@@ -1,0 +1,36 @@
+{
+  "collection": "pages",
+  "path": "/baseline/",
+  "title": "Baseline Page",
+  "status": "draft",
+  "seo": {
+    "metaTitle": "Baseline Page",
+    "metaDescription": "A small page used to validate the shared CMS JSON contract."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Schema test",
+      "title": "Baseline page JSON",
+      "description": "This file validates the reusable content upsert path.",
+      "primaryAction": {
+        "label": "Get started",
+        "href": "/"
+      }
+    },
+    {
+      "type": "faq",
+      "title": "Validation FAQ",
+      "items": [
+        {
+          "question": "Does this use a page-specific script?",
+          "answer": "No. The same cms:upsert command validates every generated page."
+        },
+        {
+          "question": "Is this runtime tied to the old source platform?",
+          "answer": "No. It is product-native CMS JSON."
+        }
+      ]
+    }
+  ]
+}

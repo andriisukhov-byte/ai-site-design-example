@@ -1,0 +1,64 @@
+@use "../variables" as *;
+@use "design-tokens" as *;
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @supports (overflow: clip) {
+        overflow: clip;
+    }
+
+    > main {
+        flex: 1 1 auto;
+    }
+
+    > * {
+        min-width: 0;
+    }
+}
+
+[class*="__container"] {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: rem($container-padding * 0.5);
+    min-width: 0;
+}
+
+.ca-container,
+.container-wide,
+[class*="__container"].container-wide {
+    max-width: rem($container-wide + $container-padding);
+}
+
+.container-base,
+[class*="__container"].container-base {
+    max-width: rem($container-base + $container-padding);
+}
+
+.container-narrow,
+[class*="__container"].container-narrow {
+    max-width: rem($container-narrow + $container-padding);
+}
+
+.ca-section {
+    padding-block: 120px;
+}
+
+@media (max-width: $pc) {
+    .ca-section {
+        padding-block: 96px;
+    }
+}
+
+@media (max-width: $mobile) {
+    [class*="__container"] {
+        padding-inline: rem($container-padding-mobile * 0.5);
+    }
+
+    .ca-section {
+        padding-block: 72px;
+    }
+}

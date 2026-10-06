@@ -1,0 +1,153 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_agent-capabilities.scss';
+
+type AgentCapabilitiesBlock = Extract<PageBlock, { type: 'agent-capabilities' }>;
+
+interface Props {
+  block: AgentCapabilitiesBlock;
+}
+
+const { block } = Astro.props;
+const items = (block.items ?? []).filter((item) => item.title?.trim() && item.description?.trim());
+const contentSide = block.contentSide === 'left' ? 'left' : 'right';
+const autoplayInterval = Number.isFinite(block.autoplayInterval) && (block.autoplayInterval ?? 0) >= 2000
+  ? block.autoplayInterval
+  : 5000;
+const iconClass = (icon?: string) => {
+  const normalized = icon?.trim().replaceAll('_', '-');
+  return normalized || 'messages-square';
+};
+const mediaSrc = (media?: { src?: string }) => media?.src || '';
+const asset = (file: string) => `/assets/blocks/agent-capabilities/${file}`;
+const firstLink = items[0]?.link?.url ? items[0].link : null;
+const gridRows = Math.ceil(Math.max(1, items.length) / 2);
+const gridRowsClass = `agent-capabilities__grid--rows-${Math.min(gridRows, 12)}`;
+const shouldRender = Boolean(block.title || block.description || items.length > 0 || block.infoNote);
+---
+
+{shouldRender && (
+  <section
+    class:list={[
+      'agent-capabilities',
+      `agent-capabilities--content-${contentSide}`,
+      block.preview && 'agent-capabilities--preview',
+    ]}
+    data-agent-capabilities
+    data-capability-side={contentSide}
+    data-capability-autoplay={block.autoplay ? 'true' : 'false'}
+    data-capability-autoplay-interval={autoplayInterval}
+    data-capability-preview={block.preview ? '1' : undefined}
+  >
+    <div class="agent-capabilities__container container-wide">
+      {(block.title || block.description) && (
+        <div class="agent-capabilities__intro">
+          {block.title && <h2 class="agent-capabilities__heading"><FormattedText text={block.title} /></h2>}
+          {block.description && <p class="agent-capabilities__intro-text"><FormattedText text={block.description} /></p>}
+        </div>
+      )}
+
+      {items.length > 0 && (
+        <div class="agent-capabilities__layout">
+          <div class="agent-capabilities__aside">
+            <div class="agent-capabilities__card">
+              <div class="agent-capabilities__panels swiper" data-capability-swiper>
+                <div class="swiper-wrapper">
+                  {items.map((item, index) => {
+                    const image = mediaSrc(item.image);
+                    const link = item.link?.url ? item.link : null;
+                    return (
+                      <article
+                        class:list={['agent-capabilities__panel', 'swiper-slide', index === 0 && 'is-active']}
+                        data-capability-panel={index}
+                        aria-hidden={index === 0 ? 'false' : 'true'}
+                        data-capability-link-url={link?.url}
+                        data-capability-link-label={link?.title || 'Get more'}
+                        data-capability-link-target={link?.target}
+                      >
+                        <div class="agent-capabilities__panel-main">
+                          {image && (
+                            <span class="agent-capabilities__panel-image">
+                              <img src={image} alt={item.image?.alt || ''} loading="lazy" decoding="async" />
+                            </span>
+                          )}
+                          {item.title && <h3 class="agent-capabilities__panel-title">{item.title}</h3>}
+                          {item.description && <div class="agent-capabilities__panel-description" set:html={item.description} />}
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {(items.length > 1 || firstLink) && (
+                <div class="agent-capabilities__footer">
+                  <a
+                    class:list={['agent-capabilities__panel-button', 'c-btn', 'c-btn--primary', !firstLink && 'is-hidden']}
+                    data-capability-button
+                    href={firstLink?.url || '#'}
+                    target={firstLink?.target}
+                  >
+                    <span class="c-btn__label" data-capability-button-label>{firstLink?.title || 'Get more'}</span>
+                  </a>
+
+                  {items.length > 1 && (
+                    <div class="agent-capabilities__controls" aria-label="Agent capabilities controls">
+                      <button class="agent-capabilities__arrow agent-capabilities__arrow--prev" type="button" data-capability-prev aria-label="Previous capability" disabled>
+                        <img src={asset('icon-arrow.svg')} alt="" />
+                      </button>
+                      <button class="agent-capabilities__arrow agent-capabilities__arrow--next" type="button" data-capability-next aria-label="Next capability">
+                        <img src={asset('icon-arrow.svg')} alt="" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {contentSide === 'left' && (
+              <span class="agent-capabilities__badge" aria-hidden="true">
+                <img src={asset('brand-label.svg')} alt="" loading="lazy" decoding="async" />
+              </span>
+            )}
+          </div>
+
+          <div class:list={['agent-capabilities__grid', gridRowsClass]} role="tablist" aria-label="Agent capabilities">
+            {items.map((item, index) => (
+              <button
+                class:list={['agent-capabilities__item', index === 0 && 'is-active']}
+                type="button"
+                role="tab"
+                data-capability-icon={index}
+                aria-selected={index === 0 ? 'true' : 'false'}
+              >
+                <span class="agent-capabilities__item-badge">
+                  {mediaSrc(item.customIcon) ? (
+                    <img class="agent-capabilities__custom-icon" src={mediaSrc(item.customIcon)} alt="" />
+                  ) : (
+                    <span class:list={['agent-capabilities__item-icon', `agent-capabilities__item-icon--${iconClass(item.icon)}`]} />
+                  )}
+                </span>
+                {item.title && <span class="agent-capabilities__item-label">{item.title}</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {block.infoNote && (
+        <aside class="agent-capabilities__info">
+          <span class="agent-capabilities__info-icon" aria-hidden="true">
+            <img src={asset('icon-info.svg')} alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="agent-capabilities__info-text" set:html={block.infoNote} />
+        </aside>
+      )}
+    </div>
+  </section>
+)}
+
+<script>
+  import '../../../scripts/agent-capabilities';
+</script>

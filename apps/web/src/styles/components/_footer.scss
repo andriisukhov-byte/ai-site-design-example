@@ -1,0 +1,242 @@
+@use "../variables" as *;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    width: 100%;
+    padding: 64px 64px 48px;
+    background: #0c0a09;
+    color: #fff;
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 48px;
+        width: 100%;
+    }
+
+    &__brand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        flex: 0 0 auto;
+    }
+
+    &__logo-link {
+        display: flex;
+        align-items: center;
+        width: 202px;
+        height: 32px;
+        text-decoration: none;
+    }
+
+    &__logo {
+        display: block;
+        width: 202px;
+        height: 32px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    &__site-name {
+        color: #fff;
+        font-family: "Geist", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0;
+    }
+
+    &__socials {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        color: #fff;
+        background: #191817;
+        border-radius: 2px;
+        font-family: "Geist", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: #fff;
+            background: #2e2e2e;
+            text-decoration: none;
+        }
+    }
+
+    &__social-icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+
+    &__menu {
+        flex: 0 1 auto;
+    }
+
+    &__menu > .menu {
+        display: flex;
+        align-items: flex-start;
+        gap: 78px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__menu > .menu > .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        min-width: max-content;
+    }
+
+    &__menu > .menu > .menu-item > a {
+        color: #8b8b8b;
+        font-family: "Geist", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            color: #8b8b8b;
+            text-decoration: none;
+        }
+    }
+
+    &__menu .sub-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__menu .sub-menu a {
+        color: #fff;
+        font-family: "Geist", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: #8b8b8b;
+            text-decoration: none;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: 100%;
+        padding: 24px 0;
+        border-top: 1px solid #2e2e2e;
+        color: #fff;
+        font-family: "Geist", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0;
+    }
+
+    &__copyright {
+        margin: 0;
+    }
+
+    &__legal {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__legal-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        &:not(:last-child)::after {
+            content: "|";
+            color: #fff;
+        }
+    }
+
+    &__legal-link {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: #8b8b8b;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .footer {
+        gap: 24px;
+        padding: 64px 16px 16px;
+
+        &__content {
+            flex-direction: column;
+            gap: 72px;
+        }
+
+        &__menu {
+            width: 100%;
+        }
+
+        &__menu > .menu {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 72px 48px;
+            width: 100%;
+        }
+
+        &__menu > .menu > .menu-item {
+            min-width: 0;
+        }
+
+        &__bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+    }
+}

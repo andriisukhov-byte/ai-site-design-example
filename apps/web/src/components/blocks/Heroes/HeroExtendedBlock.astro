@@ -1,0 +1,157 @@
+---
+import '../../../styles/blocks/_hero-extended.scss';
+
+type ImageValue = { src?: string; url?: string; alt?: string } | null | undefined;
+type LinkValue = { title?: string; label?: string; url?: string; href?: string; target?: string } | null | undefined;
+
+type HeroExtendedCard = {
+  icon?: ImageValue;
+  title?: string;
+  description?: string;
+};
+
+export type HeroExtendedBlockData = {
+  variant?: 'default' | 'home';
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  backgroundImage?: ImageValue;
+  media?: ImageValue;
+  mediaSize?: 'wide' | 'tall';
+  secondaryAction?: LinkValue;
+  secondaryNote?: string;
+  primaryAction?: LinkValue;
+  primaryNote?: string;
+  cards?: HeroExtendedCard[];
+};
+
+interface Props {
+  block: HeroExtendedBlockData;
+}
+
+const { block } = Astro.props;
+const heroVariant = block.variant || 'default';
+const eyebrow = block.eyebrow;
+const title = richText(block.title);
+const subtitle = richText(block.subtitle);
+const description = richText(block.description);
+const backgroundImage = block.backgroundImage;
+const contentImage = block.media;
+const mediaSize = block.mediaSize === 'tall' ? 'tall' : 'wide';
+const secondaryButton = block.secondaryAction;
+const primaryButton = block.primaryAction;
+const secondaryNote = block.secondaryNote;
+const primaryNote = block.primaryNote;
+const cards = (block.cards || []).filter((card) => card.title || card.description || imageSrc(card.icon));
+const hasCards = cards.length > 0;
+const hasMedia = Boolean(imageSrc(contentImage));
+const rootClass = [
+  'hero-extended',
+  `hero-extended--media-${mediaSize}`,
+  heroVariant === 'home' && 'hero-extended--home',
+  hasCards && 'hero-extended--has-cards',
+  hasMedia && 'hero-extended--has-media',
+].filter(Boolean).join(' ');
+const titleTag = eyebrow ? 'p' : 'h1';
+
+function imageSrc(image: ImageValue) {
+  return image?.src || image?.url || '';
+}
+
+function linkHref(link: LinkValue) {
+  return link?.href || link?.url || '#';
+}
+
+function linkLabel(link: LinkValue) {
+  return link?.label || link?.title || '';
+}
+
+function richText(value?: string): string {
+  return (value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;')
+    .replace(/\{\{\s*([^}]+?)\s*\}\}/g, '<span>$1</span>')
+    .replace(/\|\|/g, '<br>')
+    .replaceAll('&lt;br&gt;', '<br>')
+    .replaceAll('&lt;br /&gt;', '<br>')
+    .replaceAll('&lt;span&gt;', '<span>')
+    .replaceAll('&lt;/span&gt;', '</span>');
+}
+
+function buttonAttrs(link: LinkValue) {
+  const href = linkHref(link);
+  return {
+    href,
+    ...(link?.target ? { target: link.target, rel: 'noopener' } : {}),
+    ...(href.startsWith('#popup-open-') ? { 'data-popup': href.slice('#popup-open-'.length) } : {}),
+  };
+}
+
+const noteIcons = {
+  calendar: '<svg class="hero-extended__note-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M6.45833 14.3501V14.2857M10.2083 14.3501V14.2857M10.2083 10.8571V10.7927M13.5417 10.8571V10.7927M3.95833 7.42855H15.625M5.46627 2.5V3.78586M13.9583 2.5V3.78571M13.9583 3.78571H5.625C4.24429 3.78571 3.125 4.93697 3.125 6.35712V14.9286C3.125 16.3487 4.24429 17.5 5.625 17.5H13.9583C15.339 17.5 16.4583 16.3487 16.4583 14.9286L16.4583 6.35712C16.4583 4.93697 15.339 3.78571 13.9583 3.78571Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  card: '<svg class="hero-extended__note-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M11.8417 15.7499H3.84201C2.73747 15.7499 1.84204 14.8545 1.84201 13.75L1.8418 6.25012C1.84177 5.14553 2.73721 4.25006 3.8418 4.25006H15.8413C16.9459 4.25006 17.8414 5.14497 17.8414 6.24957L17.8414 9.75006M2.34141 7.74994H17.3414M15.181 15.5668L16.6695 14.0783M16.6695 14.0783L18.1581 12.5897M16.6695 14.0783L15.181 12.5897M16.6695 14.0783L18.1581 15.5668" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+---
+
+<section class={rootClass}>
+  {imageSrc(backgroundImage) && (
+    <div class="hero-extended__background" aria-hidden="true">
+      <img class="hero-extended__background-image" src={imageSrc(backgroundImage)} alt="" />
+    </div>
+  )}
+
+  <div class="hero-extended__container container-wide">
+    <div class="hero-extended__content">
+      <div class="hero-extended__text">
+        {eyebrow && <h1 class="hero-extended__eyebrow">{eyebrow}</h1>}
+        {title && (titleTag === 'p' ? <p class="hero-extended__title" set:html={title} /> : <h1 class="hero-extended__title" set:html={title} />)}
+        {subtitle && <p class="hero-extended__subtitle" set:html={subtitle} />}
+        {description && <p class="hero-extended__description" set:html={description} />}
+      </div>
+
+      <div class="hero-extended__actions">
+        {linkLabel(secondaryButton) && (
+          <div class="hero-extended__action">
+            <a class="c-btn c-btn--secondary c-btn--lg hero-extended__button" {...buttonAttrs(secondaryButton)}>
+              <span class="c-btn__label">{linkLabel(secondaryButton)}</span>
+            </a>
+            {secondaryNote && <p class="hero-extended__note hero-extended__note--calendar"><Fragment set:html={noteIcons.calendar} /><span class="hero-extended__note-text">{secondaryNote}</span></p>}
+          </div>
+        )}
+
+        {linkLabel(primaryButton) && (
+          <div class="hero-extended__action">
+            <a class="c-btn c-btn--primary c-btn--lg hero-extended__button" {...buttonAttrs(primaryButton)}>
+              <span class="c-btn__label">{linkLabel(primaryButton)}</span>
+            </a>
+            {primaryNote && <p class="hero-extended__note hero-extended__note--card"><Fragment set:html={noteIcons.card} /><span class="hero-extended__note-text">{primaryNote}</span></p>}
+          </div>
+        )}
+      </div>
+
+      {hasMedia && (
+        <div class="hero-extended__media">
+          <img class="hero-extended__image" src={imageSrc(contentImage)} alt={contentImage?.alt || ''} />
+        </div>
+      )}
+    </div>
+
+    {hasCards && (
+      <div class="hero-extended__cards">
+        {cards.map((card) => (
+          <article class="hero-extended__card">
+            <div class="hero-extended__card-icon" aria-hidden="true">
+              {imageSrc(card.icon) && <img src={imageSrc(card.icon)} alt="" />}
+            </div>
+            {card.title && <h2 class="hero-extended__card-title">{card.title}</h2>}
+            {card.description && <p class="hero-extended__card-description" set:html={richText(card.description)} />}
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

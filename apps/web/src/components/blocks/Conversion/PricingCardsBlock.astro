@@ -1,0 +1,103 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_pricing-cards.scss';
+
+type PricingCardsBlock = Extract<PageBlock, { type: 'pricing-cards' }>;
+
+interface Props {
+  block: PricingCardsBlock;
+}
+
+const { block } = Astro.props;
+const isPricingPage = block.root?.className?.split(/\s+/).includes('pricing-page');
+const background = block.background === 'white' || isPricingPage ? 'white' : 'gray';
+const sectionClasses = ['pricing-cards', `pricing-cards--${background}`, block.root?.className];
+const hasHeader = Boolean(block.eyebrow || block.title || block.description);
+const cards = (block.cards ?? []).filter((card) => Boolean(card.title || card.features?.length));
+
+const normalizeFeatures = (features: PricingCardsBlock['cards'][number]['features'] = []) =>
+  features.map((feature) => (typeof feature === 'string' ? feature : feature.text)).filter(Boolean);
+
+function popupId(href?: string): string | undefined {
+  const prefix = '#popup-open-';
+  return href?.startsWith(prefix) ? href.slice(prefix.length) : undefined;
+}
+---
+
+{cards.length > 0 && (
+  <section class:list={sectionClasses}>
+    <div class="pricing-cards__container container-wide">
+      {hasHeader && (
+        <header class="pricing-cards__header">
+          {block.eyebrow && <p class="pricing-cards__eyebrow">{block.eyebrow}</p>}
+          {block.title && <h2 class="pricing-cards__title"><FormattedText text={block.title} /></h2>}
+          {block.description && <p class="pricing-cards__description"><FormattedText text={block.description} /></p>}
+        </header>
+      )}
+
+      <div class="pricing-cards__plans">
+        {cards.map((card) => {
+          const isGradient = card.accent !== 'dark';
+          const features = normalizeFeatures(card.features);
+          const button = card.button;
+          const target = button?.target && button.target !== '_self' ? button.target : undefined;
+          const buttonClass = `c-btn c-btn--${isGradient ? 'primary' : 'secondary'} c-btn--lg pricing-cards__button`;
+
+          return (
+            <article class:list={['pricing-cards__plan', `pricing-cards__plan--${isGradient ? 'gradient' : 'dark'}`]}>
+              <div class="pricing-cards__plan-top">
+                <div class="pricing-cards__plan-head">
+                  {card.eyebrow && <p class="pricing-cards__plan-eyebrow">{card.eyebrow}</p>}
+                  {card.title && <h3 class="pricing-cards__plan-title">{card.title}</h3>}
+                  {card.description && <p class="pricing-cards__plan-description" set:html={card.description} />}
+                </div>
+
+                {features.length > 0 && (
+                  <ul class="pricing-cards__features">
+                    {features.map((feature) => (
+                      <li class="pricing-cards__feature">
+                        <img
+                          class="pricing-cards__feature-icon"
+                          src={`/assets/blocks/pricing-cards/icons/${isGradient ? 'check-gradient' : 'check-dark'}.svg`}
+                          alt=""
+                          aria-hidden="true"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {card.note && <p class="pricing-cards__plan-note" set:html={card.note} />}
+              </div>
+
+              {button?.href && button.label && (
+                <a
+                  class={buttonClass}
+                  href={button.href}
+                  target={target}
+                  rel={target ? 'noopener' : undefined}
+                  data-popup={popupId(button.href)}
+                >
+                  <span class="c-btn__label">{button.label}</span>
+                </a>
+              )}
+            </article>
+          );
+        })}
+      </div>
+
+      {block.info && (
+        <aside class="pricing-cards__info">
+          <span class="pricing-cards__info-icon" aria-hidden="true">
+            <img src="/assets/blocks/pricing-cards/icons/info.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <p set:html={block.info} />
+        </aside>
+      )}
+    </div>
+  </section>
+)}

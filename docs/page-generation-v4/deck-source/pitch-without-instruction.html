@@ -1,0 +1,478 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<title>Как работает система генерации страниц</title><link rel="stylesheet" href="deck.css"></head><body>
+
+<section class="slide dark">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Демонстрация · 15 сентября 2026</div>
+  <h1>Страница сайта<br>рождается из текста.<br><span class="grad">Макет не нужен.</span></h1>
+  <p class="lead" style="margin-top:34px;max-width:960px">Эта презентация показывает, как работает система: что она получает на входе, что выдаёт на выходе, как проверяет саму себя и где всё-таки нужен человек. Без инструкций — только демонстрация.</p>
+  <div class="hero-strip">
+    <div><b>ЧТО ПОКАЗЫВАЕМ</b><span>Один реальный прогон от начала до конца, со всеми ошибками, которые он нашёл.</span></div>
+    <div><b>ЧТО ПОЛУЧИЛОСЬ</b><span>Отраслевая посадочная страница из 9 секций, живая в браузере.</span></div>
+    <div><b>СКОЛЬКО ЗАНЯЛО</b><span>11 минут от поднятого окружения до черновика в CMS. Дальше — круги проверок.</span></div>
+  </div>
+  <div class="foot">Вторая часть — «pitch-instruction» — объясняет, как это повторить.</div>
+  <div class="num">01</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Суть</div>
+  <h2>Обычный путь и этот путь</h2>
+  <div class="cols c2" style="margin-top:34px;gap:40px">
+    <div class="doc" style="background:var(--soft)">
+      <div class="t" style="color:var(--muted)">КАК ЧАЩЕ ВСЕГО</div>
+      <h3>Текст → макет → вёрстка → правки</h3>
+      <p style="margin-bottom:14px">Каждый шаг — отдельный человек и отдельное ожидание. Макет рисуется заново под каждую страницу, даже если страница по сути такая же, как десять предыдущих.</p>
+      <p>Проверка качества — чей-то взгляд на последнем шаге. Что именно проверяли, нигде не записано.</p>
+    </div>
+    <div class="doc">
+      <div class="t">КАК ЗДЕСЬ</div>
+      <h3>Текст → страница</h3>
+      <p style="margin-bottom:14px">Как выглядит каждый вид секции, решено один раз — когда секцию заводили в библиотеку. На конкретной странице этот вопрос уже не поднимается.</p>
+      <p>Остаётся два вопроса: какие секции нужны и что в них написано. Оба — про содержание, не про рисование.</p>
+    </div>
+  </div>
+  <div class="rule" style="margin-top:34px"></div>
+  <p class="lead">Это не «ИИ рисует дизайн». Это сборка из готовых, заранее утверждённых деталей — и набор проверок, которые не дают собрать неправильно.</p>
+  <div class="num">02</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Вход</div>
+  <h2>На входе — обычное ТЗ, написанное словами</h2>
+  <p class="sub" style="margin-bottom:24px">Никаких картинок, никаких макетов. Описание того, что должно быть на странице и зачем.</p>
+  <div class="cols c2" style="gap:40px">
+    <div class="doc">
+      <div class="t">ШАПКА ТЗ</div>
+      <ul>
+        <li><b>Тип страницы</b> и что из шаблона исключено</li>
+        <li><b>Ключевой запрос</b> — один на страницу</li>
+        <li><b>Описание для поиска</b> — одно предложение</li>
+        <li><b>Призыв к действию</b> — одна формулировка везде</li>
+      </ul>
+    </div>
+    <div class="doc">
+      <div class="t">СПИСОК СЕКЦИЙ, ПОРЯДОК ОБЯЗАТЕЛЕН</div>
+      <ul>
+        <li>Обещание · Возможности · Проблема</li>
+        <li>Как это работает · Что меняется</li>
+        <li>Как запуститься · Призыв · Вопросы</li>
+      </ul>
+    </div>
+  </div>
+  <div class="quote" style="margin-top:32px">У каждой секции в ТЗ написана <b>роль</b>, а не внешний вид. Например, у секции с проблемой: «согласие читателя с диагнозом до того, как предложено лекарство».<br>Роль проверяема. Вкус — нет. Именно поэтому система вообще возможна.</div>
+  <div class="num">03</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Вход</div>
+  <h2>Для демонстрации взяли живую задачу</h2>
+  <div class="cols c2" style="margin-top:24px;gap:40px">
+    <div>
+      <table>
+        <tr><th>Что</th><th>Значение</th></tr>
+        <tr><td>Тема</td><td>Приём звонков и запись пациентов в стоматологии</td></tr>
+        <tr><td>Тип</td><td>Отраслевая посадочная, облегчённая: без цен, без сравнения с конкурентами, без блока безопасности</td></tr>
+        <tr><td>Ключевой запрос</td><td>AI receptionist for dental clinics</td></tr>
+        <tr><td>Призыв</td><td>Get Started Free</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Почему именно эта тема</h3>
+      <p style="margin-bottom:18px">На сайте уже есть похожие страницы по клинингу и юрфирмам — значит, есть с чем сверять плотность, тон и структуру.</p>
+      <h3>И почему она неудобная</h3>
+      <p>В списке проверенных фактов компании <b>нет ни одной цифры по медицине</b>, и медицина отдельно помечена как область, где нельзя называть чужие программы. Странице придётся справиться без выдуманных цифр и без выдуманных интеграций.</p>
+    </div>
+  </div>
+  <div class="num">04</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Система</div>
+  <h2>Библиотека секций: 47 видов, у каждого своя работа</h2>
+  <p class="sub">Секция — это не картинка, а роль. Система знает, какую работу выполняет каждый вид и сколько элементов в нём уместно.</p>
+  <div class="roles">
+    <div><b>Обещание</b><span>первый экран</span></div>
+    <div><b>Перечень</b><span>возможности, каналы, отрасли</span></div>
+    <div><b>Рассказ</b><span>как это работает, история</span></div>
+    <div><b>Доказательство</b><span>сравнения, метрики, продукт</span></div>
+    <div><b>Действие</b><span>призывы и тарифы</span></div>
+    <div><b>Навигация</b><span>вопросы, ссылки, якоря</span></div>
+  </div>
+  <div class="cols c2" style="margin-top:40px;gap:40px">
+    <div class="doc">
+      <div class="t">ГЛАВНОЕ ПРАВИЛО</div>
+      <h3>Сначала переиспользовать</h3>
+      <p>Новая секция заводится только если выполнены три условия сразу: ни одна существующая не закрывает эту роль, появляется реально новый механизм, и секция пригодится минимум на двух будущих страницах. Не больше одной новой на страницу.</p>
+    </div>
+    <div class="doc" style="background:#eef3fd;border-color:#d3e0f8">
+      <div class="t">НА ЭТОЙ СТРАНИЦЕ</div>
+      <h3>Новых секций — ноль</h3>
+      <p style="color:#20458f">Все девять взяты из библиотеки. Уникальность страницы даёт комбинация секций, их порядок, плотность и текст — а не новые визуальные конструкции.</p>
+    </div>
+  </div>
+  <div class="num">05</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Система</div>
+  <h2>Правила написаны заранее и лежат рядом с сайтом</h2>
+  <div class="cols c3" style="margin-top:30px;gap:24px">
+    <div class="doc"><div class="t">ЗАКОН СБОРКИ</div><h3>Какая секция для чего</h3><p>Чем нельзя подменить что. Сколько призывов к действию на странице и где они стоят. Какая арка у страницы по умолчанию.</p></div>
+    <div class="doc"><div class="t">СВОД ПРАВИЛ ПИСЬМА</div><h3>Как формулировать</h3><p>Запрещённые слова и обороты. Длина заголовка, описания, ответа на вопрос. Ритм: три предложения подряд одной длины — признак машинного текста.</p></div>
+    <div class="doc"><div class="t">УТВЕРЖДЁННЫЕ ФАКТЫ</div><h3>Что вообще можно утверждать</h3><p>Список цифр с источниками, названий программ и определений, которые разрешено ставить на страницу. Всё остальное — нельзя.</p></div>
+  </div>
+  <div class="quote" style="margin-top:38px">Файл утверждённых фактов прямо предупреждает о своей неполноте: «там, где отрасль не исследована — исследуйте до выпуска страницы».<br><b>«Возьмём цифры из соседней отрасли, они под рукой» — это и есть тот провал, ради которого файл существует.</b></div>
+  <div class="num">06</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Ход работы</div>
+  <h2>Четыре фазы</h2>
+  <div class="phase">
+    <div><b>ФАЗА 1</b><h3>Проверить место</h3><p>Свободен ли адрес, нет ли уже такой страницы, не конкурирует ли ключевой запрос с существующими. Три независимых источника, все обязательны.</p></div>
+    <div><b>ФАЗА 2</b><h3>Разложить по секциям</h3><p>Каждую секцию ТЗ сопоставить с видом из библиотеки. Для каждой записать, почему выбран именно он и почему не нужен новый.</p></div>
+    <div><b>ФАЗА 3</b><h3>Написать текст</h3><p>По своду правил, с цифрами только из утверждённых фактов. Если текст пришёл от маркетинга — переносится дословно, без единой правки.</p></div>
+    <div><b>ФАЗА 4</b><h3>Проверить и сдать</h3><p>Одиннадцать ворот, каждое «сдал / не сдал». Потом независимая проверка другим участником. Потом — черновик, который публикует человек.</p></div>
+  </div>
+  <div class="rule" style="margin-top:44px"></div>
+  <p class="lead">На этом прогоне первые три фазы заняли меньше времени, чем четвёртая. Так и должно быть.</p>
+  <div class="num">07</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Артефакты</div>
+  <h2>Что остаётся после работы, кроме самой страницы</h2>
+  <div class="cols c3" style="margin-top:30px;gap:24px">
+    <div class="doc"><div class="t">ДОКУМЕНТ 1</div><h3>Бриф</h3><p style="margin-bottom:12px">Заполненное ТЗ. Здесь записаны все решения, принятые до сборки, и — обязательно — <b>каждое отступление от шаблона</b> с объяснением почему.</p><p>Это то, с чем сверяют страницу через полгода.</p></div>
+    <div class="doc"><div class="t">ДОКУМЕНТ 2</div><h3>Сама страница</h3><p style="margin-bottom:12px">Список секций и их содержимое. Ни одного оформительского решения — только состав и текст.</p><p>Лежит в системе управления сайтом как черновик.</p></div>
+    <div class="doc"><div class="t">ДОКУМЕНТ 3</div><h3>Отчёт о приёмке</h3><p style="margin-bottom:12px">Какая секция взята и почему. Что проверено и с каким результатом. Что нашла независимая проверка.</p><p>И отдельно — <b>открытые хвосты</b>: что осталось за человеком.</p></div>
+  </div>
+  <div class="quote" style="margin-top:38px">Из брифа этой страницы, дословно: «Четыре цифры найдены под эту страницу и <b>ждут подтверждения маркетингом</b>. Ни одна программа для клиник не названа: медицина в списке областей, где нельзя выдумывать названия инструментов».</div>
+  <div class="num">08</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Самопроверка</div>
+  <h2>Одиннадцать ворот, каждое «сдал / не сдал»</h2>
+  <div class="cols c2" style="margin-top:22px;gap:44px">
+    <div>
+      <div class="chk"><span class="m">✓</span><span><b>Страница собрана правильно</b><span>Каждая секция существует, у каждой заполнены нужные поля, элементов не больше допустимого.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Адрес свободен</b><span>Такой страницы нет ни в одном разделе сайта и ключевой запрос не отбирает трафик у существующей.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Текст соответствует своду правил</b><span>Длины, запрещённые слова, ритм, и главное — ни одной цифры, которой нет в утверждённых фактах.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Страница открывается</b><span>Все девять секций видны в готовой странице, а не только в файле.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Главный заголовок тот, что задуман</b><span>Проверяется в готовой странице: система умеет подменять заголовок, и в файле этого не видно.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Все ссылки ведут куда-то</b><span>И все призывы к действию — на один и тот же адрес.</span></span></div>
+    </div>
+    <div>
+      <div class="chk"><span class="m">✓</span><span><b>Ни одной битой картинки</b><span>И ни одной картинки, подгружаемой с чужого сервера.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Код сайта не сломан</b><span>Проверка типов по всем 153 файлам.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Оформление не протекло в контент</b><span>Ни одного стиля, прописанного прямо в странице в обход дизайн-системы.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Призывы расставлены по политике</b><span>Три на странице: в первом экране, после доказательства, в финальном баннере.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Независимая проверка дала «принято»</b><span>Не самопроверка. Другой участник, с доступом только на чтение, проверяет своими командами.</span></span></div>
+      <div class="card" style="margin-top:26px;background:#eef3fd;border-color:#d3e0f8">
+        <p style="color:#20458f">Ворота нельзя уговорить и нельзя забыть. «Почти прошло» не бывает.</p>
+      </div>
+    </div>
+  </div>
+  <div class="num">09</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Что нашли проверки · 1</div>
+  <h2>Машина поймала семь замечаний четырёх типов</h2>
+  <div class="cols c2" style="margin-top:26px;gap:44px">
+    <div>
+      <table>
+        <tr><th>Замечание</th><th>Что с ним сделали</th></tr>
+        <tr><td><b>Цифра в двух секциях</b><br><span style="font-size:15px;color:var(--muted)">четыре замечания: 38%, 78%, 67%, 7.4% — каждая дважды</span></td><td>Цифра принадлежит одной секции. Оставили в разделе про проблему, из таблицы убрали.</td></tr>
+        <tr><td><b>Заголовок карточки в 5 слов</b><br><span style="font-size:15px;color:var(--muted)">норма 2–4</span></td><td>«Voicemail Is a Dead End» → «The Voicemail Dead End»</td></tr>
+        <tr><td><b>Ответ на вопрос в 64 слова</b><br><span style="font-size:15px;color:var(--muted)">норма 40–60</span></td><td>Сокращён до 58 без потери смысла</td></tr>
+        <tr><td><b>Описание карточки в 36 слов</b><br><span style="font-size:15px;color:var(--muted)">норма 20–35</span></td><td>Сокращено на одно предложение, смысл карточки не тронут</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Почему это важнее, чем кажется</h3>
+      <p style="margin-bottom:20px">Все четыре типа — вещи, которые человек на вычитке пропускает через раз. Не потому что невнимателен, а потому что их надо считать, а не читать.</p>
+      <div class="doc" style="background:#fdf6e6;border-color:#f0e2c0">
+        <div class="t" style="color:#9a7017">ОДНО ЗАМЕЧАНИЕ ПРИНЯЛИ, А НЕ ИСПРАВИЛИ</div>
+        <p style="color:#7a5c10">Все карточки возможностей вышли одной длины — 31–33 слова. Это не лень: у этого вида секции задана минимальная высота карточки, и при более коротком тексте она выглядит полупустой.<br><br>Свод правил прямо говорит: <b>ограничение секции сильнее идеала длины</b>. Записали в отчёт и не стали разбавлять текст водой.</p>
+      </div>
+    </div>
+  </div>
+  <div class="num">10</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Что нашли проверки · 2</div>
+  <h2>Три дефекта увидел только глаз</h2>
+  <p class="sub" style="margin-bottom:22px">Ни одна автоматическая проверка их не поймала: с точки зрения машины страница была безупречна.</p>
+  <div class="cols c3" style="gap:24px">
+    <div class="doc"><div class="t" style="color:var(--red)">ДЕФЕКТ 1</div><h3>Дыра в ряду</h3><p>Шесть карточек в сетке на четыре колонки оставляют пустое место в два столбца. В файле это не видно никак.</p></div>
+    <div class="doc"><div class="t" style="color:var(--red)">ДЕФЕКТ 2</div><h3>Три одинаковых значка</h3><p>Названия значков выглядели разумно, но у этого вида секции свой словарь, и всё незнакомое молча превращается в одну и ту же заглушку.</p></div>
+    <div class="doc"><div class="t" style="color:var(--red)">ДЕФЕКТ 3</div><h3>Снова рваный ряд</h3><p>Пять шагов рассказа встали как четыре плюс один. Добавили шестой шаг — тот, который и по смыслу был нужен.</p></div>
+  </div>
+  <div class="rule" style="margin-top:34px"></div>
+  <div class="cols c2" style="gap:40px">
+    <p class="lead">Поэтому в процессе есть обязательный шаг: снять страницу целиком, по секциям, на большом экране и на телефоне, и посмотреть каждый кадр.</p>
+    <p class="lead">Содержание при этом <b>не подгоняется под сетку</b>. В третьем случае добавили шаг, которого не хватало по смыслу — а не «что-нибудь шестое».</p>
+  </div>
+  <div class="num">11</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Что нашли проверки · 2</div>
+  <h2>Дефект 1: шесть карточек в сетке на четыре</h2>
+  <div class="cols c2" style="margin-top:8px;gap:24px">
+    <div><div class="badge no" style="margin-bottom:12px">✕ было</div><div class="fit ab"><img src="img/cap-before.png"></div></div>
+    <div><div class="badge yes" style="margin-bottom:12px">✓ стало</div><div class="fit ab"><img src="img/cap-after.png"></div></div>
+  </div>
+  <div class="foot">Решение — не растянуть карточки, а добавить две настоящие возможности: растянутые выглядели бы полупустыми. Отступление от ТЗ (там было шесть) записано в бриф явно.</div>
+  <div class="num">12</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Что нашли проверки · 2</div>
+  <h2>Дефект 2: три одинаковых значка вместо разных</h2>
+  <div class="cols c2" style="margin-top:8px;gap:24px">
+    <div><div class="badge no" style="margin-bottom:12px">✕ было</div><div class="fit ab"><img src="img/problem-before.png"></div></div>
+    <div><div class="badge yes" style="margin-bottom:12px">✓ стало</div><div class="fit ab"><img src="img/problem-after.png"></div></div>
+  </div>
+  <div class="foot">Такие вещи не ловятся проверкой файла: в нём значок — просто слово, и любое слово формально допустимо. Ловится только взглядом на готовую страницу.</div>
+  <div class="num">13</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Что нашли проверки · 3</div>
+  <h2>Независимая проверка: 33 замечания за четыре круга</h2>
+  <p class="sub" style="margin-bottom:26px">Отдельный участник с доступом только на чтение. Получает страницу, бриф, текст ТЗ и скриншоты — и проверяет всё сам, не доверяя отчёту. Самопроверка перед этим не нашла ничего.</p>
+  <div class="cols c4" style="gap:20px">
+    <div class="doc"><div class="t" style="color:var(--red)">КРУГ 1 · НЕ ПРИНЯТО</div><h3 style="font-size:20px">19 замечаний</h3><p>Два из них — серьёзные: страница осталась опубликованной вопреки отчёту, и на неё попала настройка «не показывать в поиске», скопированная с тестовой страницы.</p></div>
+    <div class="doc"><div class="t" style="color:var(--red)">КРУГ 2 · НЕ ПРИНЯТО</div><h3 style="font-size:20px">10 замечаний</h3><p>Четыре из них создала предыдущая починка. Плюс главное открытие прогона — про него следующий слайд.</p></div>
+    <div class="doc"><div class="t" style="color:var(--red)">КРУГ 3 · НЕ ПРИНЯТО</div><h3 style="font-size:20px">4 замечания</h3><p>Все четыре — снова следствие предыдущей починки. Сокращение одной строки под лимит сломало требование ТЗ к её форме.</p></div>
+    <div class="doc" style="background:#e7f5ee;border-color:#c9e8d8"><div class="t" style="color:var(--green)">КРУГ 4</div><h3 style="font-size:20px">Принято</h3><p style="color:#155e3a">«Всё, что поднималось за четыре круга, закрыто, нового не внесено».</p></div>
+  </div>
+  <div class="rule" style="margin-top:36px"></div>
+  <div class="cols c2" style="gap:40px">
+    <p class="lead"><b>Правка текста вносит регрессии ровно как правка кода.</b> Это главный аргумент за то, чтобы проверка была не разовой, а повторялась после каждого исправления.</p>
+    <p class="lead">Ни одно из 33 замечаний не было придиркой к вкусу. Каждое опиралось на записанное правило — поэтому по каждому было понятно, кто прав.</p>
+  </div>
+  <div class="num">14</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Что нашли проверки · 3</div>
+  <h2>Самая дорогая находка прогона</h2>
+  <div class="cols c2" style="margin-top:20px;gap:44px">
+    <div>
+      <div class="doc" style="background:#fdf0ee;border-color:#f3d5cf">
+        <div class="t" style="color:#a8341d">ЧТО ПРОИЗОШЛО</div>
+        <h3>Настройку удалили из файла — а она осталась на странице</h3>
+        <p style="color:#8a2f1a">На страницу попала настройка «не показывать в поисковиках»: её случайно скопировали с соседней тестовой страницы. Заметили, убрали из файла, перезалили. Все остальные правки доехали.<br><br>А настройка осталась. Оказалось: <b>инструмент заливки записывает только те поля, которые есть в файле.</b> Удалить поле — не значит стереть значение; страница хранит старое.</p>
+      </div>
+    </div>
+    <div>
+      <h3>Почему это не могли поймать иначе</h3>
+      <p style="margin-bottom:18px">Проверка файла — всё чисто, поля же нет. Проверка готовой страницы в браузере — тоже чисто: на рабочем компьютере эта настройка и так включена для всего сайта, она маскирует проблему.</p>
+      <p style="margin-bottom:22px">Увидеть можно было только одним способом — <b>спросить у самой системы управления сайтом</b>, что у неё сейчас записано. Именно это и сделал проверяющий.</p>
+      <div class="card" style="background:#eef3fd;border-color:#d3e0f8">
+        <p style="color:#20458f"><b>Последствие шире одной страницы.</b> Записали в общий список ловушек проекта вместе с указанием: перепроверить прошлые пакеты страниц, где поля удаляли тем же способом. Ошибка такого рода тихо доезжает до продакшена.</p>
+      </div>
+    </div>
+  </div>
+  <div class="num">15</div>
+</section>
+
+<section class="slide dark" style="padding:0">
+  <div style="padding:54px 80px 0"><div class="label">PITCH-WITHOUT-INSTRUCTION</div><div class="kicker" style="margin-top:26px">Результат</div><h2>Первый экран</h2></div>
+  <div class="fit" style="--h:620px;flex:1;margin:20px 80px 56px;width:auto"><img src="img/hero.png"></div>
+  <div class="num">16</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>Возможности</h2>
+  <div class="fit" style="--h:560px;margin-top:8px"><img src="img/cap-after.png"></div>
+  <div class="num">17</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>Проблема — три структурные причины</h2>
+  <div class="fit" style="--h:560px;margin-top:10px"><img src="img/problem-after.png"></div>
+  <div class="foot">Каждая карточка описывает устройство процесса, а не ошибку конкретного человека, и несёт цифру с источником. Три разных среза: время, охват, ответственность.</div>
+  <div class="num">18</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>Как это работает — один звонок по стадиям</h2>
+  <div class="fit" style="--h:600px;margin-top:10px"><img src="img/flow-after.png"></div>
+  <div class="foot">Стадии идут по времени, а не по важности: первый гудок, двадцатая секунда, первая минута, вторая, третья, сорок восьмой час. У каждой ровно одно предложение.</div>
+  <div class="num">19</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>Что меняется: было и стало</h2>
+  <div class="fit pair" style="--h:580px;margin-top:10px">
+    <img src="img/table-a.png"><img src="img/table-b.png">
+  </div>
+  <div class="foot">Одна таблица, показана двумя половинами. Пять строк, и каждая — измеримая величина: время до первого ответа, доля отвеченных звонков, минуты, потерянные на ресепшене, доля дошедших до записи, часы на обзвон.</div>
+  <div class="num">20</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>Запуск и финальный призыв</h2>
+  <div class="shot" style="margin-top:14px"><img src="img/launch.png"></div>
+  <div class="shot" style="margin-top:20px;max-height:310px;overflow:hidden"><img src="img/cta.png"></div>
+  <div class="num">21</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>Вопросы — четыре типа возражений</h2>
+  <div class="fit" style="--h:580px;margin-top:10px"><img src="img/faq.png"></div>
+  <div class="foot">Охват · как принимается решение · что происходит с тем, что не прошло основной путь · как результат попадает к человеку. По одному вопросу на тип.</div>
+  <div class="num">22</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Результат</div>
+  <h2>То же самое на телефоне</h2>
+  <div class="phones" style="--ph:520px">
+    <div><div class="phone"><img src="img/m-hero.png"></div><div class="phone-cap">Первый экран</div></div>
+    <div><div class="phone"><img src="img/m-cap.png"></div><div class="phone-cap">Возможности</div></div>
+    <div><div class="phone"><img src="img/m-table.png"></div><div class="phone-cap">Было и стало</div></div>
+  </div>
+  <div class="foot">Поведение на узком экране — свойство секции, а не отдельная работа. Скриншоты снимаются в обоих размерах на каждой итерации: иначе мобильная поломка доезжает до продакшена.</div>
+  <div class="num">23</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Честно</div>
+  <h2>Что система не сделала и сделать не может</h2>
+  <div class="cols c2" style="margin-top:26px;gap:30px">
+    <div class="doc" style="background:#fdf6e6;border-color:#f0e2c0"><div class="t" style="color:#9a7017">ЖДЁТ ЧЕЛОВЕКА</div><h3>Четыре цифры без подтверждения</h3><p style="color:#7a5c10">Их нет в утверждённых фактах — они найдены под эту страницу, с источниками, и лежат в брифе. Пока маркетинг их не примет, страница не публикуется.</p></div>
+    <div class="doc"><div class="t">ПРОБЕЛ В ДАННЫХ</div><h3>Ни одна программа для клиник не названа</h3><p>Медицина в списке областей, где нельзя выдумывать названия инструментов. Страница говорит «ваша система управления клиникой». Исследованный список сделал бы две секции конкретнее.</p></div>
+    <div class="doc"><div class="t">НЕДОСТАЮЩИЙ МАТЕРИАЛ</div><h3>Продуктовая картинка одолжена</h3><p>Использован общий скриншот продукта, не стоматологический. Требование к нужной картинке записано в отчёт.</p></div>
+    <div class="doc"><div class="t">ПРОБЕЛ В БИБЛИОТЕКЕ</div><h3>Две секции требуют доработки</h3><p>У одной словарь всего из четырёх значков — она не годится под задачу из ТЗ. У другой нет собственного заголовка, и раздел выпадает из оглавления страницы.</p></div>
+  </div>
+  <div class="quote" style="margin-top:32px">Все четыре пункта попали в отчёт прогона и в общий список открытых вопросов проекта. <b>Хвосты записываются, а не замалчиваются</b> — страница остаётся черновиком, пока человек их не закроет.</div>
+  <div class="num">24</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Где остаётся человек</div>
+  <h2>Три места, и ни одно из них не «нарисовать»</h2>
+  <div class="cols c3" style="margin-top:34px;gap:24px">
+    <div class="doc"><div class="t">ДО</div><h3>Решить, что утверждать</h3><p>Какие цифры правда, какие инструменты можно называть, как звучит компания. Это записывается один раз и работает на всех следующих страницах.</p></div>
+    <div class="doc"><div class="t">ВО ВРЕМЯ</div><h3>Смотреть глазами</h3><p>Три дефекта этого прогона нашли скриншоты, а не проверки. Взгляд на готовую страницу остаётся обязательным шагом, а не приятным дополнением.</p></div>
+    <div class="doc"><div class="t">ПОСЛЕ</div><h3>Нажать «Опубликовать»</h3><p>Система доводит страницу до черновика и останавливается. Публикация — всегда человеческое действие, и на этой странице она пока не сделана.</p></div>
+  </div>
+  <div class="rule" style="margin-top:40px"></div>
+  <p class="lead">Работа никуда не делась. Она сместилась: с «нарисовать эту страницу» на «договориться, как выглядят все страницы такого типа» — и это делается один раз.</p>
+  <div class="num">25</div>
+</section>
+
+<section class="slide dark">
+  <div class="label">PITCH-WITHOUT-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Итог</div>
+  <h2 style="font-size:38px;margin-bottom:44px">Что показал один прогон</h2>
+  <div class="cols c4" style="gap:26px;margin-top:auto">
+    <div class="stat"><div class="big grad">9</div><p>секций на странице, все из библиотеки</p></div>
+    <div class="stat"><div class="big grad">0</div><p>новых секций и ноль выдуманных цифр</p></div>
+    <div class="stat"><div class="big grad">3</div><p>дефекта вёрстки, которых не увидела ни одна проверка</p></div>
+    <div class="stat"><div class="big grad">33</div><p>замечания независимой проверки за четыре круга</p></div>
+  </div>
+  <div class="cols c2" style="gap:44px;margin-top:58px;margin-bottom:auto">
+    <p class="lead" style="font-size:21px">Ни одного оформительского решения в файле страницы — и при этом две ошибки, которые дошли бы до продакшена, если бы независимая проверка не была обязательной.</p>
+    <p class="lead" style="font-size:21px">Систему делает работающей не генерация текста. Её делают работающей записанные заранее правила и ворота, которые нельзя уговорить.</p>
+  </div>
+  <div class="foot" style="margin-top:auto">Страница в системе управления сайтом · статус «черновик» · ждёт подтверждения цифр и кнопки человека</div>
+  <div class="num">26</div>
+</section>
+
+<style>
+@media print { #nav, #hud, #hint { display:none !important; } }
+@media screen {
+  html, body { height:100%; margin:0; overflow:hidden; background:#0b0d12; }
+  .num { display:none; }
+  .slide { position:absolute; left:50%; top:50%; margin:0 !important;
+           transform:translate(-50%,-50%) scale(var(--s,1)); transform-origin:center center;
+           opacity:0; visibility:hidden; transition:opacity .18s ease;
+           box-shadow:0 24px 70px rgba(0,0,0,.45); }
+  .slide.is-on { opacity:1; visibility:visible; }
+  #hud { position:fixed; right:22px; bottom:18px; z-index:9;
+         font:600 13px 'SF Mono',Menlo,monospace; letter-spacing:.08em;
+         color:#8c94a2; background:rgba(20,24,31,.86); border:1px solid #262b34;
+         padding:7px 13px; border-radius:999px; user-select:none; }
+  #nav { position:fixed; inset:0; z-index:8; display:flex; }
+  #nav div { flex:1; cursor:pointer; }
+  #hint { position:fixed; left:22px; bottom:18px; z-index:9;
+          font:500 13px 'SF Mono',Menlo,monospace; color:#5b626d;
+          transition:opacity .5s ease; }
+}
+</style>
+<div id="nav"><div data-go="-1"></div><div data-go="1"></div></div>
+<div id="hud"></div>
+<div id="hint">← → листать · F во весь экран</div>
+<script>
+(function () {
+  var s = [].slice.call(document.querySelectorAll('.slide'));
+  var i = 0, hud = document.getElementById('hud'), hint = document.getElementById('hint');
+  function fit() {
+    var k = Math.min(window.innerWidth / 1600, window.innerHeight / 900) * 0.96;
+    s.forEach(function (el) { el.style.setProperty('--s', k); });
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(s.length - 1, n));
+    s.forEach(function (el, j) { el.classList.toggle('is-on', j === i); });
+    hud.textContent = (i + 1) + ' / ' + s.length;
+    location.hash = i + 1;
+  }
+  function go(d) { show(i + d); if (hint) hint.style.opacity = 0; }
+  addEventListener('resize', fit);
+  addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(s.length - 1);
+    else if (e.key === 'f' || e.key === 'F') {
+      document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+    }
+  });
+  document.getElementById('nav').addEventListener('click', function (e) {
+    var d = e.target.getAttribute('data-go'); if (d) go(+d);
+  });
+  fit();
+  show(Math.max(0, (parseInt(location.hash.slice(1), 10) || 1) - 1));
+  setTimeout(function () { if (hint) hint.style.opacity = 0; }, 6000);
+})();
+</script>
+
+</body></html>

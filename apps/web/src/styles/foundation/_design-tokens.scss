@@ -1,0 +1,98 @@
+$font-family-base: "Geist", "Inter", "Segoe UI", sans-serif;
+$font-family-heading: "Geist", "Inter", "Segoe UI", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$color-brand-black: #0C0A09;
+$color-brand-font-dark: #171717;
+$color-brand-font-light: #FAFAF9;
+$color-brand-white: #FFFFFF;
+
+$color-brand-amber-glow: #F7A75F;
+$color-brand-burnt-clay: #AD3822;
+$color-brand-dark-umber: #200000;
+$color-brand-royal-violet: #2F1A6B;
+$color-brand-azure-sky: #3A87D9;
+
+$color-orange-900: #E65100;
+$color-orange-800: #EF6C00;
+$color-orange-700: #F57C00;
+$color-orange-600: #FB8C00;
+$color-orange-500: #FF9800;
+$color-orange-400: #FFA726;
+$color-orange-300: #FFCC80;
+$color-orange-200: #FFE0B2;
+$color-orange-100: #FFF3E0;
+
+$color-blue-900: #0D47A1;
+$color-blue-800: #1565C0;
+$color-blue-400: #42A5F5;
+$color-blue-100: #BBDEFB;
+
+$color-gray-900: #2E2E2E;
+$color-gray-700: #5D5D5D;
+$color-gray-500: #8B8B8B;
+$color-gray-300: #B9B9B9;
+$color-gray-100: #E8E8E8;
+$color-gray-50: #F3F3F3;
+$color-gray-25: #F9F9F9;
+
+$gradient-gold: linear-gradient(102deg, #3A87D9 0%, #2F1A6B 25%, #200000 50%, #AD3822 75%, #F7A75F 100%);
+$gradient-aurora: linear-gradient(113.96deg, #46D5C2 0%, #067579 25.47%, #020820 50.95%, #195AD1 76.42%, #75CFF3 101.89%);
+
+$container-padding: 32px;
+$container-padding-mobile: 32px;
+$container-wide: 1312px;
+$container-base: 1200px;
+$container-narrow: 1080px;
+
+$container-max-width: 1312px;
+$container-offset-desktop: 64px;
+$container-offset-mobile: 16px;
+
+$radius-xs: 6px;
+$radius-sm: 12px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$radius-pill: 999px;
+
+$transition-base: 0.25s ease;
+
+$type-h1-size: 80px;
+$type-h1-line-height: 121%;
+$type-h1-letter-spacing: -3px;
+$type-h2-size: 72px;
+$type-h2-line-height: 78px;
+$type-h2-letter-spacing: 0;
+$type-h3-size: 64px;
+$type-h3-line-height: 78px;
+$type-h3-letter-spacing: 0;
+$type-h4-size: 48px;
+$type-h4-line-height: 1;
+$type-h4-letter-spacing: 0;
+$type-h5-size: 32px;
+$type-h5-line-height: 1;
+$type-h5-letter-spacing: 0;
+$type-h6-size: 24px;
+$type-h6-line-height: 1;
+$type-h6-letter-spacing: 0;
+$type-subtitle-size: 24px;
+$type-subtitle-line-height: 32px;
+$type-body-lg-size: 18px;
+$type-body-lg-line-height: 24px;
+$type-body-md-size: 16px;
+$type-body-md-line-height: 22px;
+$type-body-sm-size: 14px;
+$type-body-sm-line-height: 22px;
+$type-body-xs-size: 14px;
+$type-body-xs-line-height: 22px;
+$type-button-size: 16px;
+$type-button-line-height: 22px;
+$type-eyebrow-1-size: 13px;
+$type-eyebrow-1-line-height: 28px;
+$type-eyebrow-1-letter-spacing: 2.08px;
+$type-eyebrow-2-size: 16px;
+$type-eyebrow-2-line-height: 22px;

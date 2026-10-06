@@ -1,0 +1,117 @@
+---
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_testimonials.scss';
+
+type ImageValue = {
+  src?: string;
+  url?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+};
+
+type TestimonialItem = {
+  quote?: string;
+  authorName?: string;
+  authorRole?: string;
+  authorImage?: ImageValue | string | null;
+};
+
+interface Props {
+  block: {
+    title?: string;
+    subtitle?: string;
+    items?: TestimonialItem[];
+  };
+}
+
+const { block } = Astro.props;
+const title = block.title?.trim() || 'What Our Clients {{Say}}';
+const subtitle = block.subtitle?.trim() || 'Our customers have experienced remarkable transformations by implementing the cognitive conversational AI platform Acme';
+const items = (block.items ?? []).filter((item) => Boolean(item.quote?.trim() || item.authorName?.trim()));
+
+function imageData(image: TestimonialItem['authorImage'], authorName: string) {
+  if (typeof image === 'string') return { src: image, alt: authorName };
+  return {
+    src: image?.src || image?.url || '',
+    alt: image?.alt || authorName,
+    width: image?.width,
+    height: image?.height,
+  };
+}
+---
+
+{items.length > 0 && (
+  <section class="testimonial" data-testimonial>
+    <div class="testimonial__container container-wide">
+      <header class="testimonial__header">
+        {title && <h2 class="testimonial__title"><FormattedText text={title} /></h2>}
+        {subtitle && <p class="testimonial__subtitle"><FormattedText text={subtitle} /></p>}
+      </header>
+
+      <div class="testimonial__content">
+        <div class="testimonial__viewport">
+          <div class="testimonial__slider swiper" data-testimonial-slider>
+            <div class="testimonial__wrapper swiper-wrapper">
+              {items.map((item, index) => {
+                const authorName = item.authorName?.trim() || '';
+                const image = imageData(item.authorImage, authorName);
+                return (
+                  <article class="testimonial__slide swiper-slide" data-testimonial-slide={index}>
+                    <div class="testimonial__card">
+                      <div class="testimonial__quote-mark" aria-hidden="true">&ldquo;</div>
+                      <div class="testimonial__card-content">
+                        {item.quote && <blockquote class="testimonial__quote"><FormattedText text={item.quote} /></blockquote>}
+
+                        {(authorName || item.authorRole || image.src) && (
+                          <div class="testimonial__author">
+                            {image.src && (
+                              <div class="testimonial__author-image-wrap">
+                                <img
+                                  class="testimonial__author-image"
+                                  src={image.src}
+                                  alt={image.alt}
+                                  width={image.width}
+                                  height={image.height}
+                                  loading="lazy"
+                                  decoding="async"
+                                />
+                              </div>
+                            )}
+                            <div class="testimonial__author-meta">
+                              {authorName && <p class="testimonial__author-name">{authorName}</p>}
+                              {item.authorRole && <p class="testimonial__author-role">{item.authorRole}</p>}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {items.length > 1 && (
+          <div class="testimonial__controls" aria-label="Testimonials navigation">
+            <button class="testimonial__arrow testimonial__arrow--prev" type="button" data-testimonial-prev aria-label="Previous testimonial">
+              <svg class="testimonial__arrow-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M11.293 4.29289C11.6835 3.90237 12.3165 3.90237 12.707 4.29289L19.707 11.2929C20.0976 11.6834 20.0976 12.3164 19.707 12.707L12.707 19.707C12.3165 20.0975 11.6835 20.0975 11.293 19.707C10.9024 19.3164 10.9024 18.6834 11.293 18.2929L16.5859 12.9999H5C4.44772 12.9999 4 12.5522 4 11.9999C4 11.4476 4.44772 10.9999 5 10.9999H16.5859L11.293 5.70696C10.9024 5.31643 10.9024 4.68342 11.293 4.29289Z" fill="currentColor" />
+              </svg>
+            </button>
+            <button class="testimonial__arrow testimonial__arrow--next" type="button" data-testimonial-next aria-label="Next testimonial">
+              <svg class="testimonial__arrow-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M11.293 4.29289C11.6835 3.90237 12.3165 3.90237 12.707 4.29289L19.707 11.2929C20.0976 11.6834 20.0976 12.3164 19.707 12.707L12.707 19.707C12.3165 20.0975 11.6835 20.0975 11.293 19.707C10.9024 19.3164 10.9024 18.6834 11.293 18.2929L16.5859 12.9999H5C4.44772 12.9999 4 12.5522 4 11.9999C4 11.4476 4.44772 10.9999 5 10.9999H16.5859L11.293 5.70696C10.9024 5.31643 10.9024 4.68342 11.293 4.29289Z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+<script>
+  import '../../../scripts/testimonial';
+</script>

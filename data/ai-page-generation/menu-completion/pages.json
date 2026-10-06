@@ -1,0 +1,457 @@
+{
+  "pages": [
+    {
+      "contentKey": "ai-page:restaurant-ai-agent",
+      "collection": "use-cases",
+      "path": "/ai-agent-for-restaurants/",
+      "title": "AI Agent for Restaurants",
+      "excerpt": "Give guests a clear first response, capture service requests, and route the right next step to your restaurant team.",
+      "status": "published",
+      "template": "industry-use-case",
+      "seo": {
+        "metaTitle": "AI Agent for Restaurants | Acme",
+        "metaDescription": "Use AI agents to handle restaurant inquiries, collect guest context, and route reservations and service requests to the right team."
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "eyebrow": "Restaurant industry",
+          "title": "AI Agents for {{ Restaurant Teams }}",
+          "description": "Respond to guest inquiries, collect the details your team needs, and keep every request moving toward the right next step.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "use-case-flow",
+          "background": "gray",
+          "title": "A clear {{ guest-request workflow }} from first message to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                { "text": "Answer the guest inquiry" },
+                { "text": "Identify the request type" },
+                { "text": "Confirm contact details" }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                { "text": "Collect reservation, order, or service context" },
+                { "text": "Confirm timing and location details" },
+                { "text": "Apply your routing rules" }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                { "text": "Confirm the next step" },
+                { "text": "Notify the right team member" },
+                { "text": "Keep a concise handoff summary" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pain-points-comparison",
+          "background": "white",
+          "title": "Replace manual {{ guest follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "A guest request arrives without enough context",
+              "rightDescription": "The agent collects the approved details before the request reaches your team."
+            },
+            {
+              "leftTitle": "A team member has to identify the right next step",
+              "rightDescription": "Configured routing rules prepare the handoff for the appropriate person or process."
+            },
+            {
+              "leftTitle": "Follow-up details live across separate conversations",
+              "rightDescription": "The handoff keeps the request summary and next action together."
+            }
+          ]
+        },
+        {
+          "type": "security",
+          "background": "gray",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with a high-volume guest conversation, then connect the handoff and follow-up your operation needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "restaurant AI agents",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can we use our own intake questions?",
+              "answer": "Yes. Configure the questions and routing rules around your approved restaurant processes."
+            },
+            {
+              "question": "Can a team member take over a conversation?",
+              "answer": "Yes. Configure the handoff rules for requests, exceptions, or guest preferences that require a person."
+            },
+            {
+              "question": "Can the workflow connect to our systems?",
+              "answer": "The workflow can be configured around the connected tools and access your team approves."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:email-marketing-automation",
+      "collection": "use-cases",
+      "path": "/email-marketing-automation/",
+      "title": "Email Marketing Automation",
+      "excerpt": "Turn approved marketing triggers and customer context into a consistent follow-up workflow.",
+      "status": "published",
+      "template": "use-case",
+      "seo": {
+        "metaTitle": "Email Marketing Automation | Acme",
+        "metaDescription": "Use AI agents to collect campaign context, route approvals, and keep email marketing follow-up workflows moving."
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "eyebrow": "Marketing use case",
+          "title": "AI for {{ Email Marketing Automation }}",
+          "description": "Turn approved marketing triggers and customer context into a consistent follow-up workflow for your team.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "use-case-flow",
+          "background": "gray",
+          "title": "A clear {{ campaign workflow }} from trigger to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                { "text": "Receive the approved campaign trigger" },
+                { "text": "Identify the audience and intent" },
+                { "text": "Confirm required campaign context" }
+              ]
+            },
+            {
+              "label": "Prepare",
+              "items": [
+                { "text": "Apply your approved workflow rules" },
+                { "text": "Collect missing information" },
+                { "text": "Route exceptions for review" }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                { "text": "Hand off the next action" },
+                { "text": "Record the campaign context" },
+                { "text": "Keep follow-up moving" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pain-points-comparison",
+          "background": "white",
+          "title": "Replace manual {{ campaign follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Campaign context is collected manually across tools",
+              "rightDescription": "The workflow gathers the approved context before it reaches the next owner."
+            },
+            {
+              "leftTitle": "Exceptions wait for someone to notice them",
+              "rightDescription": "Routing rules identify the right review or handoff path."
+            },
+            {
+              "leftTitle": "Follow-up activity is difficult to trace",
+              "rightDescription": "A structured handoff keeps the next action and relevant context together."
+            }
+          ]
+        },
+        {
+          "type": "security",
+          "background": "gray",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with one approved campaign process, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "email marketing automation",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can we use our existing campaign rules?",
+              "answer": "Yes. Configure the workflow around the triggers, approvals, and follow-up rules your team already uses."
+            },
+            {
+              "question": "Can the workflow route an exception to a person?",
+              "answer": "Yes. Configure the exception conditions and the human owner for each approved handoff."
+            },
+            {
+              "question": "Can we connect the workflow to our marketing tools?",
+              "answer": "The workflow can be configured around the connected tools and access your team approves."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:candidate-screening-agent",
+      "collection": "use-cases",
+      "path": "/candidate-screening-agent/",
+      "title": "Candidate Screening Agent",
+      "excerpt": "Collect approved candidate information, coordinate the next step, and give recruiters concise context for every handoff.",
+      "status": "published",
+      "template": "use-case",
+      "seo": {
+        "metaTitle": "Candidate Screening Agent | Acme",
+        "metaDescription": "Use AI agents to collect approved candidate information, coordinate the next step, and prepare clear recruiter handoffs."
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "eyebrow": "HR and recruiting use case",
+          "title": "AI for {{ Candidate Screening }}",
+          "description": "Collect approved candidate information, coordinate the next step, and give recruiters concise context for every handoff.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "use-case-flow",
+          "background": "gray",
+          "title": "A clear {{ candidate workflow }} from first response to recruiter handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                { "text": "Respond to the candidate" },
+                { "text": "Confirm the role and contact details" },
+                { "text": "Collect approved screening information" }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                { "text": "Apply your approved intake rules" },
+                { "text": "Identify missing information" },
+                { "text": "Prepare the next step" }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                { "text": "Route the recruiter handoff" },
+                { "text": "Confirm the candidate’s next action" },
+                { "text": "Keep a concise context summary" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pain-points-comparison",
+          "background": "white",
+          "title": "Replace manual {{ candidate intake }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Candidate information arrives in inconsistent formats",
+              "rightDescription": "The workflow collects the approved information in a consistent sequence."
+            },
+            {
+              "leftTitle": "Recruiters must reconstruct context before the next conversation",
+              "rightDescription": "A concise handoff keeps the relevant candidate context and next action together."
+            },
+            {
+              "leftTitle": "Exceptions are handled outside the normal process",
+              "rightDescription": "Configured rules route exceptions to the appropriate person for review."
+            }
+          ]
+        },
+        {
+          "type": "security",
+          "background": "gray",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with one approved recruiting process, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "candidate screening agents",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can we define our own screening questions?",
+              "answer": "Yes. Configure the approved questions, routing rules, and human handoffs around your recruiting process."
+            },
+            {
+              "question": "Can a recruiter take over a conversation?",
+              "answer": "Yes. Configure the handoff rules for any request or exception that requires a recruiter’s review."
+            },
+            {
+              "question": "Can the workflow connect to our existing tools?",
+              "answer": "The workflow can be configured around the connected tools and access your team approves."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

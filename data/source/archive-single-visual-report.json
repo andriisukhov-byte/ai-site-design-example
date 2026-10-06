@@ -1,0 +1,199 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "e0daf8a-dirty"
+  },
+  "generatedAt": "2026-07-26T23:01:03.349Z",
+  "mode": "source-target-diff",
+  "targetBase": "http://localhost:4321",
+  "sourceBase": "https://dev.acme.example",
+  "routes": [
+    "/blog/",
+    "/guides/",
+    "/news/",
+    "/tips-and-tricks/",
+    "/ai-agent-use-cases/",
+    "/guide/ai-youtube-automation-script-generator/"
+  ],
+  "outDir": "data/source/archive-single-visual",
+  "routeCount": 6,
+  "findingCount": 0,
+  "findings": [],
+  "results": [
+    {
+      "path": "/blog/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/blog/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/blog/target.png",
+        "width": 1440,
+        "height": 3649,
+        "nonWhitePixels": 1658348,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/blog/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/blog/source.png",
+        "width": 1440,
+        "height": 3607,
+        "nonWhitePixels": 1746068,
+        "consoleErrorCount": 5
+      },
+      "diff": {
+        "pixels": 626799,
+        "ratio": 0.12067565382127345,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual\\blog\\diff.png"
+      }
+    },
+    {
+      "path": "/guides/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/guides/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/guides/target.png",
+        "width": 1440,
+        "height": 2904,
+        "nonWhitePixels": 1655437,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/guides/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/guides/source.png",
+        "width": 1440,
+        "height": 2944,
+        "nonWhitePixels": 1666230,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 123755,
+        "ratio": 0.029593998699112334,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual\\guides\\diff.png"
+      }
+    },
+    {
+      "path": "/news/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/news/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/news/target.png",
+        "width": 1440,
+        "height": 6073,
+        "nonWhitePixels": 2405242,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/news/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/news/source.png",
+        "width": 1440,
+        "height": 5184,
+        "nonWhitePixels": 2403550,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 1040850,
+        "ratio": 0.1394314236111111,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual\\news\\diff.png"
+      }
+    },
+    {
+      "path": "/tips-and-tricks/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/tips-and-tricks/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/tips-and-tricks/target.png",
+        "width": 1440,
+        "height": 3704,
+        "nonWhitePixels": 1147473,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/tips-and-tricks/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/tips-and-tricks/source.png",
+        "width": 1440,
+        "height": 3941,
+        "nonWhitePixels": 1115344,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 479297,
+        "ratio": 0.08986099862011039,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual\\tips-and-tricks\\diff.png"
+      }
+    },
+    {
+      "path": "/ai-agent-use-cases/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/ai-agent-use-cases/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/ai-agent-use-cases/target.png",
+        "width": 1440,
+        "height": 10008,
+        "nonWhitePixels": 2669610,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/ai-agent-use-cases/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/ai-agent-use-cases/source.png",
+        "width": 1440,
+        "height": 10263,
+        "nonWhitePixels": 2378642,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 1701668,
+        "ratio": 0.11807692734701128,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual\\ai-agent-use-cases\\diff.png"
+      }
+    },
+    {
+      "path": "/guide/ai-youtube-automation-script-generator/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/guide/ai-youtube-automation-script-generator/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/guide-ai-youtube-automation-script-generator/target.png",
+        "width": 1440,
+        "height": 7676,
+        "nonWhitePixels": 2271262,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/guide/ai-youtube-automation-script-generator/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual/guide-ai-youtube-automation-script-generator/source.png",
+        "width": 1440,
+        "height": 7932,
+        "nonWhitePixels": 2365458,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 1265233,
+        "ratio": 0.11446508960106537,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual\\guide-ai-youtube-automation-script-generator\\diff.png"
+      }
+    }
+  ]
+}

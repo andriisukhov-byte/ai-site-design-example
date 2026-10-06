@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "action": "validated",
+  "scope": "used",
+  "manifestPath": "data/source/attachment-media.json",
+  "manifestRecords": 2418,
+  "selectedRecords": 933,
+  "sourceDir": "apps/web/public/media",
+  "records": 933,
+  "presentFiles": 933,
+  "missingFiles": [],
+  "note": "Dry-run only. Re-run with --write true to upsert media into Payload."
+}

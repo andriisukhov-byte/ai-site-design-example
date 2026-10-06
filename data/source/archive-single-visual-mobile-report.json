@@ -1,0 +1,199 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "000bace-dirty"
+  },
+  "generatedAt": "2026-07-26T23:58:21.562Z",
+  "mode": "source-target-diff",
+  "targetBase": "http://localhost:4321",
+  "sourceBase": "https://dev.acme.example",
+  "routes": [
+    "/blog/",
+    "/guides/",
+    "/news/",
+    "/tips-and-tricks/",
+    "/ai-agent-use-cases/",
+    "/guide/ai-youtube-automation-script-generator/"
+  ],
+  "outDir": "data/source/archive-single-visual-mobile-latest",
+  "routeCount": 6,
+  "findingCount": 0,
+  "findings": [],
+  "results": [
+    {
+      "path": "/blog/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/blog/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/blog/target.png",
+        "width": 390,
+        "height": 7408,
+        "nonWhitePixels": 1246653,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/blog/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/blog/source.png",
+        "width": 390,
+        "height": 7452,
+        "nonWhitePixels": 1261391,
+        "consoleErrorCount": 5
+      },
+      "diff": {
+        "pixels": 137487,
+        "ratio": 0.04758784681840837,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\archive-single-visual-mobile-latest\\blog\\diff.png"
+      }
+    },
+    {
+      "path": "/guides/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/guides/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/guides/target.png",
+        "width": 390,
+        "height": 5546,
+        "nonWhitePixels": 1049024,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/guides/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/guides/source.png",
+        "width": 390,
+        "height": 5590,
+        "nonWhitePixels": 1046781,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 153052,
+        "ratio": 0.07076109369654267,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\archive-single-visual-mobile-latest\\guides\\diff.png"
+      }
+    },
+    {
+      "path": "/news/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/news/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/news/target.png",
+        "width": 390,
+        "height": 4664,
+        "nonWhitePixels": 804655,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/news/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/news/source.png",
+        "width": 390,
+        "height": 4931,
+        "nonWhitePixels": 885224,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 248566,
+        "ratio": 0.13665281259620882,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\archive-single-visual-mobile-latest\\news\\diff.png"
+      }
+    },
+    {
+      "path": "/tips-and-tricks/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/tips-and-tricks/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/tips-and-tricks/target.png",
+        "width": 390,
+        "height": 6362,
+        "nonWhitePixels": 587463,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/tips-and-tricks/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/tips-and-tricks/source.png",
+        "width": 390,
+        "height": 6186,
+        "nonWhitePixels": 597011,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 228559,
+        "ratio": 0.09473791108126704,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\archive-single-visual-mobile-latest\\tips-and-tricks\\diff.png"
+      }
+    },
+    {
+      "path": "/ai-agent-use-cases/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/ai-agent-use-cases/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/ai-agent-use-cases/target.png",
+        "width": 390,
+        "height": 15254,
+        "nonWhitePixels": 1337036,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/ai-agent-use-cases/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/ai-agent-use-cases/source.png",
+        "width": 390,
+        "height": 16872,
+        "nonWhitePixels": 1338260,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 1026916,
+        "ratio": 0.17261819514343443,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\archive-single-visual-mobile-latest\\ai-agent-use-cases\\diff.png"
+      }
+    },
+    {
+      "path": "/guide/ai-youtube-automation-script-generator/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/guide/ai-youtube-automation-script-generator/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/guide-ai-youtube-automation-script-generator/target.png",
+        "width": 390,
+        "height": 8676,
+        "nonWhitePixels": 1064482,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/guide/ai-youtube-automation-script-generator/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-mobile-latest/guide-ai-youtube-automation-script-generator/source.png",
+        "width": 390,
+        "height": 9198,
+        "nonWhitePixels": 1052243,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 584201,
+        "ratio": 0.1726545968247213,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\archive-single-visual-mobile-latest\\guide-ai-youtube-automation-script-generator\\diff.png"
+      }
+    }
+  ]
+}

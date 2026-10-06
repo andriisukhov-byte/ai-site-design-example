@@ -1,0 +1,205 @@
+@use "../variables" as *;
+
+$button-text-dark: #171717;
+$button-text-light: #fafaf9;
+$button-bg-primary: #0c0a09;
+$button-bg-primary-hover: #5d5d5d;
+$button-border-default: #e8e8e8;
+$button-border-hover: #5d5d5d;
+$button-border-pressed: #3a87d9;
+$button-transition: 0.25s ease;
+
+@mixin button-base {
+    --btn-height: 48px;
+    --btn-padding-inline-start: 16px;
+    --btn-padding-inline-end: 16px;
+    --btn-gap: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--btn-gap);
+    min-height: var(--btn-height);
+    padding: 12px var(--btn-padding-inline-end) 12px var(--btn-padding-inline-start);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-family: var(--font-family-base);
+    font-size: var(--type-button-size);
+    font-weight: 500;
+    line-height: var(--type-button-line-height);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color $button-transition,
+        border-color $button-transition,
+        color $button-transition,
+        box-shadow $button-transition;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(58, 135, 217, 0.24);
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+        cursor: not-allowed;
+    }
+}
+
+@mixin button-primary {
+    background: $button-bg-primary;
+    color: $button-text-light;
+
+    &:hover {
+        background: $button-bg-primary-hover;
+        color: $button-text-light;
+    }
+
+    &:active,
+    &.is-pressed {
+        border-width: 2px;
+        border-color: $button-border-pressed;
+        background: $button-bg-primary;
+        color: $button-text-light;
+    }
+}
+
+@mixin button-secondary {
+    background: #ffffff;
+    border-color: $button-border-default;
+    color: $button-text-dark;
+
+    &:hover {
+        border-color: $button-border-hover;
+        color: $button-text-dark;
+    }
+
+    &:active,
+    &.is-pressed {
+        border-width: 2px;
+        border-color: $button-border-pressed;
+        color: $button-text-dark;
+    }
+}
+
+@mixin button-size-md {
+    --btn-height: 40px;
+}
+
+@mixin button-icon-right {
+    --btn-gap: 6px;
+    --btn-padding-inline-end: 10px;
+}
+
+@mixin button-icon-left {
+    --btn-gap: 6px;
+    --btn-padding-inline-start: 10px;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+button:not(:disabled),
+input[type="button"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+input[type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled {
+    cursor: not-allowed;
+}
+
+.c-btn {
+    @include button-base;
+
+    &--primary {
+        @include button-primary;
+    }
+
+    &--secondary {
+        @include button-secondary;
+    }
+
+    &--lg {
+        --btn-height: 48px;
+    }
+
+    &--md {
+        @include button-size-md;
+    }
+
+    &--icon-right {
+        @include button-icon-right;
+    }
+
+    &--icon-left {
+        @include button-icon-left;
+    }
+
+    &__label {
+        white-space: nowrap;
+    }
+
+    &__icon {
+        flex: 0 0 auto;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+            stroke: currentColor;
+        }
+    }
+
+    &__icon--plus {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 50% auto auto 50%;
+            background: currentColor;
+            border-radius: 999px;
+            transform: translate(-50%, -50%);
+        }
+
+        &::before {
+            width: 10px;
+            height: 1.75px;
+        }
+
+        &::after {
+            width: 1.75px;
+            height: 10px;
+        }
+    }
+}

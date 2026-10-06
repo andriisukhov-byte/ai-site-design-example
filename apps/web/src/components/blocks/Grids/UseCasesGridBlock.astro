@@ -1,0 +1,87 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_use-cases-grid.scss';
+
+type UseCasesGridBlock = Extract<PageBlock, { type: 'use-cases-grid' }>;
+
+type Props = {
+  block: UseCasesGridBlock;
+};
+
+const { block } = Astro.props;
+const allowedIcons = new Set([
+  'shopping-cart',
+  'building',
+  'cloud-cog',
+  'megaphone',
+  'heart-handshake',
+  'hammer',
+  'shield-check',
+  'scroll-text',
+  'briefcase',
+  'headset',
+  'graduation-cap',
+  'truck',
+  'calendar-check',
+  'clock',
+  'filter',
+  'refresh-ccw',
+  'list-checks',
+  'file-plus',
+  'messages-square',
+]);
+const cards = block.cards.filter((card) => card.title || card.description);
+const cols = cards.length % 4 === 0 && cards.length % 3 !== 0 ? 4 : 3;
+const iconSrc = (icon?: string) => `/assets/blocks/use-cases-grid/icons/${allowedIcons.has(icon ?? '') ? icon : 'shopping-cart'}.svg`;
+---
+
+<section class="use-cases-grid">
+  <div class="use-cases-grid__container container-wide">
+    <header class="use-cases-grid__header">
+      {block.eyebrow && <p class="use-cases-grid__eyebrow">{block.eyebrow}</p>}
+
+      {block.title && (
+        <h2 class="use-cases-grid__title">
+          <FormattedText text={block.title} />
+        </h2>
+      )}
+
+      {block.description && <p class="use-cases-grid__description">{block.description}</p>}
+    </header>
+
+    {cards.length > 0 && (
+      <div class="use-cases-grid__list" data-cols={cols}>
+        {cards.map((card) => (
+          <article class="use-cases-grid__card">
+            <span class="use-cases-grid__card-icon" aria-hidden="true">
+              {card.customIcon?.src ? (
+                <img
+                  class="use-cases-grid__custom-icon"
+                  src={card.customIcon.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <img src={iconSrc(card.icon)} alt="" loading="lazy" decoding="async" />
+              )}
+            </span>
+
+            {card.title && (
+              card.href ? (
+                <a class="use-cases-grid__card-title use-cases-grid__card-title--link" href={card.href} target="_blank" rel="noopener noreferrer">
+                  {card.title}
+                </a>
+              ) : (
+                <h3 class="use-cases-grid__card-title">{card.title}</h3>
+              )
+            )}
+
+            {card.description && <p class="use-cases-grid__card-description">{card.description}</p>}
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

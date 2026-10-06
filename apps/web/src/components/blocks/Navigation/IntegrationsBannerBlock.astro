@@ -1,0 +1,97 @@
+---
+import '../../../styles/blocks/_integrations-banner.scss';
+
+type ImageValue = {
+  url?: string;
+  src?: string;
+  alt?: string;
+};
+
+type IntegrationItem = {
+  label?: string;
+  icon?: ImageValue | string | null;
+};
+
+interface Props {
+  block: {
+    title?: string;
+    description?: string;
+    items?: IntegrationItem[];
+  };
+}
+
+const { block } = Astro.props;
+const fallbackLabels = [
+  'Open AI',
+  'Gmail',
+  'Slack',
+  'HubSpot',
+  'Salesforce',
+  'Zoom',
+  'Google Meet',
+  'Google Calendar',
+  'Anthropic',
+  'Jira',
+  'Outlook',
+  'Postgres',
+  'Google Sheets',
+  'Notion',
+  'Webhook',
+  'Trello',
+];
+
+const sourceItems: IntegrationItem[] = block.items?.length
+  ? block.items
+  : fallbackLabels.map((label, index) => ({
+      label,
+      icon: `/assets/blocks/integrations-banner/icons/icon-${index + 1}.svg`,
+    }));
+
+function imageData(image: IntegrationItem['icon'], label: string) {
+  if (typeof image === 'string') return { src: image, alt: label };
+  return { src: image?.src || image?.url || '', alt: image?.alt || label };
+}
+
+const items = sourceItems
+  .map((item) => {
+    const label = item.label?.trim() || '';
+    const image = imageData(item.icon, label);
+    return { label, image };
+  })
+  .filter((item) => Boolean(item.image.src || item.label));
+
+---
+
+{items.length > 0 && (
+  <section class="integrations-banner">
+    <div class="integrations-banner__container container-wide">
+      <div class="integrations-banner__content">
+        {block.title && <h2 class="integrations-banner__title" set:html={block.title}></h2>}
+        {block.description && <p class="integrations-banner__description" set:html={block.description}></p>}
+      </div>
+
+      <div class="integrations-banner__marquee" aria-label="Available integrations">
+        <div class="integrations-banner__track">
+          {[items, items].map((set, setIndex) => (
+            <div class="integrations-banner__set" aria-hidden={setIndex > 0 ? 'true' : undefined}>
+              {set.map((item) => (
+                <div class="integrations-banner__logo">
+                  {item.image.src && <img class="integrations-banner__logo-icon" src={item.image.src} alt={item.image.alt} loading="lazy" decoding="async" />}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="integrations-banner__chips" aria-hidden="true">
+        {items.slice(0, 12).map((item) => (
+          <div class="integrations-banner__chip">
+            {item.image.src && <img class="integrations-banner__chip-icon" src={item.image.src} alt={item.image.alt} loading="lazy" decoding="async" />}
+            {item.label && <span class="integrations-banner__chip-label">{item.label}</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

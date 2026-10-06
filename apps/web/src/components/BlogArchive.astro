@@ -1,0 +1,190 @@
+---
+import type { PageDocument } from '@acme/blocks';
+import blogArchiveReference from '../../../../data/source/blog-archive-reference.json';
+import ArchivePagination from './ArchivePagination.astro';
+import BlogNewsletterForm from './BlogNewsletterForm.astro';
+import { archivePayloadJson, comparePublishedDesc, estimateReadTime, excerptFor, imageFor } from './archive-utils';
+
+interface Props {
+  items: PageDocument[];
+  firstPageCount?: number;
+  perPage?: number;
+}
+
+const { items, firstPageCount: configuredFirstPageCount, perPage: configuredPerPage } = Astro.props;
+const sourceCardMeta = new Map(blogArchiveReference.firstPageCards.map((item) => [item.path, item]));
+const sortedItems = orderBlogItems(items);
+const filters = blogArchiveReference.filters;
+const featured = sortedItems[0];
+const rest = sortedItems.slice(1);
+const firstPageCount = configuredFirstPageCount ?? 9;
+const perPage = configuredPerPage ?? 10;
+const totalPages = rest.length <= firstPageCount
+  ? 1
+  : 1 + Math.ceil((rest.length - firstPageCount) / perPage);
+const firstPageItems = rest.slice(0, firstPageCount);
+const payload = {
+  variant: 'blog',
+  perPage,
+  firstPageCount,
+  items: sortedItems.map((item) => ({
+    title: item.title,
+    path: item.path,
+    image: imageFor(item),
+    excerpt: item.path === blogArchiveReference.featuredPath
+      ? blogArchiveReference.featuredExcerpt
+      : excerptFor(item),
+    readTime: sourceCardMeta.get(item.path)?.readTime ?? estimateReadTime(item),
+    rating: ratingFor(item),
+    category: item.articleMeta?.category || 'Article',
+    tags: item.articleMeta?.tags ?? [],
+  })),
+};
+
+function filterHref(filter: string, index: number): string {
+  if (index === 0) {
+    return '/blog/';
+  }
+
+  return `/blog/?tag=${encodeURIComponent(slugifyTag(filter))}`;
+}
+
+function orderBlogItems(blogItems: PageDocument[]) {
+  const byPath = new Map(blogItems.map((item) => [item.path, item]));
+  const ordered: PageDocument[] = [];
+  const featuredItem = byPath.get(blogArchiveReference.featuredPath);
+
+  if (featuredItem) {
+    ordered.push(featuredItem);
+  }
+
+  for (const item of blogArchiveReference.firstPageCards) {
+    const page = byPath.get(item.path);
+
+    if (page && !ordered.includes(page)) {
+      ordered.push(page);
+    }
+  }
+
+  return [
+    ...ordered,
+    ...blogItems
+      .filter((item) => !ordered.includes(item))
+      .sort(comparePublishedDesc),
+  ];
+}
+
+function slugifyTag(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function ratingFor(item: PageDocument): string | undefined {
+  const sourceRating = sourceCardMeta.get(item.path)?.rating;
+  if (sourceRating) {
+    return sourceRating;
+  }
+
+  if (item.articleMeta?.ratingAverage !== undefined) {
+    const count = item.articleMeta.ratingCount;
+    return `${item.articleMeta.ratingAverage.toFixed(1)}/5${count ? ` - (${count} ${count === 1 ? 'vote' : 'votes'})` : ''}`;
+  }
+
+  return undefined;
+}
+---
+
+<div class="blog-archive-page">
+  {featured && (
+    <section class="blog-featured">
+      <article class="blog-featured__article" data-blog-featured>
+        <div class="blog-featured__image">
+          {imageFor(featured)?.src
+            ? <img data-blog-featured-image src={imageFor(featured)?.src} alt={imageFor(featured)?.alt || featured.title} loading="lazy" decoding="async" />
+            : <img data-blog-featured-image src="/assets/brand/acme-logo.svg" alt="No image" loading="lazy" decoding="async" />}
+        </div>
+
+        <div class="blog-featured__content">
+          <a class="blog-featured__category" href="/category/article/">{featured.articleMeta?.category || 'Article'}</a>
+          <h3 class="blog-featured__title">
+            <a data-blog-featured-title href={featured.path}>{featured.title}</a>
+          </h3>
+
+          <div class="blog-featured__excerpt">
+            <p data-blog-featured-excerpt>
+              {featured.path === blogArchiveReference.featuredPath && blogArchiveReference.featuredExcerpt
+                ? blogArchiveReference.featuredExcerpt
+                : excerptFor(featured)}
+            </p>
+          </div>
+
+          <a data-blog-featured-button class="blog-featured__button c-btn c-btn--primary" href={featured.path}>Learn More</a>
+        </div>
+      </article>
+    </section>
+  )}
+
+  <nav class="blog-filters" aria-label="Blog topics">
+    {filters.map((filter, index) => (
+      <a href={filterHref(filter, index)} data-archive-filter={index === 0 ? '' : slugifyTag(filter)} class:list={['blog-filters__tab', { 'blog-filters__tab--active': index === 0 }]}>{filter}</a>
+    ))}
+  </nav>
+
+  {rest.length > 0 && (
+    <section class="blog-posts guides" data-archive-root>
+      <div class="container-default">
+        <div class="guides__list" data-archive-list>
+          {firstPageItems.map((item) => (
+            <a href={item.path} class="guide-card guide-card__link">
+              {imageFor(item)?.src && (
+                <div class="guide-card__image">
+                  <img src={imageFor(item)?.src} alt={imageFor(item)?.alt || item.title} loading="lazy" decoding="async" />
+                </div>
+              )}
+
+              <div class="guide-card__content">
+                <div class="blog-posts__tags"><div class="blog-posts__tag">{item.articleMeta?.category || 'Article'}</div></div>
+                <div class="guide-card__title">{item.title}</div>
+
+                <div class="guide-card__info">
+                  <div class="guide-card__info-item">
+                    <div class="blog-posts__rating">
+                      <span class="kk-star-ratings">
+                        <span class="kksr-stars" aria-hidden="true"></span>
+                        {ratingFor(item) && <span class="kksr-legend">{ratingFor(item)}</span>}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="guide-card__info-item read">
+                    <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                    <span>{sourceCardMeta.get(item.path)?.readTime ?? estimateReadTime(item)}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <ArchivePagination totalPages={totalPages} />
+      </div>
+
+      <script is:inline type="application/json" data-archive-payload set:html={archivePayloadJson(payload)}></script>
+    </section>
+  )}
+
+  <section class="blog-newsletter">
+    <div class="blog-newsletter__inner">
+      <h2 class="blog-newsletter__heading">Acme <span>Newsletters</span></h2>
+      <BlogNewsletterForm />
+    </div>
+  </section>
+</div>
+
+<script>
+  import '../scripts/archive-pagination';
+</script>

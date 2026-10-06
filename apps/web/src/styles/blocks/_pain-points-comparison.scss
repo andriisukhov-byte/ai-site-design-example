@@ -1,0 +1,259 @@
+.pain-points-comparison {
+  padding: 100px 0 120px;
+  background: var(--color-brand-white);
+}
+
+.pain-points-comparison--gray {
+  background: var(--color-gray-25);
+}
+
+.pain-points-comparison__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.pain-points-comparison__header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.pain-points-comparison__eyebrow {
+  margin: 0;
+  color: var(--color-gray-700);
+  font-size: var(--type-eyebrow-1-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-eyebrow-1-line-height);
+  letter-spacing: var(--type-eyebrow-1-letter-spacing);
+  text-transform: uppercase;
+}
+
+.pain-points-comparison__title {
+  max-width: 1120px;
+  margin: 0;
+  color: var(--color-brand-font-dark);
+  font-size: var(--type-h3-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--type-h3-line-height);
+  letter-spacing: var(--type-h3-letter-spacing);
+}
+
+.pain-points-comparison__title span,
+.pain-points-comparison__column-title--accent {
+  background: var(--gradient-gold);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pain-points-comparison__table {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pain-points-comparison__row {
+  display: grid;
+  min-height: 230px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto auto 1fr;
+  row-gap: 8px;
+}
+
+.pain-points-comparison__row--head {
+  min-height: auto;
+}
+
+.pain-points-comparison__cell {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  grid-row: 1 / -1;
+  grid-template-rows: subgrid;
+  justify-items: center;
+  border-bottom: 1px solid var(--color-gray-100);
+  padding: 24px 48px;
+  text-align: center;
+}
+
+.pain-points-comparison__cell--challenge {
+  padding-left: 120px;
+}
+
+.pain-points-comparison__cell--solution {
+  padding-right: 120px;
+}
+
+.pain-points-comparison__cell--head {
+  gap: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.pain-points-comparison__row:last-child .pain-points-comparison__cell {
+  border-bottom: 0;
+}
+
+.pain-points-comparison__column-title {
+  margin: 0;
+  color: var(--color-brand-font-dark);
+  font-size: 32px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+}
+
+.pain-points-comparison__icon {
+  position: relative;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.pain-points-comparison__icon--challenge {
+  width: 32px;
+  height: 32px;
+}
+
+.pain-points-comparison__challenge-dot {
+  width: 26px;
+  height: 26px;
+}
+
+.pain-points-comparison__challenge-arrow {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.pain-points-comparison__icon--solution img {
+  width: 26px;
+  height: 26px;
+}
+
+.pain-points-comparison__copy {
+  display: contents;
+}
+
+.pain-points-comparison__item-title {
+  width: 100%;
+  margin: 0;
+  color: var(--color-brand-font-dark);
+  font-size: var(--type-h6-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+}
+
+.pain-points-comparison__item-description {
+  width: 100%;
+  margin: 0;
+  color: var(--color-gray-700);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-body-lg-line-height);
+}
+
+.pain-points-comparison__button {
+  width: 320px;
+  max-width: 100%;
+  box-shadow: 0 0 18px rgba(22, 24, 24, 0.05);
+}
+
+@media (max-width: 991px) {
+  .pain-points-comparison__title {
+    font-size: 48px;
+    line-height: 1.12;
+  }
+
+  .pain-points-comparison__cell,
+  .pain-points-comparison__cell--challenge,
+  .pain-points-comparison__cell--solution {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pain-points-comparison {
+    padding: 64px 0;
+  }
+
+  .pain-points-comparison__container {
+    gap: 40px;
+  }
+
+  .pain-points-comparison__title {
+    max-width: 343px;
+    font-size: 32px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+  }
+
+  .pain-points-comparison__table {
+    gap: 0;
+  }
+
+  .pain-points-comparison__row {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    row-gap: 0;
+  }
+
+  .pain-points-comparison__row--head {
+    display: none;
+  }
+
+  .pain-points-comparison__cell,
+  .pain-points-comparison__cell--challenge,
+  .pain-points-comparison__cell--solution {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    grid-row: auto;
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .pain-points-comparison__copy {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pain-points-comparison__icon {
+    margin-bottom: 0;
+  }
+
+  .pain-points-comparison__cell--challenge {
+    border-bottom: 0;
+    padding-bottom: 18px;
+  }
+
+  .pain-points-comparison__cell--solution {
+    padding-top: 18px;
+  }
+
+  .pain-points-comparison__item-title {
+    font-size: 22px;
+    line-height: 1.12;
+  }
+
+  .pain-points-comparison__item-description {
+    font-size: var(--type-body-md-size);
+    line-height: var(--type-body-md-line-height);
+  }
+
+  .pain-points-comparison__button {
+    width: 100%;
+  }
+}

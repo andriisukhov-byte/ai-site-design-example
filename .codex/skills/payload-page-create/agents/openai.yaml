@@ -1,0 +1,4 @@
+interface:
+  display_name: "Payload Page Creator"
+  short_description: "Create and publish typed marketing pages"
+  default_prompt: "Use $payload-page-create to create a new Acme marketing page from this brief."

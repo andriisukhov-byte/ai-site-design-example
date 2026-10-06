@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-06T14:30:00.000Z",
+  "source": "create-page skill smoke test",
+  "pages": [
+    {
+      "contentKey": "skill-smoke-test-0001",
+      "collection": "pages",
+      "path": "/skill-smoke-test/",
+      "title": "AI Agents for Field Service Teams",
+      "status": "published",
+      "template": "standard",
+      "seo": {
+        "metaTitle": "AI Agents for Field Service Teams | Acme",
+        "metaDescription": "Automate scheduling, dispatch updates, and customer follow-ups with AI agents that talk and act. Start free - pay as you go.",
+        "canonicalUrl": "https://acme.example/skill-smoke-test/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "eyebrow": "Field Service",
+          "title": "Put Scheduling on {{Autopilot}}",
+          "description": "AI agents answer every call, book the visit, and keep customers updated - so your dispatchers focus on the exceptions, not the routine.",
+          "primaryAction": { "label": "Get Started Free", "href": "/signup" },
+          "secondaryAction": { "label": "Request Demo", "href": "/request-demo/" }
+        },
+        {
+          "type": "feature-grid",
+          "title": "What the Agent Handles From Day One",
+          "background": "gray",
+          "columns": 3,
+          "cards": [
+            {
+              "icon": "smartphone",
+              "title": "Inbound Calls and SMS",
+              "description": "Answers instantly on every channel, qualifies the request, and books the right time slot."
+            },
+            {
+              "icon": "cog",
+              "title": "Dispatch Updates",
+              "description": "Notifies customers about arrival windows and reschedules without a human in the loop."
+            },
+            {
+              "icon": "users",
+              "title": "Follow-ups That Convert",
+              "description": "Requests reviews, confirms satisfaction, and revives quotes that went quiet."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "title": "See It Working on {{Your Calls}}",
+          "description": "Launch a field-service agent in minutes. No monthly fee - pay only for what runs.",
+          "primaryAction": { "label": "Get Started Free", "href": "/signup" },
+          "secondaryAction": { "label": "Request Demo", "href": "/request-demo/" }
+        },
+        {
+          "type": "faq",
+          "title": "Frequently Asked {{Questions}}",
+          "items": [
+            {
+              "question": "Can the agent hand off complex calls to my team?",
+              "answer": "Yes. You define the handoff rules, and the agent transfers the conversation with full context whenever a request falls outside its scope."
+            },
+            {
+              "question": "Which channels does the agent cover?",
+              "answer": "Voice calls, SMS, web chat, WhatsApp, and email - one agent keeps the same context across all of them."
+            },
+            {
+              "question": "How long does setup take?",
+              "answer": "A working agent takes minutes to launch from a template. Connecting your scheduling tools is guided and typically done the same day."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

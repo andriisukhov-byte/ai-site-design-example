@@ -1,0 +1,130 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "a05b9e3-dirty"
+  },
+  "generatedAt": "2026-07-25T02:01:14.573Z",
+  "mode": "target-smoke",
+  "targetBase": "http://127.0.0.1:4326",
+  "routes": [
+    "/",
+    "/ai-agent-builder/",
+    "/blog/",
+    "/guides/",
+    "/tips-and-tricks/",
+    "/24-7-emergency-call-intake/",
+    "/abandoned-form-recovery/",
+    "/agent-task-assignments/"
+  ],
+  "outDir": "data/source/visual-smoke-latest",
+  "routeCount": 8,
+  "findingCount": 0,
+  "findings": [],
+  "results": [
+    {
+      "path": "/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/home/target.png",
+        "width": 1440,
+        "height": 14658,
+        "nonWhitePixels": 3394780,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/ai-agent-builder/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/ai-agent-builder/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/ai-agent-builder/target.png",
+        "width": 1440,
+        "height": 14023,
+        "nonWhitePixels": 3026387,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/blog/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/blog/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/blog/target.png",
+        "width": 1440,
+        "height": 3582,
+        "nonWhitePixels": 1648288,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/guides/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/guides/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/guides/target.png",
+        "width": 1440,
+        "height": 2904,
+        "nonWhitePixels": 1620537,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/tips-and-tricks/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/tips-and-tricks/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/tips-and-tricks/target.png",
+        "width": 1440,
+        "height": 3621,
+        "nonWhitePixels": 1081819,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/24-7-emergency-call-intake/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/24-7-emergency-call-intake/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/24-7-emergency-call-intake/target.png",
+        "width": 1440,
+        "height": 6842,
+        "nonWhitePixels": 1936307,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/abandoned-form-recovery/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/abandoned-form-recovery/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/abandoned-form-recovery/target.png",
+        "width": 1440,
+        "height": 7217,
+        "nonWhitePixels": 1897686,
+        "consoleErrorCount": 0
+      }
+    },
+    {
+      "path": "/agent-task-assignments/",
+      "target": {
+        "ok": true,
+        "url": "http://127.0.0.1:4326/agent-task-assignments/",
+        "status": 200,
+        "screenshotPath": "data/source/visual-smoke-latest/agent-task-assignments/target.png",
+        "width": 1440,
+        "height": 7297,
+        "nonWhitePixels": 1970984,
+        "consoleErrorCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,956 @@
+{
+  "generatedAt": "2026-07-26T22:52:58.244Z",
+  "source": {
+    "dumpFile": "acmeai_main-2026-07-23-23-14-51.sql",
+    "table": "wp_posts + wp_postmeta",
+    "postType": "wpcf7_contact_form"
+  },
+  "count": 9,
+  "forms": [
+    {
+      "sourceId": 16,
+      "title": "Contact form",
+      "slug": "contact-form-1",
+      "intent": "contact",
+      "description": "Contact lead form.",
+      "fields": [
+        {
+          "name": "your-firstname",
+          "label": "Firstname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-lastname",
+          "label": "Lastname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-title",
+          "label": "Title",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "your-companyname",
+          "label": "Companyname",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "your-phone",
+          "label": "Phone",
+          "type": "phone",
+          "required": false
+        },
+        {
+          "name": "your-industry",
+          "label": "Industry",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Select Option",
+              "value": "Select Option"
+            },
+            {
+              "label": "Banking",
+              "value": "Banking"
+            },
+            {
+              "label": "Insurance",
+              "value": "Insurance"
+            },
+            {
+              "label": "Finance",
+              "value": "Finance"
+            },
+            {
+              "label": "E-commerce",
+              "value": "E-commerce"
+            },
+            {
+              "label": "Retail",
+              "value": "Retail"
+            },
+            {
+              "label": "Real estate",
+              "value": "Real estate"
+            },
+            {
+              "label": "Travel",
+              "value": "Travel"
+            },
+            {
+              "label": "Healthcare",
+              "value": "Healthcare"
+            },
+            {
+              "label": "Manufacturing",
+              "value": "Manufacturing"
+            },
+            {
+              "label": "Agriculture",
+              "value": "Agriculture"
+            },
+            {
+              "label": "Energy & Utilities",
+              "value": "Energy & Utilities"
+            },
+            {
+              "label": "Legal Services",
+              "value": "Legal Services"
+            },
+            {
+              "label": "Education",
+              "value": "Education"
+            },
+            {
+              "label": "Transportation & Logistics",
+              "value": "Transportation & Logistics"
+            },
+            {
+              "label": "Media & Entertainment",
+              "value": "Media & Entertainment"
+            },
+            {
+              "label": "Construction",
+              "value": "Construction"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-department",
+          "label": "Department",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Select Option",
+              "value": "Select Option"
+            },
+            {
+              "label": "Customer Service",
+              "value": "Customer Service"
+            },
+            {
+              "label": "IT Support",
+              "value": "IT Support"
+            },
+            {
+              "label": "Human Resources",
+              "value": "Human Resources"
+            },
+            {
+              "label": "Sales and Marketing",
+              "value": "Sales and Marketing"
+            },
+            {
+              "label": "Finance and Accounting",
+              "value": "Finance and Accounting"
+            },
+            {
+              "label": "Operations and Supply Chain",
+              "value": "Operations and Supply Chain"
+            },
+            {
+              "label": "Legal and Compliance",
+              "value": "Legal and Compliance"
+            },
+            {
+              "label": "Research and Development",
+              "value": "Research and Development"
+            },
+            {
+              "label": "Market Research and Analysis",
+              "value": "Market Research and Analysis"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-information",
+          "label": "Information",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "name": "term_and_conditions",
+          "label": "Term And Conditions",
+          "type": "checkbox",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "contact",
+      "crmConfigKey": "contact",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "📨 Contact Form Request"
+      }
+    },
+    {
+      "sourceId": 561,
+      "title": "Blog subscribe",
+      "slug": "contact-form-1_copy",
+      "intent": "blog-subscribe",
+      "description": "Blog subscription form.",
+      "fields": [
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "blog-subscribe",
+      "crmConfigKey": "blog-subscribe",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "[_site_title] "
+      }
+    },
+    {
+      "sourceId": 603,
+      "title": "Free Trial",
+      "slug": "contact-form_copy",
+      "intent": "free-trial",
+      "description": "Free trial lead form.",
+      "fields": [
+        {
+          "name": "your-firstname",
+          "label": "Firstname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-lastname",
+          "label": "Lastname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-companyname",
+          "label": "Companyname",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "your-phone",
+          "label": "Phone",
+          "type": "phone",
+          "required": true
+        },
+        {
+          "name": "your-industry",
+          "label": "Industry",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Your industry",
+              "value": "Your industry"
+            },
+            {
+              "label": "Banking",
+              "value": "Banking"
+            },
+            {
+              "label": "Insurance",
+              "value": "Insurance"
+            },
+            {
+              "label": "Finance",
+              "value": "Finance"
+            },
+            {
+              "label": "E-commerce",
+              "value": "E-commerce"
+            },
+            {
+              "label": "Retail",
+              "value": "Retail"
+            },
+            {
+              "label": "Real estate",
+              "value": "Real estate"
+            },
+            {
+              "label": "Travel",
+              "value": "Travel"
+            },
+            {
+              "label": "Healthcare",
+              "value": "Healthcare"
+            },
+            {
+              "label": "Manufacturing",
+              "value": "Manufacturing"
+            },
+            {
+              "label": "Agriculture",
+              "value": "Agriculture"
+            },
+            {
+              "label": "Energy & Utilities",
+              "value": "Energy & Utilities"
+            },
+            {
+              "label": "Legal Services",
+              "value": "Legal Services"
+            },
+            {
+              "label": "Education",
+              "value": "Education"
+            },
+            {
+              "label": "Transportation & Logistics",
+              "value": "Transportation & Logistics"
+            },
+            {
+              "label": "Media & Entertainment",
+              "value": "Media & Entertainment"
+            },
+            {
+              "label": "Construction",
+              "value": "Construction"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-department",
+          "label": "Department",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Your Business Area",
+              "value": "Your Business Area"
+            },
+            {
+              "label": "Customer Service",
+              "value": "Customer Service"
+            },
+            {
+              "label": "IT Support",
+              "value": "IT Support"
+            },
+            {
+              "label": "Human Resources",
+              "value": "Human Resources"
+            },
+            {
+              "label": "Sales and Marketing",
+              "value": "Sales and Marketing"
+            },
+            {
+              "label": "Finance and Accounting",
+              "value": "Finance and Accounting"
+            },
+            {
+              "label": "Operations and Supply Chain",
+              "value": "Operations and Supply Chain"
+            },
+            {
+              "label": "Legal and Compliance",
+              "value": "Legal and Compliance"
+            },
+            {
+              "label": "Research and Development",
+              "value": "Research and Development"
+            },
+            {
+              "label": "Market Research and Analysis",
+              "value": "Market Research and Analysis"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-information",
+          "label": "Information",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "name": "term_and_conditions",
+          "label": "Term And Conditions",
+          "type": "checkbox",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "free-trial",
+      "crmConfigKey": "free-trial",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "🤖 Free Trial Request"
+      }
+    },
+    {
+      "sourceId": 1122,
+      "title": "Waitlist",
+      "slug": "blog-subscribe_copy",
+      "intent": "waitlist",
+      "description": "Waitlist signup form.",
+      "fields": [
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "term_and_conditions",
+          "label": "Term And Conditions",
+          "type": "checkbox",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "waitlist",
+      "crmConfigKey": "waitlist",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "✅ Waitlist Request"
+      }
+    },
+    {
+      "sourceId": 1167,
+      "title": "Custom",
+      "slug": "request-a-demo_copy",
+      "intent": "custom-pricing",
+      "description": "Custom pricing request form.",
+      "fields": [
+        {
+          "name": "your-firstname",
+          "label": "Firstname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-lastname",
+          "label": "Lastname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-companyname",
+          "label": "Companyname",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "your-phone",
+          "label": "Phone",
+          "type": "phone",
+          "required": false
+        },
+        {
+          "name": "your-industry",
+          "label": "Industry",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Your industry",
+              "value": "Your industry"
+            },
+            {
+              "label": "Banking",
+              "value": "Banking"
+            },
+            {
+              "label": "Insurance",
+              "value": "Insurance"
+            },
+            {
+              "label": "Finance",
+              "value": "Finance"
+            },
+            {
+              "label": "E-commerce",
+              "value": "E-commerce"
+            },
+            {
+              "label": "Retail",
+              "value": "Retail"
+            },
+            {
+              "label": "Real estate",
+              "value": "Real estate"
+            },
+            {
+              "label": "Travel",
+              "value": "Travel"
+            },
+            {
+              "label": "Healthcare",
+              "value": "Healthcare"
+            },
+            {
+              "label": "Manufacturing",
+              "value": "Manufacturing"
+            },
+            {
+              "label": "Agriculture",
+              "value": "Agriculture"
+            },
+            {
+              "label": "Energy & Utilities",
+              "value": "Energy & Utilities"
+            },
+            {
+              "label": "Legal Services",
+              "value": "Legal Services"
+            },
+            {
+              "label": "Education",
+              "value": "Education"
+            },
+            {
+              "label": "Transportation & Logistics",
+              "value": "Transportation & Logistics"
+            },
+            {
+              "label": "Media & Entertainment",
+              "value": "Media & Entertainment"
+            },
+            {
+              "label": "Construction",
+              "value": "Construction"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-department",
+          "label": "Department",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Your Department",
+              "value": "Your Department"
+            },
+            {
+              "label": "Customer Service",
+              "value": "Customer Service"
+            },
+            {
+              "label": "IT Support",
+              "value": "IT Support"
+            },
+            {
+              "label": "Human Resources",
+              "value": "Human Resources"
+            },
+            {
+              "label": "Sales and Marketing",
+              "value": "Sales and Marketing"
+            },
+            {
+              "label": "Finance and Accounting",
+              "value": "Finance and Accounting"
+            },
+            {
+              "label": "Operations and Supply Chain",
+              "value": "Operations and Supply Chain"
+            },
+            {
+              "label": "Legal and Compliance",
+              "value": "Legal and Compliance"
+            },
+            {
+              "label": "Research and Development",
+              "value": "Research and Development"
+            },
+            {
+              "label": "Market Research and Analysis",
+              "value": "Market Research and Analysis"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-information",
+          "label": "Information",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "name": "term_and_conditions",
+          "label": "Term And Conditions",
+          "type": "checkbox",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "custom-pricing",
+      "crmConfigKey": "custom-pricing",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "🤖 Custom Pricing"
+      }
+    },
+    {
+      "sourceId": 1725,
+      "title": "White Paper",
+      "slug": "blog-subscribe_copy-2",
+      "intent": "blog-subscribe",
+      "description": "Blog subscription form.",
+      "fields": [
+        {
+          "name": "your-lastname",
+          "label": "Lastname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "blog-subscribe",
+      "crmConfigKey": "blog-subscribe",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "[_site_title] "
+      }
+    },
+    {
+      "sourceId": 7711,
+      "title": "Demo Request",
+      "slug": "free-trial_copy",
+      "intent": "request-demo",
+      "description": "Demo request lead form.",
+      "fields": [
+        {
+          "name": "your-firstname",
+          "label": "Firstname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-lastname",
+          "label": "Lastname",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-companyname",
+          "label": "Companyname",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "your-phone",
+          "label": "Phone",
+          "type": "phone",
+          "required": true
+        },
+        {
+          "name": "your-industry",
+          "label": "Industry",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Your industry",
+              "value": "Your industry"
+            },
+            {
+              "label": "Banking",
+              "value": "Banking"
+            },
+            {
+              "label": "Insurance",
+              "value": "Insurance"
+            },
+            {
+              "label": "Finance",
+              "value": "Finance"
+            },
+            {
+              "label": "E-commerce",
+              "value": "E-commerce"
+            },
+            {
+              "label": "Retail",
+              "value": "Retail"
+            },
+            {
+              "label": "Real estate",
+              "value": "Real estate"
+            },
+            {
+              "label": "Travel",
+              "value": "Travel"
+            },
+            {
+              "label": "Healthcare",
+              "value": "Healthcare"
+            },
+            {
+              "label": "Manufacturing",
+              "value": "Manufacturing"
+            },
+            {
+              "label": "Agriculture",
+              "value": "Agriculture"
+            },
+            {
+              "label": "Energy & Utilities",
+              "value": "Energy & Utilities"
+            },
+            {
+              "label": "Legal Services",
+              "value": "Legal Services"
+            },
+            {
+              "label": "Education",
+              "value": "Education"
+            },
+            {
+              "label": "Transportation & Logistics",
+              "value": "Transportation & Logistics"
+            },
+            {
+              "label": "Media & Entertainment",
+              "value": "Media & Entertainment"
+            },
+            {
+              "label": "Construction",
+              "value": "Construction"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-department",
+          "label": "Department",
+          "type": "select",
+          "required": false,
+          "options": [
+            {
+              "label": "Your Business Area",
+              "value": "Your Business Area"
+            },
+            {
+              "label": "Customer Service",
+              "value": "Customer Service"
+            },
+            {
+              "label": "IT Support",
+              "value": "IT Support"
+            },
+            {
+              "label": "Human Resources",
+              "value": "Human Resources"
+            },
+            {
+              "label": "Sales and Marketing",
+              "value": "Sales and Marketing"
+            },
+            {
+              "label": "Finance and Accounting",
+              "value": "Finance and Accounting"
+            },
+            {
+              "label": "Operations and Supply Chain",
+              "value": "Operations and Supply Chain"
+            },
+            {
+              "label": "Legal and Compliance",
+              "value": "Legal and Compliance"
+            },
+            {
+              "label": "Research and Development",
+              "value": "Research and Development"
+            },
+            {
+              "label": "Market Research and Analysis",
+              "value": "Market Research and Analysis"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            }
+          ]
+        },
+        {
+          "name": "your-information",
+          "label": "Information",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "name": "term_and_conditions",
+          "label": "Term And Conditions",
+          "type": "checkbox",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/demo-thanks-page/"
+      },
+      "notificationConfigKey": "request-demo",
+      "crmConfigKey": "request-demo",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "🤖 Demo Request"
+      }
+    },
+    {
+      "sourceId": 8679,
+      "title": "Enterprise Upgrade",
+      "slug": "contact-form_copy-2",
+      "intent": "enterprise",
+      "description": "Enterprise upgrade request form.",
+      "fields": [
+        {
+          "name": "company-name",
+          "label": "Company Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "company-website",
+          "label": "Company Website",
+          "type": "url",
+          "required": true
+        },
+        {
+          "name": "job-functions",
+          "label": "Job Functions",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "name": "enterprise-notes",
+          "label": "Enterprise Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "enterprise",
+      "crmConfigKey": "enterprise",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "🔺 Enterprise Upgrade Request"
+      }
+    },
+    {
+      "sourceId": 8826,
+      "title": "App launch notify",
+      "slug": "waitlist_copy",
+      "intent": "waitlist",
+      "description": "Waitlist signup form.",
+      "fields": [
+        {
+          "name": "your-name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "your-email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "term_and_conditions",
+          "label": "Term And Conditions",
+          "type": "checkbox",
+          "required": false
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "waitlist",
+      "crmConfigKey": "waitlist",
+      "source": {
+        "sourceType": "legacy-wordpress-form",
+        "mailSubject": "✅ Waitlist Request"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-25T08:46:14.198Z",
+  "sourcePath": "data/source/cms-pages.json",
+  "cmsPath": "data/cms/pages.json",
+  "sourceGeneratedAt": "2026-07-25T08:41:28.463Z",
+  "cmsGeneratedAt": "2026-07-25T08:43:48.721Z",
+  "sourceDocuments": 315,
+  "cmsDocuments": 315,
+  "sourcePaths": 315,
+  "cmsPaths": 315,
+  "sourceContentKeys": 315,
+  "cmsContentKeys": 315,
+  "sourceImportedImageDescriptors": 1967,
+  "cmsImportedImageDescriptors": 1967,
+  "sourceImportedImageIds": 477,
+  "cmsImportedImageIds": 477,
+  "findingCount": 0,
+  "findings": []
+}

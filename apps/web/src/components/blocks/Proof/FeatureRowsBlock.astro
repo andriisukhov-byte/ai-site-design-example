@@ -1,0 +1,171 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import '../../../styles/blocks/_feature-rows.scss';
+import FormattedText from '../../FormattedText.astro';
+
+type FeatureRowsBlock = Extract<PageBlock, { type: 'feature-rows' }>;
+
+interface Props {
+  block: FeatureRowsBlock;
+}
+
+const { block } = Astro.props;
+const rows = block.rows.slice(0, 3);
+const variant = block.variant === 'builder' ? 'builder' : 'capabilities';
+const flowAsset = (file: string) => `/assets/blocks/feature-rows/flow/${file}`;
+const builderAsset = (file: string) => `/assets/blocks/feature-rows/builder/${file}`;
+---
+
+{variant === 'builder' ? (
+  <section class="feature-rows feature-rows--builder">
+    <div class="feature-rows__container container-wide">
+      <div class="feature-rows__stage" aria-label="Acme AI builder features">
+        <div class="feature-rows__row feature-rows__builder-row feature-rows__builder-row--concierge">
+          <img class="feature-rows__builder-bg" src={builderAsset('bg.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+          <svg class="feature-rows__row-connectors feature-rows__row-connectors--builder-one" data-dot-gradient="featureRowsBuilderDot1" fill="none" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="featureRowsBuilderDot1" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+          </svg>
+
+          <article class="feature-rows__builder-copy feature-rows__builder-copy--one">
+            {rows[0].eyebrow && <p class="feature-rows__eyebrow">{rows[0].eyebrow}</p>}
+            {rows[0].title && <h3 class="feature-rows__title"><FormattedText text={rows[0].title} /></h3>}
+            {rows[0].description && <p class="feature-rows__description"><FormattedText text={rows[0].description} /></p>}
+          </article>
+
+          <div class="feature-rows__builder-prompt feature-rows__builder-prompt--one">
+            <p>Create a product return automation workflow</p>
+            <div class="feature-rows__builder-prompt-actions">
+              <img src={builderAsset('plus.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+              <span></span>
+              <img src={builderAsset('mic.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+              <span class="feature-rows__builder-send"><img src={builderAsset('arrow.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></span>
+            </div>
+          </div>
+
+          <div class="feature-rows__builder-icon-rail feature-rows__builder-icon-rail--one">
+            <span><img src={builderAsset('calendar-check.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></span>
+            <span><img src={builderAsset('phone-incoming.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></span>
+          </div>
+          <div class="feature-rows__builder-node feature-rows__builder-node--one"><img src={builderAsset('node.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+        </div>
+
+        <div class="feature-rows__row feature-rows__builder-row feature-rows__builder-row--canvas">
+          <svg class="feature-rows__row-connectors feature-rows__row-connectors--builder-two" data-dot-gradient="featureRowsBuilderDot2" fill="none" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="featureRowsBuilderDot2" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+          </svg>
+          <div class="feature-rows__builder-avatar feature-rows__builder-avatar--qualifies"><img src={builderAsset('avatar.jpg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          <div class="feature-rows__builder-icon feature-rows__builder-icon--calendar-clock"><img src={builderAsset('calendar-clock.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          <span class="feature-rows__builder-label feature-rows__builder-label--qualifies">Agent qualifies</span>
+          <span class="feature-rows__builder-label feature-rows__builder-label--booked">Slot booked</span>
+          <div class="feature-rows__builder-node feature-rows__builder-node--two"><img src={builderAsset('node-alt.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          <div class="feature-rows__builder-icon feature-rows__builder-icon--mail"><img src={builderAsset('mail-check.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+
+          <article class="feature-rows__builder-copy feature-rows__builder-copy--two">
+            {rows[1].eyebrow && <p class="feature-rows__eyebrow">{rows[1].eyebrow}</p>}
+            {rows[1].title && <h3 class="feature-rows__title"><FormattedText text={rows[1].title} /></h3>}
+            {rows[1].description && <p class="feature-rows__description"><FormattedText text={rows[1].description} /></p>}
+          </article>
+        </div>
+
+        <div class="feature-rows__row feature-rows__builder-row feature-rows__builder-row--no-code">
+          <svg class="feature-rows__row-connectors feature-rows__row-connectors--builder-three" data-dot-gradient="featureRowsBuilderDot3" fill="none" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="featureRowsBuilderDot3" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+          </svg>
+
+          <article class="feature-rows__builder-copy feature-rows__builder-copy--three">
+            {rows[2].eyebrow && <p class="feature-rows__eyebrow">{rows[2].eyebrow}</p>}
+            {rows[2].title && <h3 class="feature-rows__title"><FormattedText text={rows[2].title} /></h3>}
+            {rows[2].description && <p class="feature-rows__description"><FormattedText text={rows[2].description} /></p>}
+          </article>
+
+          <div class="feature-rows__builder-icon-rail feature-rows__builder-icon-rail--three">
+            {['square-pointer.svg', 'code-xml.svg', 'bot-message.svg', 'settings.svg'].map((icon) => (
+              <span><img src={builderAsset(icon)} alt="" loading="lazy" decoding="async" aria-hidden="true" /></span>
+            ))}
+          </div>
+          <div class="feature-rows__builder-icon feature-rows__builder-icon--headset"><img src={builderAsset('headset.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          <span class="feature-rows__builder-label feature-rows__builder-label--expert">Human expert session</span>
+          <div class="feature-rows__builder-avatar feature-rows__builder-avatar--expert"><img src={builderAsset('avatar.jpg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+) : (
+  <section class="feature-rows">
+    <div class="feature-rows__container container-wide">
+      <div class="feature-rows__stage" aria-label="Acme platform capabilities">
+        <svg class="feature-rows__connectors" fill="none" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="featureRowsDot" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+        </svg>
+
+        <div class="feature-rows__row feature-rows__row--conversational is-bg-active" data-flow-node="row-1">
+          <svg class="feature-rows__row-connectors feature-rows__row-connectors--conversational" data-dot-gradient="featureRowsRowDot1" viewBox="0 0 1312 457" fill="none" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="featureRowsRowDot1" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+          </svg>
+          <article class="feature-rows__copy feature-rows__copy--conversational" data-flow-node="copy-1">
+            <h3 class="feature-rows__title"><FormattedText text={rows[0].title || 'Conversational AI'} /></h3>
+            {rows[0].description && <p class="feature-rows__description"><FormattedText text={rows[0].description} /></p>}
+          </article>
+          <div class="feature-rows__message" data-flow-node="message">
+            <div class="feature-rows__message-head"><img class="feature-rows__avatar" src={flowAsset('avatar.jpg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /><span>Ethan Walker</span></div>
+            <div class="feature-rows__voice">{Array.from({ length: 34 }).map(() => <span></span>)}</div>
+            <img class="feature-rows__play" src={flowAsset('play.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+          </div>
+          <div class="feature-rows__icon-card feature-rows__icon-card--gmail"><img src={flowAsset('gmail.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          <div class="feature-rows__sentiment"><span><img src={flowAsset('happy.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></span><span><img src={flowAsset('sad.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></span></div>
+          <div class="feature-rows__node feature-rows__node--conversation"><img src={flowAsset('node.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+        </div>
+
+        <div class="feature-rows__row feature-rows__row--employees">
+          <svg class="feature-rows__row-connectors feature-rows__row-connectors--employees" data-dot-gradient="featureRowsRowDot2" viewBox="0 0 1312 457" fill="none" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="featureRowsRowDot2" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+          </svg>
+          <div class="feature-rows__visual feature-rows__visual--employees" data-flow-node="visual-2">
+            <div class="feature-rows__round feature-rows__round--slack"><img src={flowAsset('slack.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--sheets"><img src={flowAsset('google-sheets.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--linkedin"><img src={flowAsset('linkedin.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__icon-card feature-rows__icon-card--calendar-clock"><img src={flowAsset('calendar-clock.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__icon-card feature-rows__icon-card--git"><img src={flowAsset('git-compare.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <span class="feature-rows__pill feature-rows__pill--left">Employee 2</span>
+            <span class="feature-rows__pill feature-rows__pill--right">Employee 1</span>
+            <div class="feature-rows__node feature-rows__node--employee"><img src={flowAsset('node.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          </div>
+          <article class="feature-rows__copy feature-rows__copy--employees" data-flow-node="copy-2">
+            <h3 class="feature-rows__title"><FormattedText text={rows[1].title || 'Autonomous Agents'} /></h3>
+            {rows[1].description && <p class="feature-rows__description"><FormattedText text={rows[1].description} /></p>}
+          </article>
+        </div>
+
+        <div class="feature-rows__row feature-rows__row--automation">
+          <svg class="feature-rows__row-connectors feature-rows__row-connectors--automation" data-dot-gradient="featureRowsRowDot3" viewBox="0 0 1312 457" fill="none" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="featureRowsRowDot3" x1="0" y1="0" x2="1" y2="0.207" gradientUnits="objectBoundingBox"><stop stop-color="#3A87D9" /><stop offset="0.25" stop-color="#2F1A6B" /><stop offset="0.5" stop-color="#200000" /><stop offset="0.75" stop-color="#AD3822" /><stop offset="1" stop-color="#F7A75F" /></linearGradient></defs>
+          </svg>
+          <article class="feature-rows__copy feature-rows__copy--automation" data-flow-node="copy-3">
+            <h3 class="feature-rows__title"><FormattedText text={rows[2].title || 'Workflow Automation'} /></h3>
+            {rows[2].description && <p class="feature-rows__description"><FormattedText text={rows[2].description} /></p>}
+          </article>
+          <div class="feature-rows__visual feature-rows__visual--automation" data-flow-node="visual-3">
+            <img class="feature-rows__orbit" src={flowAsset('orbit.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+            <div class="feature-rows__node feature-rows__node--automation"><img src={flowAsset('node.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--auto-gmail"><img src={flowAsset('gmail-full.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--auto-slack"><img src={flowAsset('slack-full.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--auto-calendar"><img src={flowAsset('calendar.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--auto-webhook"><img src={flowAsset('webhook.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+            <div class="feature-rows__round feature-rows__round--auto-hubspot"><img src={flowAsset('hubspot.svg')} alt="" loading="lazy" decoding="async" aria-hidden="true" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<script is:inline>
+  (() => {
+    if (document.querySelector('script[data-feature-rows-script]')) return;
+    const script = document.createElement('script');
+    script.src = '/assets/blocks/feature-rows/feature-rows.js';
+    script.defer = true;
+    script.dataset.featureRowsScript = 'true';
+    document.head.appendChild(script);
+  })();
+</script>

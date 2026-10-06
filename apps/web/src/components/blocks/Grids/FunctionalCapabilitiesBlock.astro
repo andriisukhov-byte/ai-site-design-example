@@ -1,0 +1,114 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_functional-capabilities.scss';
+
+type FunctionalCapabilitiesBlock = Extract<PageBlock, { type: 'functional-capabilities' }>;
+
+type Props = {
+  block: FunctionalCapabilitiesBlock;
+};
+
+const { block } = Astro.props;
+const allowedIcons = new Set([
+  'award',
+  'bell',
+  'calendar-check-2',
+  'calendar-days',
+  'calendar-range',
+  'clipboard-check',
+  'clock',
+  'database',
+  'file-check-2',
+  'file-text',
+  'filter',
+  'handshake',
+  'inbox',
+  'message-square',
+  'phone-incoming',
+  'receipt',
+  'repeat-2',
+  'send',
+  'shield-check',
+  'sliders-horizontal',
+  'star',
+  'triangle-alert',
+  'audio-lines',
+  'messages-square',
+  'smartphone',
+  'users',
+  'mail',
+  'info',
+]);
+const iconSrc = (icon?: string) => `/assets/blocks/functional-capabilities/icons/${allowedIcons.has(icon ?? '') ? icon : 'filter'}.svg`;
+---
+
+<section class={`functional-capabilities functional-capabilities--${block.preset}`}>
+  <div class="functional-capabilities__container container-wide">
+    <header class="functional-capabilities__header">
+      {block.eyebrow && <p class="functional-capabilities__eyebrow">{block.eyebrow}</p>}
+
+      {block.title && (
+        <h2 class="functional-capabilities__title">
+          <FormattedText text={block.title} />
+        </h2>
+      )}
+
+      {block.description && (
+        <p class="functional-capabilities__description">
+          <FormattedText text={block.description} />
+        </p>
+      )}
+    </header>
+
+    <div class="functional-capabilities__grid">
+      {block.cards.map((card) => (
+        <article class={`functional-capabilities__card${card.width === 'wide' ? ' functional-capabilities__card--wide' : ''}`}>
+          <div class="functional-capabilities__card-main">
+            <span class="functional-capabilities__icon">
+              {card.customIcon?.src ? (
+                <img
+                  class="functional-capabilities__custom-icon"
+                  src={card.customIcon.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <img src={iconSrc(card.icon)} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              )}
+            </span>
+
+            <div class="functional-capabilities__card-content">
+              {card.title && <h3 class="functional-capabilities__card-title">{card.title}</h3>}
+
+              {card.description && (
+                <p class="functional-capabilities__card-description">
+                  <FormattedText text={card.description} />
+                </p>
+              )}
+            </div>
+          </div>
+
+          {card.channels && (
+            <p class="functional-capabilities__channels">
+              <strong>Channels:</strong>
+              <FormattedText text={card.channels} />
+            </p>
+          )}
+        </article>
+      ))}
+    </div>
+
+    {block.note && (
+      <aside class="functional-capabilities__note">
+        <span class="functional-capabilities__note-icon" aria-hidden="true">
+          <img src={iconSrc('info')} alt="" loading="lazy" decoding="async" />
+        </span>
+        <p>
+          <FormattedText text={block.note} />
+        </p>
+      </aside>
+    )}
+  </div>
+</section>

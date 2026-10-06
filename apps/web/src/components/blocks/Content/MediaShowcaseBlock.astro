@@ -1,0 +1,40 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_media-showcase.scss';
+
+type MediaShowcaseBlock = Extract<PageBlock, { type: 'media-showcase' }>;
+
+interface Props {
+  block: MediaShowcaseBlock;
+}
+
+const { block } = Astro.props;
+const background = block.background === 'white' ? 'white' : 'gray';
+const image = block.image ?? {
+  src: '/assets/blocks/media-showcase/placeholder.png',
+  alt: stripInlineMarkers(block.title ?? ''),
+};
+
+function stripInlineMarkers(value: string): string {
+  return value
+    .replace(/\{\{\s*([^}]+?)\s*\}\}/g, '$1')
+    .replace(/<[^>]*>/g, '')
+    .trim();
+}
+---
+
+<section class={`media-showcase media-showcase--${background}`}>
+  <div class="media-showcase__container container-wide">
+    <header class="media-showcase__header">
+      {block.title && <h2 class="media-showcase__title"><FormattedText text={block.title} /></h2>}
+      {block.description && <p class="media-showcase__description">{block.description}</p>}
+    </header>
+
+    {image.src && (
+      <div class="media-showcase__media">
+        <img class="media-showcase__image" src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+      </div>
+    )}
+  </div>
+</section>

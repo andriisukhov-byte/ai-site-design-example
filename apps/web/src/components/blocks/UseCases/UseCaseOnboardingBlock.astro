@@ -1,0 +1,34 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+type HowItWorksBlock = Extract<PageBlock, { type: 'how-it-works' }>;
+
+interface Props {
+  block: HowItWorksBlock;
+}
+
+const { block } = Astro.props;
+---
+
+<section id={block.root?.anchor} class="uc-onboarding">
+  <div class="uc-onboarding__container container-wide">
+    {block.title && (
+      <header class="uc-onboarding__header">
+        <h2 class="uc-onboarding__title"><FormattedText text={block.title} /></h2>
+      </header>
+    )}
+
+    <ol class="uc-onboarding__steps" data-count={block.steps.length}>
+      {block.steps.map((step, index) => (
+        <li class="uc-onboarding__step">
+          <div class="uc-onboarding__step-body">
+            <p class="uc-onboarding__step-label">{step.label || step.title || `Step ${index + 1}`}</p>
+            {step.description && <p class="uc-onboarding__step-text"><FormattedText text={step.description} /></p>}
+          </div>
+          <span class="uc-onboarding__step-marker" aria-hidden="true"></span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

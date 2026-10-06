@@ -1,0 +1,194 @@
+---
+import '../../../styles/blocks/_contact-us.scss';
+import { formEndpointFor, formSuccessRedirects } from '../../../data/forms';
+import FormTrackingFields from '../../FormTrackingFields.astro';
+
+type ImageValue = {
+  src?: string;
+  url?: string;
+  alt?: string;
+};
+
+type ContactUsBlock = {
+  titleStart?: string;
+  titleAccent?: string;
+  description?: string;
+  city?: string;
+  address?: string;
+  phone?: string;
+  logo?: ImageValue | string | null;
+  formHtml?: string;
+};
+
+interface Props {
+  block: ContactUsBlock;
+}
+
+const { block } = Astro.props;
+const titleStart = block.titleStart?.trim() || "Let's";
+const titleAccent = block.titleAccent?.trim() || 'Connect!';
+const phone = block.phone?.trim() || '';
+const phoneHref = phone.replace(/[^0-9+]/g, '');
+const logo = typeof block.logo === 'string'
+  ? { src: block.logo, alt: '' }
+  : { src: block.logo?.src || block.logo?.url || '', alt: block.logo?.alt || '' };
+const industryOptions = [
+  'Banking',
+  'Insurance',
+  'Finance',
+  'E-commerce',
+  'Retail',
+  'Real estate',
+  'Travel',
+  'Healthcare',
+  'Manufacturing',
+  'Agriculture',
+  'Energy & Utilities',
+  'Legal Services',
+  'Education',
+  'Transportation & Logistics',
+  'Media & Entertainment',
+  'Construction',
+  'Other',
+];
+const departmentOptions = [
+  'Customer Service',
+  'IT Support',
+  'Human Resources',
+  'Sales and Marketing',
+  'Finance and Accounting',
+  'Operations and Supply Chain',
+  'Legal and Compliance',
+  'Research and Development',
+  'Market Research and Analysis',
+  'Other',
+];
+---
+
+<section class="contact-us" data-contact-us>
+  <div class="contact-us__container container-wide">
+    <div class="contact-us__layout">
+      <div class="contact-us__info-card">
+        <h1 class="contact-us__title">
+          <span class="contact-us__title-line">{titleStart}</span>
+          <span class="contact-us__title-line contact-us__title-line--accent">{titleAccent}</span>
+        </h1>
+
+        {block.description && <p class="contact-us__description" set:html={block.description} />}
+
+        {logo.src && (
+          <div class="contact-us__logo-wrap" aria-hidden="true">
+            <img class="contact-us__logo" src={logo.src} alt={logo.alt} />
+          </div>
+        )}
+
+        <div class="contact-us__meta">
+          {(block.city || block.address) && (
+            <div class="contact-us__meta-item">
+              <span class="contact-us__icon" aria-hidden="true">
+                <img src="/assets/blocks/contact-us/icon-map-pin.svg" alt="" width="24" height="24" loading="lazy" />
+              </span>
+              <div class="contact-us__meta-content">
+                {block.city && <div class="contact-us__meta-title">{block.city}</div>}
+                {block.address && <div class="contact-us__meta-text" set:html={block.address} />}
+              </div>
+            </div>
+          )}
+
+          {phone && (
+            <div class="contact-us__meta-item">
+              <span class="contact-us__icon" aria-hidden="true">
+                <img src="/assets/blocks/contact-us/icon-phone.svg" alt="" width="24" height="24" loading="lazy" />
+              </span>
+              <div class="contact-us__meta-content">
+                {phoneHref ? (
+                  <a class="contact-us__phone" href={`tel:${phoneHref}`}>{phone}</a>
+                ) : (
+                  <span class="contact-us__phone">{phone}</span>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div class="contact-us__form-card">
+        {block.formHtml ? (
+          <Fragment set:html={block.formHtml} />
+        ) : (
+          <form
+            class="contact-us__form"
+            action={formEndpointFor('contact')}
+            method="post"
+            data-acme-form
+            data-contact-form
+            data-success-redirect={formSuccessRedirects.contact}
+          >
+            <input type="hidden" name="formIntent" value="contact" />
+            <input type="hidden" name="successRedirect" value={formSuccessRedirects.contact} />
+            <FormTrackingFields />
+            <input class="contact-us__honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="contact-us__form-grid">
+              <label class="contact-us__field">
+                <span>First Name*</span>
+                <input class="contact-us__control" type="text" name="firstName" autocomplete="given-name" placeholder="John" required />
+              </label>
+              <label class="contact-us__field">
+                <span>Last Name*</span>
+                <input class="contact-us__control" type="text" name="lastName" autocomplete="family-name" placeholder="Smith" required />
+              </label>
+              <label class="contact-us__field">
+                <span>Title</span>
+                <input class="contact-us__control" type="text" name="title" placeholder="CEO" />
+              </label>
+              <label class="contact-us__field">
+                <span>Company Name</span>
+                <input class="contact-us__control" type="text" name="company" autocomplete="organization" placeholder="Mycompany Inc." />
+              </label>
+              <label class="contact-us__field">
+                <span>Email*</span>
+                <input class="contact-us__control" type="email" name="email" autocomplete="email" placeholder="john.smith@mycompany.com" required />
+              </label>
+              <label class="contact-us__field">
+                <span>Phone Number</span>
+                <input class="contact-us__control" type="tel" name="phone" autocomplete="tel" placeholder="+1 XXX XXX XXX" />
+              </label>
+              <label class="contact-us__field">
+                <span>Your industry</span>
+                <select class="contact-us__control" name="industry">
+                  <option value="">Select Option</option>
+                  {industryOptions.map((option) => <option value={option}>{option}</option>)}
+                </select>
+              </label>
+              <label class="contact-us__field">
+                <span>Your Department</span>
+                <select class="contact-us__control" name="department">
+                  <option value="">Select Option</option>
+                  {departmentOptions.map((option) => <option value={option}>{option}</option>)}
+                </select>
+              </label>
+            </div>
+            <label class="contact-us__field contact-us__field--message">
+              <span>Message*</span>
+              <textarea class="contact-us__control" name="message" placeholder="I would like to know more about your enterprise options..." required></textarea>
+            </label>
+            <label class="contact-us__policy">
+              <input type="checkbox" name="consent" value="yes" required />
+              <span>I agree that my information will be used to contact me about Acme services or news. I can unsubscribe at any time <a href="/privacy-policy/">Privacy Policy</a></span>
+            </label>
+            <p class="ca-form-status" data-form-status aria-live="polite"></p>
+            <div class="contact-us__submit-wrap">
+              <button class="c-btn c-btn--primary c-btn--lg contact-us__submit" type="submit">
+                <span class="c-btn__label">Send</span>
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../../scripts/contact-us';
+</script>

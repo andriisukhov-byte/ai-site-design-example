@@ -1,0 +1,455 @@
+{
+  "forms": [
+    {
+      "title": "Contact",
+      "intent": "contact",
+      "description": "Contact lead form used by Contact Us blocks.",
+      "fields": [
+        {
+          "name": "firstName",
+          "label": "First name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lastName",
+          "label": "Last name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "text"
+        },
+        {
+          "name": "company",
+          "label": "Company name",
+          "type": "text"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone number",
+          "type": "phone"
+        },
+        {
+          "name": "industry",
+          "label": "Industry",
+          "type": "select"
+        },
+        {
+          "name": "department",
+          "label": "Department",
+          "type": "select"
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "name": "consent",
+          "label": "Consent",
+          "type": "checkbox",
+          "required": true
+        },
+        {
+          "name": "referrer",
+          "label": "Referrer",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_source",
+          "label": "UTM source",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_medium",
+          "label": "UTM medium",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_campaign",
+          "label": "UTM campaign",
+          "type": "hidden"
+        },
+        {
+          "name": "source",
+          "label": "Source URL",
+          "type": "hidden"
+        },
+        {
+          "name": "allpages_visited",
+          "label": "All pages visited",
+          "type": "hidden"
+        },
+        {
+          "name": "first_page_visited",
+          "label": "First page visited",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_country",
+          "label": "Visitor country",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_city",
+          "label": "Visitor city",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_continent",
+          "label": "Visitor continent",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_calling_code",
+          "label": "Visitor calling code",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_channel",
+          "label": "Visitor channel",
+          "type": "hidden"
+        },
+        {
+          "name": "current-time",
+          "label": "Current time",
+          "type": "hidden"
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "contact",
+      "crmConfigKey": "contact"
+    },
+    {
+      "title": "Blog subscribe",
+      "intent": "blog-subscribe",
+      "description": "Newsletter email subscription form used in blog archives.",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "referrer",
+          "label": "Referrer",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_source",
+          "label": "UTM source",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_medium",
+          "label": "UTM medium",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_campaign",
+          "label": "UTM campaign",
+          "type": "hidden"
+        },
+        {
+          "name": "source",
+          "label": "Source URL",
+          "type": "hidden"
+        },
+        {
+          "name": "allpages_visited",
+          "label": "All pages visited",
+          "type": "hidden"
+        },
+        {
+          "name": "first_page_visited",
+          "label": "First page visited",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_country",
+          "label": "Visitor country",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_city",
+          "label": "Visitor city",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_continent",
+          "label": "Visitor continent",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_calling_code",
+          "label": "Visitor calling code",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_channel",
+          "label": "Visitor channel",
+          "type": "hidden"
+        },
+        {
+          "name": "current-time",
+          "label": "Current time",
+          "type": "hidden"
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "blog-subscribe",
+      "crmConfigKey": "blog-subscribe"
+    },
+    {
+      "title": "Request demo",
+      "intent": "request-demo",
+      "description": "Lead form used by the Request a Demo popup.",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "phone"
+        },
+        {
+          "name": "company",
+          "label": "Company",
+          "type": "text"
+        },
+        {
+          "name": "teamSize",
+          "label": "Team size",
+          "type": "select"
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea"
+        },
+        {
+          "name": "consent",
+          "label": "Consent",
+          "type": "checkbox",
+          "required": true
+        },
+        {
+          "name": "referrer",
+          "label": "Referrer",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_source",
+          "label": "UTM source",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_medium",
+          "label": "UTM medium",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_campaign",
+          "label": "UTM campaign",
+          "type": "hidden"
+        },
+        {
+          "name": "source",
+          "label": "Source URL",
+          "type": "hidden"
+        },
+        {
+          "name": "allpages_visited",
+          "label": "All pages visited",
+          "type": "hidden"
+        },
+        {
+          "name": "first_page_visited",
+          "label": "First page visited",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_country",
+          "label": "Visitor country",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_city",
+          "label": "Visitor city",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_continent",
+          "label": "Visitor continent",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_calling_code",
+          "label": "Visitor calling code",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_channel",
+          "label": "Visitor channel",
+          "type": "hidden"
+        },
+        {
+          "name": "current-time",
+          "label": "Current time",
+          "type": "hidden"
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/demo-thanks-page/"
+      },
+      "notificationConfigKey": "request-demo",
+      "crmConfigKey": "request-demo"
+    },
+    {
+      "title": "Enterprise upgrade",
+      "intent": "enterprise",
+      "description": "Enterprise upgrade request form.",
+      "fields": [
+        {
+          "name": "company",
+          "label": "Company name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "companyWebsite",
+          "label": "Company website",
+          "type": "url",
+          "required": true
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Work email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "functions",
+          "label": "Job functions",
+          "type": "checkbox"
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea"
+        },
+        {
+          "name": "consent",
+          "label": "Consent",
+          "type": "checkbox",
+          "required": true
+        },
+        {
+          "name": "referrer",
+          "label": "Referrer",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_source",
+          "label": "UTM source",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_medium",
+          "label": "UTM medium",
+          "type": "hidden"
+        },
+        {
+          "name": "utm_campaign",
+          "label": "UTM campaign",
+          "type": "hidden"
+        },
+        {
+          "name": "source",
+          "label": "Source URL",
+          "type": "hidden"
+        },
+        {
+          "name": "allpages_visited",
+          "label": "All pages visited",
+          "type": "hidden"
+        },
+        {
+          "name": "first_page_visited",
+          "label": "First page visited",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_country",
+          "label": "Visitor country",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_city",
+          "label": "Visitor city",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_continent",
+          "label": "Visitor continent",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_calling_code",
+          "label": "Visitor calling code",
+          "type": "hidden"
+        },
+        {
+          "name": "visitor_channel",
+          "label": "Visitor channel",
+          "type": "hidden"
+        },
+        {
+          "name": "current-time",
+          "label": "Current time",
+          "type": "hidden"
+        }
+      ],
+      "successBehavior": {
+        "message": "Thanks, your request has been received.",
+        "redirectPath": "/contact-us/thanks-page/"
+      },
+      "notificationConfigKey": "enterprise",
+      "crmConfigKey": "enterprise"
+    }
+  ]
+}

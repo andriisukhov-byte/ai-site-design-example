@@ -1,0 +1,2373 @@
+{
+  "generatedAt": "2026-07-30T12:21:49.881Z",
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "11d90ec-dirty",
+    "input": "data/source/sanitized-content.json",
+    "mediaInput": "data/source/attachment-media.json"
+  },
+  "totals": {
+    "sourceDocuments": 330,
+    "validPages": 331,
+    "pagesWithUnmappedBlocks": 0,
+    "pagesWithSkippedBlocks": 2,
+    "pagesRecoveredFromLinkedCards": 6,
+    "invalidPages": 0
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Cognitive AI Platform",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/24-7-emergency-call-intake/",
+      "title": "24/7 Emergency Call Intake",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/abandoned-form-recovery/",
+      "title": "Abandoned Form Recovery",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/about/",
+      "title": "About",
+      "mappedBlocks": 8,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ada-alternative/",
+      "title": "Ada Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/advanced-voice-intelligence/",
+      "title": "Advanced Voice Intelligence",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/agent-task-assignments/",
+      "title": "Agent Task Assignments",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agent-builder/",
+      "title": "AI Agent Builder",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": [
+        {
+          "sourceName": "acme/testimonial",
+          "reason": "Skipped empty testimonials source shell."
+        }
+      ]
+    },
+    {
+      "path": "/ai-agent-for-installation-and-repair-services/",
+      "title": "AI Agent for Installation and Repair Services",
+      "mappedBlocks": 17,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agent-for-plumbers/",
+      "title": "AI Agent for Plumbers",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agent-use-cases/",
+      "title": "100 AI Agent Use Cases in 2025: The Practical Power of Autonomy",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agent-vs-chatbot/",
+      "title": "AI Agent vs Chatbot: Comparison Guide",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agents-for-hr/",
+      "title": "How to Use AI for HR Workflow Agents",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agents-for-recruiting/",
+      "title": "AI Agents for Recruiting",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-agents-for-sales/",
+      "title": "AI Agents for Sales: Everything You Need to Know in 2026",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-chatbot-for-ecommerce/",
+      "title": "How AI Chatbots for Ecommerce Automate Support and Boost Revenue",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-chatbot-prestashop/",
+      "title": "AI Chatbot PrestaShop",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-first-pass-screening-for-security-guard-companies/",
+      "title": "AI First-Pass Screening for Security Guard Companies",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-for-email-marketing/",
+      "title": "AI for Email Marketing: How Smart Automation Is Transforming Campaigns",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-for-marketing-campaigns/",
+      "title": "10 Best Tools to Run AI Marketing Campaigns",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-for-small-business-marketing/",
+      "title": "How to Use AI for Small Business Marketing",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-in-b2b-ecommerce/",
+      "title": "AI in B2B eCommerce: Smarter Chatbots for Complex Requests",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-in-customer-service-automation/",
+      "title": "How to Use AI in Customer Service Automation to Delight Your Customers 24/7",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-instant-lead-response-for-cleaning-and-facility-services/",
+      "title": "AI Instant Lead Response for Cleaning & Facility Services",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-lead-handling-for-cleaning-facility-services/",
+      "title": "AI Lead Handling For Cleaning & Facility Services",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-magic-window/",
+      "title": "Magic Window Coordination",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-marketing-agent/",
+      "title": "AI Marketing Agent",
+      "mappedBlocks": 11,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-marketing-automation-tools/",
+      "title": "Top 10 AI Marketing Automation Tools",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-marketing-automation/",
+      "title": "AI Marketing Automation - How to Use it in 2026",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-phone-system/",
+      "title": "AI Phone System",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-receptionist-for-cleaning-companies/",
+      "title": "AI Receptionist for Cleaning Companies",
+      "mappedBlocks": 16,
+      "unmappedBlocks": [],
+      "skippedBlocks": [
+        {
+          "sourceName": "acme/agent-solutions",
+          "reason": "Skipped empty agent-solutions source shell."
+        },
+        {
+          "sourceName": "acme/agent-solutions",
+          "reason": "Skipped empty agent-solutions source shell."
+        }
+      ]
+    },
+    {
+      "path": "/ai-receptionist/",
+      "title": "AI Receptionist",
+      "mappedBlocks": 16,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-recruiting-agent-cleaning/",
+      "title": "AI Recruiting Agent Cleaning",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-recruiting-agent-for-auto-repair-shops/",
+      "title": "AI Recruiting Agent for Auto Repair Shops",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-recruiting-agent-for-restaurants/",
+      "title": "AI Recruiting Agent for Restaurants",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-recruiting-agent-security/",
+      "title": "AI Recruiting Agent Security",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-sales-assistant/",
+      "title": "AI Sales Assistant",
+      "mappedBlocks": 17,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-solutions-for-security-companies/",
+      "title": "AI Solutions for Security Companies Ready to Cut Response Times and Reduce False Alarms",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-tools-for-recruitment/",
+      "title": "Keep Your Ranks Full with AI Tools for Recruitment Tailored for High-Turnover Businesses",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-use-cases-in-ecommerce/",
+      "title": "AI Use Cases in eCommerce",
+      "mappedBlocks": 19,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-use-cases-in-hr/",
+      "title": "AI Use Cases in HR",
+      "mappedBlocks": 11,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-use-cases-in-marketing/",
+      "title": "Acme AI Use Cases in Marketing",
+      "mappedBlocks": 14,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-use-cases-in-real-estate/",
+      "title": "AI Use Cases in Real Estate",
+      "mappedBlocks": 14,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-use-cases-in-recruitment/",
+      "title": "AI Use Cases in Recruitment",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ai-use-cases-in-sales/",
+      "title": "AI Use Cases in Sales",
+      "mappedBlocks": 16,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/alibaba-ai-chatbot/",
+      "title": "Alibaba AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/alternatives/",
+      "title": "Comparisons",
+      "mappedBlocks": 4,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/amazon-ai-chatbot/",
+      "title": "Amazon AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/applicant-intake-pre-screen-agent/",
+      "title": "Applicant Intake & Pre-Screen Agent",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/appointment-reminder-confirmation/",
+      "title": "Appointment Reminder & Confirmation",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/approval-workflow-for-large-orders/",
+      "title": "Approval Workflow for Large Orders",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/automated-payment-verification/",
+      "title": "Automated Payment Verification",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/automated-return-management/",
+      "title": "Automated Returns Management",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/autonomous-ai-agents/",
+      "title": "Autonomous AI",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/autonomous-ai-software/",
+      "title": "Autonomous AI Software",
+      "mappedBlocks": 11,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/benefits-of-ai-in-hr/",
+      "title": "The Real Benefits of AI in HR for Service Businesses",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/benefits-of-using-ai-in-ecommerce/",
+      "title": "What Are the Benefits of Using AI in eCommerce? [Full Guide 2026]",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/best-ai-agents-for-home-services/",
+      "title": "5 Best AI Agents for Home Services to Handle Calls and Cut No-Shows",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/best-ai-ecommerce-personalization-strategies/",
+      "title": "The Best AI eCommerce Personalization Strategies in 2026",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/best-ai-tools-for-ecommerce-businesses/",
+      "title": "15 Best AI Tools for eCommerce Businesses in 2026",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/best-ai-tools-for-hospitality/",
+      "title": "Best AI Tools for Hospitality in 2026: Hiring, Guest Communication, and Operations",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/best-ai-tools-for-restaurants/",
+      "title": "Best AI Tools for Restaurants in 2026: From Hiring to Customer Service",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/best-autonomous-ai-agents/",
+      "title": "What are Autonomous Agents? 5 Best Autonomous AI Agents",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/bigcommerce-ai-chatbot/",
+      "title": "BigCommerce AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/bland-ai-alternative/",
+      "title": "Bland AI Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/blocks/",
+      "title": "Blocks",
+      "mappedBlocks": 52,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/blog/",
+      "title": "Blog",
+      "mappedBlocks": 0,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/brand-customization-engine/",
+      "title": "Brand Customization Engine",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/business-intelligence-dashboard/",
+      "title": "Business Intelligence Dashboard",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/business-workflow-automation/",
+      "title": "Business Workflow Automation",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/call-center-automation/",
+      "title": "Call Center Automation",
+      "mappedBlocks": 17,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/campaign-response-notifications/",
+      "title": "Campaign Response Notifications",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/candidate-reengagement-pipeline/",
+      "title": "Candidate Re-Engagement Pipeline",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/cart-abandonment-recovery-agent/",
+      "title": "Cart Abandonment Recovery Agent",
+      "mappedBlocks": 2,
+      "unmappedBlocks": [],
+      "skippedBlocks": [],
+      "recoveredFrom": {
+        "path": "/ai-use-cases-in-ecommerce/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      }
+    },
+    {
+      "path": "/chatbase-alternative/",
+      "title": "Chatbase Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-appliance-store/",
+      "title": "Chatbot for Appliance Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-auto-parts-store/",
+      "title": "Chatbot for Auto Parts Store",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-baby-products-store/",
+      "title": "Chatbot for Baby Products Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-beauty-shop/",
+      "title": "Chatbot for Beauty Shop",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-electronics/",
+      "title": "Chatbot for Electronics Store",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-eyewear-store/",
+      "title": "Chatbot for Eyewear Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-fashion/",
+      "title": "Chatbot for Fashion",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-furniture-store/",
+      "title": "Chatbot for Furniture Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-home-improvement-store/",
+      "title": "Chatbot for Home Improvement Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-jewelry-store/",
+      "title": "Chatbot for Jewellery Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-mattress-store/",
+      "title": "Chatbot for Mattress Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-pet-store/",
+      "title": "Chatbot for Pet Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-shopify/",
+      "title": "Chatbot for Shopify",
+      "mappedBlocks": 14,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-sporting-goods-store/",
+      "title": "Chatbot for Sporting Goods Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-subscription-box-business/",
+      "title": "Chatbot for Subscription Box Business",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatbot-for-supplement-store/",
+      "title": "Chatbot for Supplement Store",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/chatra-alternative/",
+      "title": "Chatra Alternatives",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/client-milestone-reminders/",
+      "title": "Client Milestone Reminders",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/acme-canvas/",
+      "title": "Acme Canvas/AcmeApps",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/cognitive-ai-agent-builder-new-test/",
+      "title": "Cognitive AI Platform",
+      "mappedBlocks": 0,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/cognitive-ai-vs-generative-ai/",
+      "title": "Cognitive AI vs Generative AI: Everything You Need to Know",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/cognitive-ai/",
+      "title": "What is Cognitive AI and What Problems Can It Solve?",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/consultation-booking-agent/",
+      "title": "Consultation Booking Agent",
+      "mappedBlocks": 2,
+      "unmappedBlocks": [],
+      "skippedBlocks": [],
+      "recoveredFrom": {
+        "path": "/ai-use-cases-in-sales/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      }
+    },
+    {
+      "path": "/contact-us/",
+      "title": "Contact",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/contact-us/demo-thanks-page/",
+      "title": "Demo Request - Thank You",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/contact-us/thanks-page/",
+      "title": "Thanks Page",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/content-distribution-tracking/",
+      "title": "Content Distribution Tracking",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-agent/",
+      "title": "Conversational AI Agent",
+      "mappedBlocks": 16,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-for-customer-service/",
+      "title": "10 Best Platforms to Build Conversational AI for Customer Service",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-for-ecommerce/",
+      "title": "Top 10 Tools to Create Conversational AI for eCommerce",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-in-healthcare/",
+      "title": "Top Conversational AI in Healthcare Solutions",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-insurance/",
+      "title": "10 Conversational AI Insurance Use Cases for Modern Providers",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-market/",
+      "title": "Conversational AI Market",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-platform/",
+      "title": "Conversational AI Platform",
+      "mappedBlocks": 16,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-solutions/",
+      "title": "Top 15 Conversational AI Solutions [Comparison]",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/conversational-ai-vs-generative-ai/",
+      "title": "Conversational AI vs Generative AI – 360° Comparison",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/cookie-policy/",
+      "title": "Cookie Policy",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/customer-service-ai-agent/",
+      "title": "Customer Service AI Agent",
+      "mappedBlocks": 17,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/customer-support-ai-chatbots-for-ecommerce/",
+      "title": "Customer Support AI Chatbots for eCommerce: How They Reduce Tickets and Boost Satisfaction",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/data-processing-agreement/",
+      "title": "Data Processing Agreement",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ecommerce-ai-solutions/",
+      "title": "Top 10 eCommerce AI Solutions Every Online Store Needs in 2026",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/ecommerce-automation/",
+      "title": "eCommerce Automation",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/email-list-management/",
+      "title": "Email List Management",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/emotional-intelligence-engine/",
+      "title": "Emotional Intelligence Engine",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/employee-offboarding-coordinator/",
+      "title": "Employee Offboarding Coordinator",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/erp-ai-chatbot/",
+      "title": "AI ERP Automation",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/expired-listing-follow-up/",
+      "title": "Expired Listing Follow-Up",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/features/",
+      "title": "Features",
+      "mappedBlocks": 21,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/follow-up-for-estimate-approval/",
+      "title": "Estimate Approval Follow-Up",
+      "mappedBlocks": 2,
+      "unmappedBlocks": [],
+      "skippedBlocks": [],
+      "recoveredFrom": {
+        "path": "/ai-use-cases-in-sales/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      }
+    },
+    {
+      "path": "/free-trial-thank-you/",
+      "title": "Free Trial - Thank You",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/generative-ai-in-ecommerce/",
+      "title": "Generative AI in eCommerce: Use Cases, Examples, Benefits",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/gorgias-alternatives/",
+      "title": "Gorgias Alternatives",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/ai-youtube-automation-script-generator/",
+      "title": "YouTube Automation with AI: How to Add a Script Generator to Your Workflow",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/automate-your-shopify-order-fulfillment-workflow-e-commerce-example/",
+      "title": "Automate Your Shopify Order Fulfillment Workflow (E-Commerce Example)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/automated-invoice-processing-acme/",
+      "title": "Automated Invoice Processing: How to Build It with Acme (No Code)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+      "title": "Acme Conversational AI: How It Works in the Builder",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+      "title": "Why Acme's Conversational AI Automation Is Different From Everything Else",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/daily-revenue-dashboard-e-commerce-shopify-automation-guide/",
+      "title": "Daily Revenue Dashboard — E-Commerce Shopify Automation Guide",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-auto-translate-auto-publish-shopify-product-descriptions/",
+      "title": "How to Auto-Translate & Auto-Publish Shopify Product Descriptions",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-automate-a-post-purchase-email-sequence-for-your-shopify-store/",
+      "title": "How to Automate a Post-Purchase Email Sequence for Your Shopify Store",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-automate-competitor-price-monitoring-e-commerce-example/",
+      "title": "How to Automate Competitor Price Monitoring  (E-Commerce Example)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-automate-feedback-collection-and-log-the-data-in-hubspot/",
+      "title": "How to Automate Feedback Collection and Log the Data in HubSpot",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-automate-onboarding-emails-once-payment-on-your-platform-is-received/",
+      "title": "How to Automate Onboarding Emails Once Payment on Your Platform Is Received",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-automate-task-management-from-meeting-notes-in-acme/",
+      "title": "How to Automate Task Management from Meeting Notes in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-a-conversational-weekly-business-report-in-acme-part-2/",
+      "title": "How to Build a Conversational Weekly Business Report in Acme (Part 2)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-a-conversational-weekly-business-report-in-acme/",
+      "title": "How to Build a Conversational Weekly Business Report in Acme (Part 1)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+      "title": "How to Build a Customer Support Triage Agent in Acme: From Inbound Message to Routed Ticket",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow/",
+      "title": "How to Build a Lead Agent That Handles Both SMS and Website Widget in One Flow",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-a-recruiting-agent-in-acme-step-by-step/",
+      "title": "How to Build a Recruiting Agent in Acme (Step by Step)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-a-return-request-handler-for-your-shopify-store/",
+      "title": "How to Build a Return Request Handler for Your Shopify Store",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-ai-agents-with-acme/",
+      "title": "How to Build AI Agents: A Beginner's Guide to Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-an-abandoned-cart-recovery-workflow-e-commerce-example-part-2/",
+      "title": "How to Build an Abandoned Cart Recovery Workflow (E-Commerce Example: Part 2)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-an-abandoned-cart-recovery-workflow-e-commerce-example-part1/",
+      "title": "How to Build an Abandoned Cart Recovery Workflow (E-Commerce Example: Part1)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-an-instant-inbound-response-workflow-in-acme-capture-every-missed-call-before-they-call-your-competitor/",
+      "title": "How to Build an Instant Inbound Response Workflow in Acme: Capture Every Missed Call Before They Call Your Competitor",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+      "title": "How to Build an Out-of-Office Coverage Handoff Flow in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-collect-job-information-automatically-with-acme/",
+      "title": "How to Collect Job Information Automatically with Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-create-an-ai-automated-inquiry-auto-response-with-acme/",
+      "title": "How to Create an AI-Automated Inquiry Auto-Response with Acme (Real Estate Workflow Example)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-create-an-inbound-triage-and-customer-communication-agent-on-acme/",
+      "title": "How to Create an Inbound Triage and Customer Communication Agent on Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-create-auto-follow-up-emails-at-24-72-hours-real-estate-workflow-example/",
+      "title": "How to create auto-follow-up emails at 24/72 hours (Real Estate Workflow Example)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-get-more-reviews-and-repeat-bookings-after-every-job-with-acme/",
+      "title": "How to Get More Reviews and Repeat Bookings After Every Job with Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-let-customers-book-themselves-without-calling-or-waiting-on-acme/",
+      "title": "How to Let Customers Book Themselves – Without Calling or Waiting on Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-set-up-a-daily-sales-report-in-shopify-using-acme-automation/",
+      "title": "How to Set Up a Daily Sales Report in Shopify Using Acme Automation",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+      "title": "How to Set Up an Employee Onboarding Flow with Conversation Flows and Definition of Done",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-set-up-low-stock-alerts-in-shopify-using-acme-automation/",
+      "title": "How to Set Up Low Stock Alerts in Shopify Using Acme Automation",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-teach-ai-with-your-companys-knowledge-base-in-acme/",
+      "title": "How to Teach AI with Your Company's Knowledge Base in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-use-action-nodes-to-run-ai-agents-with-acme/",
+      "title": "How to Use Action Nodes to Run AI Agents",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-use-control-nodes-in-acme/",
+      "title": "How to use Control Nodes in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+      "title": "How to Use Knowledge Base in Acme for Product-Aware Agents",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/how-to-use-starting-nodes-in-acme/",
+      "title": "How to Use Starting Nodes in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/social-media-automation-workflow-acme/",
+      "title": "Social Media Automation with AI: How to Build Your Workflow in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/web-form-automation-lead-routing-acme/",
+      "title": "Web Form Automation for Lead Routing | Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guide/what-you-can-build-in-acme-in-less-than-4-steps/",
+      "title": "What you can build in Acme in less than 4 Steps",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guides/",
+      "title": "Guides",
+      "mappedBlocks": 0,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guides/how-to-build-an-automated-follow-up-sequence-in-acme/",
+      "title": "How to Build an Automated Follow-Up Sequence in Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/guides/how-to-create-an-ai-automated-property-inquiry-auto-response-with-acme/",
+      "title": "How to Create an AI-Automated Property Inquiry Auto-Response with Acme",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/high-intent-lead-alerts-in-slack/",
+      "title": "High-Intent Lead Alerts in Slack",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/how-erp-automation-is-transforming-enterprise-operations/",
+      "title": "How ERP Automation is Transforming Enterprise Operations",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/how-to-build-an-ai-agent/",
+      "title": "How to Build an AI Agent Without Coding",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/how-to-use-ai-in-recruitment/",
+      "title": "How to Use AI in Recruitment in 2026: A Stage-by-Stage Guide That Actually Fills Roles",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/how-to-use-conversational-ai-in-retail/",
+      "title": "How to Use Conversational AI in Retail to Turn Clicks into Completed Orders",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/hr-policy-qa-bot/",
+      "title": "HR Policy Q&A Bot",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/hvac-ai-agent/",
+      "title": "HVAC AI Agent",
+      "mappedBlocks": 17,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/interview-scheduling-agent/",
+      "title": "Interview Scheduling Agent",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/invoice-data-entry-automation/",
+      "title": "Invoice Data Entry Automation",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/lead-enrichment-on-autopilot/",
+      "title": "Lead Enrichment on Autopilot",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/lead-form-to-crm-sync-automation/",
+      "title": "Lead Form to CRM Sync Automation",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/lead-response-speed-agent/",
+      "title": "Lead Response Speed Agent",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/license-and-certification-tracker/",
+      "title": "License & Certification Tracker",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/lindy-alternative/",
+      "title": "Lindy Alternative",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/magento-ai-chatbot/",
+      "title": "Magento AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/make-alternative/",
+      "title": "Make Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/marketing-ai-agents/",
+      "title": "Top 10 Marketing AI Agents to Use in 2025",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/marketing-automation-for-ecommerce/",
+      "title": "Marketing Automation for eCommerce",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/missed-call-text-back/",
+      "title": "Missed Call Text-Back",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/move-to-enterprise/",
+      "title": "Move to Enterprise",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/mulesoft-alternative/",
+      "title": "MuleSoft Alternatives",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/multi-agent-collaboration/",
+      "title": "Multi-Agent Collaboration",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/multi-channel-chatbot-deployment/",
+      "title": "Multi-Channel Chatbot Deployment",
+      "mappedBlocks": 2,
+      "unmappedBlocks": [],
+      "skippedBlocks": [],
+      "recoveredFrom": {
+        "path": "/ai-use-cases-in-ecommerce/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      }
+    },
+    {
+      "path": "/multi-platform-order-consolidation/",
+      "title": "Multi-Platform Order Consolidation",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/n8n-alternative/",
+      "title": "n8n Alternatives",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/new-hire-onboarding-flow-agent/",
+      "title": "New Hire Onboarding Flow Agent",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/new-listing-alerts-to-prospects/",
+      "title": "New Listing Alerts to Prospects",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/billing-credits/",
+      "title": "Billing & Credits",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/custom-branding-for-the-chat-widget/",
+      "title": "Billing & Credits",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/faster-agent-response-times/",
+      "title": "Workflow",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/improved-analytics-dashboard/",
+      "title": "Improvements",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/improvements/",
+      "title": "Improvements",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/new-integrations-slack-hubspot/",
+      "title": "New Channels & Integrations",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/template-center/",
+      "title": "Template Center",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/news/workspace/",
+      "title": "Workspace",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/odoo-ai-automation/",
+      "title": "Odoo AI Automation",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/offer-communication-agent/",
+      "title": "Offer Communication Agent",
+      "mappedBlocks": 2,
+      "unmappedBlocks": [],
+      "skippedBlocks": [],
+      "recoveredFrom": {
+        "path": "/ai-use-cases-in-recruitment/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      }
+    },
+    {
+      "path": "/open-house-registration-tracker/",
+      "title": "Open House Registration Tracker",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/order-status-inquiry/",
+      "title": "Order Status Inquiry",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/performance-review-reminder-flow/",
+      "title": "Performance Review Reminder Flow",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/price-reduction-notifications/",
+      "title": "Price Reduction Notifications",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/pricing-thanks-page/",
+      "title": "Pricing Thanks Page",
+      "mappedBlocks": 0,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/pricing/",
+      "title": "Pricing",
+      "mappedBlocks": 13,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/privacy-policy/",
+      "title": "Privacy Policy",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/product-availability-check/",
+      "title": "Product Availability Check",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/product-recommendation-agent/",
+      "title": "Product Recommendation Agent",
+      "mappedBlocks": 2,
+      "unmappedBlocks": [],
+      "skippedBlocks": [],
+      "recoveredFrom": {
+        "path": "/ai-use-cases-in-ecommerce/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      }
+    },
+    {
+      "path": "/property-data-enrichment/",
+      "title": "Property Data Enrichment",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/property-inquiry-auto-response/",
+      "title": "Property Inquiry Auto-Response",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/purchase-order-automation-software/",
+      "title": "Purchase Order Automation: Software, Best Practices and Why it Matters",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/purchase-order-processing/",
+      "title": "Purchase Order Processing",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/quote-follow-up-sequence/",
+      "title": "Quote Follow-Up Sequence",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/rasa-alternative/",
+      "title": "Rasa Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/real-estate-ai-agent/",
+      "title": "Real Estate AI Agent",
+      "mappedBlocks": 12,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/recruiting-ai-agent-for-cleaning-company/",
+      "title": "Recruiting AI Agent · Cleaning & Facility Services",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/recruiting-ai-agent-for-security-guard-company/",
+      "title": "Recruiting AI Agent · Guarding & Security Company",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/relevance-ai-alternative/",
+      "title": "Relevance AI Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/reservation-confirmation-no-show-reduction/",
+      "title": "Reservation Confirmation & No-Show Reduction",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/return-cost-analysis-alert/",
+      "title": "Return Cost Analysis Alert",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/roofing-answering-service-agent/",
+      "title": "Roofing Answering Service Agent",
+      "mappedBlocks": 16,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/sendbird-alternative/",
+      "title": "Sendbird Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/shipping-delay-notification/",
+      "title": "Shipping Delay Notification",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/showing-appointment-scheduler/",
+      "title": "Showing Appointment Scheduler",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/sintra-alternative/",
+      "title": "Sintra Alternative",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/social-media-cross-posting/",
+      "title": "Social Media Cross-Posting",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/squarespace-ai-chatbot/",
+      "title": "Squarespace AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/stock-discrepancy-detection/",
+      "title": "Stock Discrepancy Detection",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/team-collaboration-workspace/",
+      "title": "Team Collaboration Workspace",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/technician-pre-screen-agent/",
+      "title": "Technician Pre-Screen Agent",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/terms-of-use/",
+      "title": "Terms of Service",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/test-page/",
+      "title": "Test page",
+      "mappedBlocks": 0,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tidio-alternatives/",
+      "title": "Tidio Alternative",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips-and-tricks/",
+      "title": "Tips and Tricks",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/action-in-app-node/",
+      "title": "Action in App Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/ai-custom-event/",
+      "title": "AI Custom Event",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/all-in-one-pattern/",
+      "title": "All-in-one pattern",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/automate-recurring-tasks/",
+      "title": "Automate Recurring Tasks",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/avoid-constant-polling/",
+      "title": "Avoid Constant Polling",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/beyond-one-shot-automations/",
+      "title": "Beyond one-shot automations",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/call-agent-node/",
+      "title": "Call Agent Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/channel-dispatcher-initiator-mode/",
+      "title": "Channel Dispatcher: Initiator mode",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/channel-dispatcher-responder-node/",
+      "title": "Channel Dispatcher: Responder Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/channel-dispatcher/",
+      "title": "Channel Dispatcher",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/choose-events-based-on-your-needs/",
+      "title": "Choose Events Based on Your Needs",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/clear-conversation/",
+      "title": "Clear Conversation",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/combine-events-with-actions/",
+      "title": "Combine Events with Actions",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/communication-actor/",
+      "title": "Communication Actor",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/condition-node/",
+      "title": "Condition Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/connect-your-favorite-apps/",
+      "title": "Connect Your Favorite Apps",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/conversational-ai-three-layer-design/",
+      "title": "Conversational AI: Three-layer design",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/custom-tools/",
+      "title": "Custom Tools",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/describe-triggers-in-plain-english/",
+      "title": "Describe Triggers in Plain English",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/event-from-app-notion/",
+      "title": "Event from App – Notion",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/execute-code-node/",
+      "title": "Execute Code Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/get-urn-code-for-linkedin-posting/",
+      "title": "Get URN Code for Linkedin Posting",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/how-to-transfer-the-communication-to-human/",
+      "title": "How to transfer the communication to Human",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-cheatsheet/",
+      "title": "HTTP Node. CheatSheet",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-delete/",
+      "title": "HTTP Node: DELETE",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-get/",
+      "title": "HTTP Node: GET",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-head/",
+      "title": "HTTP Node: HEAD",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-options/",
+      "title": "HTTP Node: OPTIONS",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-patch-2/",
+      "title": "HTTP Node: PATCH",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-patch/",
+      "title": "HTTP Node: PATCH",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-node-post/",
+      "title": "HTTP Node: POST",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/http-request-node/",
+      "title": "HTTP Request Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/human-communicator/",
+      "title": "Human Communicator",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/knowledge-base-2/",
+      "title": "Knowledge Base",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/knowledge-base-3/",
+      "title": "Knowledge Base",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/knowledge-base/",
+      "title": "Knowledge Base",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/leverage-real-time-responses/",
+      "title": "Leverage Real-Time Responses",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/llm-actor-vs-communication-actor/",
+      "title": "LLM Actor vs Communication Actor",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/llm-actor/",
+      "title": "LLM Actor",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/llm-node/",
+      "title": "LLM Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/llm-nodes/",
+      "title": "LLM Nodes",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/loop-node/",
+      "title": "Loop Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/manual-testing-start/",
+      "title": "Manual Testing Start",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/merge-node/",
+      "title": "Merge Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/modular-pattern-recommended/",
+      "title": "Modular pattern (recommended)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/monitor-key-data-changes/",
+      "title": "Monitor Key Data Changes",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/multi-channel-one-node/",
+      "title": "Multi-channel, one node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/node-colors-indicate-status/",
+      "title": "Node Colors Indicate Status",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/parse-file-node/",
+      "title": "Parse File Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/recurrent-event-frequency/",
+      "title": "Recurrent Event Frequency",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/route-conversations-by-intent/",
+      "title": "Route conversations by intent",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/send-message-formatting/",
+      "title": "Send Message Formatting",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/send-message-outputs/",
+      "title": "Send Message Outputs",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/send-message-patterns/",
+      "title": "Send Message Patterns",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/send-message-setup/",
+      "title": "Send Message Setup",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/send-message/",
+      "title": "Send Message",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/separate-channel-from-ai-logic/",
+      "title": "Separate channel from AI logic",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/set-the-exit-conditions-for-llm-actor/",
+      "title": "Set the exit conditions for LLM Actor",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/set-variable-node/",
+      "title": "Set Variable Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/sleep-node-parameters/",
+      "title": "Sleep Node Parameters",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/sleep-node/",
+      "title": "Sleep Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/structured-output/",
+      "title": "Structured Output",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/switch-node/",
+      "title": "Switch Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/system-vs-user-instructions-in-llm-node/",
+      "title": "System vs User Instructions in LLM Node",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/track-status-changes-automatically/",
+      "title": "Track Status Changes Automatically",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/use-ai-for-sentiment-detection/",
+      "title": "Use AI for Sentiment Detection",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/use-multiple-llm-actors-by-fields/",
+      "title": "Use multiple LLM actors by fields",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/use-webhooks-for-custom-integrations/",
+      "title": "Use Webhooks for Custom Integrations",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/variables-are-critical/",
+      "title": "Variables Are Critical",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/web-widget-support/",
+      "title": "Web widget support",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/webhook-parameters/",
+      "title": "Webhook Parameters",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/what-are-conversation-nodes/",
+      "title": "What are Conversation Nodes?",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/when-to-use-human-communicator-instead/",
+      "title": "When to use Human Communicator instead",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/tips/works-across-every-channel/",
+      "title": "Works across every channel",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/top-conversational-ai-for-home-services/",
+      "title": "Top 7 Conversational AI for Home Services in 2026",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/top-llm-agents/",
+      "title": "Top 10 LLM Agents (And How They Actually Work)",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/universal-data-integration/",
+      "title": "Universal Data Integration",
+      "mappedBlocks": 10,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/verification/",
+      "title": "Verification",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/virtual-employees/",
+      "title": "Virtual Employees",
+      "mappedBlocks": 14,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/wait-list-thanks-page/",
+      "title": "Waitlist Thanks Page",
+      "mappedBlocks": 0,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/webinar-registration-to-email-sequence/",
+      "title": "Webinar Registration to Email Sequence",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/weekly-report-generation/",
+      "title": "Weekly Report Generation",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/what-is-agent-ai/",
+      "title": "What is Agent AI - Basic Concept Overview",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/what-is-agentic-commerce/",
+      "title": "What Is Agentic Commerce? A New Era of Autonomous Selling",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/what-is-conversational-ai/",
+      "title": "What is Conversational AI: Examples, Use Cases, Pros & Cons",
+      "mappedBlocks": 1,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/wix-ai-chatbot/",
+      "title": "Wix AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/woocommerce-ai-chatbot/",
+      "title": "WooCommerce AI Chatbot",
+      "mappedBlocks": 15,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    },
+    {
+      "path": "/workforce-analytics-assistant/",
+      "title": "Workforce Analytics Assistant",
+      "mappedBlocks": 9,
+      "unmappedBlocks": [],
+      "skippedBlocks": []
+    }
+  ]
+}

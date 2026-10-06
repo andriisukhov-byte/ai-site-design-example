@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-25T08:47:28.546Z",
+  "cmsPagesPath": "data/cms/pages.json",
+  "cmsGeneratedAt": "2026-07-25T08:43:48.721Z",
+  "distDir": "apps/web/dist",
+  "redirectsRoot": "apps/web/src/pages",
+  "totalDocuments": 315,
+  "publishedRoutes": 304,
+  "draftRoutes": 11,
+  "explicitRedirects": 5,
+  "builtHtmlRoutes": 310,
+  "expectedBuiltRoutes": 310,
+  "missingPublishedRoutes": 0,
+  "missingRedirectRoutes": 0,
+  "builtDraftRoutes": 0,
+  "unownedBuiltRoutes": 0,
+  "blockerCount": 0,
+  "findingCount": 0,
+  "redirects": [
+    {
+      "from": "/ai-recruitment/",
+      "to": "/ai-agents-for-recruiting/",
+      "file": "apps/web/src/pages/ai-recruitment/index.astro"
+    },
+    {
+      "from": "/cognitive-ai-platform/",
+      "to": "/",
+      "file": "apps/web/src/pages/cognitive-ai-platform/index.astro"
+    },
+    {
+      "from": "/guide/how-to-auto-fill-your-crm-with-a-received-invoice-or-route-it-to-your-customer-handling-team/",
+      "to": "/guides/",
+      "file": "apps/web/src/pages/guide/how-to-auto-fill-your-crm-with-a-received-invoice-or-route-it-to-your-customer-handling-team/index.astro"
+    },
+    {
+      "from": "/guide/how-to-automate-inquiries-from-your-web-form-into-actions-for-your-team-with-acme/",
+      "to": "/guides/",
+      "file": "apps/web/src/pages/guide/how-to-automate-inquiries-from-your-web-form-into-actions-for-your-team-with-acme/index.astro"
+    },
+    {
+      "from": "/recruiting-ai-agent-for-security-guard-company/",
+      "to": "/ai-recruiting-agent-security/",
+      "file": "apps/web/src/pages/recruiting-ai-agent-for-security-guard-company/index.astro"
+    }
+  ],
+  "findings": []
+}

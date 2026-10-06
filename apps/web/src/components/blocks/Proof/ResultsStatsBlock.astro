@@ -1,0 +1,42 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_results-stats.scss';
+
+type ResultsStatsBlock = Extract<PageBlock, { type: 'results-stats' }>;
+
+const { block } = Astro.props as { block: ResultsStatsBlock };
+---
+
+<section class:list={['results-stats', `results-stats--${block.background}`]}>
+  <div class="results-stats__container container-wide">
+    <h2 class="results-stats__title"><FormattedText text={block.title} /></h2>
+
+    <div class="results-stats__grid">
+      {block.items.map((item) => (
+        <article class="results-stats__item">
+          {item.value && (
+            item.link?.href ? (
+              <a class="results-stats__value results-stats__value--link" href={item.link.href} target={item.link.target} rel={item.link.target ? 'noopener' : undefined}>
+                <FormattedText text={item.value} />
+              </a>
+            ) : (
+              <p class="results-stats__value"><FormattedText text={item.value} /></p>
+            )
+          )}
+          {item.description && <p class="results-stats__description"><FormattedText text={item.description} /></p>}
+        </article>
+      ))}
+    </div>
+
+    {block.infoNote && (
+      <aside class="results-stats__note" role="note">
+        <span class="results-stats__note-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg>
+        </span>
+        <p class="results-stats__note-text"><FormattedText text={block.infoNote} /></p>
+      </aside>
+    )}
+  </div>
+</section>

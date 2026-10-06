@@ -1,0 +1,29 @@
+---
+import SingleArticle from '../../components/SingleArticle.astro';
+import {
+  createFaqPage,
+  productionTaxonomies,
+} from '../../data/production-taxonomies';
+import { getSourcePage } from '../../data/source-pages';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const item = productionTaxonomies.faqItems.find(
+  (candidate) => candidate.slug === Astro.params.slug,
+);
+
+if (!item) {
+  return Astro.redirect('/404');
+}
+
+const blogPage = await getSourcePage('/blog/');
+
+if (!blogPage) {
+  throw new Error('Missing CMS document for /blog/.');
+}
+
+const page = createFaqPage(blogPage, item);
+---
+
+<SiteLayout page={page}>
+  <SingleArticle page={page} unratedLabel={item.ratingLabel} />
+</SiteLayout>

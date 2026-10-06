@@ -1,0 +1,30 @@
+@use "../foundation/design-tokens" as dt;
+
+.section-background {
+  --section-background: #{dt.$color-brand-white};
+  --section-card-background: #{dt.$color-gray-25};
+
+  background: var(--section-background);
+
+  &--gray {
+    --section-background: #{dt.$color-gray-25};
+    --section-card-background: #{dt.$color-brand-white};
+  }
+
+  > :is(section, div, astro-island),
+  > astro-island > :is(section, div) {
+    background-color: var(--section-background);
+  }
+
+  :where(
+    [class$="__card"],
+    [class*="__card "],
+    [class$="__plan"],
+    [class*="__plan "],
+    [class$="__column"],
+    [class*="__column "]
+  ) {
+    background-color: var(--section-card-background);
+  }
+}
+

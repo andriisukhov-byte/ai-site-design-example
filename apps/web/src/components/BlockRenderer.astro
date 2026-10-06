@@ -1,0 +1,175 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import { resolveMediaUrls } from '../data/media';
+import { resolveSignupLinks } from '../data/signup-links';
+import HeroBlock from './blocks/Heroes/HeroBlock.astro';
+import HeroExtendedBlock from './blocks/Heroes/HeroExtendedBlock.astro';
+import RichTextBlock from './blocks/Content/RichTextBlock.astro';
+import SideBySideBlock from './blocks/Content/SideBySideBlock.astro';
+import StoryBlock from './blocks/Content/StoryBlock.astro';
+import MediaShowcaseBlock from './blocks/Content/MediaShowcaseBlock.astro';
+import HowItWorksBlock from './blocks/Content/HowItWorksBlock.astro';
+import TabsShowcaseBlock from './blocks/Content/TabsShowcaseBlock.astro';
+import UseCasesFlowBlock from './blocks/Content/UseCasesFlowBlock.astro';
+import FeatureGridBlock from './blocks/Grids/FeatureGridBlock.astro';
+import ChannelsGridBlock from './blocks/Grids/ChannelsGridBlock.astro';
+import CoverageGridBlock from './blocks/Grids/CoverageGridBlock.astro';
+import FunctionalCapabilitiesBlock from './blocks/Grids/FunctionalCapabilitiesBlock.astro';
+import CapabilityToolsBlock from './blocks/Grids/CapabilityToolsBlock.astro';
+import LogoGridBlock from './blocks/Grids/LogoGridBlock.astro';
+import AlternativesGridBlock from './blocks/Grids/AlternativesGridBlock.astro';
+import UseCasesGridBlock from './blocks/Grids/UseCasesGridBlock.astro';
+import ContactUsBlock from './blocks/Conversion/ContactUsBlock.astro';
+import ConciergeFlowBlock from './blocks/Conversion/ConciergeFlowBlock.astro';
+import EnterpriseUpgradeBlock from './blocks/Conversion/EnterpriseUpgradeBlock.astro';
+import CtaBlock from './blocks/Conversion/CtaBlock.astro';
+import LiveInDaysBlock from './blocks/Conversion/LiveInDaysBlock.astro';
+import PricingCardsBlock from './blocks/Conversion/PricingCardsBlock.astro';
+import PricingDetailsBlock from './blocks/Conversion/PricingDetailsBlock.astro';
+import PricingPolicyBlock from './blocks/Conversion/PricingPolicyBlock.astro';
+import FaqBlock from './blocks/Navigation/FaqBlock.astro';
+import NewsInsightsBlock from './blocks/Navigation/NewsInsightsBlock.astro';
+import CapabilityStripBlock from './blocks/Navigation/CapabilityStripBlock.astro';
+import AnchorPillsBlock from './blocks/Navigation/AnchorPillsBlock.astro';
+import IntegrationsBannerBlock from './blocks/Navigation/IntegrationsBannerBlock.astro';
+import AgentCapabilitiesBlock from './blocks/Proof/AgentCapabilitiesBlock.astro';
+import AgentSolutionsBlock from './blocks/Proof/AgentSolutionsBlock.astro';
+import FeatureStackBlock from './blocks/Proof/FeatureStackBlock.astro';
+import FeatureRowsBlock from './blocks/Proof/FeatureRowsBlock.astro';
+import CapabilityTrioBlock from './blocks/Proof/CapabilityTrioBlock.astro';
+import SecurityBlock from './blocks/Proof/SecurityBlock.astro';
+import ConversationReplayBlock from './blocks/Proof/ConversationReplayBlock.astro';
+import RecoveryCalculatorBlock from './blocks/Proof/RecoveryCalculatorBlock.astro';
+import MetricsBlock from './blocks/Proof/MetricsBlock.astro';
+import ResultsStatsBlock from './blocks/Proof/ResultsStatsBlock.astro';
+import StatsCardsBlock from './blocks/Proof/StatsCardsBlock.astro';
+import DifferenceBlock from './blocks/Proof/DifferenceBlock.astro';
+import PainPointsComparisonBlock from './blocks/Proof/PainPointsComparisonBlock.astro';
+import IndustryExpertiseBlock from './blocks/Proof/IndustryExpertiseBlock.astro';
+import LogoStripBlock from './blocks/Proof/LogoStripBlock.astro';
+import TestimonialsBlock from './blocks/Proof/TestimonialsBlock.astro';
+import UseCaseHeroBlock from './blocks/UseCases/UseCaseHeroBlock.astro';
+import UseCaseFeaturesBlock from './blocks/UseCases/UseCaseFeaturesBlock.astro';
+import UseCaseProblemBlock from './blocks/UseCases/UseCaseProblemBlock.astro';
+import UseCaseHowItWorksBlock from './blocks/UseCases/UseCaseHowItWorksBlock.astro';
+import UseCaseImpactBlock from './blocks/UseCases/UseCaseImpactBlock.astro';
+import UseCaseOnboardingBlock from './blocks/UseCases/UseCaseOnboardingBlock.astro';
+import '../styles/components/_section-background.scss';
+import '../styles/blocks/_use-case-detail.scss';
+
+interface Props {
+  blocks: PageBlock[];
+}
+
+const { blocks } = Astro.props;
+const resolvedBlocks = resolveSignupLinks(resolveMediaUrls(blocks), Astro.url.pathname);
+const componentByType = {
+  hero: HeroBlock,
+  'hero-extended': HeroExtendedBlock,
+  'rich-text': RichTextBlock,
+  'side-by-side': SideBySideBlock,
+  story: StoryBlock,
+  'media-showcase': MediaShowcaseBlock,
+  'feature-grid': FeatureGridBlock,
+  'agent-capabilities': AgentCapabilitiesBlock,
+  'agent-solutions': AgentSolutionsBlock,
+  'contact-us': ContactUsBlock,
+  'concierge-flow': ConciergeFlowBlock,
+  'enterprise-upgrade': EnterpriseUpgradeBlock,
+  'channels-grid': ChannelsGridBlock,
+  'feature-stack': FeatureStackBlock,
+  'coverage-grid': CoverageGridBlock,
+  'feature-rows': FeatureRowsBlock,
+  'capability-trio': CapabilityTrioBlock,
+  'capability-tools': CapabilityToolsBlock,
+  'use-cases-grid': UseCasesGridBlock,
+  security: SecurityBlock,
+  'conversation-replay': ConversationReplayBlock,
+  'recovery-calculator': RecoveryCalculatorBlock,
+  'functional-capabilities': FunctionalCapabilitiesBlock,
+  'how-it-works': HowItWorksBlock,
+  cta: CtaBlock,
+  metrics: MetricsBlock,
+  'results-stats': ResultsStatsBlock,
+  'stats-cards': StatsCardsBlock,
+  'capability-strip': CapabilityStripBlock,
+  'live-in-days': LiveInDaysBlock,
+  faq: FaqBlock,
+  'content-feed': NewsInsightsBlock,
+  'news-insights': NewsInsightsBlock,
+  'pricing-cards': PricingCardsBlock,
+  'pricing-details': PricingDetailsBlock,
+  difference: DifferenceBlock,
+  'pain-points-comparison': PainPointsComparisonBlock,
+  'pricing-policy': PricingPolicyBlock,
+  'industry-expertise': IndustryExpertiseBlock,
+  'logo-strip': LogoStripBlock,
+  'integrations-banner': IntegrationsBannerBlock,
+  'logo-grid': LogoGridBlock,
+  'tabs-showcase': TabsShowcaseBlock,
+  'anchor-nav': AnchorPillsBlock,
+  testimonials: TestimonialsBlock,
+  'comparison-grid': AlternativesGridBlock,
+  'use-case-flow': UseCasesFlowBlock,
+};
+
+const sectionBackground = (block: PageBlock) =>
+  block.background === 'white' || block.background === 'gray' ? block.background : undefined;
+const needsWrapper = (block: PageBlock) =>
+  Boolean(block.root?.anchor || block.root?.className || sectionBackground(block));
+const dedicatedUseCaseComponent = (block: PageBlock) => {
+  const rootClasses = new Set(block.root?.className?.split(/\s+/).filter(Boolean) ?? []);
+
+  if (block.type === 'hero' && rootClasses.has('uc-hero')) {
+    return UseCaseHeroBlock;
+  }
+
+  if (block.type === 'feature-grid' && rootClasses.has('uc-features')) {
+    return UseCaseFeaturesBlock;
+  }
+
+  if (block.type === 'feature-grid' && rootClasses.has('uc-problem')) {
+    return UseCaseProblemBlock;
+  }
+
+  if (block.type === 'side-by-side' && rootClasses.has('uc-hiw')) {
+    return UseCaseHowItWorksBlock;
+  }
+
+  if (block.type === 'pricing-details' && rootClasses.has('uc-impact')) {
+    return UseCaseImpactBlock;
+  }
+
+  if (block.type === 'how-it-works' && rootClasses.has('uc-onboarding')) {
+    return UseCaseOnboardingBlock;
+  }
+
+  return undefined;
+};
+---
+
+{resolvedBlocks.map((block) => {
+  const UseCaseComponent = dedicatedUseCaseComponent(block);
+  const Component = UseCaseComponent ?? componentByType[block.type];
+  const background = sectionBackground(block);
+  if (UseCaseComponent) {
+    return <Component block={block as never} />;
+  }
+
+  if (!needsWrapper(block)) {
+    return <Component block={block as never} />;
+  }
+
+  return (
+    <div
+      id={block.root?.anchor}
+      class:list={[
+        block.root?.className,
+        background && 'section-background',
+        background && `section-background--${background}`,
+      ]}
+    >
+      <Component block={block as never} />
+    </div>
+  );
+})}

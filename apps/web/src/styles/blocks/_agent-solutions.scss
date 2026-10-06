@@ -1,0 +1,283 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.agent-solutions {
+    padding: 120px 0;
+    overflow: hidden;
+    background: dt.$color-brand-white;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    &__title {
+        max-width: 920px;
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 78px;
+        letter-spacing: 0;
+
+        span {
+            background: dt.$gradient-gold;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    &__column {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__card {
+        position: relative;
+        display: grid;
+        width: 100%;
+        min-height: 132px;
+        grid-template-rows: auto 1fr;
+        gap: 24px;
+        overflow: hidden;
+        padding: 24px;
+        border: 0;
+        border-radius: 24px;
+        background: dt.$color-gray-25;
+        color: dt.$color-brand-font-dark;
+        text-align: left;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:visited {
+            text-decoration: none;
+        }
+        transition:
+            min-height 0.36s ease,
+            background-color 0.28s ease,
+            color 0.28s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 8px;
+            background: dt.$gradient-gold;
+            opacity: 0;
+            transition: opacity 0.28s ease;
+        }
+
+        &:focus-visible {
+            outline: 2px solid dt.$color-brand-azure-sky;
+            outline-offset: 4px;
+        }
+
+        &.is-active {
+            min-height: 324px;
+            align-content: space-between;
+            background: dt.$color-brand-black;
+            color: dt.$color-brand-white;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 8px;
+        background: dt.$color-gray-25;
+        color: dt.$color-brand-font-dark;
+        transition:
+            width 0.28s ease,
+            height 0.28s ease,
+            border-color 0.28s ease,
+            border-radius 0.28s ease,
+            background-color 0.28s ease;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            --fill-0: #{dt.$color-brand-font-dark};
+            --stroke-0: #{dt.$color-brand-font-dark};
+        }
+
+        img {
+            display: block;
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+    }
+
+    &__card.is-active &__icon {
+        width: 64px;
+        height: 64px;
+        border-color: dt.$color-gray-900;
+        border-radius: 16px;
+        background: dt.$color-brand-black;
+
+        svg {
+            width: 32px;
+            height: 32px;
+            --fill-0: #{dt.$color-brand-white};
+            --stroke-0: #{dt.$color-brand-white};
+        }
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__card-title {
+        color: currentColor;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0;
+        transition:
+            font-size 0.28s ease,
+            color 0.28s ease;
+    }
+
+    &__card.is-active &__card-title {
+        font-size: 32px;
+    }
+
+    &__description-wrap {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        transition:
+            grid-template-rows 0.36s ease,
+            opacity 0.22s ease;
+    }
+
+    &__description {
+        min-height: 0;
+        overflow: hidden;
+        color: dt.$color-gray-100;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+
+    &__card.is-active &__description-wrap {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        transition-delay: 0.04s;
+    }
+
+    @include tablet {
+        &__title {
+            font-size: 48px;
+            line-height: 56px;
+        }
+    }
+
+    @include mobile {
+        padding: 64px 0;
+        background: dt.$color-gray-25;
+
+        &__container {
+            gap: 24px;
+            padding-inline: 16px;
+        }
+
+        &__title {
+            max-width: 343px;
+            margin-inline: auto;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__card {
+            min-height: 0;
+            gap: 16px;
+            padding: 24px;
+            background: dt.$color-brand-white;
+            color: dt.$color-brand-font-dark;
+
+            &::after {
+                display: none;
+            }
+
+            &.is-active {
+                min-height: 0;
+                background: dt.$color-brand-white;
+                color: dt.$color-brand-font-dark;
+            }
+        }
+
+        &__icon,
+        &__card.is-active &__icon {
+            width: 48px;
+            height: 48px;
+            border-color: dt.$color-gray-100;
+            border-radius: 8px;
+            background: dt.$color-brand-white;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                --fill-0: #{dt.$color-brand-font-dark};
+                --stroke-0: #{dt.$color-brand-font-dark};
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &__card-title,
+        &__card.is-active &__card-title {
+            font-size: 24px;
+        }
+
+        &__description-wrap,
+        &__card.is-active &__description-wrap {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+
+        &__description {
+            color: dt.$color-gray-700;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.metrics-section--dark {
+  color: var(--ca-color-white);
+  background: var(--ca-color-ink);
+}
+
+.metrics-section .section-heading {
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.metrics-section .eyebrow {
+  color: var(--ca-color-brand);
+  font-weight: 800;
+}
+
+.metrics-section--dark .eyebrow {
+  color: var(--ca-color-accent);
+}
+
+.metrics-section h2 {
+  margin-block: 0;
+  color: var(--ca-color-ink);
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.metrics-section--dark h2 {
+  color: var(--ca-color-white);
+}
+
+.metrics-section .section-heading p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.metric-card {
+  min-height: 190px;
+  border: 1px solid var(--ca-color-line);
+  border-radius: var(--ca-radius-md);
+  padding: 24px;
+  background: var(--ca-color-white);
+}
+
+.metrics-section--dark .metric-card {
+  color: var(--ca-color-text);
+}
+
+.metric-card strong {
+  display: block;
+  color: var(--ca-color-brand);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.metric-card p {
+  line-height: 1.55;
+}
+
+.section-note {
+  max-width: 820px;
+  margin: 28px auto 0;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,94 @@
+---
+import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_coverage-grid.scss';
+
+type CoverageGridBlock = Extract<PageBlock, { type: 'coverage-grid' }>;
+
+type Props = {
+  block: CoverageGridBlock;
+};
+
+const { block } = Astro.props;
+const sourceDir = dirname(fileURLToPath(import.meta.url));
+const iconDir = resolve(sourceDir, '../../../../public/assets/blocks/coverage-grid/icons');
+const allowedIcons = new Set(['flame', 'wind', 'fan', 'refrigerator', 'home', 'store', 'building', 'factory']);
+const iconCache = new Map<string, string>();
+
+function iconMarkup(icon?: string): string {
+  const key = allowedIcons.has(icon ?? '') ? icon! : 'flame';
+  const cached = iconCache.get(key);
+
+  if (cached) {
+    return cached;
+  }
+
+  try {
+    const markup = readFileSync(resolve(iconDir, `${key}.svg`), 'utf8');
+    iconCache.set(key, markup);
+    return markup;
+  } catch {
+    return '';
+  }
+}
+---
+
+<section class="coverage-grid">
+  <div class="coverage-grid__container container-wide">
+    <header class="coverage-grid__header">
+      {block.eyebrow && <p class="coverage-grid__eyebrow">{block.eyebrow}</p>}
+
+      {block.title && (
+        <h2 class="coverage-grid__title">
+          <FormattedText text={block.title} />
+        </h2>
+      )}
+
+      {block.description && (
+        <p class="coverage-grid__description">
+          <FormattedText text={block.description} />
+        </p>
+      )}
+    </header>
+
+    {block.cards.length > 0 && (
+      <div class="coverage-grid__list">
+        {block.cards.map((card) => (
+          <article class="coverage-grid__card">
+            <span class="coverage-grid__card-icon" aria-hidden="true">
+              {card.customIcon?.src ? (
+                <img
+                  class="coverage-grid__custom-icon"
+                  src={card.customIcon.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <Fragment set:html={iconMarkup(card.icon)} />
+              )}
+            </span>
+
+            <div class="coverage-grid__card-content">
+              {card.title && (
+                card.href ? (
+                  <a class="coverage-grid__card-title coverage-grid__card-title--link" href={card.href} target="_blank" rel="noopener noreferrer">
+                    {card.title}
+                  </a>
+                ) : (
+                  <h3 class="coverage-grid__card-title">{card.title}</h3>
+                )
+              )}
+
+              {card.description && <p class="coverage-grid__card-description">{card.description}</p>}
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

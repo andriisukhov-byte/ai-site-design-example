@@ -1,0 +1,518 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.recovery-calculator {
+    --rc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --rc-ink: #{dt.$color-brand-font-dark};
+    --rc-muted: #{dt.$color-gray-700};
+    --rc-hair: #{dt.$color-gray-100};
+    --rc-track: #{dt.$color-gray-100};
+    --rc-panel: #{dt.$color-brand-white};
+
+    padding: 120px 0;
+    background: dt.$color-brand-white;
+
+    &--gray {
+        background: dt.$color-gray-25;
+    }
+
+    &--dark {
+        background: dt.$color-brand-black;
+
+        --rc-ink: #{dt.$color-brand-font-light};
+        --rc-muted: rgb(250 250 249 / 66%);
+        --rc-hair: rgb(250 250 249 / 14%);
+        --rc-track: rgb(250 250 249 / 16%);
+        --rc-panel: rgb(250 250 249 / 4%);
+    }
+
+    &__container {
+        max-width: dt.$container-base;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    &__intro {
+        display: flex;
+        max-width: 812px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__title {
+        margin: 0;
+        color: var(--rc-ink);
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 78px;
+        text-wrap: balance;
+    }
+
+    /* The brand gradient runs through #200000, which disappears against the
+       near-black panel. On the dark variant the highlight becomes solid amber. */
+    &--dark &__title .ca-gradient-text {
+        background: none;
+        -webkit-text-fill-color: dt.$color-brand-amber-glow;
+        background-clip: border-box;
+        -webkit-background-clip: border-box;
+        color: dt.$color-brand-amber-glow;
+    }
+
+    &__description {
+        max-width: 66ch;
+        margin: 0;
+        color: var(--rc-muted);
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    &__grid {
+        display: grid;
+        align-items: start;
+        gap: 56px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    }
+
+    /* ---- controls ---- */
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__control {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    &__control-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__label {
+        color: var(--rc-ink);
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    &__readout {
+        display: inline-flex;
+        align-items: baseline;
+        color: var(--rc-ink);
+        font-size: 22px;
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+        line-height: 30px;
+        white-space: nowrap;
+    }
+
+    &__affix {
+        color: var(--rc-ink);
+    }
+
+    /* Operators who know their exact figure type it instead of dragging. */
+    &__number {
+        width: 3.6em;
+        /* Where supported the field hugs its digits, so a "$" prefix sits tight
+           against the number instead of across a fixed-width box. */
+        field-sizing: content;
+        min-width: 2.2em;
+        max-width: 4.5em;
+        padding: 0 2px;
+        appearance: textfield;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        border-radius: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+        transition: border-color 200ms var(--rc-ease);
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            margin: 0;
+            appearance: none;
+        }
+
+        &:hover {
+            border-bottom-color: var(--rc-hair);
+        }
+
+        &:focus-visible {
+            border-bottom-color: transparent;
+            outline: 2px solid dt.$color-brand-azure-sky;
+            outline-offset: 2px;
+        }
+    }
+
+    &__hint {
+        margin: 0;
+        color: var(--rc-muted);
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &__range {
+        /* --rc-fill is written by the script so the travelled part of the track
+           reads as filled; it degrades to a plain track without JS. */
+        --rc-fill: 0%;
+
+        width: 100%;
+        height: 24px;
+        margin: 0;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+
+        &::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: dt.$radius-pill;
+            background:
+                linear-gradient(
+                    90deg,
+                    #{dt.$color-brand-azure-sky} 0%,
+                    #{dt.$color-brand-burnt-clay} 70%,
+                    #{dt.$color-brand-amber-glow} 100%
+                )
+                no-repeat,
+                var(--rc-track);
+            background-size: var(--rc-fill) 100%, 100% 100%;
+        }
+
+        &::-moz-range-track {
+            height: 4px;
+            border-radius: dt.$radius-pill;
+            background:
+                linear-gradient(
+                    90deg,
+                    #{dt.$color-brand-azure-sky} 0%,
+                    #{dt.$color-brand-burnt-clay} 70%,
+                    #{dt.$color-brand-amber-glow} 100%
+                )
+                no-repeat,
+                var(--rc-track);
+            background-size: var(--rc-fill) 100%, 100% 100%;
+        }
+
+        &::-webkit-slider-thumb {
+            width: 22px;
+            height: 22px;
+            appearance: none;
+            border: 0;
+            border-radius: dt.$radius-pill;
+            margin-top: -9px;
+            background: dt.$gradient-gold;
+            box-shadow: 0 2px 10px rgb(12 10 9 / 24%);
+            transition: transform 200ms var(--rc-ease);
+        }
+
+        &::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border: 0;
+            border-radius: dt.$radius-pill;
+            background: dt.$gradient-gold;
+            box-shadow: 0 2px 10px rgb(12 10 9 / 24%);
+        }
+
+        &:hover::-webkit-slider-thumb {
+            transform: scale(1.08);
+        }
+
+        &:focus-visible {
+            outline: none;
+
+            &::-webkit-slider-thumb {
+                box-shadow: 0 0 0 3px #{dt.$color-brand-azure-sky};
+            }
+
+            &::-moz-range-thumb {
+                box-shadow: 0 0 0 3px #{dt.$color-brand-azure-sky};
+            }
+        }
+    }
+
+    /* ---- result ---- */
+
+    &__result {
+        display: flex;
+        flex-direction: column;
+        padding: 36px 36px 40px;
+        border: 1px solid var(--rc-hair);
+        border-radius: dt.$radius-lg;
+        background: var(--rc-panel);
+        gap: 6px;
+    }
+
+    /* ---- frequency segments ---- */
+
+    &__frequency {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    &__segments {
+        display: flex;
+        margin-top: 14px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    &__segment {
+        position: relative;
+
+        input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        span {
+            display: inline-flex;
+            padding: 9px 16px;
+            border: 1px solid var(--rc-hair);
+            border-radius: dt.$radius-pill;
+            color: var(--rc-muted);
+            font-size: 15px;
+            line-height: 22px;
+            cursor: pointer;
+            transition:
+                border-color 200ms var(--rc-ease),
+                color 200ms var(--rc-ease),
+                background-color 200ms var(--rc-ease);
+        }
+
+        input:checked + span {
+            border-color: transparent;
+            background: dt.$color-brand-burnt-clay;
+            color: dt.$color-brand-white;
+            font-weight: 500;
+        }
+
+        input:focus-visible + span {
+            outline: 2px solid dt.$color-brand-azure-sky;
+            outline-offset: 2px;
+        }
+    }
+
+    /* ---- headline count ---- */
+
+    &__clients {
+        display: flex;
+        align-items: baseline;
+        margin: 0 0 26px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--rc-hair);
+        gap: 14px;
+    }
+
+    /* Headline values follow the site's established value typography
+       (`results-stats__value`): $type-h4-size at semibold, no tracking. */
+    &__clients-value {
+        color: var(--rc-ink);
+        font-size: dt.$type-h4-size;
+        font-weight: dt.$font-weight-semibold;
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+    }
+
+    &__clients-label {
+        max-width: 22ch;
+        color: var(--rc-ink);
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    &__money {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__breakeven {
+        max-width: 70ch;
+        margin: 0;
+        color: var(--rc-ink);
+        font-size: 17px;
+        line-height: 27px;
+    }
+
+    &__status {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        margin: -1px;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    &__result-label {
+        margin: 0;
+        color: var(--rc-muted);
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    &__result-value {
+        display: flex;
+        align-items: baseline;
+        margin: 6px 0 0;
+        color: var(--rc-ink);
+        font-size: dt.$type-h4-size;
+        font-weight: dt.$font-weight-semibold;
+        font-variant-numeric: tabular-nums;
+        gap: 10px;
+        line-height: 1;
+    }
+
+    &__result-suffix {
+        color: var(--rc-muted);
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+
+    &__result-annual {
+        margin: 10px 0 0;
+        color: var(--rc-muted);
+        font-size: 16px;
+        font-variant-numeric: tabular-nums;
+        line-height: 26px;
+
+        span {
+            color: var(--rc-ink);
+            font-weight: 500;
+        }
+    }
+
+    &__formula {
+        margin: 22px 0 0;
+        padding-top: 22px;
+        border-top: 1px solid var(--rc-hair);
+        color: var(--rc-muted);
+        font-size: 14px;
+        font-variant-numeric: tabular-nums;
+        line-height: 24px;
+    }
+
+    &__action {
+        align-self: flex-start;
+        margin-top: 26px;
+        padding: 12px 22px;
+        border-radius: dt.$radius-xs;
+        background: dt.$color-brand-white;
+        color: dt.$color-brand-black;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        text-decoration: none;
+        transition: transform 200ms var(--rc-ease), box-shadow 200ms var(--rc-ease);
+
+        &:hover,
+        &:focus-visible {
+            box-shadow: 0 10px 26px rgb(12 10 9 / 22%);
+            transform: translateY(-1px);
+        }
+    }
+
+    &--white &__action,
+    &--gray &__action {
+        background: dt.$color-brand-black;
+        color: dt.$color-brand-white;
+    }
+
+    &__note {
+        max-width: 80ch;
+        margin: 0;
+        color: var(--rc-muted);
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    @include tablet {
+        padding: 88px 0;
+
+        &__panel {
+            gap: 40px;
+        }
+
+        &__title {
+            font-size: 44px;
+            line-height: 54px;
+        }
+
+        &__grid {
+            gap: 40px;
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @include mobile {
+        padding: 64px 0;
+
+        &__container {
+            padding: 0 20px;
+        }
+
+        &__title {
+            font-size: 34px;
+            line-height: 42px;
+        }
+
+        &__description {
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        &__control-head {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        &__number {
+            /* Narrow enough that the "%" and "$" affixes sit against the digits
+               in browsers without field-sizing support. */
+            width: 2.6em;
+            text-align: left;
+        }
+
+        &__result {
+            padding: 26px 22px 30px;
+        }
+
+        /* Mirrors the mobile step of `results-stats__value`. */
+        &__clients-value,
+        &__result-value {
+            font-size: 40px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__range::-webkit-slider-thumb,
+        &__action,
+        &__number,
+        &__segment span {
+            transition: none;
+        }
+
+        &__range:hover::-webkit-slider-thumb {
+            transform: none;
+        }
+    }
+}

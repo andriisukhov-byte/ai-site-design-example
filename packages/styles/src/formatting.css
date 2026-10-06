@@ -1,0 +1,6 @@
+.ca-gradient-text {
+  color: transparent;
+  background: var(--gradient-gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+}

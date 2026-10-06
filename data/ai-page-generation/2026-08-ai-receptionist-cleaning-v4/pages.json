@@ -1,0 +1,704 @@
+[
+  {
+    "collection": "pages",
+    "path": "/ai-receptionist-for-cleaning-companies-v4/",
+    "title": "AI Receptionist for Cleaning Companies",
+    "status": "draft",
+    "template": "standard",
+    "seo": {
+      "metaTitle": "AI Receptionist for Cleaning Companies | Acme",
+      "metaDescription": "AI receptionist for cleaning companies: your agent answers every call, quotes the standard scope, books the crew, and then follows up on every open quote.",
+      "canonicalUrl": "https://acme.example/ai-receptionist-for-cleaning-companies-v4/",
+      "ogTitle": "AI Receptionist for Cleaning Companies",
+      "ogDescription": "Your agent answers on SMS, voice, web chat, WhatsApp, and email, qualifies the job, books the crew, and follows up."
+    },
+    "blocks": [
+      {
+        "type": "hero",
+        "variant": "default",
+        "eyebrow": "AI Receptionist for Cleaning Companies",
+        "title": "Turn Missed Calls Into || {{ Booked Jobs }}",
+        "description": "Your agent answers on SMS, voice, web chat, WhatsApp, and email, qualifies the job, books the crew, and follows up.",
+        "primaryAction": {
+          "label": "Get Started Free",
+          "href": "https://app.acme.example/signup",
+          "target": "_self"
+        },
+        "secondaryAction": {
+          "label": "Book a Demo",
+          "href": "#popup-open-popupRequestDemo",
+          "target": "_self"
+        },
+        "primaryNote": "No monthly fee",
+        "secondaryNote": "30-min consultation",
+        "mediaSize": "wide",
+        "cards": []
+      },
+      {
+        "type": "functional-capabilities",
+        "preset": "sales",
+        "eyebrow": "Day one scope",
+        "title": "What Your {{ AI Receptionist }} Agent Runs",
+        "description": "The full lead lifecycle on one canvas, with live access to your booking software, calendar, and CRM.",
+        "cards": [
+          {
+            "icon": "handshake",
+            "title": "Missed-Call Recovery",
+            "description": "Your agent answers live on voice and texts back every missed caller within seconds. Requests flagged urgent reach you the same hour.",
+            "width": "default"
+          },
+          {
+            "icon": "file-check-2",
+            "title": "Service Request Intake",
+            "description": "On first contact your agent captures property type, beds and baths, square footage, pets, and access notes, so your dispatcher reads a complete scope.",
+            "width": "default"
+          },
+          {
+            "icon": "clipboard-check",
+            "title": "Lead Qualification",
+            "description": "Your agent checks the service area, then separates one-time cleans from recurring intent before anyone on your team picks up the thread.",
+            "width": "default"
+          },
+          {
+            "icon": "messages-square",
+            "title": "Quote Coordination",
+            "description": "Standard scopes get a flat rate on the spot. Anything unusual, and your agent books a walk-through and forwards the photos to you.",
+            "width": "default"
+          },
+          {
+            "icon": "calendar-days",
+            "title": "Appointment Scheduling",
+            "description": "Your agent reads live availability and writes the booking into your calendar while the customer is still on the thread.",
+            "width": "default"
+          },
+          {
+            "icon": "bell",
+            "title": "Confirmation and Reminders",
+            "description": "Reminders land 24 hours and 1 hour before the visit. Your agent reschedules and chases no-shows without you.",
+            "width": "default"
+          },
+          {
+            "icon": "send",
+            "title": "Quote Follow-Up",
+            "description": "Open quotes get a nudge on day 1, day 3, and day 7. When the answer is no, your agent records why and passes it to you.",
+            "width": "default"
+          },
+          {
+            "icon": "triangle-alert",
+            "title": "Post-Visit Follow-Up",
+            "description": "After the visit your agent checks in and invites the customer to leave a review. Anything that went wrong reaches you the same day.",
+            "width": "default"
+          }
+        ]
+      },
+      {
+        "background": "gray",
+        "type": "pain-points-comparison",
+        "title": "Whoever Picks Up First Gets the {{ Booking }}",
+        "showColumnHeadings": true,
+        "leftHeading": "The Challenge",
+        "rightHeading": "Acme AI Receptionist",
+        "rows": [
+          {
+            "leftTitle": "Crews are on site, so the phone rings out",
+            "leftDescription": "85% of missed callers never call back, and the ones who do reach a competitor first (Allclean, 2025).",
+            "rightTitle": "Live answer, plus a text back in seconds",
+            "rightDescription": "Your agent picks up on voice and texts the caller who hung up, before they open the next listing."
+          },
+          {
+            "leftTitle": "The first reply lands hours after the request",
+            "leftDescription": "By then the customer has a quote from someone else and stops reading yours.",
+            "rightTitle": "First reply before the competition",
+            "rightDescription": "The reply lands in under a minute, day or night, and the slot holds while the customer decides."
+          },
+          {
+            "leftTitle": "Quotes go out and nothing happens",
+            "leftDescription": "The second follow-up depends on whoever remembers it, so open quotes go cold on their own.",
+            "rightTitle": "Follow-up that does not depend on memory",
+            "rightDescription": "Your agent nudges on a set cadence, and a \"no\" comes back to you with the reason attached."
+          },
+          {
+            "leftTitle": "Every channel is a different inbox",
+            "leftDescription": "Text, web chat, WhatsApp, and email each sit somewhere else, and one of them always gets missed.",
+            "rightTitle": "One thread per customer",
+            "rightDescription": "One thread follows the customer wherever they write next, context intact."
+          },
+          {
+            "leftTitle": "One-time cleans stay one-time",
+            "leftDescription": "Nobody asks for the second visit while the customer is still happy with the first.",
+            "rightTitle": "The recurring offer arrives on time",
+            "rightDescription": "Your agent makes the offer right after a good clean, sets the cadence, and takes payment on file."
+          }
+        ],
+        "action": {
+          "label": "Start Building Your Agent",
+          "href": "https://app.acme.example/signup",
+          "target": "_self"
+        }
+      },
+      {
+        "background": "white",
+        "type": "how-it-works",
+        "title": "How It Works",
+        "gradientText": "Works",
+        "subtitle": "From manual booking to a live AI receptionist in days, not quarters, and nobody has to write code.",
+        "openFirst": false,
+        "showStepNumbers": true,
+        "steps": [
+          {
+            "title": "Start From a Lead-Handling Template",
+            "description": "Pick the cleaning intake template and the flow arrives built, with the qualification questions already written."
+          },
+          {
+            "title": "Connect Your Stack and Channels",
+            "description": "Connect Jobber or ZenMaid, your calendar, your number, and the channels your customers already use."
+          },
+          {
+            "title": "Go Live and Tune as You Learn",
+            "description": "Watch the first conversations, adjust the script and the pricing rules, and widen the agent's remit from there."
+          }
+        ]
+      },
+      {
+        "background": "gray",
+        "type": "media-showcase",
+        "title": "Your {{ AI Receptionist }} in Action",
+        "description": "One canvas: calls, texts and email land in a single thread. The quote goes out with a price, and a negative review escalates to a person.",
+        "image": {
+          "id": "9940",
+          "src": "/media/2026/07/img-3-scaled.png",
+          "alt": "Acme canvas routing phone, text, and email into one thread with quote and booking steps"
+        }
+      },
+      {
+        "type": "channels-grid",
+        "title": "One AI Receptionist, Every {{ Channel }} Your Customers Use",
+        "description": "Younger residential customers text, older homeowners call, property managers email, rental hosts message through apps. The agent meets each one with the same context.",
+        "cards": [
+          {
+            "icon": "sms",
+            "title": "SMS",
+            "description": "The recovery channel for every missed call, plus reminders, en-route alerts, and review requests. 98% of texts are read (Sakari, 2025).",
+            "fullWidth": false
+          },
+          {
+            "icon": "voice",
+            "title": "Voice AI",
+            "description": "Answers on the first ring and books the slot, with no menu tree in the way. Works outbound for commercial follow-ups too.",
+            "fullWidth": false,
+            "image": {
+              "id": "9742",
+              "src": "/media/2026/06/image-109392.png",
+              "alt": "Voice AI agent scoping a cleaning job on a call"
+            }
+          },
+          {
+            "icon": "chat",
+            "title": "Web Chat",
+            "description": "Catches visitors on your pricing and service-area pages and turns the question into a booked visit.",
+            "fullWidth": false,
+            "image": {
+              "id": "9743",
+              "src": "/media/2026/06/image-109393.png",
+              "alt": "Web chat agent quoting a recurring clean on a pricing page"
+            }
+          },
+          {
+            "icon": "whatsapp",
+            "title": "WhatsApp",
+            "description": "Photo upload of the problem areas, square-footage estimates, and quick confirmations for rental hosts.",
+            "fullWidth": false,
+            "image": {
+              "id": "9741",
+              "src": "/media/2026/06/image-109391.png",
+              "alt": "WhatsApp thread with photos of rooms to be cleaned"
+            }
+          },
+          {
+            "icon": "mail",
+            "title": "Email",
+            "description": "Property managers, multi-site accounts, and lead-gen platforms that send requests as long threads.",
+            "fullWidth": true,
+            "image": {
+              "id": "9744",
+              "src": "/media/2026/06/image-109394.png",
+              "alt": "Email request from a property manager parsed into a booking"
+            }
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Stop Losing Bookings to a Phone Nobody Picks Up",
+        "description": "Free to start, pay only for what you use. Nothing to sign, nothing monthly, no per-seat fee, and a working agent live in days.",
+        "primaryAction": {
+          "label": "Get Started Free",
+          "href": "https://app.acme.example/signup",
+          "target": "_self"
+        },
+        "secondaryAction": {
+          "label": "Book a Demo",
+          "href": "#popup-open-popupRequestDemo",
+          "target": "_self"
+        }
+      },
+      {
+        "type": "industry-expertise",
+        "title": "The Platform Behind || Your {{ AI Receptionist }}",
+        "subtitle": "Your agent does structured work rather than chat. It reasons about the scope, writes to your booking software, and holds one customer profile as the channel changes.",
+        "visualType": "capabilities",
+        "button": {
+          "label": "See It In Action",
+          "href": "#popup-open-popupRequestDemo",
+          "target": "_self"
+        },
+        "hideBottomControls": false,
+        "autoplay": false,
+        "items": [
+          {
+            "icon": "brain",
+            "title": "Cognitive Reasoning + Live System Access",
+            "description": "Your agent reasons about the scope and reads your booking software mid-conversation, so the price and the slot it offers are the real ones."
+          },
+          {
+            "icon": "layers",
+            "title": "Template Center",
+            "description": "Cleaning intake, quote follow-up, and recurring plan flows arrive prebuilt. You adjust the questions instead of starting from an empty canvas."
+          },
+          {
+            "icon": "wand",
+            "title": "AI Concierge",
+            "description": "Describe the flow you want in plain words and the concierge assembles it on the canvas for you to review."
+          },
+          {
+            "icon": "globe",
+            "title": "Multi-Channel From One Canvas",
+            "description": "One agent works SMS, voice, chat and email from a single canvas. The customer moves between them and the thread continues."
+          },
+          {
+            "icon": "users",
+            "title": "Virtual AI Employees",
+            "description": "Run the receptionist beside a recruiting agent and a service agent, each with its own remit and the same connected stack."
+          }
+        ],
+        "infoCards": []
+      },
+      {
+        "type": "logo-grid",
+        "title": "Connects to Your || {{ Entire Cleaning Stack }}",
+        "description": "2,700+ integrations. The agent reads live data and updates the record inside the tools you already run, during the conversation.",
+        "columns": [
+          {
+            "heading": "Booking and Field Service",
+            "items": [
+              {
+                "image": {
+                  "id": "8938",
+                  "src": "/media/2026/05/cleaning-jobber.png",
+                  "alt": "Jobber logo, cleaning field-service software"
+                }
+              },
+              {
+                "image": {
+                  "id": "8939",
+                  "src": "/media/2026/05/cleaning-zenmaid.png",
+                  "alt": "ZenMaid logo, maid service scheduling software"
+                }
+              },
+              {
+                "image": {
+                  "id": "8691",
+                  "src": "/media/2026/05/HousecallPro.svg",
+                  "alt": "Housecall Pro logo, home service management software"
+                }
+              },
+              {
+                "image": {
+                  "id": "8941",
+                  "src": "/media/2026/05/cleaning-bookingkoala.png",
+                  "alt": "BookingKoala logo, cleaning booking software"
+                }
+              },
+              {
+                "image": {
+                  "id": "8942",
+                  "src": "/media/2026/05/cleaning-launch27.png",
+                  "alt": "Launch27 logo, cleaning booking software"
+                }
+              }
+            ]
+          },
+          {
+            "heading": "Communications",
+            "items": [
+              {
+                "image": {
+                  "id": "8946",
+                  "src": "/media/2026/05/cleaning-twilio-scaled.png",
+                  "alt": "Twilio logo, SMS and voice provider"
+                }
+              },
+              {
+                "image": {
+                  "id": "8947",
+                  "src": "/media/2026/05/cleaning-ringcentral-scaled.png",
+                  "alt": "RingCentral logo, business phone system"
+                }
+              },
+              {
+                "image": {
+                  "id": "9967",
+                  "src": "/media/2026/07/SuperPhone-Logo.svg",
+                  "alt": "SuperPhone logo, text messaging platform"
+                }
+              },
+              {
+                "image": {
+                  "id": "8949",
+                  "src": "/media/2026/05/cleaning-whatsapp-business.svg",
+                  "alt": "WhatsApp Business logo"
+                },
+                "subLabel": "business",
+                "label": "WhatsApp"
+              },
+              {
+                "image": {
+                  "id": "9952",
+                  "src": "/media/2026/07/gmail-logo_brandlogos.net_eqenr.png",
+                  "alt": "Gmail logo"
+                }
+              }
+            ]
+          },
+          {
+            "heading": "Payments",
+            "items": [
+              {
+                "image": {
+                  "id": "8953",
+                  "src": "/media/2026/05/cleaning-stripe.png",
+                  "alt": "Stripe logo, payment processor"
+                }
+              },
+              {
+                "image": {
+                  "id": "8954",
+                  "src": "/media/2026/05/cleaning-square-scaled.png",
+                  "alt": "Square logo, card payment provider"
+                }
+              },
+              {
+                "image": {
+                  "id": "8955",
+                  "src": "/media/2026/05/cleaning-quickbooks-payments-e1781527960473.png",
+                  "alt": "QuickBooks Payments logo, invoicing and payments"
+                }
+              },
+              {
+                "image": {
+                  "id": "8956",
+                  "src": "/media/2026/05/cleaning-paypal.png",
+                  "alt": "PayPal logo, payment provider"
+                }
+              },
+              {
+                "image": {
+                  "id": "9948",
+                  "src": "/media/2026/07/GoCardless_Wordmark_Regular_Pos_1x.png",
+                  "alt": "GoCardless logo, direct debit provider"
+                }
+              }
+            ]
+          },
+          {
+            "heading": "Lead Sources",
+            "items": [
+              {
+                "image": {
+                  "id": "8959",
+                  "src": "/media/2026/05/cleaning-yelp.png",
+                  "alt": "Yelp logo, local review and lead platform"
+                }
+              },
+              {
+                "image": {
+                  "id": "8966",
+                  "src": "/media/2026/05/cleaning-nextdoor.png",
+                  "alt": "Nextdoor logo, neighborhood network"
+                }
+              },
+              {
+                "image": {
+                  "id": "9976",
+                  "src": "/media/2026/07/Google-Sheets-1.png",
+                  "alt": "Google Sheets logo"
+                },
+                "label": "Google Sheets"
+              },
+              {
+                "image": {
+                  "id": "9971",
+                  "src": "/media/2026/07/HubSpot_Logo.svg-scaled.png",
+                  "alt": "HubSpot logo, CRM"
+                }
+              },
+              {
+                "image": {
+                  "id": "9969",
+                  "src": "/media/2026/07/ZoomInfo-Logo-scaled.png",
+                  "alt": "ZoomInfo logo, B2B contact database"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "difference",
+        "title": "{{ What Acme Does }} That Standard Cleaning Answering Services Don't",
+        "subtitle": "Your evenings are covered either way. Your pipeline is not, unless whatever answers can price a job and hold a slot.",
+        "leftTitle": "Standard Cleaning Answering Service / Chatbot",
+        "rightTitle": "Acme AI Receptionist for Cleaning Companies",
+        "leftItems": [
+          {
+            "text": "Takes a message and forwards it to whoever reads it next"
+          },
+          {
+            "text": "Cannot see your calendar, so it never offers a real slot"
+          },
+          {
+            "text": "Follows a fixed script and breaks on anything unusual"
+          },
+          {
+            "text": "Quotes nothing, so pricing waits for a callback"
+          },
+          {
+            "text": "Lives on one channel and loses the thread on the others"
+          },
+          {
+            "text": "Leaves the CRM record for someone to type in later"
+          },
+          {
+            "text": "Charges a monthly retainer whatever the call volume"
+          }
+        ],
+        "rightItems": [
+          {
+            "text": "Runs the lead end to end and hands you a booked job"
+          },
+          {
+            "text": "Books the crew on a real calendar instead of a callback list"
+          },
+          {
+            "text": "Reasons about the scope and asks the question the script missed"
+          },
+          {
+            "text": "Prices the standard job on the spot and sends the rest to a walk-through"
+          },
+          {
+            "text": "Keeps one thread per customer instead of one inbox per channel"
+          },
+          {
+            "text": "Writes the booking and the customer record while the conversation runs"
+          },
+          {
+            "text": "Costs credits per action, so slow months cost less"
+          }
+        ],
+        "action": {
+          "label": "Talk to Sales",
+          "href": "#popup-open-popupRequestDemo",
+          "target": "_self"
+        }
+      },
+      {
+        "background": "white",
+        "type": "results-stats",
+        "title": "{{ The Measurable Shift }} From Day One",
+        "items": [
+          {
+            "value": "24/7",
+            "description": "Coverage on every inbound route, including nights, weekends and the hours nobody is at the desk."
+          },
+          {
+            "value": "<1 min",
+            "description": "First response on every channel. The recovery text lands while the caller is still choosing."
+          },
+          {
+            "value": "21x",
+            "description": "Higher chance of qualifying a lead when the reply comes in 5 minutes rather than 30 (HBR via Verse.ai, 2025)."
+          },
+          {
+            "value": "40%",
+            "description": "The top of the 25-40% missed-call range cleaning operators live with today, and the gap this closes (Allclean, 2025)."
+          }
+        ],
+        "infoNote": "Indicative outcomes based on industry benchmarks for cleaning operations. Results vary by deployment, service mix, and configuration."
+      },
+      {
+        "background": "gray",
+        "type": "pricing-cards",
+        "title": "Pricing",
+        "description": "Pay only for what you use. Full visibility on every credit spent.",
+        "cards": [
+          {
+            "accent": "gradient",
+            "title": "Pay-as-you-go",
+            "description": "No subscription. No monthly fee. Buy credits from $10.",
+            "features": [
+              {
+                "text": "5,000 credits loaded on signup"
+              },
+              {
+                "text": "Full canvas and all AI features"
+              },
+              {
+                "text": "All integrations and templates"
+              },
+              {
+                "text": "Free messaging channels"
+              },
+              {
+                "text": "Up to 5 user seats"
+              },
+              {
+                "text": "Production deployment"
+              },
+              {
+                "text": "Human chat support*"
+              },
+              {
+                "text": "Credits never expire"
+              }
+            ],
+            "note": "* activates on first credit purchase",
+            "button": {
+              "label": "Get Started Free",
+              "href": "https://app.acme.example/signup",
+              "target": "_self"
+            }
+          },
+          {
+            "accent": "dark",
+            "title": "Enterprise",
+            "description": "Custom plan. Annual prepay at a negotiated rate.",
+            "features": [
+              {
+                "text": "Annual credit package"
+              },
+              {
+                "text": "Custom user seats"
+              },
+              {
+                "text": "SSO"
+              },
+              {
+                "text": "Bring your own LLM API keys"
+              },
+              {
+                "text": "Extended usage logs"
+              },
+              {
+                "text": "Assisted onboarding and training"
+              },
+              {
+                "text": "Agents built by the Acme team"
+              },
+              {
+                "text": "Premium support and SLA"
+              }
+            ],
+            "button": {
+              "label": "Talk to Sales",
+              "href": "#popup-open-popupRequestDemo",
+              "target": "_self"
+            }
+          }
+        ],
+        "info": "Per-action costs and worked examples are on the <a href=\"/pricing/\">pricing page</a>."
+      },
+      {
+        "background": "white",
+        "type": "security",
+        "title": "Enterprise-Grade",
+        "titleGradient": "Security & Compliance",
+        "subtitle": "Built for cleaning operators handling sensitive customer data - home addresses, access instructions, payment on file, and recorded client intake calls.",
+        "cards": [
+          {
+            "icon": "database_zap",
+            "title": "Data Protection",
+            "description": "Conversations, recordings, transcripts, and customer records are encrypted in transit and at rest. Retention windows are configurable to match your own policy."
+          },
+          {
+            "icon": "file_key",
+            "title": "Privacy Assurance",
+            "description": "Your customer data stays yours. Call recordings and CRM records never train public AI models, and your own LLM keys keep calls inside your provider account."
+          },
+          {
+            "icon": "shield_ellipsis",
+            "title": "Secure System Integration",
+            "description": "Role-based access governs every connection to your booking software, calendar, and payment processor. Reads and writes run over encrypted channels."
+          },
+          {
+            "icon": "text_search",
+            "title": "Audit & Monitoring",
+            "description": "Full activity logs for every call, message, booking, and system write, with time stamps for dispute resolution and consent-to-record obligations."
+          }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions for",
+        "titleGradient": "AI Receptionist for Cleaning Companies",
+        "searchPlaceholder": "Search FAQ",
+        "items": [
+          {
+            "question": "How is an AI receptionist for cleaning companies different from an answering service?",
+            "answer": "<p>The difference is what happens after the greeting. Your agent asks the scope questions and checks your service area. It prices a standard clean and books the crew on your calendar, so the customer record exists in your booking software before the call ends.</p>",
+            "category": "product"
+          },
+          {
+            "question": "What does the agent handle, and what still reaches a human?",
+            "answer": "<p>The agent handles intake, qualification, standard quoting, booking, reminders, and follow-up. It routes to a human on four triggers: a walk-through estimate, an urgent flag, a disputed charge, or a request outside the rules you set. Every handoff arrives with the full transcript attached.</p>",
+            "category": "product"
+          },
+          {
+            "question": "How does it handle one-time deep cleans versus recurring customers?",
+            "answer": "<p>Both run the same intake, then split. A one-time scope gets a flat rate and the earliest slot that fits the crew. A recurring lead gets a cadence, a plan price, and payment on file, and the agent returns after the first visit to offer the second.</p>",
+            "category": "product"
+          },
+          {
+            "question": "Does it work for our cleaning type, including commercial walk-throughs?",
+            "answer": "<p>Residential maid, commercial, janitorial, and vacation-rental turnover all follow the same qualify, quote, book, remind, follow-up sequence. Only the variables change. Commercial accounts that need a site visit get a walk-through booked instead of a price, with the square footage and access notes already captured.</p>",
+            "category": "product"
+          },
+          {
+            "question": "What changes in our speed-to-lead and missed-call rate?",
+            "answer": "<p>Every inbound request gets a first response in under a minute, including nights and weekends, and every missed call gets a text back within seconds. Worth saying what this does not fix. If one person already answers every call inside working hours, your voicemail is fine and this will not pay for itself.</p>",
+            "category": "business"
+          },
+          {
+            "question": "Who owns the customer data and the conversation records?",
+            "answer": "<p>You do. Call recordings, transcripts, photos, and customer records sit in your account, and Acme never uses them to train public AI models. Retention windows are yours to set. If you bring your own LLM API key, the AI calls stay inside your provider relationship.</p>",
+            "category": "support"
+          },
+          {
+            "question": "How long does deployment take?",
+            "answer": "<p>Between 5 and 15 days for a lead-handling agent, depending on how many channels you switch on and how clean your booking data is. The template arrives built, so the work is connecting your stack, setting pricing rules, and listening to the first conversations.</p>",
+            "category": "support"
+          },
+          {
+            "question": "How do credits map to call and message volume?",
+            "answer": "<p>Each agent action draws a set credit cost: a conversation turn, an availability lookup, a calendar write, a customer record update. A text-led month costs less than a voice-led one at the same lead volume, and a slow month costs less than a peak one. Nothing is billed per seat.</p>",
+            "category": "pricing"
+          },
+          {
+            "question": "Can the platform extend beyond lead handling later?",
+            "answer": "<p>Yes. The same canvas and the same connected stack run cleaner recruiting, customer service on active jobs, supply ordering, and contract renewals. You add a flow rather than buying another tool. The platform view of the same agent sits on the <a href=\"/conversational-ai-platform/\">conversational AI platform page</a>.</p>",
+            "category": "platform_overview"
+          }
+        ]
+      }
+    ]
+  }
+]

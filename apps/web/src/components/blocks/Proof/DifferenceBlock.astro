@@ -1,0 +1,114 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_difference.scss';
+
+type DifferenceBlock = Extract<PageBlock, { type: 'difference' }>;
+
+interface Props {
+  block: DifferenceBlock;
+}
+
+const { block } = Astro.props;
+
+const defaultLeftItems = [
+  'Prompt-based agents that hope for the best',
+  'Separate tools for chat, automation, and background agents',
+  'You figure it out alone from docs and tutorials',
+  'Onboarding ends at signup. What you build is your problem.',
+  'Chat-only or voice-only. Pick a channel',
+];
+
+const defaultRightItems = [
+  'Structured reasoning with decision frameworks and input validation',
+  'Three capabilities native on one platform - combinable in a single workflow',
+  'Human expert onboarding included. AI Concierge to generate your first canvas',
+  'We stay with you until your first agent is live and working. No charge until it runs.',
+  'Chat, voice, email, WhatsApp, SMS - same agent, any channel',
+];
+
+const normalizeItem = (item: DifferenceBlock['leftItems'][number] | string) =>
+  typeof item === 'string' ? item : item.text;
+
+const leftItems = (block.leftItems?.map(normalizeItem).filter(Boolean) ?? []);
+const rightItems = (block.rightItems?.map(normalizeItem).filter(Boolean) ?? []);
+const action = block.action ?? {
+  label: 'See It In Action',
+  href: '#popup-open-popupRequestDemo',
+};
+const actionTarget = action.target && action.target !== '_self' ? action.target : undefined;
+
+// The left column lists what the alternative does NOT do. A checkmark there
+// reads the seven drawbacks as seven approved features, so it gets an
+// exclusion mark instead, on the same disc as the right column's check.
+function excludedIcon(): string {
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="13" fill="#0C0A09"/><path d="M12.2 12.2 19.8 19.8M19.8 12.2 12.2 19.8" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/></svg>';
+}
+
+function checkIcon(variant: 'dark' | 'gradient', index: number): string {
+  if (variant === 'gradient') {
+    const id = `differenceCheckGradient${index}`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false"><path d="M3 16C3 8.8203 8.8203 3 16 3C23.1797 3 29 8.8203 29 16C29 23.1797 23.1797 29 16 29C8.8203 29 3 23.1797 3 16ZM21.0301 11.5893C20.5823 11.266 19.9572 11.3668 19.6339 11.8145L14.8371 18.4562C14.7116 18.6299 14.4572 18.6418 14.316 18.4805L12.3083 16.1859C11.9446 15.7703 11.3128 15.7282 10.8972 16.0919C10.4815 16.4555 10.4394 17.0873 10.8031 17.5029L12.8109 19.7975C13.7988 20.9266 15.5801 20.8434 16.4585 19.6272L21.2552 12.9855C21.5786 12.5378 21.4778 11.9127 21.0301 11.5893Z" fill="url(#${id})"/><defs><linearGradient id="${id}" x1="3" y1="3" x2="33.0875" y2="9.21643" gradientUnits="userSpaceOnUse"><stop stop-color="#3A87D9"/><stop offset="0.25" stop-color="#2F1A6B"/><stop offset="0.5" stop-color="#200000"/><stop offset="0.75" stop-color="#AD3822"/><stop offset="1" stop-color="#F7A75F"/></linearGradient></defs></svg>`;
+  }
+
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false"><path d="M3 16C3 8.8203 8.8203 3 16 3C23.1797 3 29 8.8203 29 16C29 23.1797 23.1797 29 16 29C8.8203 29 3 23.1797 3 16ZM21.0301 11.5893C20.5823 11.266 19.9572 11.3668 19.6339 11.8145L14.8371 18.4562C14.7116 18.6299 14.4572 18.6418 14.316 18.4805L12.3083 16.1859C11.9446 15.7703 11.3128 15.7282 10.8972 16.0919C10.4815 16.4555 10.4394 17.0873 10.8031 17.5029L12.8109 19.7975C13.7988 20.9266 15.5801 20.8434 16.4585 19.6272L21.2552 12.9855C21.5786 12.5378 21.4778 11.9127 21.0301 11.5893Z" fill="#0C0A09"/></svg>';
+}
+---
+
+<section class="difference">
+  <div class="difference__container container-wide">
+    <header class="difference__header">
+      <h2 class="difference__title"><FormattedText text={block.title || 'The {{ Acme }} Difference'} /></h2>
+      {(block.subtitle || 'Built for People Who Think in Processes') && (
+        <p class="difference__subtitle">{block.subtitle || 'Built for People Who Think in Processes'}</p>
+      )}
+    </header>
+
+    <div class="difference__grid">
+      <article class="difference__column difference__column--left">
+        <div class="difference__column-hero">
+          <span class="difference__hero-icon difference__hero-icon--left" aria-hidden="true">
+            <img src="/assets/blocks/difference/hero-left-icon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <h3 class="difference__column-title">{block.leftTitle || 'Other Tools'}</h3>
+          <span class="difference__hero-art difference__hero-art--left" aria-hidden="true">
+            <img src="/assets/blocks/difference/art-left.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+        </div>
+        <ul class="difference__list">
+          {(leftItems.length ? leftItems : defaultLeftItems).map((item) => (
+            <li class="difference__item">
+              <span class="difference__item-icon" set:html={excludedIcon()} />
+              <span class="difference__item-text">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      <article class="difference__column difference__column--right">
+        <div class="difference__column-hero">
+          <span class="difference__hero-icon difference__hero-icon--right" aria-hidden="true">
+            <img src="/assets/blocks/difference/hero-right-icon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <h3 class="difference__column-title">{block.rightTitle || 'Acme'}</h3>
+          <span class="difference__hero-art difference__hero-art--right" aria-hidden="true">
+            <img src="/assets/blocks/difference/art-right.png" alt="" loading="lazy" decoding="async" />
+          </span>
+        </div>
+        <ul class="difference__list difference__list--accent">
+          {(rightItems.length ? rightItems : defaultRightItems).map((item, index) => (
+            <li class="difference__item">
+              <span class="difference__item-icon" set:html={checkIcon('gradient', index)} />
+              <span class="difference__item-text">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="difference__actions">
+          <a class="c-btn c-btn--primary c-btn--lg difference__button" href={action.href} target={actionTarget}>
+            <span class="c-btn__label">{action.label}</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

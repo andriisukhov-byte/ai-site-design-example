@@ -1,0 +1,79 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "e0daf8a-dirty"
+  },
+  "generatedAt": "2026-07-26T23:06:16.378Z",
+  "mode": "source-target-diff",
+  "targetBase": "http://localhost:4321",
+  "sourceBase": "https://dev.acme.example",
+  "routes": [
+    "/ai-agent-use-cases/",
+    "/guide/ai-youtube-automation-script-generator/"
+  ],
+  "outDir": "data/source/archive-single-visual-after-thumbnail",
+  "routeCount": 2,
+  "findingCount": 0,
+  "findings": [],
+  "results": [
+    {
+      "path": "/ai-agent-use-cases/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/ai-agent-use-cases/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-after-thumbnail/ai-agent-use-cases/target.png",
+        "width": 1440,
+        "height": 10008,
+        "nonWhitePixels": 2455573,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/ai-agent-use-cases/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-after-thumbnail/ai-agent-use-cases/source.png",
+        "width": 1440,
+        "height": 10263,
+        "nonWhitePixels": 2378602,
+        "consoleErrorCount": 5
+      },
+      "diff": {
+        "pixels": 1191458,
+        "ratio": 0.08267399968913758,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual-after-thumbnail\\ai-agent-use-cases\\diff.png"
+      }
+    },
+    {
+      "path": "/guide/ai-youtube-automation-script-generator/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/guide/ai-youtube-automation-script-generator/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-after-thumbnail/guide-ai-youtube-automation-script-generator/target.png",
+        "width": 1440,
+        "height": 7676,
+        "nonWhitePixels": 2271262,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/guide/ai-youtube-automation-script-generator/",
+        "status": 200,
+        "screenshotPath": "data/source/archive-single-visual-after-thumbnail/guide-ai-youtube-automation-script-generator/source.png",
+        "width": 1440,
+        "height": 7932,
+        "nonWhitePixels": 2212305,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 1164692,
+        "ratio": 0.10536918823461293,
+        "threshold": 0.18,
+        "imagePath": "data\\source\\archive-single-visual-after-thumbnail\\guide-ai-youtube-automation-script-generator\\diff.png"
+      }
+    }
+  ]
+}

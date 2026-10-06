@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "f12349e-dirty"
+  },
+  "distDir": "apps/web/dist",
+  "publicDir": "apps/web/public",
+  "manifestPath": "data/source/attachment-media.json",
+  "htmlFiles": 334,
+  "missingImportedAssets": 0,
+  "affectedRoutes": 0,
+  "byManifestStatus": {
+    "missing-original": 0,
+    "recorded": 0,
+    "not-in-manifest": 0
+  },
+  "findingsWithLocalCandidates": 0,
+  "topMissingAssets": [],
+  "findings": [],
+  "truncatedFindings": 0
+}

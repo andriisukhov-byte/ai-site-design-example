@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "000bace-dirty"
+  },
+  "generatedAt": "2026-07-27T00:01:42.447Z",
+  "mode": "source-target-diff",
+  "targetBase": "http://localhost:4321",
+  "sourceBase": "https://dev.acme.example",
+  "routes": [
+    "/news/"
+  ],
+  "outDir": "data/source/news-visual-mobile-final",
+  "routeCount": 1,
+  "findingCount": 0,
+  "findings": [],
+  "results": [
+    {
+      "path": "/news/",
+      "target": {
+        "ok": true,
+        "url": "http://localhost:4321/news/",
+        "status": 200,
+        "screenshotPath": "data/source/news-visual-mobile-final/news/target.png",
+        "width": 390,
+        "height": 4881,
+        "nonWhitePixels": 871651,
+        "consoleErrorCount": 0
+      },
+      "source": {
+        "ok": true,
+        "url": "https://dev.acme.example/news/",
+        "status": 200,
+        "screenshotPath": "data/source/news-visual-mobile-final/news/source.png",
+        "width": 390,
+        "height": 4931,
+        "nonWhitePixels": 885224,
+        "consoleErrorCount": 3
+      },
+      "diff": {
+        "pixels": 132035,
+        "ratio": 0.06936104938563452,
+        "threshold": 0.2,
+        "imagePath": "data\\source\\news-visual-mobile-final\\news\\diff.png"
+      }
+    }
+  ]
+}

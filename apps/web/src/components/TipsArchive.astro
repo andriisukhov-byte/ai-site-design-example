@@ -1,0 +1,145 @@
+---
+import type { PageBlock, PageDocument } from '@acme/blocks';
+import tipsPresentationReference from '../../../../data/source/tips-presentation-reference.json';
+
+type RichTextBlock = Extract<PageBlock, { type: 'rich-text' }>;
+
+interface Props {
+  page: PageDocument;
+  items: PageDocument[];
+}
+
+const { page, items } = Astro.props;
+const productionPaths = new Set(tipsPresentationReference.records.map((record) => record.path));
+const sortedItems = items
+  .filter((item) => productionPaths.has(item.path))
+  .sort(comparePublishedDesc);
+const categoryOrder = ['Applications', 'Conversational AI', 'Knowledge Base'];
+const categories = [...new Set(sortedItems.map((item) => item.tipCard?.category).filter((value): value is string => Boolean(value)))]
+  .sort((left, right) => {
+    const leftIndex = categoryOrder.indexOf(left);
+    const rightIndex = categoryOrder.indexOf(right);
+    return (leftIndex < 0 ? categoryOrder.length : leftIndex) - (rightIndex < 0 ? categoryOrder.length : rightIndex)
+      || left.localeCompare(right);
+  });
+const perPage = 15;
+const firstPageItems = sortedItems.slice(0, perPage);
+const maxPages = Math.max(1, Math.ceil(sortedItems.length / perPage));
+const payload = sortedItems.map((item) => ({
+  title: item.title,
+  path: item.path,
+  excerptHtml: excerptFor(item),
+  searchText: stripHtml(`${item.title} ${excerptFor(item)} ${item.seo.metaDescription ?? ''}`),
+  category: item.tipCard?.category ?? '',
+  archiveWidth: item.tipCard?.archiveWidth ?? 1,
+  icons: item.tipCard?.icons ?? [],
+}));
+const payloadJson = JSON.stringify({ items: payload, perPage }).replace(/</g, '\\u003c');
+
+function comparePublishedDesc(left: PageDocument, right: PageDocument): number {
+  return dateValue(right.publishedAt) - dateValue(left.publishedAt) || left.title.localeCompare(right.title);
+}
+
+function dateValue(value?: string): number {
+  return value ? new Date(value.replace(' ', 'T')).getTime() || 0 : 0;
+}
+
+function richTextFor(page: PageDocument): string {
+  return (page.blocks.find((block): block is RichTextBlock => block.type === 'rich-text')?.html ?? '').trim();
+}
+
+function excerptFor(item: PageDocument): string {
+  return richTextFor(item) || item.seo.metaDescription || '';
+}
+
+function stripHtml(value: string): string {
+  return value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+---
+
+<div class="tips" data-tips-root>
+  <div class="tips__hero">
+    <div class="tips__hero-content">
+      <h1 class="tips__hero-title">{page.title}</h1>
+      <div class="tips__hero-description">
+        <p>Practical tips and proven techniques to help you get the</p>
+        <p>most out of <span>Acme</span></p>
+      </div>
+
+      <form class="tips__search" data-tips-search-form>
+        <div class="tips-search-field">
+          <input type="search" name="tips-s" value="" placeholder="Search" autocomplete="off" data-tips-search />
+          <button type="submit" class="tips-search-field__btn" aria-label="Search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M16.9265 17.04L20.3996 20.4M19.2796 11.44C19.2796 15.7699 15.7695 19.28 11.4396 19.28C7.1097 19.28 3.59961 15.7699 3.59961 11.44C3.59961 7.11006 7.1097 3.59998 11.4396 3.59998C15.7695 3.59998 19.2796 7.11006 19.2796 11.44Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="tips__main">
+    <aside class="tips__sidebar">
+      <p class="tips__sidebar-title">Browse by Category</p>
+      <div class="tips__categories" data-tips-categories>
+        <button type="button" data-cat="" class="is-active">All</button>
+        {categories.map((category) => <button type="button" data-cat={category}>{category}</button>)}
+      </div>
+    </aside>
+
+    <div class="tips__content">
+      <div class="tips__stats" data-tips-stats>
+        <strong>Showing 1 - {Math.min(perPage, sortedItems.length)} of {sortedItems.length} results</strong> <span>in All</span>
+      </div>
+      <div class="tips__grid" data-tips-grid>
+        {firstPageItems.map((item) => (
+          <article class:list={['tips-card', `tips-card--span-${item.tipCard?.archiveWidth ?? 1}`]}>
+            <div class="tips-card__inner">
+              {Boolean(item.tipCard?.icons.length) && (
+                <div class="tips-card__icons">
+                  {item.tipCard?.icons.map((icon, index) => (
+                    <div class:list={['tips-card__icon', { 'is-overlap': index === 1 }]}>
+                      <img src={icon.src} alt={item.title} width={icon.width} height={icon.height} loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+              )}
+              <h3 class="tips-card__title">{item.title}</h3>
+              <div class="tips-card__excerpt" set:html={excerptFor(item)} />
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="tips__pagination-wrap" data-tips-pagination>
+        {maxPages > 1 && (
+          <nav class="tips-pagination" data-max={maxPages}>
+            <button type="button" class="tips-pagination__prev" data-page="1" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M19 12H5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                <path d="M11 6L5 12L11 18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="tips-pagination__pages">
+              {Array.from({ length: maxPages }, (_, index) => (
+                <button type="button" class:list={['tips-pagination__page', { 'is-active': index === 0 }]} data-page={index + 1}>{index + 1}</button>
+              ))}
+            </div>
+            <button type="button" class="tips-pagination__next" data-page="2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12H19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </nav>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <script is:inline type="application/json" data-tips-payload set:html={payloadJson}></script>
+</div>
+
+<script>
+  import '../scripts/tips-archive';
+</script>

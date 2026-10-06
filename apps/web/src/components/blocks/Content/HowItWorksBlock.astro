@@ -1,0 +1,99 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_how-it-works.scss';
+
+type HowItWorksBlock = Extract<PageBlock, { type: 'how-it-works' }>;
+
+interface Props {
+  block: HowItWorksBlock;
+}
+
+const { block } = Astro.props;
+const steps = block.steps.filter((step) => step.title || step.description || step.label);
+const stepColumns = steps.length % 3 === 0 ? 3 : 4;
+const dayRanges = steps.map((step) => {
+  const match = (step.label ?? '').match(/(\d+)\s*[-\u2013\u2014]\s*(\d+)/u) ?? (step.label ?? '').match(/(\d+)/u);
+  if (!match) return [0, 0];
+  const start = Number(match[1]);
+  const end = Number(match[2] ?? match[1]);
+  return start >= 1900 || end >= 1900 ? [0, 0] : [start, end];
+});
+const dayTotal = Math.max(0, ...dayRanges.map((range) => range[1]));
+const hasContent = block.eyebrow || block.title || block.subtitle || steps.length || block.button?.href || block.infoNote;
+const titleText = block.title && block.gradientText && !block.title.includes('{{')
+  ? block.title.replace(block.gradientText, `{{ ${block.gradientText} }}`)
+  : block.title;
+---
+
+{hasContent && (
+  <section class:list={['how-it-works', `how-it-works--${block.background}`]} data-how-it-works>
+    <div class="how-it-works__container container-wide">
+      <header class="how-it-works__header">
+        {block.eyebrow && <p class="how-it-works__eyebrow">{block.eyebrow}</p>}
+        {block.title && (
+          <h2 class="how-it-works__title">
+            <FormattedText text={titleText ?? ''} />
+          </h2>
+        )}
+        {block.subtitle && <p class="how-it-works__subtitle">{block.subtitle}</p>}
+      </header>
+
+      {steps.length > 0 && (
+        <>
+          <div
+            class:list={['how-it-works__steps', `how-it-works__steps--cols-${stepColumns}`]}
+            role="tablist"
+            aria-label={block.title || 'How it works'}
+            data-day-total={dayTotal}
+            data-open-first={block.openFirst ? '1' : undefined}
+          >
+            {steps.map((step, index) => {
+              const [dayStart, dayEnd] = dayRanges[index];
+              const cardTitle = step.title ?? '';
+              const isActive = block.openFirst && index === 0;
+              return (
+                <button
+                  class:list={['how-it-works__card', { 'is-active': isActive }]}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive ? 'true' : 'false'}
+                  data-how-step={index}
+                  data-day-start={dayStart > 0 ? dayStart : undefined}
+                  data-day-end={dayStart > 0 ? dayEnd : undefined}
+                >
+                  <span class="how-it-works__card-content">
+                    <span class="how-it-works__card-body">
+                      <span class="how-it-works__card-heading">
+                        {block.showStepNumbers !== false && <span class="how-it-works__number">{index + 1}</span>}
+                        <span class:list={['how-it-works__card-title', { 'how-it-works__card-title--long': cardTitle.length > 20 }]}>{cardTitle}</span>
+                      </span>
+                      {step.description && <span class="how-it-works__description">{step.description}</span>}
+                    </span>
+                    {step.label && <span class="how-it-works__label">{step.label}</span>}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <div class="how-it-works__progress" aria-hidden="true"><span class="how-it-works__progress-bar"></span></div>
+        </>
+      )}
+
+      {block.button?.href && block.button.label && (
+        <a class="c-btn c-btn--primary c-btn--lg how-it-works__button" href={block.button.href} target={block.button.target} rel={block.button.target === '_blank' ? 'noopener' : undefined}>
+          <span class="c-btn__label">{block.button.label}</span>
+        </a>
+      )}
+
+      {block.infoNote && (
+        <aside class="how-it-works__note">
+          <span class="how-it-works__note-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+          <p class="how-it-works__note-text">{block.infoNote}</p>
+        </aside>
+      )}
+    </div>
+  </section>
+)}
+
+{hasContent && <script is:inline src="/assets/blocks/how-it-works/how-it-works.js" defer></script>}

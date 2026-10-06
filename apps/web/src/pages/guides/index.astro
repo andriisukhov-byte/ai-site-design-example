@@ -1,0 +1,26 @@
+---
+import GuidesArchive from '../../components/GuidesArchive.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getSourcePage, getSourcePages } from '../../data/source-pages';
+
+import '../../styles/templates/_guides.scss';
+
+const page = await getSourcePage('/guides/');
+const sourcePages = await getSourcePages();
+
+if (!page) {
+  throw new Error('Missing CMS document for /guides/.');
+}
+
+const guideItems = sourcePages
+  .filter((page) => {
+    const isGuideCollection = page.collection === 'guides' || page.template === 'guide';
+    const isGuidePath = page.path.startsWith('/guide/') || page.path.startsWith('/guides/');
+    return isGuideCollection && isGuidePath && page.path !== '/guides/' && page.status === 'published';
+  });
+
+---
+
+<SiteLayout page={page}>
+  <GuidesArchive items={guideItems} />
+</SiteLayout>

@@ -1,0 +1,28 @@
+{
+  "id": "GLOBAL-100",
+  "title": "Plan a coordinated Web and CMS migration slice",
+  "description": "Split the named objective into dependency-gated Web, CMS, QA, review, and integration lanes. Delegate lane-level decomposition only where it reduces context duplication.",
+  "kind": "orchestration",
+  "lane": "global",
+  "role": "global-orchestrator",
+  "priority": 10,
+  "baseBranch": "codex/clean-astro-migration",
+  "branch": "codex/agent/global-100-plan",
+  "allowedFiles": [],
+  "sharedFiles": [
+    "packages/blocks/src/schemas.ts",
+    "packages/blocks/src/registry.ts",
+    "apps/cms/src/collections/RoutableContent.ts",
+    "apps/web/src/components/BlockRenderer.astro"
+  ],
+  "acceptance": [],
+  "contextFiles": [
+    "ai/teams/orchestrator.md",
+    "ai/workflows/parallel-agent-orchestration.md",
+    "docs/migration/open-questions.md"
+  ],
+  "dependsOn": [],
+  "tokenBudget": 10000,
+  "reasoningEffort": "high",
+  "delivery": "report"
+}

@@ -1,0 +1,81 @@
+{
+  "sourceUrl": "https://acme.example/blog/",
+  "capturedAt": "2026-07-30T12:45:00.000Z",
+  "note": "Pinned production archive presentation evidence. Paths and labels preserve the current production ordering, filters, ratings, read-time text, and featured excerpt without hotlinking production images.",
+  "featuredPath": "/ai-receptionists-for-cleaning-services/",
+  "featuredExcerpt": "An AI receptionist for a cleaning company is software that answers inbound calls, texts, and messages, qualifies the job, and books it on your live calendar — automatically, around the clock. For cleaning operators who lose bookings every time a crew is mid-job or a lead lands at 10 p.m., it closes the single biggest […]",
+  "featuredRating": "4.8/5 - (5 votes)",
+  "featuredReadTime": "8 min read",
+  "filters": [
+    "All",
+    "AI Agents",
+    "AI Automation",
+    "AI Chatbots",
+    "AI for Home Services",
+    "AI for Hospitality",
+    "AI for Restautants",
+    "AI in Customer Support",
+    "AI in eCommerce",
+    "AI in Healthcare",
+    "AI in HR",
+    "AI in Insurance",
+    "AI in Marketing",
+    "AI in Real Estate",
+    "AI in Recruitment",
+    "AI in Sales",
+    "AI Platforms",
+    "Autonomus Agents",
+    "Acme",
+    "Cognitive AI",
+    "Conversational AI",
+    "ERP Automation",
+    "Generative AI"
+  ],
+  "firstPageCards": [
+    {
+      "path": "/best-ai-tools-for-auto-repair-shops/",
+      "rating": "Rate this post",
+      "readTime": "12 min read"
+    },
+    {
+      "path": "/best-ai-tools-for-property-management/",
+      "rating": "5/5 - (1 vote)",
+      "readTime": "10 min read"
+    },
+    {
+      "path": "/benefits-of-ai-in-hr/",
+      "rating": "4.5/5 - (2 votes)",
+      "readTime": "11 min read"
+    },
+    {
+      "path": "/how-to-use-ai-in-recruitment/",
+      "rating": "5/5 - (3 votes)",
+      "readTime": "11 min read"
+    },
+    {
+      "path": "/top-conversational-ai-for-home-services/",
+      "rating": "4.5/5 - (2 votes)",
+      "readTime": "10 min read"
+    },
+    {
+      "path": "/best-ai-tools-for-hospitality/",
+      "rating": "4.5/5 - (2 votes)",
+      "readTime": "10 min read"
+    },
+    {
+      "path": "/best-ai-tools-for-restaurants/",
+      "rating": "5/5 - (1 vote)",
+      "readTime": "9 min read"
+    },
+    {
+      "path": "/ai-solutions-for-security-companies/",
+      "rating": "5/5 - (1 vote)",
+      "readTime": "10 min read"
+    },
+    {
+      "path": "/ai-tools-for-recruitment/",
+      "rating": "4.1/5 - (7 votes)",
+      "readTime": "13 min read"
+    }
+  ]
+}

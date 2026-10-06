@@ -1,0 +1,362 @@
+{
+  "generatedAt": "2026-07-26T23:39:09.216Z",
+  "source": "https://dev.acme.example/wp-json/wp/v2/guide",
+  "records": [
+    {
+      "sourceId": 9805,
+      "slug": "how-to-build-an-out-of-office-coverage-handoff-flow-in-acme",
+      "tags": []
+    },
+    {
+      "sourceId": 9799,
+      "slug": "how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done",
+      "tags": []
+    },
+    {
+      "sourceId": 9791,
+      "slug": "how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket",
+      "tags": []
+    },
+    {
+      "sourceId": 9768,
+      "slug": "how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow",
+      "tags": []
+    },
+    {
+      "sourceId": 9764,
+      "slug": "how-to-use-knowledge-base-in-acme-for-product-aware-agents",
+      "tags": []
+    },
+    {
+      "sourceId": 9660,
+      "slug": "how-to-build-a-conversational-weekly-business-report-in-acme-part-2",
+      "tags": []
+    },
+    {
+      "sourceId": 9653,
+      "slug": "how-to-build-a-conversational-weekly-business-report-in-acme",
+      "tags": []
+    },
+    {
+      "sourceId": 9619,
+      "slug": "how-to-build-a-recruiting-agent-in-acme-step-by-step",
+      "tags": []
+    },
+    {
+      "sourceId": 9372,
+      "slug": "how-to-create-an-inbound-triage-and-customer-communication-agent-on-acme",
+      "tags": []
+    },
+    {
+      "sourceId": 9364,
+      "slug": "acme-conversational-ai-how-it-works-in-the-builder",
+      "tags": []
+    },
+    {
+      "sourceId": 9327,
+      "slug": "how-to-let-customers-book-themselves-without-calling-or-waiting-on-acme",
+      "tags": []
+    },
+    {
+      "sourceId": 9097,
+      "slug": "how-to-get-more-reviews-and-repeat-bookings-after-every-job-with-acme",
+      "tags": []
+    },
+    {
+      "sourceId": 9087,
+      "slug": "how-to-collect-job-information-automatically-with-acme",
+      "tags": []
+    },
+    {
+      "sourceId": 8270,
+      "slug": "how-to-build-an-instant-inbound-response-workflow-in-acme-capture-every-missed-call-before-they-call-your-competitor",
+      "tags": []
+    },
+    {
+      "sourceId": 8257,
+      "slug": "conversational-ai-workflow-automation-with-acme",
+      "tags": [
+        "Business Workflow Automation",
+        "Acme",
+        "Conversational AI",
+        "Virtual Employees"
+      ]
+    },
+    {
+      "sourceId": 8213,
+      "slug": "how-to-set-up-a-daily-sales-report-in-shopify-using-acme-automation",
+      "tags": [
+        "Acme",
+        "Daily Sales Report",
+        "Revenue Automation",
+        "Shopify API"
+      ]
+    },
+    {
+      "sourceId": 8205,
+      "slug": "how-to-set-up-low-stock-alerts-in-shopify-using-acme-automation",
+      "tags": [
+        "Acme",
+        "Inventory Monitoring",
+        "Shopify Integration",
+        "Slack Alerts"
+      ]
+    },
+    {
+      "sourceId": 8156,
+      "slug": "how-to-build-a-return-request-handler-for-your-shopify-store",
+      "tags": [
+        "AI Classification",
+        "Acme",
+        "Return Request Automation",
+        "Tally Form"
+      ]
+    },
+    {
+      "sourceId": 8147,
+      "slug": "how-to-automate-a-post-purchase-email-sequence-for-your-shopify-store",
+      "tags": [
+        "Acme",
+        "Customer Engagement",
+        "Post-Purchase Emails",
+        "Shopify Webhook"
+      ]
+    },
+    {
+      "sourceId": 8127,
+      "slug": "how-to-auto-translate-auto-publish-shopify-product-descriptions",
+      "tags": [
+        "AI Translation",
+        "Acme",
+        "Product Description Automation",
+        "Shopify Integration"
+      ]
+    },
+    {
+      "sourceId": 8112,
+      "slug": "how-to-automate-competitor-price-monitoring-e-commerce-example",
+      "tags": [
+        "AI Data Extraction",
+        "Acme",
+        "Competitor Monitoring",
+        "Price Scraping"
+      ]
+    },
+    {
+      "sourceId": 8104,
+      "slug": "daily-revenue-dashboard-e-commerce-shopify-automation-guide",
+      "tags": [
+        "Acme",
+        "Daily Automation",
+        "Sales Reporting",
+        "Shopify API"
+      ]
+    },
+    {
+      "sourceId": 8094,
+      "slug": "automate-your-shopify-order-fulfillment-workflow-e-commerce-example",
+      "tags": [
+        "Acme",
+        "E-commerce Workflow",
+        "Order Fulfillment",
+        "Shopify Automation"
+      ]
+    },
+    {
+      "sourceId": 8047,
+      "slug": "how-to-build-an-abandoned-cart-recovery-workflow-e-commerce-example-part-2",
+      "tags": [
+        "Abandoned Cart Recovery",
+        "Acme",
+        "E-commerce Automation",
+        "Merge Node"
+      ]
+    },
+    {
+      "sourceId": 8036,
+      "slug": "how-to-build-an-abandoned-cart-recovery-workflow-e-commerce-example-part1",
+      "tags": [
+        "Abandoned Cart Recovery",
+        "Acme",
+        "E-commerce Automation",
+        "Personalized Emails",
+        "Shopify Integration"
+      ]
+    },
+    {
+      "sourceId": 8027,
+      "slug": "how-to-automate-feedback-collection-and-log-the-data-in-hubspot",
+      "tags": [
+        "Acme",
+        "Feedback Automation",
+        "HubSpot Integration",
+        "Sentiment Analysis"
+      ]
+    },
+    {
+      "sourceId": 7975,
+      "slug": "how-to-automate-task-management-from-meeting-notes-in-acme",
+      "tags": [
+        "Asana Integration",
+        "Acme",
+        "Loop Node",
+        "Meeting Automation",
+        "Task Extraction"
+      ]
+    },
+    {
+      "sourceId": 7952,
+      "slug": "automated-invoice-processing-acme",
+      "tags": [
+        "AI Data Extraction",
+        "Acme",
+        "Condition-Based Routing",
+        "Invoice Automation",
+        "PDF Parsing"
+      ]
+    },
+    {
+      "sourceId": 7925,
+      "slug": "how-to-teach-ai-with-your-companys-knowledge-base-in-acme",
+      "tags": [
+        "AI Context",
+        "Brand Consistency",
+        "Acme",
+        "Knowledge Base",
+        "Lead Qualification"
+      ]
+    },
+    {
+      "sourceId": 7827,
+      "slug": "how-to-automate-onboarding-emails-once-payment-on-your-platform-is-received",
+      "tags": [
+        "Acme",
+        "CRM Trigger",
+        "Email Automation",
+        "Onboarding Automation",
+        "Payment Follow-Up"
+      ]
+    },
+    {
+      "sourceId": 7781,
+      "slug": "how-to-create-auto-follow-up-emails-at-24-72-hours-real-estate-workflow-example",
+      "tags": [
+        "Acme",
+        "CRM Workflow",
+        "Email Sequences",
+        "Follow-Up Automation",
+        "Loop Node"
+      ]
+    },
+    {
+      "sourceId": 7773,
+      "slug": "web-form-automation-lead-routing-acme",
+      "tags": [
+        "Acme",
+        "Condition Nodes",
+        "Lead Routing",
+        "Web Form Automation",
+        "Webhook Trigger"
+      ]
+    },
+    {
+      "sourceId": 7156,
+      "slug": "ai-youtube-automation-script-generator",
+      "tags": [
+        "AI Workflow",
+        "Acme",
+        "Content Repurposing",
+        "Script Generation",
+        "YouTube Automation"
+      ]
+    },
+    {
+      "sourceId": 6921,
+      "slug": "social-media-automation-workflow-acme",
+      "tags": [
+        "AI Workflow",
+        "Acme",
+        "Content Generation",
+        "Multi-Platform Publishing",
+        "Social Media Automation"
+      ]
+    },
+    {
+      "sourceId": 6910,
+      "slug": "how-to-create-an-ai-automated-inquiry-auto-response-with-acme",
+      "tags": [
+        "Acme",
+        "Email Follow-Ups",
+        "Google Sheets Trigger",
+        "No-Code Workflow",
+        "Real Estate Automation"
+      ]
+    },
+    {
+      "sourceId": 6901,
+      "slug": "what-you-can-build-in-acme-in-less-than-4-steps",
+      "tags": [
+        "AI Lead Qualification",
+        "Applications",
+        "Acme",
+        "Lead Automation",
+        "No-Code Workflow"
+      ]
+    },
+    {
+      "sourceId": 6586,
+      "slug": "how-to-create-an-ai-automated-property-inquiry-auto-response-with-acme",
+      "tags": [
+        "Acme",
+        "Email Follow-Ups",
+        "Lead Validation",
+        "No-Code Workflow",
+        "Real Estate Automation"
+      ]
+    },
+    {
+      "sourceId": 6512,
+      "slug": "how-to-use-starting-nodes-in-acme",
+      "tags": [
+        "Acme",
+        "Event-Driven Automation",
+        "Starting Nodes",
+        "Webhook Events",
+        "Workflow Triggers"
+      ]
+    },
+    {
+      "sourceId": 6500,
+      "slug": "how-to-use-control-nodes-in-acme",
+      "tags": [
+        "AI Workflow Design",
+        "Acme",
+        "Conditional Automation",
+        "Control Nodes",
+        "Workflow Logic"
+      ]
+    },
+    {
+      "sourceId": 6362,
+      "slug": "how-to-use-action-nodes-to-run-ai-agents-with-acme",
+      "tags": [
+        "Action Nodes",
+        "AI Agents",
+        "Acme",
+        "LLM Integration",
+        "Workflow Automation"
+      ]
+    },
+    {
+      "sourceId": 6498,
+      "slug": "how-to-build-ai-agents-with-acme",
+      "tags": [
+        "AI Agents",
+        "Acme",
+        "Event-Driven Automation",
+        "No-Code Automation",
+        "Workflow Automation"
+      ]
+    }
+  ]
+}

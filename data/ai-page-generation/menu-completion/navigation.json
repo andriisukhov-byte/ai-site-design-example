@@ -1,0 +1,19 @@
+{
+  "operations": [
+    {
+      "menuLabel": "Industries",
+      "itemLabel": "Restaurants",
+      "href": "/ai-agent-for-restaurants/"
+    },
+    {
+      "menuLabel": "Use Cases",
+      "itemLabel": "Email Marketing Automation",
+      "href": "/email-marketing-automation/"
+    },
+    {
+      "menuLabel": "Use Cases",
+      "itemLabel": "Candidate Screening",
+      "href": "/candidate-screening-agent/"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+---
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_logo-strip.scss';
+type ImageValue = {
+  src?: string;
+  url?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+};
+
+type LogoItem = {
+  label?: string;
+  image?: ImageValue | string | null;
+  placeholder?: string;
+};
+
+type StatItem = {
+  label?: string;
+  value?: string;
+};
+
+interface Props {
+  block: {
+    eyebrow?: string;
+    title?: string;
+    description?: string;
+    logos?: LogoItem[];
+    stats?: StatItem[];
+  };
+}
+
+const { block } = Astro.props;
+const eyebrow = block.eyebrow?.trim() || '';
+const title = block.title?.trim() || '';
+const description = block.description?.trim() || '';
+const logos = (block.logos ?? []).filter((logo) => Boolean(logo.label?.trim() || logo.image || logo.placeholder));
+const stats = (block.stats ?? []).filter((stat) => Boolean(stat.label?.trim() || stat.value?.trim()));
+const withDescription = description !== '';
+
+function imageData(image: LogoItem['image'], label: string, placeholder = '') {
+  if (typeof image === 'string') return { src: image, alt: label };
+  return {
+    src: image?.src || image?.url || placeholder,
+    alt: image?.alt || label,
+    width: image?.width,
+    height: image?.height,
+  };
+}
+
+const logoViews = logos.map((logo) => {
+  const label = logo.label?.trim() || '';
+  return {
+    label,
+    image: imageData(logo.image, label, logo.placeholder),
+  };
+});
+
+const marqueeSets = [logoViews, logoViews];
+---
+
+{(title || description || logos.length > 0 || stats.length > 0) && (
+  <section class:list={['logo-strip', withDescription ? 'logo-strip--with-description' : 'logo-strip--inline-logos']}>
+    <div class="logo-strip__container container-wide">
+      <div class="logo-strip__hero">
+        <div class="logo-strip__title-wrap">
+          {eyebrow && <p class="logo-strip__eyebrow">{eyebrow}</p>}
+          {title && <h2 class="logo-strip__title"><FormattedText text={title} /></h2>}
+        </div>
+
+        {withDescription ? (
+          <p class="logo-strip__description"><FormattedText text={description} /></p>
+        ) : logos.length > 0 ? (
+          <div class="logo-strip__marquee logo-strip__marquee--inline" aria-label="Trusted companies">
+            <div class="logo-strip__track">
+              {marqueeSets.map((set, setIndex) => (
+                <div class="logo-strip__set" aria-hidden={setIndex > 0 ? 'true' : undefined}>
+                  {set.map((logo) => (
+                    <div class="logo-strip__logo">
+                      {logo.image.src ? (
+                        <img
+                          class="logo-strip__logo-image"
+                          src={logo.image.src}
+                          alt={logo.image.alt}
+                          width={logo.image.width}
+                          height={logo.image.height}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : logo.label ? (
+                        <span class="logo-strip__logo-text">{logo.label}</span>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
+
+      {withDescription && logos.length > 0 && (
+        <div class="logo-strip__marquee logo-strip__marquee--full" aria-label="Trusted companies">
+          <div class="logo-strip__track">
+            {marqueeSets.map((set, setIndex) => (
+              <div class="logo-strip__set" aria-hidden={setIndex > 0 ? 'true' : undefined}>
+                {set.map((logo) => (
+                  <div class="logo-strip__logo">
+                    {logo.image.src ? (
+                      <img
+                        class="logo-strip__logo-image"
+                        src={logo.image.src}
+                        alt={logo.image.alt}
+                        width={logo.image.width}
+                        height={logo.image.height}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : logo.label ? (
+                      <span class="logo-strip__logo-text">{logo.label}</span>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {stats.length > 0 && (
+        <div class="logo-strip__stats">
+          {stats.map((stat) => (
+            <div class="logo-strip__stat">
+              {stat.label && <p class="logo-strip__stat-label">{stat.label}</p>}
+              {stat.value && <p class="logo-strip__stat-value">{stat.value}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+)}

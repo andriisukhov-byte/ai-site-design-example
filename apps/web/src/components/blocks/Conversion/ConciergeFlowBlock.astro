@@ -1,0 +1,105 @@
+---
+import '../../../styles/blocks/_concierge-flow.scss';
+
+interface ConciergeFlowImage {
+  src: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
+
+interface ConciergeFlowCard {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+interface ConciergeFlowButton {
+  href: string;
+  label: string;
+  target?: string;
+}
+
+export interface ConciergeFlowBlock {
+  title?: string;
+  description?: string;
+  image?: ConciergeFlowImage;
+  cards?: ConciergeFlowCard[];
+  button?: ConciergeFlowButton;
+}
+
+interface Props {
+  block: ConciergeFlowBlock;
+}
+
+const { block } = Astro.props;
+const title = block.title?.trim() ?? '';
+const description = block.description?.trim() ?? '';
+const cards = (block.cards ?? []).filter((card) => card.eyebrow || card.title || card.description);
+const image: ConciergeFlowImage = block.image?.src
+  ? block.image
+  : { src: '/assets/blocks/concierge-flow/images/diagram.png', alt: title.replace(/<[^>]*>/g, '') };
+const hasButton = Boolean(block.button?.href && block.button.label);
+
+function titleMarkup(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;')
+    .replace(/\{\{\s*([^}]+?)\s*\}\}/g, '<span>$1</span>')
+    .replace(/\|\|/g, '<br>')
+    .replace(/\r?\n/g, '<br>')
+    .replaceAll('&lt;span&gt;', '<span>')
+    .replaceAll('&lt;/span&gt;', '</span>');
+}
+---
+
+<section class="concierge-flow">
+  <div class="concierge-flow__container container-wide">
+    <header class="concierge-flow__header">
+      {title && <h2 class="concierge-flow__title" set:html={titleMarkup(title)} />}
+      {description && <p class="concierge-flow__description">{description}</p>}
+    </header>
+
+    {image?.src && (
+      <div class="concierge-flow__media">
+        <img
+          class="concierge-flow__image"
+          src={image.src}
+          alt={image.alt ?? ''}
+          loading="lazy"
+          decoding="async"
+          width={image.width && image.height ? image.width : undefined}
+          height={image.width && image.height ? image.height : undefined}
+        />
+      </div>
+    )}
+
+    {cards.length > 0 && (
+      <div class="concierge-flow__cards">
+        {cards.map((card) => (
+          <article class="concierge-flow__card">
+            {card.eyebrow && <p class="concierge-flow__card-eyebrow">{card.eyebrow}</p>}
+            {card.title && <h3 class="concierge-flow__card-title">{card.title}</h3>}
+            {card.description && <p class="concierge-flow__card-description">{card.description}</p>}
+          </article>
+        ))}
+      </div>
+    )}
+
+    {hasButton && (
+      <div class="concierge-flow__actions">
+        <a
+          class="c-btn c-btn--primary c-btn--lg concierge-flow__button"
+          href={block.button?.href}
+          target={block.button?.target}
+          rel={block.button?.target ? 'noopener noreferrer' : undefined}
+        >
+          <span class="c-btn__label">{block.button?.label}</span>
+        </a>
+      </div>
+    )}
+  </div>
+</section>

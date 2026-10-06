@@ -1,0 +1,35 @@
+---
+import BlogArchive from '../../components/BlogArchive.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getSourcePage, getSourcePages } from '../../data/source-pages';
+
+import '../../styles/templates/_blog.scss';
+
+const page = await getSourcePage('/blog/');
+const sourcePages = await getSourcePages();
+
+if (!page) {
+  throw new Error('Missing CMS document for /blog/.');
+}
+
+const blogItems = sourcePages.filter((page) => {
+  if (page.status !== 'published' || page.path === '/blog/') {
+    return false;
+  }
+
+  return page.collection === 'posts'
+    || (page.template === 'article' && page.path.startsWith('/blog/'));
+});
+const layoutPage = {
+  ...page,
+  seo: {
+    ...page.seo,
+    metaTitle: 'Blog | Acme',
+  },
+};
+
+---
+
+<SiteLayout page={layoutPage}>
+  <BlogArchive items={blogItems} />
+</SiteLayout>

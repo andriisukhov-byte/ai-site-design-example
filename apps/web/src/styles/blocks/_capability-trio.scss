@@ -1,0 +1,364 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.capability-trio {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 120px;
+    background: dt.$color-brand-white;
+
+    &__container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    &__header {
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: clamp(32px, 4.4vw, 64px);
+        font-weight: 500;
+        line-height: 1.22;
+
+        span {
+            background: dt.$gradient-gold;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    // ---- Cards -------------------------------------------------------------
+    &__cards {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+    }
+
+    // Circuit + connector traces (base circuit and gray/active trace lines) sit
+    // behind the cards; the dots layer sits above them. Both svgs share the same
+    // 1301×703 space and are pinned to the decoration rect (see the desktop
+    // block), so they stay pixel-aligned to the absolutely-placed cards / node.
+    &__circuit,
+    &__traces {
+        display: none;
+        position: absolute;
+        overflow: visible;
+        pointer-events: none;
+    }
+
+    &__circuit { z-index: 0; }
+    &__traces { z-index: 2; }
+
+    // Sizing only — visibility stays controlled by the display rules above
+    // (hidden on mobile/tablet, shown on desktop).
+    &__circuit > svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+    &__traces {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+
+    // Each connector trace: a gray line by default (blends into the base
+    // circuit), fading up to the brand gradient when its card is active.
+    &__trace-line {
+        fill: url(#capability-trio-bg-gradient);
+        fill-opacity: 0.2;
+
+        &--active {
+            fill: url(#capability-trio-line-gradient);
+            fill-opacity: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    }
+
+    &__trace-dot {
+        opacity: 0;
+        transition: opacity 0.4s ease 0.1s;
+
+        &--card {
+            fill: dt.$color-brand-white;
+            stroke: url(#capability-trio-line-gradient);
+            stroke-width: 4;
+        }
+
+        &--node {
+            fill: url(#capability-trio-line-gradient);
+            stroke: dt.$color-brand-white;
+            stroke-width: 2;
+        }
+    }
+
+    // Node-border highlight: the border segment (+ nearest corner) where the
+    // active trace lands, drawn in the brand gradient over the node's gray edge.
+    // Reveal the active card's trace + dots.
+    @each $i in (1, 2, 3) {
+        &__cards--trio[data-active="#{$i}"] &__trace--#{$i} &__trace-line--active {
+            opacity: 1;
+        }
+
+        &__cards--trio[data-active="#{$i}"] &__trace--#{$i} &__trace-dot { opacity: 1; }
+    }
+
+    // Central node = three stacked layers: a gray base (shows as the border
+    // ring), an orange glow blob, and the white text overlay. overflow:hidden
+    // clips the blob to the node, so it only shows through the ring where the
+    // active trace connects. On mobile it flows after the cards (order:1).
+    &__center {
+        order: 1;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        max-width: 420px;
+        padding: 2px; // border thickness — gray base shows around the inner
+        border-radius: 16px;
+        background: dt.$color-gray-100;
+    }
+
+    // Orange glow: small + centred by default (hidden behind the white overlay);
+    // JS-set data-active moves it to the connection edge and grows it (desktop).
+    &__center-glow {
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle,
+            #FF7500 0%,
+            rgba(247, 117, 0, 0.55) 32%,
+            rgba(247, 117, 0, 0) 70%);
+        pointer-events: none;
+        transition:
+            top 0.55s ease,
+            left 0.55s ease,
+            width 0.55s ease,
+            height 0.55s ease;
+    }
+
+    &__center-inner {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 26px;
+        border-radius: 14px;
+        background: dt.$color-brand-white;
+        text-align: center;
+    }
+
+    &__center-label {
+        margin: 0;
+        font-size: clamp(15px, 1.35vw, 24px);
+        font-weight: 500;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 2.4px;
+        background: dt.$gradient-gold;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.4;
+    }
+
+    &__card {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        max-width: 546px;
+        padding: 48px 24px 24px;
+        border-radius: 16px;
+        background: dt.$color-brand-white;
+        // Same 2px width as the active card so activating a card never shifts
+        // its box (no hover jump); only the border style/colour changes.
+        border: 2px dashed dt.$color-gray-300;
+        transition: border-color 0.4s ease, background 0.4s ease;
+
+        // Active card: brand-gradient border (2px) over a faint gradient tint on
+        // white. The border shows through the transparent border-box layer.
+        &--highlighted {
+            border: 2px solid transparent;
+            background:
+                linear-gradient(102deg,
+                    rgba(58, 135, 217, 0.05) 0%,
+                    rgba(47, 26, 107, 0.05) 25%,
+                    rgba(32, 0, 0, 0.05) 50%,
+                    rgba(173, 56, 34, 0.05) 75%,
+                    rgba(247, 167, 95, 0.05) 100%) padding-box,
+                linear-gradient(dt.$color-brand-white, dt.$color-brand-white) padding-box,
+                dt.$gradient-gold border-box;
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        padding: 14px;
+        border-radius: 128px;
+        background: dt.$color-brand-white;
+        border: 2px solid dt.$color-gray-100;
+        transition: border-color 0.4s ease;
+
+        svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        &-icon-img {
+            max-width: 48px;
+            max-height: 48px;
+            object-fit: contain;
+        }
+    }
+
+    &__card--highlighted &__badge {
+        border: 2px solid transparent;
+        background:
+            linear-gradient(dt.$color-brand-white, dt.$color-brand-white) padding-box,
+            dt.$gradient-gold border-box;
+    }
+
+    &__card-title {
+        margin: 0;
+        color: dt.$color-brand-black;
+        font-size: clamp(28px, 3vw, 48px);
+        font-weight: 500;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    &__card-description {
+        margin: 0;
+        color: dt.$color-gray-500;
+        font-size: clamp(17px, 1.4vw, 24px);
+        font-weight: 400;
+        line-height: 1.33;
+        text-align: center;
+        transition: color 0.4s ease;
+    }
+
+    &__card--highlighted &__card-description {
+        color: dt.$color-gray-700;
+    }
+
+    // ---- Staggered desktop layout (trio only) ------------------------------
+    // Desktop reconstructs the Figma content frame (1312×789) as an absolute
+    // canvas so the background-locked traces + dots align with the cards / node.
+    @include desktop(up) {
+        &__cards--trio {
+            display: block;
+            position: relative;
+            width: 100%;
+            max-width: 1312px;
+            margin-inline: auto;
+            aspect-ratio: 1312 / 789;
+        }
+
+        // Circuit + dots pinned to the decoration rect within the content frame.
+        &__cards--trio &__circuit,
+        &__cards--trio &__traces {
+            display: block;
+            left: -0.35%;
+            top: 10.66%;
+            width: 99.47%;
+            height: 88.97%;
+        }
+
+        &__cards--trio &__card {
+            position: absolute;
+            z-index: 1;
+            width: 41.62%;
+            height: 24.84%;
+            max-width: none;
+            margin: 0;
+        }
+        &__cards--trio &__card--1 { left: 0; top: 15.21%; }
+        &__cards--trio &__card--2 { left: 58.23%; top: 15.21%; }
+        &__cards--trio &__card--3 { left: 29.19%; top: 69.46%; }
+
+        // Centre node.
+        &__cards--trio &__center {
+            position: absolute;
+            z-index: 1;
+            left: 34.30%;
+            top: 48.04%;
+            width: 31.17%;
+            height: 11.91%;
+            max-width: none;
+            margin: 0;
+        }
+
+        // Baseline (works everywhere): jump the glow to the connection edge and
+        // grow it. Modern browsers upgrade this to a border-following run below.
+        &__cards--trio[data-active="1"] &__center-glow { top: 0; left: 27%; width: 150px; height: 150px; }
+        &__cards--trio[data-active="2"] &__center-glow { top: 47%; left: 100%; width: 150px; height: 150px; }
+        &__cards--trio[data-active="3"] &__center-glow { top: 100%; left: 35%; width: 150px; height: 150px; }
+
+        // Progressive enhancement: ride the glow ALONG the node's rounded-rect
+        // border (a motion path) instead of cutting across the interior. We drive
+        // one value — offset-distance, the % around the perimeter — so going from
+        // one card to another retraces the border rather than a straight line.
+        @supports (offset-path: inset(0 round 16px)) {
+            &__cards--trio &__center-glow {
+                offset-path: inset(0 round 16px);
+                offset-rotate: 0deg; // blob is radial — keep it upright, don't spin
+                // JS feeds an ever-increasing distance so the glow always runs
+                // clockwise and wraps 76%->110% instead of reversing on 3->1.
+                offset-distance: var(--ct-glow-distance, 10%);
+                transition:
+                    offset-distance 0.6s ease,
+                    width 0.6s ease,
+                    height 0.6s ease;
+            }
+            // top:0/left:0 + transform:none so the path offset alone places it.
+            // The per-card fallbacks only apply if JS never sets the variable.
+            &__cards--trio[data-active="1"] &__center-glow { top: 0; left: 0; transform: none; offset-distance: var(--ct-glow-distance, 10%); }
+            &__cards--trio[data-active="2"] &__center-glow { top: 0; left: 0; transform: none; offset-distance: var(--ct-glow-distance, 44%); }
+            &__cards--trio[data-active="3"] &__center-glow { top: 0; left: 0; transform: none; offset-distance: var(--ct-glow-distance, 76%); }
+        }
+    }
+
+    @include tablet {
+        padding: 64px 0 80px;
+
+        &__container { gap: 48px; }
+        &__cards { gap: 56px; }
+    }
+
+    @include mobile {
+        padding: 48px 0 64px;
+
+        &__container { gap: 40px; }
+        &__cards { gap: 52px; }
+        &__card { padding: 44px 20px 24px; }
+    }
+}

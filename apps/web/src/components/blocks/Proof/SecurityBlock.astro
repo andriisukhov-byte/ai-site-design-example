@@ -1,0 +1,87 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import '../../../styles/blocks/_security.scss';
+
+type SecurityBlock = Extract<PageBlock, { type: 'security' }>;
+
+type Props = {
+  block: SecurityBlock;
+};
+
+const defaultCards: NonNullable<SecurityBlock['cards']> = [
+  {
+    icon: 'database_zap',
+    title: 'Data Protection',
+    description: 'Advanced encryption and security protocols that meet or exceed industry standards for protecting customer information.',
+  },
+  {
+    icon: 'file_key',
+    title: 'Privacy Assurance',
+    description: 'Your business data and customer interactions remain exclusively yours - never used to train public AI models or shared with third parties.',
+  },
+  {
+    icon: 'shield_ellipsis',
+    title: 'Secure System Integration',
+    description: 'Role-based access controls and encrypted connection protocols ensure your systems remain protected while enabling seamless data flow between Acme and your business tools.',
+  },
+  {
+    icon: 'text_search',
+    title: 'Audit & Monitoring',
+    description: 'Full activity logging and audit trails across every agent interaction, workflow execution, and system connection.',
+  },
+];
+const { block } = Astro.props;
+const background = block.background === 'gray' ? 'gray' : 'white';
+const title = block.title || 'Enterprise-Grade';
+const titleGradient = block.titleGradient || 'Security & Compliance';
+const cards = block.cards.filter((card) => card.title || card.description);
+const displayCards = cards.length ? cards : defaultCards;
+const allowedIcons = new Set(['database_zap', 'file_key', 'shield_ellipsis', 'text_search', 'file_search']);
+const iconSrc = (icon?: string) => `/assets/blocks/security/icons/${allowedIcons.has(icon ?? '') ? icon : 'shield_ellipsis'}.svg`;
+---
+
+<section class={`security security--${background}`}>
+  <div class="security__container container-wide">
+    <header class="security__header">
+      <h2 class="security__title">{title}</h2>
+      <p class="security__gradient">{titleGradient}</p>
+      {block.subtitle && <p class="security__subtitle">{block.subtitle}</p>}
+    </header>
+
+    <div class="security__layout">
+      <div class="security__visual" aria-hidden="true">
+        <span class="security__visual-corner security__visual-corner--top"></span>
+        <span class="security__visual-corner security__visual-corner--bottom"></span>
+        <span class="security__visual-ring"></span>
+        <span class="security__visual-dot security__visual-dot--top"></span>
+        <span class="security__visual-dot security__visual-dot--bottom"></span>
+        <span class="security__visual-icon">
+          <img src={iconSrc('shield_ellipsis')} alt="" loading="lazy" decoding="async" />
+        </span>
+      </div>
+
+      <div class="security__grid">
+        {displayCards.map((card, index) => {
+          const fallback = defaultCards[index % defaultCards.length];
+          const icon = card.icon || fallback.icon;
+
+          return (
+            <article class="security__card">
+              <div class="security__card-content">
+                <div class="security__card-icon" aria-hidden="true">
+                  {card.customIcon?.src ? (
+                    <img class="security__custom-icon" src={card.customIcon.src} alt="" loading="lazy" decoding="async" />
+                  ) : (
+                    <img src={iconSrc(icon)} alt="" loading="lazy" decoding="async" />
+                  )}
+                </div>
+                {card.title && <h3 class="security__card-title">{card.title}</h3>}
+                {card.description && <p class="security__card-description">{card.description}</p>}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

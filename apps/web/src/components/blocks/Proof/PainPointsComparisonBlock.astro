@@ -1,0 +1,67 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_pain-points-comparison.scss';
+type PainPointsComparisonBlock = Extract<PageBlock, { type: 'pain-points-comparison' }>;
+
+interface Props {
+  block: PainPointsComparisonBlock;
+}
+
+const { block } = Astro.props;
+const sectionClass = `pain-points-comparison pain-points-comparison--${block.background === 'gray' ? 'gray' : 'white'}`;
+---
+
+<section class={sectionClass}>
+  <div class="pain-points-comparison__container container-wide">
+    <header class="pain-points-comparison__header">
+      {block.eyebrow && <p class="pain-points-comparison__eyebrow">{block.eyebrow}</p>}
+      <h2 class="pain-points-comparison__title"><FormattedText text={block.title} /></h2>
+    </header>
+
+    <div class="pain-points-comparison__table">
+      {block.showColumnHeadings && (
+        <div class="pain-points-comparison__row pain-points-comparison__row--head">
+          <div class="pain-points-comparison__cell pain-points-comparison__cell--head">
+            <h3 class="pain-points-comparison__column-title">{block.leftHeading}</h3>
+          </div>
+          <div class="pain-points-comparison__cell pain-points-comparison__cell--head pain-points-comparison__cell--solution">
+            <h3 class="pain-points-comparison__column-title pain-points-comparison__column-title--accent">{block.rightHeading}</h3>
+          </div>
+        </div>
+      )}
+
+      {block.rows.map((row) => (
+        <div class="pain-points-comparison__row">
+          <article class="pain-points-comparison__cell pain-points-comparison__cell--challenge">
+            <span class="pain-points-comparison__icon pain-points-comparison__icon--challenge" aria-hidden="true">
+              <img class="pain-points-comparison__challenge-dot" src="/assets/blocks/pain-points-comparison/challenge-dot.svg" alt="" loading="lazy" />
+              <img class="pain-points-comparison__challenge-arrow" src="/assets/blocks/pain-points-comparison/challenge-arrow.svg" alt="" loading="lazy" />
+            </span>
+            <div class="pain-points-comparison__copy">
+              {row.leftTitle && <h4 class="pain-points-comparison__item-title">{row.leftTitle}</h4>}
+              {row.leftDescription && <p class="pain-points-comparison__item-description" set:html={row.leftDescription} />}
+            </div>
+          </article>
+
+          <article class="pain-points-comparison__cell pain-points-comparison__cell--solution">
+            <span class="pain-points-comparison__icon pain-points-comparison__icon--solution" aria-hidden="true">
+              <img src="/assets/blocks/pain-points-comparison/solution-check.svg" alt="" loading="lazy" />
+            </span>
+            <div class="pain-points-comparison__copy">
+              {row.rightTitle && <h4 class="pain-points-comparison__item-title">{row.rightTitle}</h4>}
+              {row.rightDescription && <p class="pain-points-comparison__item-description" set:html={row.rightDescription} />}
+            </div>
+          </article>
+        </div>
+      ))}
+    </div>
+
+    {block.action && (
+      <a class="c-btn c-btn--primary c-btn--lg pain-points-comparison__button" href={block.action.href} target={block.action.target ?? '_self'}>
+        <span class="c-btn__label">{block.action.label}</span>
+      </a>
+    )}
+  </div>
+</section>

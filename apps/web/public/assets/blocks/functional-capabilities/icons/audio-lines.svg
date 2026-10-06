@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Vector (Stroke)" d="M8 19V1C8 0.447715 8.44772 0 9 0C9.55229 0 10 0.447715 10 1V19C10 19.5523 9.55229 20 9 20C8.44772 20 8 19.5523 8 19ZM16 16V3C16 2.44772 16.4477 2 17 2C17.5523 2 18 2.44772 18 3V16C18 16.5523 17.5523 17 17 17C16.4477 17 16 16.5523 16 16ZM4 15V4C4 3.44772 4.44772 3 5 3C5.55228 3 6 3.44772 6 4V15C6 15.5523 5.55228 16 5 16C4.44772 16 4 15.5523 4 15ZM12 13V6C12 5.44772 12.4477 5 13 5C13.5523 5 14 5.44772 14 6V13C14 13.5523 13.5523 14 13 14C12.4477 14 12 13.5523 12 13ZM0 11V8C0 7.44772 0.447715 7 1 7C1.55228 7 2 7.44772 2 8V11C2 11.5523 1.55228 12 1 12C0.447715 12 0 11.5523 0 11ZM20 11V8C20 7.44772 20.4477 7 21 7C21.5523 7 22 7.44772 22 8V11C22 11.5523 21.5523 12 21 12C20.4477 12 20 11.5523 20 11Z" fill="url(#paint0_linear_0_71)"/>
+<defs>
+<linearGradient id="paint0_linear_0_71" x1="0" y1="0" x2="25.2417" y2="5.73674" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3A87D9"/>
+<stop offset="0.25" stop-color="#2F1A6B"/>
+<stop offset="0.5" stop-color="#200000"/>
+<stop offset="0.75" stop-color="#AD3822"/>
+<stop offset="1" stop-color="#F7A75F"/>
+</linearGradient>
+</defs>
+</svg>

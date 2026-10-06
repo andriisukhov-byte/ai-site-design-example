@@ -1,0 +1,116 @@
+---
+import cogIcon from '../../../../public/assets/blocks/agent-solutions/icons/cog.svg?raw';
+import connectionsIcon from '../../../../public/assets/blocks/agent-solutions/icons/connections.svg?raw';
+import goalIcon from '../../../../public/assets/blocks/agent-solutions/icons/goal.svg?raw';
+import headsetIcon from '../../../../public/assets/blocks/agent-solutions/icons/headset.svg?raw';
+import messagesSquareIcon from '../../../../public/assets/blocks/agent-solutions/icons/messages-square.svg?raw';
+import phoneCallIcon from '../../../../public/assets/blocks/agent-solutions/icons/phone-call.svg?raw';
+import shoppingCartIcon from '../../../../public/assets/blocks/agent-solutions/icons/shopping-cart.svg?raw';
+import tagIcon from '../../../../public/assets/blocks/agent-solutions/icons/tag.svg?raw';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_agent-solutions.scss';
+
+interface ImageValue {
+  src: string;
+  alt?: string;
+}
+
+interface AgentSolutionItem {
+  icon?: string;
+  customIcon?: ImageValue;
+  title?: string;
+  href?: string;
+  description?: string;
+}
+
+interface AgentSolutionsBlock {
+  title?: string;
+  items?: AgentSolutionItem[];
+}
+
+interface Props {
+  block: AgentSolutionsBlock;
+}
+
+const { block } = Astro.props;
+const title = block.title?.trim() ?? '';
+const items = (block.items ?? []).filter((item) => item.title?.trim() || item.description?.trim());
+const columnSize = Math.ceil(items.length / 2);
+const columns = [items.slice(0, columnSize), items.slice(columnSize)].filter((column) => column.length > 0);
+
+const presetIcons: Record<string, string> = {
+  headset: headsetIcon,
+  connections: connectionsIcon,
+  goal: goalIcon,
+  cog: cogIcon,
+  tag: tagIcon,
+  'phone-call': phoneCallIcon,
+  'messages-square': messagesSquareIcon,
+  'shopping-cart': shoppingCartIcon,
+};
+
+function presetIconMarkup(name?: string): string {
+  return presetIcons[name ?? ''] ?? headsetIcon;
+}
+
+function itemIcon(item: AgentSolutionItem): string {
+  if (item.customIcon?.src) {
+    return `<img class="agent-solutions__custom-icon" src="${item.customIcon.src}" alt="" loading="lazy" decoding="async" />`;
+  }
+
+  return presetIconMarkup(item.icon);
+}
+---
+
+{(title || items.length > 0) && (
+  <section class="agent-solutions" data-agent-solutions>
+    <div class="agent-solutions__container container-wide">
+      {title && (
+        <h2 class="agent-solutions__title">
+          <FormattedText text={title} />
+        </h2>
+      )}
+
+      {items.length > 0 && (
+        <div class="agent-solutions__grid">
+          {columns.map((column, columnIndex) => (
+            <div class="agent-solutions__column">
+              {column.map((item, itemIndex) => {
+                const globalIndex = columnIndex * columnSize + itemIndex;
+                const isLink = Boolean(item.href?.trim());
+                const cardClass = ['agent-solutions__card', globalIndex === 0 && 'is-active'].filter(Boolean).join(' ');
+                const content = (
+                  <>
+                    <span class="agent-solutions__icon" aria-hidden="true" set:html={itemIcon(item)} />
+                    <span class="agent-solutions__content">
+                      {item.title && <span class="agent-solutions__card-title">{item.title}</span>}
+                      {item.description && (
+                        <span class="agent-solutions__description-wrap">
+                          <span class="agent-solutions__description">{item.description}</span>
+                        </span>
+                      )}
+                    </span>
+                  </>
+                );
+
+                return isLink ? (
+                  <a class={cardClass} href={item.href} data-agent-solution-card>
+                    {content}
+                  </a>
+                ) : (
+                  <button class={cardClass} type="button" aria-expanded={globalIndex === 0 ? 'true' : 'false'} data-agent-solution-card>
+                    {content}
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+)}
+
+<script>
+  import '../../../scripts/agent-solutions';
+</script>

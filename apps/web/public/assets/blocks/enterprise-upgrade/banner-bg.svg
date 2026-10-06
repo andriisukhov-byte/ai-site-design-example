@@ -1,0 +1,37 @@
+<svg width="968" height="300" viewBox="0 0 968 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="968" height="300" rx="16" fill="#F9F9F9"/>
+  <rect width="968" height="300" rx="16" fill="url(#wash)"/>
+  <g opacity="0.34">
+    <path d="M-40 0H606L541 300H-40V0Z" fill="url(#leftSoft)"/>
+    <path d="M1050 0H486L551 300H1050V0Z" fill="url(#rightSoft)"/>
+  </g>
+  <path d="M153 -70C112 51 112 248 153 370" stroke="url(#leftRing)" stroke-width="1.2"/>
+  <path d="M813 -70C854 51 854 248 813 370" stroke="url(#rightRing)" stroke-width="1.2"/>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="968" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F9FF"/>
+      <stop offset="0.45" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FBF1EE"/>
+    </linearGradient>
+    <linearGradient id="leftSoft" x1="-40" y1="150" x2="606" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F5FF"/>
+      <stop offset="0.44" stop-color="#F8E8DD"/>
+      <stop offset="1" stop-color="#F9EEE5" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rightSoft" x1="1050" y1="150" x2="486" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8E2DC"/>
+      <stop offset="0.42" stop-color="#F7EEE7"/>
+      <stop offset="1" stop-color="#F6F9FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="leftRing" x1="119" y1="-70" x2="194" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AD3822"/>
+      <stop offset="0.5" stop-color="#F7A75F"/>
+      <stop offset="1" stop-color="#3A87D9"/>
+    </linearGradient>
+    <linearGradient id="rightRing" x1="849" y1="-70" x2="772" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A87D9"/>
+      <stop offset="0.48" stop-color="#2F1A6B"/>
+      <stop offset="1" stop-color="#AD3822"/>
+    </linearGradient>
+  </defs>
+</svg>

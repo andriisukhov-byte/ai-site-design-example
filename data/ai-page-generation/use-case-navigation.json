@@ -1,0 +1,11 @@
+{
+  "operations": [
+    { "menuLabel": "Industries", "itemLabel": "Insurance", "href": "/ai-insurance-agent/" },
+    { "menuLabel": "Industries", "itemLabel": "Security", "href": "/ai-security-agent/" },
+    { "menuLabel": "Industries", "itemLabel": "Cleaning", "href": "/ai-cleaning-agent/" },
+    { "menuLabel": "Industries", "itemLabel": "Auto Repair", "href": "/ai-auto-repair-agent/" },
+    { "menuLabel": "Industries", "itemLabel": "All Industries", "href": "/ai-use-cases/" },
+    { "menuLabel": "Use Cases", "itemLabel": "Lead Qualification", "href": "/ai-lead-qualification/" },
+    { "menuLabel": "Use Cases", "itemLabel": "All Use Cases", "href": "/ai-use-cases/" }
+  ]
+}

@@ -1,0 +1,210 @@
+---
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_recovery-calculator.scss';
+
+type Control = {
+  key?: 'missed' | 'share' | 'jobValue';
+  label?: string;
+  hint?: string;
+  min?: number;
+  max?: number;
+  step?: number;
+  value?: number;
+  prefix?: string;
+  suffix?: string;
+};
+
+export interface Props {
+  block: {
+    background?: 'white' | 'gray' | 'dark';
+    title?: string;
+    description?: string;
+    controls?: Control[];
+    frequencyLabel?: string;
+    frequencyDefault?: 'weekly' | 'biweekly' | 'monthly';
+    clientsLabel?: string;
+    resultLabel?: string;
+    resultSuffix?: string;
+    annualLabel?: string;
+    breakEvenNote?: string;
+    assumptionNote?: string;
+    action?: { label?: string; href?: string; target?: string };
+  };
+}
+
+const { block } = Astro.props;
+const background = block.background ?? 'dark';
+
+const defaults: Record<string, Control> = {
+  missed: { label: 'Calls you miss in a typical week', min: 0, max: 80, step: 1, value: 12 },
+  share: { label: 'Share of them that would have booked', min: 5, max: 60, step: 5, value: 30, suffix: '%' },
+  jobValue: { label: 'Your price per clean', min: 60, max: 600, step: 10, value: 180, prefix: '$' },
+};
+
+const order: Array<'missed' | 'share' | 'jobValue'> = ['missed', 'share', 'jobValue'];
+const provided = new Map((block.controls ?? []).filter((c) => c.key).map((c) => [c.key as string, c]));
+
+const controls = order.map((key) => {
+  const base = defaults[key];
+  const o = provided.get(key) ?? {};
+  return {
+    key,
+    label: o.label ?? base.label!,
+    hint: o.hint,
+    min: o.min ?? base.min!,
+    max: o.max ?? base.max!,
+    step: o.step ?? base.step!,
+    value: o.value ?? base.value!,
+    prefix: o.prefix ?? base.prefix ?? '',
+    suffix: o.suffix ?? base.suffix ?? '',
+  };
+});
+
+const byKey = Object.fromEntries(controls.map((c) => [c.key, c])) as Record<string, (typeof controls)[number]>;
+
+// Visits per month by plan. A recovered cleaning lead is usually a recurring
+// contract, not a single job - modelling it as one job understates it badly.
+const FREQUENCIES = [
+  { key: 'weekly', label: 'Weekly', visits: 4.33 },
+  { key: 'biweekly', label: 'Every 2 weeks', visits: 2.17 },
+  { key: 'monthly', label: 'Monthly', visits: 1 },
+] as const;
+
+const WEEKS_PER_MONTH = 4.33;
+const activeFrequency = block.frequencyDefault ?? 'biweekly';
+const visits = FREQUENCIES.find((f) => f.key === activeFrequency)?.visits ?? 2.17;
+
+function money(value: number): string {
+  return `$${(Math.round(value / 10) * 10).toLocaleString('en-US')}`;
+}
+
+// The count shown is the count the money is computed from, so a reader who
+// multiplies the visible formula lands on the printed figure.
+const clients = Math.round(((byKey.missed.value * WEEKS_PER_MONTH * byKey.share.value) / 100) * 10) / 10;
+const monthly = clients * byKey.jobValue.value * visits;
+const clientsRounded = clients;
+
+const hasContent = Boolean(block.title || block.description || controls.length);
+---
+
+{hasContent && (
+  <section
+    class:list={['recovery-calculator', `recovery-calculator--${background}`]}
+    data-recovery-calculator
+    data-weeks={WEEKS_PER_MONTH}
+  >
+    <div class="recovery-calculator__container">
+      <div class="recovery-calculator__panel">
+        <div class="recovery-calculator__intro">
+          {block.title && <h2 class="recovery-calculator__title"><FormattedText text={block.title} /></h2>}
+          {block.description && <p class="recovery-calculator__description">{block.description}</p>}
+        </div>
+
+        <div class="recovery-calculator__grid">
+          <div class="recovery-calculator__controls">
+            {controls.map((control) => (
+              <div class="recovery-calculator__control">
+                <div class="recovery-calculator__control-head">
+                  <label class="recovery-calculator__label" for={`rc-${control.key}`}>{control.label}</label>
+                  <span class="recovery-calculator__readout">
+                    {control.prefix && <span class="recovery-calculator__affix">{control.prefix}</span>}
+                    <input
+                      class="recovery-calculator__number"
+                      type="number"
+                      inputmode="numeric"
+                      min={control.min}
+                      max={control.max}
+                      step="1"
+                      value={control.value}
+                      readonly
+                      data-number={control.key}
+                      aria-label={`${control.label} (exact value)`}
+                    />
+                    {control.suffix && <span class="recovery-calculator__affix">{control.suffix}</span>}
+                  </span>
+                </div>
+                <input
+                  class="recovery-calculator__range"
+                  id={`rc-${control.key}`}
+                  type="range"
+                  min={control.min}
+                  max={control.max}
+                  step={control.step}
+                  value={control.value}
+                  data-input={control.key}
+                  data-prefix={control.prefix}
+                  data-suffix={control.suffix}
+                />
+                {control.hint && <p class="recovery-calculator__hint">{control.hint}</p>}
+              </div>
+            ))}
+
+            <fieldset class="recovery-calculator__frequency">
+              <legend class="recovery-calculator__label">
+                {block.frequencyLabel ?? 'How often a new client books'}
+              </legend>
+              <div class="recovery-calculator__segments">
+                {FREQUENCIES.map((frequency) => (
+                  <label class="recovery-calculator__segment">
+                    <input
+                      type="radio"
+                      name="rc-frequency"
+                      value={frequency.visits}
+                      checked={frequency.key === activeFrequency}
+                      data-frequency={frequency.key}
+                    />
+                    <span>{frequency.label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="recovery-calculator__result">
+            <p class="recovery-calculator__clients">
+              <span class="recovery-calculator__clients-value" data-clients>{clientsRounded}</span>
+              <span class="recovery-calculator__clients-label">
+                {block.clientsLabel ?? 'new clients a month you are not booking'}
+              </span>
+            </p>
+
+            <div class="recovery-calculator__money">
+              <p class="recovery-calculator__result-label">{block.resultLabel ?? 'Work that is worth'}</p>
+              <p class="recovery-calculator__result-value">
+                <span data-result>{money(monthly)}</span>
+                <span class="recovery-calculator__result-suffix">{block.resultSuffix ?? "/ month"}</span>
+              </p>
+              <p class="recovery-calculator__result-annual">
+                <span data-annual>{money(monthly * 12)}</span> {block.annualLabel ?? 'over a year, if they stay'}
+              </p>
+            </div>
+
+            <p class="recovery-calculator__formula" data-formula>
+              {byKey.missed.value} missed × {WEEKS_PER_MONTH} weeks × {byKey.share.value}% booking = {clientsRounded} clients, each worth ${byKey.jobValue.value} × {visits} visits a month
+            </p>
+
+            <p class="recovery-calculator__status" data-status role="status" aria-live="polite"></p>
+
+            {block.action?.label && block.action?.href && (
+              <a
+                class="recovery-calculator__action"
+                href={block.action.href}
+                target={block.action.target === '_blank' ? '_blank' : undefined}
+                rel={block.action.target === '_blank' ? 'noopener noreferrer' : undefined}
+              >
+                {block.action.label}
+              </a>
+            )}
+          </div>
+        </div>
+
+        {block.breakEvenNote && (
+          <p class="recovery-calculator__breakeven">{block.breakEvenNote}</p>
+        )}
+        {block.assumptionNote && <p class="recovery-calculator__note">{block.assumptionNote}</p>}
+      </div>
+    </div>
+  </section>
+)}
+
+{hasContent && <script is:inline src="/assets/blocks/recovery-calculator/recovery-calculator.js" defer></script>}

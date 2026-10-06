@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "roles": [
+    {
+      "id": "global-orchestrator",
+      "name": "Global Orchestrator",
+      "roleFile": "ai/agents/global-orchestrator.md",
+      "promptFile": "ai/prompts/global-orchestrator.md",
+      "defaultModelClass": "frontier-orchestration",
+      "writeScope": "migration docs, task assignments, evidence ledgers"
+    },
+    {
+      "id": "web-orchestrator",
+      "name": "Web Orchestrator",
+      "roleFile": "ai/agents/web-orchestrator.md",
+      "promptFile": "ai/prompts/web-orchestrator.md",
+      "defaultModelClass": "coding",
+      "writeScope": "apps/web integration, block category structure, web QA coordination"
+    },
+    {
+      "id": "cms-orchestrator",
+      "name": "CMS Orchestrator",
+      "roleFile": "ai/agents/cms-orchestrator.md",
+      "promptFile": "ai/prompts/cms-orchestrator.md",
+      "defaultModelClass": "coding",
+      "writeScope": "apps/cms, CMS schemas, import/export, preview coordination"
+    },
+    {
+      "id": "block-porter",
+      "name": "Block Porter",
+      "roleFile": "ai/agents/block-porter.md",
+      "promptFile": "ai/prompts/block-porter.md",
+      "defaultModelClass": "coding",
+      "writeScope": "one source block plus shared integration files"
+    },
+    {
+      "id": "cms-mapper",
+      "name": "CMS Mapper",
+      "roleFile": "ai/agents/cms-mapper.md",
+      "promptFile": "ai/prompts/cms-mapping-review.md",
+      "defaultModelClass": "reasoning",
+      "writeScope": "CMS schema, block schema, importer docs"
+    },
+    {
+      "id": "frontend-integration",
+      "name": "Frontend Integration",
+      "roleFile": "ai/agents/frontend-integration.md",
+      "promptFile": "ai/prompts/frontend-integration.md",
+      "defaultModelClass": "coding",
+      "writeScope": "BlockRenderer, routes, storybook entries, integration checks"
+    },
+    {
+      "id": "visual-qa",
+      "name": "Visual QA",
+      "roleFile": "ai/agents/visual-qa.md",
+      "promptFile": "ai/prompts/visual-qa.md",
+      "defaultModelClass": "fast-vision-or-browser",
+      "writeScope": "reports only unless assigned fixes"
+    },
+    {
+      "id": "storybook-qa",
+      "name": "Storybook QA",
+      "roleFile": "ai/agents/storybook-qa.md",
+      "promptFile": "ai/prompts/storybook-qa.md",
+      "defaultModelClass": "fast-vision-or-browser",
+      "writeScope": "storybook QA reports and screenshots"
+    },
+    {
+      "id": "cms-qa",
+      "name": "CMS QA",
+      "roleFile": "ai/agents/cms-qa.md",
+      "promptFile": "ai/prompts/cms-qa.md",
+      "defaultModelClass": "coding",
+      "writeScope": "CMS QA reports and focused test fixtures"
+    },
+    {
+      "id": "admin-preview",
+      "name": "Admin Preview",
+      "roleFile": "ai/agents/admin-preview.md",
+      "promptFile": "ai/prompts/admin-preview.md",
+      "defaultModelClass": "coding",
+      "writeScope": "Payload preview and Astro preview integration"
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code Reviewer",
+      "roleFile": "ai/agents/code-reviewer.md",
+      "promptFile": "ai/prompts/code-review.md",
+      "defaultModelClass": "review",
+      "writeScope": "read-only by default"
+    }
+  ],
+  "teams": [
+    {
+      "id": "global",
+      "lead": "global-orchestrator",
+      "members": ["web-orchestrator", "cms-orchestrator", "storybook-qa", "cms-qa", "code-reviewer"]
+    },
+    {
+      "id": "web-ui",
+      "lead": "web-orchestrator",
+      "members": ["block-porter", "frontend-integration", "visual-qa", "storybook-qa", "code-reviewer"]
+    },
+    {
+      "id": "cms",
+      "lead": "cms-orchestrator",
+      "members": ["cms-mapper", "admin-preview", "cms-qa", "code-reviewer"]
+    }
+  ]
+}

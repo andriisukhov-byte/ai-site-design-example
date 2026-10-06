@@ -1,0 +1,86 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_capability-tools.scss';
+
+type CapabilityToolsBlock = Extract<PageBlock, { type: 'capability-tools' }>;
+
+type Props = {
+  block: CapabilityToolsBlock;
+};
+
+const { block } = Astro.props;
+const cards = block.cards.filter((card) => card.title || card.description);
+const hasHeader = Boolean(block.eyebrow || block.title || block.description);
+---
+
+{cards.length > 0 && (
+  <section class="capability-tools">
+    <div class="capability-tools__container container-wide">
+      {hasHeader && (
+        <header class="capability-tools__header">
+          {block.eyebrow && <p class="capability-tools__eyebrow">{block.eyebrow}</p>}
+
+          {block.title && (
+            <h2 class="capability-tools__title">
+              <FormattedText text={block.title} />
+            </h2>
+          )}
+
+          {block.description && (
+            <p class="capability-tools__description">
+              <FormattedText text={block.description} />
+            </p>
+          )}
+        </header>
+      )}
+
+      <ul class="capability-tools__grid">
+        {cards.map((card) => (
+          <li class="capability-tools__card">
+            <div class="capability-tools__card-text">
+              {card.title && (
+                <h3 class="capability-tools__card-title">
+                  {card.href ? (
+                    <a class="capability-tools__card-link" href={card.href}>
+                      <FormattedText text={card.title} />
+                    </a>
+                  ) : (
+                    <FormattedText text={card.title} />
+                  )}
+                </h3>
+              )}
+
+              {card.description && (
+                <p class="capability-tools__card-desc">
+                  <FormattedText text={card.description} />
+                </p>
+              )}
+            </div>
+
+            {(card.logos.length > 0 || card.extraTools > 0) && (
+              <div class="capability-tools__tools">
+                {card.logos.map((logo) => (
+                  <span class="capability-tools__tool">
+                    <img
+                      class="capability-tools__logo"
+                      src={logo.src}
+                      alt={logo.alt ?? ''}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                ))}
+                {card.extraTools > 0 && (
+                  <span class="capability-tools__tool capability-tools__tool--more">
+                    +{card.extraTools}
+                  </span>
+                )}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}

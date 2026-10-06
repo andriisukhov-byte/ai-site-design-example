@@ -1,0 +1,55 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import '../../../styles/blocks/_live-in-days.scss';
+
+type LiveInDaysBlock = Extract<PageBlock, { type: 'live-in-days' }>;
+
+interface Props {
+  block: LiveInDaysBlock;
+}
+
+const { block } = Astro.props;
+const items = block.items ?? [];
+const hasText = Boolean(block.eyebrow || block.description);
+const cardClass = ['live-in-days__card', hasText && 'live-in-days__card--with-text'].filter(Boolean).join(' ');
+
+function iconSrc(icon: string): string {
+  const allowed = new Set(['code-xml', 'layout-grid', 'bot-message-square', 'user-round-check']);
+  const name = allowed.has(icon) ? icon : 'code-xml';
+
+  return `/assets/blocks/live-in-days/icons/${name}.svg`;
+}
+---
+
+<section class="live-in-days">
+  <div class="live-in-days__container container-wide">
+    <div class={cardClass}>
+      <span class="live-in-days__decor" aria-hidden="true">
+        <img src="/assets/blocks/live-in-days/live-in-days-decor.svg" alt="" loading="lazy" decoding="async" />
+      </span>
+
+      {hasText && (
+        <div class="live-in-days__text">
+          {block.eyebrow && <p class="live-in-days__eyebrow">{block.eyebrow}</p>}
+          {block.description && <p class="live-in-days__description">{block.description}</p>}
+        </div>
+      )}
+
+      {items.length > 0 && (
+        <ul class="live-in-days__items">
+          {items.map((item, index) => (
+            <>
+              {index > 0 && <li class="live-in-days__sep" aria-hidden="true"></li>}
+              <li class="live-in-days__item">
+                <span class="live-in-days__icon" aria-hidden="true">
+                  <img src={item.customIcon?.src || iconSrc(item.icon)} alt="" loading="lazy" decoding="async" />
+                </span>
+                <span class="live-in-days__label">{item.label}</span>
+              </li>
+            </>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</section>

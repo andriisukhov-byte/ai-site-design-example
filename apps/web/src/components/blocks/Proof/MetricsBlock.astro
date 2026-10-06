@@ -1,0 +1,31 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_metrics.scss';
+type MetricsBlock = Extract<PageBlock, { type: 'metrics' }>;
+
+const { block } = Astro.props as { block: MetricsBlock };
+---
+
+<section class:list={['metrics-section', 'ca-section', block.background === 'muted' && 'ca-section--muted', block.background === 'dark' && 'metrics-section--dark']}>
+  <div class="ca-container-wide">
+    <div class="section-heading">
+      {block.eyebrow && <p class="eyebrow ca-eyebrow">{block.eyebrow}</p>}
+      <h2 class="ca-heading-md"><FormattedText text={block.title} /></h2>
+      {block.description && <p class="ca-lede">{block.description}</p>}
+    </div>
+
+    <div class="metrics-grid">
+      {block.items.map((item) => (
+        <article class="metric-card">
+          <strong><FormattedText text={item.value} /></strong>
+          <p>{item.description}</p>
+          {item.href && <a href={item.href}>Learn more</a>}
+        </article>
+      ))}
+    </div>
+
+    {block.note && <p class="section-note">{block.note}</p>}
+  </div>
+</section>

@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-25T02:26:23.287Z",
+  "endpointPath": "/api/forms/submit",
+  "acceptedSamples": 2,
+  "rejectedSamples": 1,
+  "findingCount": 0,
+  "findings": []
+}

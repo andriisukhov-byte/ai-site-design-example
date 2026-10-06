@@ -1,0 +1,5 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="label">
+<path d="M53 0.5C81.9949 0.5 105.5 24.0051 105.5 53C105.5 81.9949 81.9949 105.5 53 105.5C24.0051 105.5 0.5 81.9949 0.5 53C0.5 24.0051 24.0051 0.5 53 0.5Z" fill="var(--fill-0, #F9F9F9)"/>
+<path d="M53 0.5C81.9949 0.5 105.5 24.0051 105.5 53C105.5 81.9949 81.9949 105.5 53 105.5C24.0051 105.5 0.5 81.9949 0.5 53C0.5 24.0051 24.0051 0.5 53 0.5Z" stroke="var(--stroke-0, #E8E8E8)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#acme_g)" d="M27 53a26 26 0 1 0 52 0a26 26 0 1 0 -52 0ZM42.08 53a10.92 10.92 0 1 0 21.84 0a10.92 10.92 0 1 0 -21.84 0Z"/></g><defs><linearGradient id="acme_g" x1="27" y1="27" x2="79" y2="79" gradientUnits="userSpaceOnUse"><stop stop-color="#3A87D9"/><stop offset="0.25" stop-color="#2F1A6B"/><stop offset="0.5" stop-color="#200000"/><stop offset="0.75" stop-color="#AD3822"/><stop offset="1" stop-color="#F7A75F"/></linearGradient></defs></svg>

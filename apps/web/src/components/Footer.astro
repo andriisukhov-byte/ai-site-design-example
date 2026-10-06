@@ -1,0 +1,82 @@
+---
+import type { SiteChromeConfig } from '@acme/config';
+import '../styles/components/_footer.scss';
+
+type Props = {
+  chrome: SiteChromeConfig;
+};
+
+const { chrome } = Astro.props;
+const copyright = chrome.copyright.replace('{year}', String(new Date().getFullYear()));
+---
+
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__brand">
+      <a class="footer__logo-link" href="/" aria-label={`${chrome.siteName} home`}>
+        <img
+          class="footer__logo"
+          src={chrome.footerLogo.src}
+          width={chrome.footerLogo.width}
+          height={chrome.footerLogo.height}
+          alt={chrome.siteName}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+
+      {chrome.socialLinks.length > 0 && (
+        <ul class="footer__socials" aria-label="Social links">
+          {chrome.socialLinks.map((link) => (
+            <li class="footer__social-item">
+              <a
+                class="footer__social-link"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                data-social-platform={link.platform}
+              >
+                <img
+                  class="footer__social-icon"
+                  src={link.icon.src}
+                  width={link.icon.width}
+                  height={link.icon.height}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+
+    <nav class="footer__menu" aria-label="Footer navigation">
+      <ul class="menu">
+        {chrome.footerColumns.map((column) => (
+          <li class="menu-item">
+            <a href="#">{column.title}</a>
+            <ul class="sub-menu">
+              {column.links.map((link) => (
+                <li class="menu-item"><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__copyright">{copyright}</p>
+    <div class="footer__legal" aria-label="Legal links">
+      {chrome.legalLinks.map((link) => (
+        <span class="footer__legal-item">
+          <a class="footer__legal-link" href={link.href}>{link.label}</a>
+        </span>
+      ))}
+    </div>
+  </div>
+</footer>

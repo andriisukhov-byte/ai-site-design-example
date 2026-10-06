@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "action": "validated",
+  "manifestRecords": 2418,
+  "selectedManifestRecords": 933,
+  "payloadMediaRecords": 933,
+  "importedPayloadRecords": 933,
+  "protectedNonImportedRecords": 0,
+  "prunePayloadRecords": 0,
+  "cacheFiles": 940,
+  "keepCacheFiles": 940,
+  "pruneCacheFiles": 0,
+  "handoffPaths": 919,
+  "usedPublicPaths": 940,
+  "handoffPathsOutsideManifest": 8,
+  "pruneSourceIds": [],
+  "note": "Dry-run only. Re-run with --write true to remove unused imported Payload records and cache files."
+}

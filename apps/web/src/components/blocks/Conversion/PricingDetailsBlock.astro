@@ -1,0 +1,104 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_pricing-details.scss';
+type PricingDetailsBlock = Extract<PageBlock, { type: 'pricing-details' }>;
+type PricingDetailsSection = PricingDetailsBlock['sections'][number];
+type PricingDetailsCell = PricingDetailsSection['rows'][number]['cells'][number];
+
+interface Props {
+  block: PricingDetailsBlock;
+}
+
+const { block } = Astro.props;
+const normalizeHeader = (header: PricingDetailsSection['headers'][number]) =>
+  typeof header === 'string' ? header : header.text;
+const stars = (count: number) => Array.from({ length: Math.max(0, Math.min(5, count)) });
+const cellClass = (cell: PricingDetailsCell) => [
+  'pricing-details__cell',
+  cell.strong && 'pricing-details__cell--strong',
+  cell.accent && 'pricing-details__cell--accent',
+  cell.muted && 'pricing-details__cell--muted',
+  cell.stars && 'pricing-details__cell--stars',
+];
+---
+
+{block.sections.map((section, sectionIndex) => {
+  const titleId = `pricing-details-title-${sectionIndex}`;
+  const sectionClass = `pricing-details pricing-details--${section.background} pricing-details--${section.variant}`;
+  const headers = section.headers.map(normalizeHeader).filter(Boolean);
+
+  return (
+    <section class={sectionClass}>
+      <div class="pricing-details__container container-wide">
+        {section.title && (
+          <h2 class="pricing-details__title" id={titleId}>
+            <FormattedText text={section.title} />
+          </h2>
+        )}
+
+        {section.info && (
+          section.variant === 'comparison' ? (
+            <p class="pricing-details__lead" set:html={section.info} />
+          ) : (
+            <aside class="pricing-details__info">
+              <span class="pricing-details__info-icon" aria-hidden="true">
+                <img src="/assets/icons/pricing-cards/info.svg" alt="" loading="lazy" />
+              </span>
+              <p set:html={section.info} />
+            </aside>
+          )
+        )}
+
+        {(headers.length > 0 || section.rows.length > 0) && (
+          <div class="pricing-details__table-shell" role="region" aria-labelledby={titleId} tabindex="0">
+            <table class="pricing-details__table">
+              {section.title && <caption class="screen-reader-text">{section.title.replace(/\{\{|\}\}|\|\|/g, ' ')}</caption>}
+              {headers.length > 0 && (
+                <thead>
+                  <tr>
+                    {headers.map((header) => <th scope="col">{header}</th>)}
+                  </tr>
+                </thead>
+              )}
+              <tbody>
+                {section.rows.map((row) => (
+                  <tr>
+                    {row.cells.map((cell, cellIndex) => {
+                      const Tag = cellIndex === 0 ? 'th' : 'td';
+                      const starCount = Number(cell.text);
+
+                      return (
+                        <Tag scope={cellIndex === 0 ? 'row' : undefined} class:list={cellClass(cell)}>
+                          {cell.stars && Number.isFinite(starCount) ? (
+                            <span class="pricing-details__stars" role="img" aria-label={`${starCount} out of 5`}>
+                              {stars(starCount).map(() => <span class="pricing-details__star" aria-hidden="true" />)}
+                            </span>
+                          ) : (
+                            cell.text || '\u00a0'
+                          )}
+                        </Tag>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {section.note && section.variant !== 'comparison' && <p class="pricing-details__note">{section.note}</p>}
+          </div>
+        )}
+
+        {section.note && section.variant === 'comparison' && (
+          <aside class="pricing-details__callout">
+            <span class="pricing-details__info-icon" aria-hidden="true">
+              <img src="/assets/icons/pricing-cards/info.svg" alt="" loading="lazy" />
+            </span>
+            <p>{section.note}</p>
+          </aside>
+        )}
+      </div>
+    </section>
+  );
+})}

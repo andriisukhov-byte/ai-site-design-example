@@ -1,0 +1,58 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+type SideBySideBlock = Extract<PageBlock, { type: 'side-by-side' }>;
+
+interface Props {
+  block: SideBySideBlock;
+}
+
+const { block } = Astro.props;
+const media = block.media ?? block.image;
+---
+
+<section id={block.root?.anchor} class="uc-hiw">
+  <div class="uc-hiw__container container-wide">
+    <header class="uc-hiw__header">
+      <h2 class="uc-hiw__title"><FormattedText text={block.title} /></h2>
+    </header>
+
+    <div class="uc-hiw__content">
+      {media?.src && (
+        <div class="uc-hiw__visual">
+          <img src={media.src} alt={media.alt ?? ''} loading="lazy" decoding="async" />
+        </div>
+      )}
+
+      <ul class="uc-hiw__list">
+        <svg width="0" height="0" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="ucCheckGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#3A87D9"></stop>
+              <stop offset="0.25" stop-color="#2F1A6B"></stop>
+              <stop offset="0.5" stop-color="#200000"></stop>
+              <stop offset="0.75" stop-color="#AD3822"></stop>
+              <stop offset="1" stop-color="#F7A75F"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {block.bullets.map((item) => (
+          <li class="uc-hiw__item">
+            <span class="uc-hiw__check" aria-hidden="true">
+              <svg class="uc-hiw__check-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+                <circle cx="16" cy="16" r="16" fill="url(#ucCheckGrad)"></circle>
+                <path d="m10 16 4 4 8-9" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="uc-hiw__item-body">
+              <p class="uc-hiw__item-title"><FormattedText text={item.title} /></p>
+              {item.description && <p class="uc-hiw__item-text"><FormattedText text={item.description} /></p>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

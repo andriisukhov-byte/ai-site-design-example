@@ -1,0 +1,294 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_side-by-side.scss';
+
+type SideBySideBlock = Extract<PageBlock, { type: 'side-by-side' }>;
+type SideBySideAction = NonNullable<SideBySideBlock['primaryAction']>;
+
+interface Props {
+  block: SideBySideBlock;
+}
+
+const { block } = Astro.props;
+const background = normalizeBackground(block.background);
+const imageSide = block.imageSide ?? block.mediaSide ?? 'right';
+const sectionEyebrow = block.sectionEyebrow ?? block.eyebrow;
+const sectionTitle = block.sectionTitle;
+const sectionSubtitle = block.sectionSubtitle;
+const hasSectionHeader = Boolean(sectionEyebrow || sectionTitle || sectionSubtitle);
+const media = block.image ?? block.media;
+const cardTitle = block.cardTitle ?? (block.sectionTitle ? undefined : block.title);
+const cardSubtitle = block.cardSubtitle;
+const cardDescription = block.cardDescription ?? block.description;
+const bullets = block.bullets ?? [];
+const smallIcons = block.smallIcons ?? [];
+const bottomCards = block.bottomCards ?? [];
+const bulletsRich = bullets.some((bullet) => Boolean(bullet.description));
+const rootClass = [
+  'side-by-side',
+  `side-by-side--bg-${background}`,
+  `side-by-side--image-${imageSide}`,
+  hasSectionHeader && 'side-by-side--has-header',
+  bulletsRich && 'side-by-side--bullets-rich',
+  bottomCards.length > 0 && 'side-by-side--has-bottom',
+].filter(Boolean).join(' ');
+const hasPrimaryButton = Boolean(block.primaryAction?.href && block.primaryAction?.label);
+const hasSecondaryButton = Boolean(block.secondaryAction?.href && block.secondaryAction?.label);
+const hasActions = hasPrimaryButton || hasSecondaryButton;
+
+function normalizeBackground(value: SideBySideBlock['background']): 'white' | 'gray' | 'transparent' {
+  if (value === 'gray' || value === 'muted') {
+    return 'gray';
+  }
+
+  if (value === 'transparent') {
+    return 'transparent';
+  }
+
+  return 'white';
+}
+
+function buttonAttrs(action: SideBySideAction) {
+  const attrs: Record<string, string> = {
+    href: action.href,
+  };
+
+  if (action.target === '_blank') {
+    attrs.target = '_blank';
+    attrs.rel = 'noopener';
+  }
+
+  if (action.href.startsWith('#popup-open-')) {
+    attrs['data-popup'] = action.href.slice('#popup-open-'.length);
+  }
+
+  return attrs;
+}
+
+function formatRichText(value: string): string {
+  const html = value.includes('<') ? sanitizeRichHtml(value) : escapeHtml(value);
+
+  return html
+    .replace(/\{\{\s*([^{}]+?)\s*\}\}/g, (_match, highlighted: string) => `<span class="ca-gradient-text">${escapeHtml(highlighted.trim())}</span>`)
+    .replace(/\s*\|\|\s*/g, '<br />');
+}
+
+function sanitizeRichHtml(value: string): string {
+  return value
+    .split(/(<\/?span(?:\s[^>]*)?>|<br\s*\/?>|<\/?(?:p|ul|ol|li|h4|strong|b|em|i)(?:\s[^>]*)?>)/gi)
+    .map((part) => {
+      if (/^<span(?:\s[^>]*)?>$/i.test(part)) {
+        return '<span class="ca-gradient-text">';
+      }
+
+      if (/^<\/span>$/i.test(part)) {
+        return '</span>';
+      }
+
+      if (/^<br\s*\/?>$/i.test(part)) {
+        return '<br />';
+      }
+
+      const tag = part.match(/^<\/?(p|ul|ol|li|h4|strong|b|em|i)(?:\s[^>]*)?>$/i);
+
+      if (tag) {
+        const slash = part.startsWith('</') ? '/' : '';
+        return `<${slash}${tag[1].toLowerCase()}>`;
+      }
+
+      return escapeHtml(part);
+    })
+    .join('');
+}
+
+function escapeHtml(value: string): string {
+  return decodeHtmlEntities(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function decodeHtmlEntities(value: string): string {
+  return value
+    .replace(/&#(\d+);/g, (_match, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_match, code: string) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#0?39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>');
+}
+
+const checkIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" class="side-by-side__check"><circle cx="12" cy="12" r="12" fill="url(#sbsCheckGrad)"/><path d="m8 12 3 3 5-6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sbsCheckGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#3A87D9"/><stop offset="0.25" stop-color="#2F1A6B"/><stop offset="0.5" stop-color="#200000"/><stop offset="0.75" stop-color="#AD3822"/><stop offset="1" stop-color="#F7A75F"/></linearGradient></defs></svg>';
+const sideBySideIcons: Record<string, string> = {
+  users: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'credit-card': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10h20M6 15h2M11 15h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  headset: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3 14v-3a9 9 0 0 1 18 0v3M21 19a2 2 0 0 1-2 2h-1v-7h3v5ZM3 19a2 2 0 0 0 2 2h1v-7H3v5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  clipboard: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1" stroke="currentColor" stroke-width="2"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'message-square': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM2 12h20M12 2c2.5 2.7 4 6.1 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.1-4-10s1.5-7.3 4-10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  link: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  package: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m21 8-9-5-9 5v8l9 5 9-5V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'shopping-cart': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="9" cy="21" r="1" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="21" r="1" stroke="currentColor" stroke-width="2"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  truck: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M10 17h4V5H2v12h3M14 8h4l4 4v5h-2M14 17h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="2"/></svg>',
+  'shield-alert': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10ZM12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'file-check': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'calendar-check': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  workflow: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  bot: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 8V4M8 12h8M8 12a4 4 0 1 1 8 0v4a4 4 0 0 1-4 4h0a4 4 0 0 1-4-4v-4ZM6 19v-3M18 19v-3M9 15h.01M15 15h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sparkles: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m12 3 1.91 5.18L19 10l-5.09 1.82L12 17l-1.91-5.18L5 10l5.09-1.82L12 3ZM19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2ZM5 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 13l9 5 9-5M3 17l9 5 9-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+
+function sideBySideIcon(name?: string): string {
+  const icon = sideBySideIcons[name ?? 'users'] ?? sideBySideIcons.users;
+  return icon.replaceAll('stroke="currentColor"', 'stroke="url(#side-by-side-icon-gradient)"');
+}
+---
+
+<section class={rootClass}>
+  <svg class="side-by-side__svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="side-by-side-icon-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#3A87D9" />
+        <stop offset="0.25" stop-color="#2F1A6B" />
+        <stop offset="0.5" stop-color="#200000" />
+        <stop offset="0.75" stop-color="#AD3822" />
+        <stop offset="1" stop-color="#F7A75F" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="side-by-side__container container-wide">
+    {hasSectionHeader && (
+      <header class="side-by-side__header">
+        {sectionEyebrow && <p class="side-by-side__eyebrow">{sectionEyebrow}</p>}
+        {sectionTitle && <h2 class="side-by-side__title"><FormattedText text={sectionTitle} /></h2>}
+        {sectionSubtitle && <p class="side-by-side__subtitle"><FormattedText text={sectionSubtitle} /></p>}
+      </header>
+    )}
+
+    <div class="side-by-side__row">
+      {media?.src && (
+        <div class="side-by-side__visual">
+          <img class="side-by-side__image" src={media.src} alt={media.alt} width={media.width} height={media.height} loading="lazy" decoding="async" />
+        </div>
+      )}
+
+      <div class="side-by-side__content">
+        {cardTitle && <h3 class="side-by-side__card-title"><FormattedText text={cardTitle} /></h3>}
+        {cardSubtitle && <p class="side-by-side__card-subtitle"><FormattedText text={cardSubtitle} /></p>}
+        {cardDescription && <div class="side-by-side__card-description" set:html={formatRichText(cardDescription)} />}
+
+        {bullets.length > 0 && (
+          <ul class="side-by-side__bullets">
+            {bullets.map((bullet) => (
+              <li class="side-by-side__bullet">
+                <span class="side-by-side__bullet-icon" aria-hidden="true" set:html={checkIcon} />
+                <div class="side-by-side__bullet-body">
+                  <span class="side-by-side__bullet-text"><FormattedText text={bullet.text ?? bullet.title} /></span>
+                  {bullet.description && <span class="side-by-side__bullet-description"><FormattedText text={bullet.description} /></span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {smallIcons.length > 0 && (
+          <div class="side-by-side__icons-row" data-icons-row>
+            {smallIcons.map(({ image }) => (
+              <span class="side-by-side__icon-cell">
+                <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+              </span>
+            ))}
+            <button type="button" class="side-by-side__icon-overflow" data-icons-toggle aria-expanded="false" hidden>
+              <span class="side-by-side__icon-overflow-label">+0</span>
+            </button>
+          </div>
+        )}
+
+        {hasActions && (
+          <div class="side-by-side__actions">
+            {hasPrimaryButton && block.primaryAction && (
+              <a class="c-btn c-btn--primary c-btn--lg" {...buttonAttrs(block.primaryAction)}>
+                <span class="c-btn__label">{block.primaryAction.label}</span>
+              </a>
+            )}
+
+            {hasSecondaryButton && block.secondaryAction && (
+              <a class="c-btn c-btn--secondary c-btn--lg" {...buttonAttrs(block.secondaryAction)}>
+                <span class="c-btn__label">{block.secondaryAction.label}</span>
+              </a>
+            )}
+          </div>
+        )}
+
+        {block.cardNote && <p class="side-by-side__card-note"><FormattedText text={block.cardNote} /></p>}
+      </div>
+    </div>
+
+    {bottomCards.length > 0 && (
+      <div class="side-by-side__bottom" data-cards={bottomCards.length}>
+        {bottomCards.map((card) => (
+          <article class="side-by-side__bottom-card">
+            {card.title && <h4 class="side-by-side__bottom-card-title">{card.title}</h4>}
+            {card.items.length > 0 && (
+              <ul class="side-by-side__bottom-list">
+                {card.items.map((item) => (
+                  <li class="side-by-side__bottom-item">
+                    <span class="side-by-side__bottom-item-icon" aria-hidden="true" set:html={sideBySideIcon(item.icon)} />
+                    <div class="side-by-side__bottom-item-body">
+                      {item.title && <span class="side-by-side__bottom-item-title">{item.title}</span>}
+                      {item.description && <span class="side-by-side__bottom-item-description">{item.description}</span>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  (() => {
+    const VISIBLE = 2;
+
+    document.querySelectorAll('[data-icons-row]').forEach((row) => {
+      const cells = row.querySelectorAll('.side-by-side__icon-cell');
+      const toggle = row.querySelector('[data-icons-toggle]');
+
+      if (!toggle) {
+        return;
+      }
+
+      const hidden = cells.length - VISIBLE;
+
+      if (hidden <= 0) {
+        (toggle as HTMLButtonElement).hidden = true;
+        return;
+      }
+
+      (toggle as HTMLButtonElement).hidden = false;
+      const label = toggle.querySelector('.side-by-side__icon-overflow-label');
+
+      if (label) {
+        label.textContent = `+${hidden}`;
+      }
+
+      row.classList.add('is-collapsed');
+
+      toggle.addEventListener('click', () => {
+        row.classList.remove('is-collapsed');
+        toggle.setAttribute('aria-expanded', 'true');
+      });
+    });
+  })();
+</script>

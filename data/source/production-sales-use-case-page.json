@@ -1,0 +1,847 @@
+{
+  "generatedAt": "2026-07-30T13:11:13.124Z",
+  "source": "https://acme.example/wp-json/wp/v2/pages",
+  "pages": [
+    {
+      "contentKey": "aa8ae1eded7e7b30",
+      "collection": "pages",
+      "path": "/ai-use-cases-in-sales/",
+      "title": "AI Use Cases in Sales",
+      "publishedAt": "2026-05-04T06:08:42",
+      "status": "published",
+      "template": "standard",
+      "seo": {
+        "metaTitle": "AI Use Cases in Sales | Acme",
+        "metaDescription": "AI agents that respond instantly, confirm appointments, chase quotes, and re-engage past customers. See all 10 sales use cases for Acme.",
+        "canonicalUrl": "https://acme.example/ai-use-cases-in-sales/",
+        "ogTitle": "AI Use Cases in Sales | Acme",
+        "ogDescription": "AI agents that respond instantly, confirm appointments, chase quotes, and re-engage past customers. See all 10 sales use cases for Acme."
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "Acme Use Cases",
+          "title": "{{ AI Use Cases }} in Sales",
+          "description": "Automation that turns every touchpoint into a closed opportunity",
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "background": "white",
+          "type": "anchor-nav",
+          "items": [
+            {
+              "icon": "square-arrow-left",
+              "label": "24/7 Emergency Call Intake",
+              "anchor": "returns-management-eligibility"
+            },
+            {
+              "icon": "shopping-bag",
+              "label": "Lead Response Speed Agent",
+              "anchor": "purchase-order-processing"
+            },
+            {
+              "icon": "coins",
+              "label": "Reservation Confirmation & No-Show Reduction",
+              "anchor": "payment-verification"
+            },
+            {
+              "icon": "audio-lines",
+              "label": "Appointment Reminder & Confirmation",
+              "anchor": "stock-discrepancy-detection"
+            },
+            {
+              "icon": "package-search",
+              "label": "Missed Call Text-Back",
+              "anchor": "order-status-inquiry"
+            },
+            {
+              "icon": "tag",
+              "label": "Quote Follow-Up Sequence",
+              "anchor": "product-availability-check"
+            },
+            {
+              "icon": "receipt",
+              "label": "Estimate Approval Follow-Up",
+              "anchor": "invoice-data-entry-automation"
+            },
+            {
+              "icon": "bell-dot",
+              "label": "Service Intake & Appointment Agent",
+              "anchor": "shipping-delay-notification"
+            },
+            {
+              "icon": "file-box",
+              "label": "After-Hours Lead Capture Agent",
+              "anchor": "unified-order-consolidation"
+            },
+            {
+              "icon": "boxes",
+              "label": "After-Hours Lead Capture Agent",
+              "anchor": "workflow-for-large-orders"
+            },
+            {
+              "icon": "triangle-alert",
+              "label": "Repeat Customer Re-Booking Agent",
+              "anchor": "return-cost-analysis-alert"
+            },
+            {
+              "icon": "calendar-check",
+              "label": "Consultation Booking Agent",
+              "anchor": "consultation-booking-agent"
+            },
+            {
+              "icon": "users",
+              "label": "Lead Qualification Agent",
+              "anchor": "lead-qualification-agent"
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "{{ Acme }} AI Use Cases in Sales",
+          "description": "Your pipeline runs itself. Your team focuses on the work.",
+          "media": {
+            "src": "/media/2026/06/247-emergency-call-intake.png",
+            "alt": "247 emergency call intake"
+          },
+          "mediaSide": "right",
+          "sectionTitle": "{{ Acme }} AI Use Cases in Sales",
+          "sectionSubtitle": "Your pipeline runs itself. Your team focuses on the work.",
+          "imageSide": "right",
+          "image": {
+            "src": "/media/2026/06/247-emergency-call-intake.png",
+            "alt": "247 emergency call intake"
+          },
+          "cardTitle": "24/7 Emergency Call Intake",
+          "cardDescription": "<p>Handle urgent inbound calls and messages around the clock, qualifying the job, collecting critical details, and dispatching or booking the next available technician without any human on standby.</p>",
+          "bullets": [
+            {
+              "title": "Live call and SMS handling at any hour",
+              "text": "Live call and SMS handling at any hour"
+            },
+            {
+              "title": "Emergency job type and urgency classification",
+              "text": "Emergency job type and urgency classification"
+            },
+            {
+              "title": "Technician dispatch or next-slot booking",
+              "text": "Technician dispatch or next-slot booking"
+            },
+            {
+              "title": "Instant confirmation sent to customer and team",
+              "text": "Instant confirmation sent to customer and team"
+            }
+          ],
+          "smallIcons": [
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-sheets.svg",
+                "alt": "Google Sheets"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-gmail.svg",
+                "alt": "Gmail"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-pencil.svg",
+                "alt": "Pencil"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-2.svg",
+                "alt": "Tool icon"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-1.svg",
+                "alt": "Tool icon"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-drive.svg",
+                "alt": "Google Drive"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-globe.svg",
+                "alt": "Web"
+              }
+            }
+          ],
+          "bottomCards": [],
+          "root": {
+            "anchor": "returns-management-eligibility"
+          }
+        },
+        {
+          "background": "gray",
+          "type": "side-by-side",
+          "title": "Lead Response Speed Agent",
+          "description": " Respond to every new inbound inquiry within seconds, qualifying the lead and initiating the booking conversation before the prospect has time to contact a competitor. ",
+          "media": {
+            "src": "/media/2026/06/Lead-responce-speed-agent.png",
+            "alt": "Lead responce speed agent"
+          },
+          "mediaSide": "left",
+          "imageSide": "left",
+          "image": {
+            "src": "/media/2026/06/Lead-responce-speed-agent.png",
+            "alt": "Lead responce speed agent"
+          },
+          "cardTitle": "Lead Response Speed Agent",
+          "cardDescription": "<p>Respond to every new inbound inquiry within seconds, qualifying the lead and initiating the booking conversation before the prospect has time to contact a competitor.</p>",
+          "bullets": [
+            {
+              "title": "Sub-minute response across web, SMS, and WhatsApp",
+              "text": "Sub-minute response across web, SMS, and WhatsApp"
+            },
+            {
+              "title": "Instant lead qualification and intent capture",
+              "text": "Instant lead qualification and intent capture"
+            },
+            {
+              "title": "Booking or callback scheduling in first contact",
+              "text": "Booking or callback scheduling in first contact"
+            },
+            {
+              "title": "CRM update with structured lead summary",
+              "text": "CRM update with structured lead summary"
+            }
+          ],
+          "smallIcons": [
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-globe.svg",
+                "alt": "Web"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-drive.svg",
+                "alt": "Google Drive"
+              }
+            }
+          ],
+          "bottomCards": [],
+          "root": {
+            "anchor": "purchase-order-processing"
+          }
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "Reservation Confirmation & No-Show Reduction",
+          "description": " Automatically confirm reservations through conversation, collect acknowledgment, and send structured reminders that cut no-show rates without consuming staff time. ",
+          "media": {
+            "src": "/media/2026/06/Reservation-confirmation-no-show-reduction.png",
+            "alt": "Reservation confirmation & no show reduction"
+          },
+          "mediaSide": "right",
+          "imageSide": "right",
+          "image": {
+            "src": "/media/2026/06/Reservation-confirmation-no-show-reduction.png",
+            "alt": "Reservation confirmation & no show reduction"
+          },
+          "cardTitle": "Reservation Confirmation & No-Show Reduction",
+          "cardDescription": "<p>Automatically confirm reservations through conversation, collect acknowledgment, and send structured reminders that cut no-show rates without consuming staff time.</p>",
+          "bullets": [
+            {
+              "title": "Automated confirmation request via SMS or WhatsApp",
+              "text": "Automated confirmation request via SMS or WhatsApp"
+            },
+            {
+              "title": "Two-way acknowledgment and rescheduling handling",
+              "text": "Two-way acknowledgment and rescheduling handling"
+            },
+            {
+              "title": "Tiered reminder sequence before appointment",
+              "text": "Tiered reminder sequence before appointment"
+            },
+            {
+              "title": "No-show follow-up with rebooking prompt",
+              "text": "No-show follow-up with rebooking prompt"
+            }
+          ],
+          "smallIcons": [
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-gmail.svg",
+                "alt": "Gmail"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-2.svg",
+                "alt": "Tool icon"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-sheets.svg",
+                "alt": "Google Sheets"
+              }
+            }
+          ],
+          "bottomCards": [],
+          "root": {
+            "anchor": "payment-verification"
+          }
+        },
+        {
+          "background": "gray",
+          "type": "side-by-side",
+          "title": "Appointment Reminder & Confirmation",
+          "description": " Send personalized appointment reminders across the customer’s preferred channel, collect confirmations, and handle reschedule requests. ",
+          "media": {
+            "src": "/media/2026/06/Appointment-reminder-confirmation.png",
+            "alt": "Appointment reminder & confirmation"
+          },
+          "mediaSide": "left",
+          "imageSide": "left",
+          "image": {
+            "src": "/media/2026/06/Appointment-reminder-confirmation.png",
+            "alt": "Appointment reminder & confirmation"
+          },
+          "cardTitle": "Appointment Reminder & Confirmation",
+          "cardDescription": "<p>Send personalized appointment reminders across the customer’s preferred channel, collect confirmations, and handle reschedule requests.</p>",
+          "bullets": [
+            {
+              "title": "Multi-channel reminder delivery (SMS, WhatsApp, voice)",
+              "text": "Multi-channel reminder delivery (SMS, WhatsApp, voice)"
+            },
+            {
+              "title": "Confirm, cancel, or reschedule in one conversation",
+              "text": "Confirm, cancel, or reschedule in one conversation"
+            },
+            {
+              "title": "Calendar sync on any status change",
+              "text": "Calendar sync on any status change"
+            },
+            {
+              "title": "Escalation to staff only when human judgment is needed",
+              "text": "Escalation to staff only when human judgment is needed"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": [],
+          "root": {
+            "anchor": "stock-discrepancy-detection"
+          }
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "Missed Call Text-Back",
+          "description": " The moment a call goes unanswered, an agent sends an immediate SMS to the caller, opening a conversation, capturing their need, and booking the job before they dial the next number. ",
+          "media": {
+            "src": "/media/2026/06/Missed-call-text-back.png",
+            "alt": "Missed call text back"
+          },
+          "mediaSide": "right",
+          "imageSide": "right",
+          "image": {
+            "src": "/media/2026/06/Missed-call-text-back.png",
+            "alt": "Missed call text back"
+          },
+          "cardTitle": "Missed Call Text-Back",
+          "cardDescription": "<p>The moment a call goes unanswered, an agent sends an immediate SMS to the caller, opening a conversation, capturing their need, and booking the job before they dial the next number.</p>",
+          "bullets": [
+            {
+              "title": "Instant text-back triggered on missed call",
+              "text": "Instant text-back triggered on missed call"
+            },
+            {
+              "title": "Intent and job type qualification via SMS",
+              "text": "Intent and job type qualification via SMS"
+            },
+            {
+              "title": "Direct booking or callback scheduling",
+              "text": "Direct booking or callback scheduling"
+            },
+            {
+              "title": "Full conversation log delivered to the team",
+              "text": "Full conversation log delivered to the team"
+            }
+          ],
+          "smallIcons": [
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-drive.svg",
+                "alt": "Google Drive"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-pencil.svg",
+                "alt": "Pencil"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-2.svg",
+                "alt": "Tool icon"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-1.svg",
+                "alt": "Tool icon"
+              }
+            }
+          ],
+          "bottomCards": [],
+          "root": {
+            "anchor": "order-status-inquiry"
+          }
+        },
+        {
+          "type": "cta",
+          "title": "Which part of your sales pipeline is still running on manual?",
+          "description": "From the first inbound call to the estimate approval and rebooking — Acme automates every conversation in the sequence so your team focuses on the work, not the chasing.",
+          "primaryAction": {
+            "label": "Start Building Free",
+            "href": "/signup",
+            "target": "_self"
+          }
+        },
+        {
+          "background": "gray",
+          "type": "side-by-side",
+          "title": "Quote Follow-Up Sequence",
+          "description": " Automatically follow up on every outstanding quote through a structured conversation that checks intent, handles objections, and moves the prospect toward a decision. ",
+          "media": {
+            "src": "/media/2026/06/Quote-follow-up-sequence.png",
+            "alt": "Quote follow up sequence"
+          },
+          "mediaSide": "left",
+          "imageSide": "left",
+          "image": {
+            "src": "/media/2026/06/Quote-follow-up-sequence.png",
+            "alt": "Quote follow up sequence"
+          },
+          "cardTitle": "Quote Follow-Up Sequence",
+          "cardDescription": "<p>Automatically follow up on every outstanding quote through a structured conversation that checks intent, handles objections, and moves the prospect toward a decision.</p>",
+          "bullets": [
+            {
+              "title": "Quote-sent trigger initiates follow-up sequence",
+              "text": "Quote-sent trigger initiates follow-up sequence"
+            },
+            {
+              "title": "Decision intent and objection collection",
+              "text": "Decision intent and objection collection"
+            },
+            {
+              "title": "Competitive and pricing question handling",
+              "text": "Competitive and pricing question handling"
+            },
+            {
+              "title": "Rep alert when prospect is ready to proceed",
+              "text": "Rep alert when prospect is ready to proceed"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": [],
+          "root": {
+            "anchor": "product-availability-check"
+          }
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "Estimate Approval Follow-Up",
+          "description": " Chase estimate approvals through conversation rather than email, prompting the customer for a decision, answering scope questions, and logging the outcome directly to your job management system. ",
+          "media": {
+            "src": "/media/2026/06/Estimate-approval-follow-up.png",
+            "alt": "Estimate approval follow up"
+          },
+          "mediaSide": "right",
+          "imageSide": "right",
+          "image": {
+            "src": "/media/2026/06/Estimate-approval-follow-up.png",
+            "alt": "Estimate approval follow up"
+          },
+          "cardTitle": "Estimate Approval Follow-Up",
+          "cardDescription": "<p>Chase estimate approvals through conversation rather than email, prompting the customer for a decision, answering scope questions, and logging the outcome directly to your job management system.</p>",
+          "bullets": [
+            {
+              "title": "Automated approval prompt via SMS or WhatsApp",
+              "text": "Automated approval prompt via SMS or WhatsApp"
+            },
+            {
+              "title": "Scope clarification and change request handling",
+              "text": "Scope clarification and change request handling"
+            },
+            {
+              "title": "Approval or rejection logged to job management tool",
+              "text": "Approval or rejection logged to job management tool"
+            },
+            {
+              "title": "Deposit or scheduling trigger on approval",
+              "text": "Deposit or scheduling trigger on approval"
+            }
+          ],
+          "smallIcons": [
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-sheets.svg",
+                "alt": "Google Sheets"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-pencil.svg",
+                "alt": "Pencil"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-2.svg",
+                "alt": "Tool icon"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-icon-1.svg",
+                "alt": "Tool icon"
+              }
+            },
+            {
+              "image": {
+                "src": "/media/2026/05/ecommerce-logo-gmail.svg",
+                "alt": "Gmail"
+              }
+            }
+          ],
+          "bottomCards": [],
+          "root": {
+            "anchor": "invoice-data-entry-automation"
+          }
+        },
+        {
+          "background": "gray",
+          "type": "side-by-side",
+          "title": "Service Intake & Appointment Agent",
+          "description": " Replace inbound phone intake with a structured conversational agent that collects job details, qualifies the request, and books the appointment. ",
+          "media": {
+            "src": "/media/2026/06/Service-intake-appointment-agent.png",
+            "alt": "Service intake & appointment agent"
+          },
+          "mediaSide": "left",
+          "imageSide": "left",
+          "image": {
+            "src": "/media/2026/06/Service-intake-appointment-agent.png",
+            "alt": "Service intake & appointment agent"
+          },
+          "cardTitle": "Service Intake & Appointment Agent",
+          "cardDescription": "<p>Replace inbound phone intake with a structured conversational agent that collects job details, qualifies the request, and books the appointment.</p>",
+          "bullets": [
+            {
+              "title": "Multi-channel intake (call, SMS, web chat, WhatsApp)",
+              "text": "Multi-channel intake (call, SMS, web chat, WhatsApp)"
+            },
+            {
+              "title": "Job type, location, and urgency data collection",
+              "text": "Job type, location, and urgency data collection"
+            },
+            {
+              "title": "Real-time availability check and slot booking",
+              "text": "Real-time availability check and slot booking"
+            },
+            {
+              "title": "Structured intake summary routed to the right team",
+              "text": "Structured intake summary routed to the right team"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": [],
+          "root": {
+            "anchor": "shipping-delay-notification"
+          }
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "After-Hours Lead Capture Agent",
+          "description": " Qualify and capture inbound leads outside business hours across SMS, web chat, and WhatsApp, so every prospect who reaches out after closing time gets an immediate response and a booked slot. ",
+          "media": {
+            "src": "/media/2026/06/After-hours-lead-capture-agent.png",
+            "alt": "After hours lead capture agent"
+          },
+          "mediaSide": "right",
+          "imageSide": "right",
+          "image": {
+            "src": "/media/2026/06/After-hours-lead-capture-agent.png",
+            "alt": "After hours lead capture agent"
+          },
+          "cardTitle": "After-Hours Lead Capture Agent",
+          "cardDescription": "<p>Qualify and capture inbound leads outside business hours across SMS, web chat, and WhatsApp, so every prospect who reaches out after closing time gets an immediate response and a booked slot.</p>",
+          "bullets": [
+            {
+              "title": "Always-on coverage across messaging channels",
+              "text": "Always-on coverage across messaging channels"
+            },
+            {
+              "title": "After-hours lead qualification and intent scoring",
+              "text": "After-hours lead qualification and intent scoring"
+            },
+            {
+              "title": "Booking or callback scheduling for next availability",
+              "text": "Booking or callback scheduling for next availability"
+            },
+            {
+              "title": "Morning summary of overnight leads delivered to team",
+              "text": "Morning summary of overnight leads delivered to team"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": [],
+          "root": {
+            "anchor": "unified-order-consolidation"
+          }
+        },
+        {
+          "background": "gray",
+          "type": "side-by-side",
+          "title": "Repeat Customer Re-Booking Agent",
+          "description": " Re-engage past customers at the right moment (triggered by service anniversaries, seasonal cycles, or inactivity) with personalized outreach that books the next job without manual follow-up. ",
+          "media": {
+            "src": "/media/2026/06/Repeat-customer-re-booking-agent.png",
+            "alt": "Repeat customer re booking agent"
+          },
+          "mediaSide": "left",
+          "imageSide": "left",
+          "image": {
+            "src": "/media/2026/06/Repeat-customer-re-booking-agent.png",
+            "alt": "Repeat customer re booking agent"
+          },
+          "cardTitle": "Repeat Customer Re-Booking Agent",
+          "cardDescription": "<p>Re-engage past customers at the right moment (triggered by service anniversaries, seasonal cycles, or inactivity) with personalized outreach that books the next job without manual follow-up.</p>",
+          "bullets": [
+            {
+              "title": "Service history and date-based re-engagement triggers",
+              "text": "Service history and date-based re-engagement triggers"
+            },
+            {
+              "title": "Personalized outreach via SMS or WhatsApp",
+              "text": "Personalized outreach via SMS or WhatsApp"
+            },
+            {
+              "title": "One-conversation booking for returning customers",
+              "text": "One-conversation booking for returning customers"
+            },
+            {
+              "title": "Loyalty and package upsell prompts integrated into flow",
+              "text": "Loyalty and package upsell prompts integrated into flow"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": [],
+          "root": {
+            "anchor": "workflow-for-large-orders"
+          }
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "Consultation Booking Agent",
+          "description": " Responds to inbound sales leads in seconds, qualifies them in conversation, and books the consultation into the right rep’s calendar, turning speed-to-lead into booked pipeline without extra headcount. ",
+          "media": {
+            "src": "/media/2026/06/Appointment-reminder-confirmation.png",
+            "alt": "Appointment reminder & confirmation"
+          },
+          "mediaSide": "right",
+          "imageSide": "right",
+          "image": {
+            "src": "/media/2026/06/Appointment-reminder-confirmation.png",
+            "alt": "Appointment reminder & confirmation"
+          },
+          "cardTitle": "Consultation Booking Agent",
+          "cardDescription": "<p>Responds to inbound sales leads in seconds, qualifies them in conversation, and books the consultation into the right rep’s calendar, turning speed-to-lead into booked pipeline without extra headcount.</p>",
+          "bullets": [
+            {
+              "title": "Instant response across web, SMS, and email",
+              "text": "Instant response across web, SMS, and email"
+            },
+            {
+              "title": "In-conversation qualification and fit scoring",
+              "text": "In-conversation qualification and fit scoring"
+            },
+            {
+              "title": "Live calendar booking with CRM sync",
+              "text": "Live calendar booking with CRM sync"
+            },
+            {
+              "title": "Automated reminders and no-show recovery",
+              "text": "Automated reminders and no-show recovery"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": []
+        },
+        {
+          "background": "white",
+          "type": "side-by-side",
+          "title": "Lead Qualification Agent",
+          "description": " Qualifies every inbound lead in conversation the moment it arrives — scoring fit, routing hot leads to the right rep instantly, and nurturing the rest so no demand goes to waste. ",
+          "media": {
+            "src": "/media/2026/06/Lead-Form-to-CRM-Sync.png",
+            "alt": "Lead Form to CRM Sync"
+          },
+          "mediaSide": "left",
+          "imageSide": "left",
+          "image": {
+            "src": "/media/2026/06/Lead-Form-to-CRM-Sync.png",
+            "alt": "Lead Form to CRM Sync"
+          },
+          "cardTitle": "Lead Qualification Agent",
+          "cardDescription": "<p>Qualifies every inbound lead in conversation the moment it arrives — scoring fit, routing hot leads to the right rep instantly, and nurturing the rest so no demand goes to waste.</p>",
+          "bullets": [
+            {
+              "title": "Instant capture across web, SMS, and email",
+              "text": "Instant capture across web, SMS, and email"
+            },
+            {
+              "title": "Criteria-based qualification and fit scoring",
+              "text": "Criteria-based qualification and fit scoring"
+            },
+            {
+              "title": "Rep routing by territory, product, or deal size",
+              "text": "Rep routing by territory, product, or deal size"
+            },
+            {
+              "title": "Nurture path with automatic CRM sync",
+              "text": "Nurture path with automatic CRM sync"
+            }
+          ],
+          "smallIcons": [],
+          "bottomCards": []
+        },
+        {
+          "type": "news-insights",
+          "title": "AI Industry {{ News }} and {{ Insights }}",
+          "mode": "latest",
+          "collections": [
+            "posts",
+            "news"
+          ],
+          "limit": 3,
+          "cards": []
+        },
+        {
+          "type": "faq",
+          "title": "Frequently Asked Questions about",
+          "titleGradient": "Acme",
+          "searchPlaceholder": "Search FAQ",
+          "items": [
+            {
+              "question": "What exactly do you build for us?",
+              "answer": "<p>Event-driven workflows that automate high-volume operational processes – lead capture and routing, returns management, order status inquiries, payment verification, inventory alerts, approval workflows, multi-channel content distribution, and showing scheduling. If your team handles it repeatedly and it follows business logic, we can automate it with seamless human handoff when judgment is required.</p>",
+              "category": "business"
+            },
+            {
+              "question": "What industries get the most value from Acme?",
+              "answer": "<p>We focus on three core industries:</p> <p>eCommerce &amp; Retail: Returns management, inventory alerts, order tracking, payment reconciliation</p> <p>Marketing Agencies &amp; Teams: Lead capture and qualification, campaign execution, multi-channel distribution, CRM workflows</p> <p>Real Estate: Inquiry response, showing scheduling, listing alerts, client reminders</p> <p>These industries have high-volume, repetitive processes where event-driven automation delivers immediate, measurable ROI. However, our cognitive AI platform isn’t limited to these verticals – any business with workflow automation needs, customer service operations, or multi-system coordination can benefit from unified automation.</p>",
+              "category": "business"
+            },
+            {
+              "question": "What types of business processes can you automate?",
+              "answer": "<p>Our cognitive AI platform handles business workflow automation across customer support, sales operations, marketing campaigns, inventory management, payment reconciliation, order processing, and lead qualification. AI agents manage conversational interfaces (chat and voice), trigger backend workflows, and escalate complex situations to human team members when needed – all on one unified platform.</p>",
+              "category": "business"
+            },
+            {
+              "question": "Can multiple AI agents work together in our organization?",
+              "answer": "<p>Yes. Our cognitive AI platform supports a multi-agent architecture where different cognitive AI agents collaborate within unified workflows. Agents share context automatically, transfer conversations intelligently when needed, and coordinate complex multi-department processes. Unlike solutions requiring separate platforms, our event-driven system enables seamless agent cooperation across your entire organization.</p>",
+              "category": "features"
+            },
+            {
+              "question": "Can we customize the AI agents’ voices and personalities?",
+              "answer": "<p>Yes, our conversational voice AI allows complete customization of AI agents’ voices, speaking styles, and personalities to match your brand. You can choose from multiple voice options or create custom voices that align with your company’s identity and communication style.</p>",
+              "category": "features"
+            },
+            {
+              "question": "How accurate is the voice recognition capability?",
+              "answer": "<p>Our conversational voice AI employs advanced voice recognition technology that delivers high accuracy across different accents and speaking styles. Cognitive AI agents built on our platform understand natural speech patterns, industry-specific terminology, and handle background noise effectively while maintaining rapid response times for natural conversation flow.</p>",
+              "category": "features"
+            },
+            {
+              "question": "Do I need technical skills to use Acme?",
+              "answer": "<p>Not to get started. You provide process knowledge; we show you how to build it. Through collaborative creation, you gain the skills to manage your automation independently without ongoing technical help.</p>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "Do you offer a free trial or self-service signup?",
+              "answer": "<p>Yes, signup is self-serve, no card and no sales call needed. Every account starts with 5,000 free credits and full access to the canvas, all AI features, and 2,700+ integrations. There’s no monthly fee and no expiry; pay as you go from $10 when you launch, with human chat support unlocking on your first purchase.</p>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "How quickly can we deploy automation with Acme?",
+              "answer": "<p>With professional onboarding included, most businesses reach production up towithin 2-3 weeks. Our team helps you configure cognitive AI agents, build event-driven workflows, and integrate with your existing systems. Using pre-built templates for common use cases (returns management, lead capture, order tracking), we can deploy working automation in your first onboarding session.</p>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "What’s included in professional onboarding?",
+              "answer": "<div class=\"main-l-faq__accordion-cont-bg\"> <div class=\"main-l-faq__accordion-cont\"> <div class=\"acmea\"> <p>Every plan includes 10-20 hours of hands-on guided setup. We build your automation together – you learn while creating so you can manage, modify, and improve independently after launch. You walk away with working automation and the knowledge to control it yourself.</p> </div> </div> </div>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "How do your AI agents handle situations requiring human judgment?",
+              "answer": "<p>This is our core differentiator. Our cognitive AI platform is the only solution that combines automation and humans in an organic way. Event-driven workflows handle routine processes automatically, then hand off seamlessly to your team when situations require judgment, creativity, or relationship management. After human resolution, automation resumes without awkward breaks or system switching.</p>",
+              "category": "product"
+            },
+            {
+              "question": "How does event-driven automation differ from traditional workflow builders?",
+              "answer": "<p>Traditional workflow builders force you to draw rigid flowcharts that break when business conditions change. Our cognitive AI platform uses an event-driven architecture that responds to real business triggers – inventory changes, customer requests, and system updates. When complexity requires human judgment, workflows hand off seamlessly to your team, then resume automation automatically. This is the only platform where business workflow automation and human expertise work organically as one.</p>",
+              "category": "product"
+            },
+            {
+              "question": "What makes Acme different from Zapier or other workflow builders?",
+              "answer": "<p>Unlike traditional builders that give you a canvas and say “good luck,” we provide event-driven architecture that adapts to real business complexity. Key differentiators: professional onboarding included (10-20 hours), conversational interfaces native to workflows (not separate tools), voice support with one click, unlimited seats at Teams tier, and transparent ROI with published time equivalents.</p>",
+              "category": "product"
+            },
+            {
+              "question": "What happens after workflows go live?",
+              "answer": "<p>You choose your support model. Many operations managers prefer self-service – monitoring dashboards, making adjustments, and adding processes independently. Others prefer ongoing expert involvement available through the Enterprise tier for workflow optimization, new integration setup, and strategic automation planning. Either approach works.</p>",
+              "category": "support"
+            },
+            {
+              "question": "What kind of support do you provide?",
+              "answer": "<p>All plans include technical assistance during onboarding plus ongoing support for workflow optimization, integration troubleshooting, and system configuration. Enterprise customers receive dedicated success management, SLA guarantees, human workflow review services, and priority response. Our team helps ensure your business workflow automation delivers measurable results.</p>",
+              "category": "support"
+            },
+            {
+              "question": "Can we use voice and chat on the same workflows?",
+              "answer": "<p>Yes. Conversational interfaces – both text and voice – live natively inside workflows on our cognitive AI platform. Your existing workflow configurations work across every channel automatically. Add voice support with a single click; no rebuilding required. This unified approach eliminates the need to stitch separate chatbot, voice AI, and automation tools together.</p>",
+              "category": "technical"
+            },
+            {
+              "question": "Can your cognitive AI platform integrate with our existing systems?",
+              "answer": "<p>Yes, our cognitive AI platform integrates with over 2,700 business tools, including CRM systems (Salesforce, HubSpot, Pipedrive), eCommerce platforms (Shopify, WooCommerce, Magento), ERP systems, ticketing platforms, and communication tools. Cognitive AI agents access and update these systems automatically through event-driven workflows, eliminating manual data entry and synchronization failures.</p>",
+              "category": "technical"
+            },
+            {
+              "question": "How do you handle security and compliance?",
+              "answer": "<p>Our cognitive AI platform includes enterprise-grade security with data encryption, role-based access controls, and audit logging. For regulated industries, Enterprise plans offer enhanced security features, compliance documentation, and dedicated security reviews. All cognitive AI agents operate within your security policies and integration permissions.</p>",
+              "category": "technical"
+            },
+            {
+              "question": "What business systems does Acme integrate with?",
+              "answer": "<p>Over 2,700 tools, including CRMs (Salesforce, HubSpot, Pipedrive), eCommerce platforms (Shopify, WooCommerce, Magento), ERPs (Odoo, NetSuite), support systems (Zendesk, Intercom), communication tools (Slack, email, SMS), calendars, spreadsheets, and payment processors. If you use it, we likely integrate with it.</p>",
+              "category": "technical"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+---
+import type { PageBlock, PageDocument } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import { getSourcePages } from '../../../data/source-pages';
+
+import '../../../styles/blocks/_news-insights.scss';
+
+interface NewsInsightImage {
+  src: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
+
+interface NewsInsightCard {
+  href: string;
+  title: string;
+  image?: NewsInsightImage;
+  categories?: string[];
+  rating?: string;
+  readTime?: string;
+}
+
+// The production source block pins this ordered set independently of the
+// general site feed. Keep it explicit so the homepage stays source-faithful.
+const sourceQueryPaths = [
+  '/ai-receptionists-for-cleaning-services/',
+  '/best-ai-tools-for-auto-repair-shops/',
+  '/best-ai-tools-for-property-management/',
+];
+
+const sourceQueryReadTimes: Record<string, string> = {
+  '/ai-receptionists-for-cleaning-services/': '8 min read',
+  '/best-ai-tools-for-auto-repair-shops/': '12 min read',
+  '/best-ai-tools-for-property-management/': '10 min read',
+};
+
+const sourceQueryRatings: Record<string, string> = {
+  '/ai-receptionists-for-cleaning-services/': '4.8/5 – (5 votes)',
+  '/best-ai-tools-for-auto-repair-shops/': 'Rate this post',
+  '/best-ai-tools-for-property-management/': '5/5 – (1 vote)',
+};
+
+interface Props {
+  block?: Extract<PageBlock, { type: 'news-insights' }> | Extract<PageBlock, { type: 'content-feed' }>;
+  title?: string;
+  subtitle?: string;
+  postsCount?: number;
+  posts?: NewsInsightCard[];
+}
+
+const { block, title: propTitle, subtitle: propSubtitle, postsCount: propPostsCount, posts: propPosts = [] } = Astro.props as Props;
+const sourcePages = await getSourcePages();
+const suppliedTitle = block?.title ?? propTitle;
+const title = (suppliedTitle ?? 'AI Industry News and Insights')
+  .replace(/^AI Industry \{\{\s*News\s*\}\}\|\|and \{\{\s*Insights\s*\}\}$/, 'AI Industry {{ News }} and {{ Insights }}');
+const subtitle = block?.description ?? propSubtitle ?? '';
+const postsCount = block?.limit ?? propPostsCount ?? 3;
+const manualPosts: NewsInsightCard[] = block?.cards?.map((card) => ({
+  href: card.href,
+  title: card.title,
+  image: card.image,
+  categories: (card.tags ?? []).map((tag) => (typeof tag === 'string' ? tag : tag.label)).filter(Boolean),
+  readTime: card.readTime,
+})) ?? propPosts;
+const sourcePosts = sourceQueryPaths
+  .map((path) => sourcePages.find((post) => post.path === path))
+  .filter((post): post is PageDocument => Boolean(post))
+  .map(toSourceNewsInsightCard);
+const fallbackPosts = sourcePages
+  .filter((page) => page.status === 'published' && page.collection === 'posts')
+  .sort(comparePublishedDesc)
+  .map(toNewsInsightCard);
+const posts = manualPosts.length > 0 ? manualPosts : sourcePosts.length > 0 ? sourcePosts : fallbackPosts;
+const visiblePosts = posts.slice(0, Math.max(1, Math.min(postsCount, 6)));
+
+function comparePublishedDesc(left: PageDocument, right: PageDocument): number {
+  return dateValue(right.publishedAt) - dateValue(left.publishedAt) || left.title.localeCompare(right.title);
+}
+
+function dateValue(value?: string): number {
+  return value ? new Date(value.replace(' ', 'T')).getTime() || 0 : 0;
+}
+
+function toNewsInsightCard(page: PageDocument): NewsInsightCard {
+  return {
+    href: page.path,
+    title: page.title,
+    image: page.seo.ogImage,
+    readTime: estimateReadTime(page),
+  };
+}
+
+function toSourceNewsInsightCard(page: PageDocument): NewsInsightCard {
+  const ratingAverage = page.articleMeta?.ratingAverage;
+  const ratingCount = page.articleMeta?.ratingCount;
+
+  return {
+    href: page.path,
+    title: page.title,
+    image: page.featuredImage,
+    categories: [page.articleMeta?.category || 'Article'],
+    rating: sourceQueryRatings[page.path] ?? (ratingAverage === undefined
+      ? undefined
+      : `${ratingAverage}/5${ratingCount === undefined ? '' : ` – (${ratingCount} ${ratingCount === 1 ? 'vote' : 'votes'})`}`),
+    readTime: sourceQueryReadTimes[page.path],
+  };
+}
+
+function estimateReadTime(page: PageDocument): string {
+  const words = page.blocks
+    .flatMap((block) => Object.values(block as Record<string, unknown>))
+    .filter((value): value is string => typeof value === 'string')
+    .join(' ')
+    .replace(/<[^>]+>/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+  const minutes = Math.max(1, Math.ceil(words / 220));
+  return `${minutes} min read`;
+}
+---
+
+<section class="news-insights">
+  <div class="news-insights__container container-wide">
+    <header class="news-insights__header">
+      <h2 class="news-insights__title">
+        <FormattedText text={title} />
+      </h2>
+      {subtitle && <p class="news-insights__subtitle">{subtitle}</p>}
+    </header>
+
+    <div class="news-insights__grid guides__list">
+      {visiblePosts.length > 0 ? (
+        visiblePosts.map((post) => (
+          <a href={post.href} class="guide-card guide-card__link">
+            {post.image && (
+              <div class="guide-card__image">
+                <img
+                  src={post.image.src}
+                  alt={post.image.alt ?? ''}
+                  width={post.image.width}
+                  height={post.image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+
+            <div class="guide-card__content">
+              {post.categories && post.categories.length > 0 && (
+                <div class="blog-posts__tags">
+                  {post.categories.map((category) => <div class="blog-posts__tag">{category}</div>)}
+                </div>
+              )}
+
+              <div class="guide-card__title">{post.title}</div>
+
+              <div class="guide-card__info">
+                <div class="guide-card__info-item">
+                  <div class="blog-posts__rating">
+                    <span class="kk-star-ratings">
+                      <span class="kksr-stars" aria-hidden="true"></span>
+                      {post.rating && <span class="kksr-legend">{post.rating}</span>}
+                    </span>
+                  </div>
+                </div>
+                {post.readTime && (
+                  <div class="guide-card__info-item read">
+                    <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" />
+                    <span>{post.readTime}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </a>
+        ))
+      ) : (
+        <p class="guides__empty">No posts found.</p>
+      )}
+    </div>
+  </div>
+</section>

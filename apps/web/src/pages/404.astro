@@ -1,0 +1,50 @@
+---
+import type { PageDocument } from '@acme/blocks';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const page: PageDocument = {
+  collection: 'pages',
+  path: '/404/',
+  title: 'Page Not Found',
+  status: 'published',
+  template: 'standard',
+  seo: {
+    metaTitle: 'Page not found | Acme',
+    metaDescription: "The page you're looking for doesn't exist, may have moved, or the link is broken. Let's get you back on track.",
+    robots: 'noindex, follow',
+  },
+  blocks: [],
+};
+---
+
+<SiteLayout page={page}>
+  <section class="error-404 not-found" aria-labelledby="error-404-title">
+    <div class="error-404__container container-wide">
+      <div class="error-404__graphic">
+        <img
+          class="error-404__svg"
+          src="/assets/templates/not-found/404.svg"
+          width="510"
+          height="182"
+          alt="404"
+        />
+      </div>
+
+      <div class="error-404__content">
+        <h1 class="error-404__title" id="error-404-title">Page Not Found</h1>
+        <p class="error-404__text">
+          The page you're looking for doesn't exist, may have moved, or the link is broken. Let's get you back on track.
+        </p>
+      </div>
+
+      <div class="error-404__actions">
+        <a class="c-btn c-btn--secondary c-btn--lg" href="/contact-us/">
+          Contact Us
+        </a>
+        <a class="c-btn c-btn--primary c-btn--lg" href="/">
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

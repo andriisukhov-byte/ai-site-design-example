@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-07-25T08:47:36.619Z",
+  "source": {
+    "cmsPagesPath": "data/cms/pages.json",
+    "cmsGeneratedAt": "2026-07-25T08:43:48.721Z",
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "5b8d90e-dirty",
+    "reportBuildRevision": "5b8d90e-dirty"
+  },
+  "ok": true,
+  "launchReady": true,
+  "routes": {
+    "totalDocuments": 315,
+    "uniquePaths": 315,
+    "published": 304,
+    "drafts": 11,
+    "contentKeys": 315,
+    "uniqueContentKeys": 315,
+    "emptyPublishedNonIndex": 0,
+    "emptyPublishedSamples": [],
+    "byCollection": {
+      "guides": 42,
+      "news": 9,
+      "pages": 157,
+      "posts": 45,
+      "tips": 58,
+      "use-cases": 4
+    },
+    "byTemplate": {
+      "article": 45,
+      "document": 5,
+      "guide": 42,
+      "news": 9,
+      "standard": 152,
+      "tip": 58,
+      "use-case": 4
+    }
+  },
+  "redirects": {
+    "count": 5,
+    "items": [
+      {
+        "from": "/ai-recruitment/",
+        "to": "/ai-agents-for-recruiting/",
+        "file": "apps/web/src/pages/ai-recruitment/index.astro"
+      },
+      {
+        "from": "/cognitive-ai-platform/",
+        "to": "/",
+        "file": "apps/web/src/pages/cognitive-ai-platform/index.astro"
+      },
+      {
+        "from": "/guide/how-to-auto-fill-your-crm-with-a-received-invoice-or-route-it-to-your-customer-handling-team/",
+        "to": "/guides/",
+        "file": "apps/web/src/pages/guide/how-to-auto-fill-your-crm-with-a-received-invoice-or-route-it-to-your-customer-handling-team/index.astro"
+      },
+      {
+        "from": "/guide/how-to-automate-inquiries-from-your-web-form-into-actions-for-your-team-with-acme/",
+        "to": "/guides/",
+        "file": "apps/web/src/pages/guide/how-to-automate-inquiries-from-your-web-form-into-actions-for-your-team-with-acme/index.astro"
+      },
+      {
+        "from": "/recruiting-ai-agent-for-security-guard-company/",
+        "to": "/ai-recruiting-agent-security/",
+        "file": "apps/web/src/pages/recruiting-ai-agent-for-security-guard-company/index.astro"
+      }
+    ],
+    "audit": {
+      "ok": true,
+      "duplicateSources": [],
+      "fromPublishedRoutes": [],
+      "missingInternalTargets": []
+    }
+  },
+  "blocks": {
+    "total": 1775,
+    "byType": {
+      "agent-capabilities": 9,
+      "agent-solutions": 6,
+      "anchor-nav": 8,
+      "capability-trio": 2,
+      "channels-grid": 16,
+      "comparison-grid": 2,
+      "concierge-flow": 4,
+      "contact-us": 2,
+      "coverage-grid": 3,
+      "cta": 128,
+      "difference": 21,
+      "enterprise-upgrade": 5,
+      "faq": 135,
+      "feature-grid": 155,
+      "feature-rows": 5,
+      "feature-stack": 4,
+      "functional-capabilities": 18,
+      "hero": 141,
+      "hero-extended": 5,
+      "how-it-works": 146,
+      "industry-expertise": 19,
+      "live-in-days": 2,
+      "logo-grid": 15,
+      "logo-strip": 50,
+      "media-showcase": 14,
+      "news-insights": 130,
+      "pain-points-comparison": 20,
+      "pricing-cards": 22,
+      "pricing-details": 73,
+      "pricing-policy": 2,
+      "results-stats": 18,
+      "rich-text": 158,
+      "security": 74,
+      "side-by-side": 291,
+      "stats-cards": 23,
+      "story": 5,
+      "tabs-showcase": 18,
+      "testimonials": 4,
+      "use-case-flow": 2,
+      "use-cases-grid": 20
+    }
+  },
+  "media": {
+    "attachmentRecords": 2418,
+    "copiedLocalAssets": 2384,
+    "missingAttachmentFiles": 34,
+    "runtimeImageReferences": 1967,
+    "imageDescriptorReferences": 1967,
+    "importedImageDescriptorReferences": 1967,
+    "uniqueImagePublicPaths": 477,
+    "uniqueImportedImagePublicPaths": 477,
+    "uniqueImportedRuntimePublicPaths": 928,
+    "importedImageDescriptorsWithStableId": 1571,
+    "importedImageDescriptorsMissingStableId": 396,
+    "availabilityOk": true,
+    "missingImportedAssets": 0,
+    "affectedRoutes": 0,
+    "handoffReport": {
+      "path": "data/cms/media-handoff.json",
+      "ok": true,
+      "requiredImportedAssets": 928,
+      "presentLocalAssets": 928,
+      "missingLocalAssets": 0,
+      "manifestCoverageOk": false,
+      "notInManifest": 8,
+      "totalBytes": 349388355,
+      "totalMegabytes": 333.2
+    },
+    "syncReport": {
+      "path": "data/cms/media-sync-report.json",
+      "ok": true,
+      "mode": "dry-run",
+      "itemCount": 928,
+      "copiedAssets": 0,
+      "plannedAssets": 928,
+      "missingSourceAssets": 0,
+      "sizeMismatchAssets": 0,
+      "unsafeTargetAssets": 0,
+      "totalBytes": 349388355,
+      "totalMegabytes": 333.2
+    }
+  },
+  "supportingCollections": {
+    "configured": [
+      "media",
+      "faq-items",
+      "testimonials"
+    ],
+    "note": "Reusable supporting collections are configured in Payload; current Astro runtime receives resolved inline block data from data/cms/pages.json."
+  },
+  "qa": {
+    "builtHtmlFiles": 310,
+    "mediaReport": {
+      "path": "data/source/media-availability-report.json",
+      "ok": true,
+      "htmlFiles": 310
+    },
+    "htmlStructureReport": {
+      "path": "data/source/html-structure-report.json",
+      "ok": true,
+      "htmlFiles": 310,
+      "findingCount": 0
+    },
+    "formsReport": {
+      "path": "data/source/forms-report.json",
+      "ok": true,
+      "htmlFiles": 310,
+      "formCount": 139,
+      "acmeFormCount": 5,
+      "findingCount": 0
+    },
+    "formApiReport": {
+      "path": "data/source/form-api-report.json",
+      "ok": true,
+      "endpointPath": "/api/forms/submit",
+      "acceptedSamples": 2,
+      "rejectedSamples": 1,
+      "findingCount": 0
+    },
+    "payloadRoundtripReport": {
+      "path": "data/source/payload-roundtrip-report.json",
+      "ok": true,
+      "sourceDocuments": 315,
+      "cmsDocuments": 315,
+      "sourcePaths": 315,
+      "cmsPaths": 315,
+      "sourceContentKeys": 315,
+      "cmsContentKeys": 315,
+      "sourceImportedImageDescriptors": 1967,
+      "cmsImportedImageDescriptors": 1967,
+      "sourceImportedImageIds": 477,
+      "cmsImportedImageIds": 477,
+      "findingCount": 0
+    },
+    "pocLaunchSuiteReport": {
+      "path": "data/source/poc-launch-suite-report.json",
+      "ok": true,
+      "gateCount": 20,
+      "passingGateCount": 20,
+      "failingGateCount": 0
+    },
+    "routeCoverageReport": {
+      "path": "data/source/route-coverage-report.json",
+      "ok": true,
+      "builtHtmlRoutes": 310,
+      "expectedBuiltRoutes": 310,
+      "publishedRoutes": 304,
+      "explicitRedirects": 5,
+      "missingPublishedRoutes": 0,
+      "missingRedirectRoutes": 0,
+      "builtDraftRoutes": 0,
+      "unownedBuiltRoutes": 0,
+      "blockerCount": 0,
+      "findingCount": 0
+    },
+    "blockRootAttrsReport": {
+      "path": "data/source/block-root-attrs-report.json",
+      "ok": true,
+      "htmlFiles": 310,
+      "routesWithRootAttrs": 76,
+      "rootAttrExpectations": 406,
+      "anchorsExpected": 405,
+      "classNamesExpected": 1,
+      "findingCount": 0
+    },
+    "visualSmokeReport": {
+      "path": "data/source/visual-smoke-report.json",
+      "ok": true,
+      "mode": "target-smoke",
+      "routeCount": 8,
+      "findingCount": 0
+    }
+  },
+  "launchGaps": [],
+  "findings": []
+}

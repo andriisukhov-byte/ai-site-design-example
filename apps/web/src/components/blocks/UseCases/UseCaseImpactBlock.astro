@@ -1,0 +1,69 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+type PricingDetailsBlock = Extract<PageBlock, { type: 'pricing-details' }>;
+
+interface Props {
+  block: PricingDetailsBlock;
+}
+
+const { block } = Astro.props;
+const section = block.sections[0];
+const headers = section?.headers ?? [];
+const headerText = (header: (typeof headers)[number]) => typeof header === 'string' ? header : header.text;
+
+function afterHeader(value: string): { prefix: string; accent?: string; suffix?: string } {
+  const match = value.match(/^(.*?)(AI Agent)(.*)$/i);
+  return match
+    ? { prefix: match[1], accent: match[2], suffix: match[3] }
+    : { prefix: value };
+}
+---
+
+{section && (
+  <section id={block.root?.anchor} class="uc-impact">
+    <div class="uc-impact__container container-wide">
+      {section.title && (
+        <header class="uc-impact__header">
+          <h2 class="uc-impact__title"><FormattedText text={section.title} /></h2>
+        </header>
+      )}
+
+      <div class="uc-impact__table-wrap">
+        <table class="uc-impact__table" data-cols={headers.length}>
+          <thead>
+            <tr>
+              {headers.map((header, index) => {
+                const value = headerText(header);
+                const after = index === headers.length - 1 ? afterHeader(value) : undefined;
+
+                return (
+                  <th class:list={['uc-impact__col-head', index === headers.length - 1 && 'uc-impact__col-head--after']}>
+                    {after ? <Fragment>{after.prefix}{after.accent && <span>{after.accent}</span>}{after.suffix}</Fragment> : value}
+                  </th>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {section.rows.map((row) => (
+              <tr>
+                {row.cells.map((cell, index) => (
+                  <td class:list={[
+                    'uc-impact__cell',
+                    index === 0 && 'uc-impact__cell--metric',
+                    index > 0 && index < row.cells.length - 1 && 'uc-impact__cell--before',
+                    index === row.cells.length - 1 && 'uc-impact__cell--after',
+                  ]}>
+                    {cell.text}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+)}

@@ -1,0 +1,159 @@
+---
+import type { PageDocument } from '@acme/blocks';
+import BlogNewsletterForm from './BlogNewsletterForm.astro';
+
+type Variant = 'blog' | 'guides' | 'news' | 'tips';
+
+interface Props {
+  variant: Variant;
+  items: PageDocument[];
+}
+
+const { variant, items } = Astro.props;
+const sortedItems = [...items].sort(comparePublishedDesc);
+const featured = sortedItems[0];
+const rest = sortedItems.slice(1);
+const isBlog = variant === 'blog';
+const archivePaths: Record<Variant, string> = {
+  blog: '/blog/',
+  guides: '/guides/',
+  news: '/news/',
+  tips: '/tips-and-tricks/',
+};
+const archiveLabels: Record<Variant, string> = {
+  blog: 'Blog posts',
+  guides: 'Guides list',
+  news: 'News list',
+  tips: 'Tips list',
+};
+const filterLabels: Record<Variant, string> = {
+  blog: 'Blog topics',
+  guides: 'Guide categories',
+  news: 'News categories',
+  tips: 'Tip categories',
+};
+const rootClass = isBlog ? 'blog-archive-page' : `${variant}-archive guide-archive`;
+
+function comparePublishedDesc(left: PageDocument, right: PageDocument): number {
+  return dateValue(right.publishedAt) - dateValue(left.publishedAt) || left.title.localeCompare(right.title);
+}
+
+function dateValue(value?: string): number {
+  return value ? new Date(value.replace(' ', 'T')).getTime() || 0 : 0;
+}
+
+function imageFor(page: PageDocument) {
+  return page.seo.ogImage ?? page.seo.twitterImage;
+}
+
+function excerptFor(page: PageDocument): string {
+  return page.excerpt || page.seo.metaDescription || '';
+}
+
+function formatDate(value?: string): string {
+  if (!value) {
+    return '';
+  }
+
+  const date = new Date(value.replace(' ', 'T'));
+  if (Number.isNaN(date.getTime())) {
+    return '';
+  }
+
+  return date.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
+}
+
+function estimateReadTime(page: PageDocument): string {
+  const words = page.blocks
+    .flatMap((block) => Object.values(block as Record<string, unknown>))
+    .filter((value): value is string => typeof value === 'string')
+    .join(' ')
+    .replace(/<[^>]+>/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(words / 220))} min read`;
+}
+---
+
+<div class={rootClass}>
+  {featured ? (
+    isBlog ? (
+      <section class="blog-featured">
+        <article class="blog-featured__article">
+          <div class="blog-featured__image">
+            {imageFor(featured) ? <img src={imageFor(featured)?.src} alt={imageFor(featured)?.alt || featured.title} loading="lazy" decoding="async" /> : <span class="first-guide__image-placeholder" aria-hidden="true"></span>}
+          </div>
+          <div class="blog-featured__content">
+            <h1 class="blog-featured__title"><a href={featured.path}>{featured.title}</a></h1>
+            {excerptFor(featured) && <div class="blog-featured__excerpt"><p>{excerptFor(featured)}</p></div>}
+            <a class="blog-featured__button c-btn c-btn--primary" href={featured.path}>Learn More</a>
+          </div>
+        </article>
+      </section>
+    ) : (
+      <section class="first-guide">
+        <article class="first-guide__container">
+          <div class="first-guide__content">
+            <h1 class="first-guide__title"><a href={featured.path}>{featured.title}</a></h1>
+            {excerptFor(featured) && <div class="first-guide__text"><p>{excerptFor(featured)}</p></div>}
+            <a class="first-guide__button c-btn c-btn--primary" href={featured.path}><span class="c-btn__label">Learn More</span></a>
+          </div>
+          <a href={featured.path} class="first-guide__image" aria-label={featured.title}>
+            {imageFor(featured) ? <img src={imageFor(featured)?.src} alt={imageFor(featured)?.alt || featured.title} loading="lazy" decoding="async" /> : <span class="first-guide__image-placeholder" aria-hidden="true"></span>}
+          </a>
+        </article>
+      </section>
+    )
+  ) : null}
+
+  <nav class={isBlog ? 'blog-filters' : 'guides-filters'} aria-label={filterLabels[variant]}>
+    <a href={archivePaths[variant]} class={isBlog ? 'blog-filters__tab blog-filters__tab--active' : 'active'}>All</a>
+  </nav>
+
+  <section class={isBlog ? 'blog-posts guides' : 'guides'} aria-label={archiveLabels[variant]}>
+    <div class={isBlog ? 'container-default' : 'guides__container'}>
+      <div class="guides__list">
+        {(rest.length > 0 ? rest : sortedItems).map((item) => (
+          <article class="guide-card">
+            <a href={item.path} class="guide-card__link" aria-label={item.title}>
+              <div class="guide-card__image">
+                {imageFor(item) ? <img src={imageFor(item)?.src} alt={imageFor(item)?.alt || item.title} loading="lazy" decoding="async" /> : <span class="guide-card__image-placeholder" aria-hidden="true"></span>}
+              </div>
+              <div class="guide-card__content">
+                <h2 class="guide-card__title">{item.title}</h2>
+                <div class="guide-card__info">
+                  {!isBlog && formatDate(item.publishedAt) && (
+                    <div class="guide-card__info-item date">
+                      <img src="/assets/blocks/news-insights/calendar.svg" alt="" width="20" height="20" loading="lazy" />
+                      <span>{formatDate(item.publishedAt)}</span>
+                    </div>
+                  )}
+                  {isBlog && (
+                    <div class="guide-card__info-item">
+                      <div class="blog-posts__rating"><span class="kk-star-ratings"><span class="kksr-stars" aria-hidden="true"></span></span></div>
+                    </div>
+                  )}
+                  <div class="guide-card__info-item read">
+                    <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                    <span>{estimateReadTime(item)}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        ))}
+        {sortedItems.length === 0 && <p class="guides__empty">No entries found for this archive.</p>}
+      </div>
+    </div>
+  </section>
+
+  {isBlog && (
+    <section class="blog-newsletter">
+      <div class="blog-newsletter__inner">
+        <h2 class="blog-newsletter__heading">Acme <span>Newsletters</span></h2>
+        <BlogNewsletterForm />
+      </div>
+    </section>
+  )}
+</div>

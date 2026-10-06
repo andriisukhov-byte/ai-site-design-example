@@ -1,0 +1,129 @@
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+.wrapper > main {
+  flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+[class*="__container"] {
+  width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  padding-inline: calc(var(--container-padding) * 0.5);
+}
+
+.ca-container,
+.container-base,
+[class*="__container"].container-base {
+  max-width: calc(var(--container-base) + var(--container-padding));
+}
+
+.ca-container-wide,
+.container-wide,
+[class*="__container"].container-wide {
+  max-width: calc(var(--container-wide) + var(--container-padding));
+}
+
+.container-narrow,
+[class*="__container"].container-narrow {
+  max-width: calc(var(--container-narrow) + var(--container-padding));
+}
+
+.ca-container,
+.ca-container-wide {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--container-padding) * 0.5);
+}
+
+.ca-section {
+  padding-block: 120px;
+}
+
+.ca-section--compact {
+  padding-block: 96px;
+}
+
+.ca-section--muted {
+  background: var(--color-gray-25);
+}
+
+.ca-section--dark {
+  color: var(--color-brand-white);
+  background: var(--color-brand-black);
+}
+
+.ca-section-header {
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.ca-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.ca-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ca-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ca-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ca-card {
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-md);
+  background: var(--color-brand-white);
+}
+
+@media (max-width: 1150px) {
+  .ca-section {
+    padding-block: 96px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ca-grid--3,
+  .ca-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  [class*="__container"],
+  .ca-container,
+  .ca-container-wide {
+    padding-inline: calc(var(--container-padding-mobile) * 0.5);
+  }
+
+  .ca-section,
+  .ca-section--compact {
+    padding-block: 72px;
+  }
+
+  .ca-grid--2,
+  .ca-grid--3,
+  .ca-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}

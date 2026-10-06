@@ -1,0 +1,118 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+const html = formatInlineText(text);
+
+function formatInlineText(value: string): string {
+  if (value.includes('<')) {
+    return sanitizeInlineHtml(value);
+  }
+
+  return escapeHtml(value)
+    .replace(/\{\{\s*([^{}]+?)\s*\}\}/g, (_match, highlighted: string) => {
+      return `<span class="ca-gradient-text">${highlighted.trim()}</span>`;
+    })
+    .replace(/\s*\|\|\s*/g, '<br />');
+}
+
+function sanitizeInlineHtml(value: string): string {
+  return value
+    .split(/(<\/?span(?:\s[^>]*)?>|<\/?(?:p|strong|b|em|i)(?:\s[^>]*)?>|<br\s*\/?>|<\/?a(?:\s[^>]*)?>)/gi)
+    .map((part) => {
+      if (/^<span(?:\s[^>]*)?>$/i.test(part)) {
+        return '<span>';
+      }
+
+      if (/^<\/span>$/i.test(part)) {
+        return '</span>';
+      }
+
+      if (/^<strong>$/i.test(part)) {
+        return '<strong>';
+      }
+
+      if (/^<\/strong>$/i.test(part)) {
+        return '</strong>';
+      }
+
+      if (/^<\/?p(?:\s[^>]*)?>$/i.test(part)) {
+        return '';
+      }
+
+      const emphasis = part.match(/^<(\/?)(b|em|i)(?:\s[^>]*)?>$/i);
+
+      if (emphasis) {
+        return `<${emphasis[1]}${emphasis[2].toLowerCase()}>`;
+      }
+
+      if (/^<br\s*\/?>$/i.test(part)) {
+        return '<br />';
+      }
+
+      if (/^<a(?:\s[^>]*)?>$/i.test(part)) {
+        return sanitizeAnchor(part);
+      }
+
+      if (/^<\/a>$/i.test(part)) {
+        return '</a>';
+      }
+
+      return escapeHtml(part);
+    })
+    .join('');
+}
+
+function sanitizeAnchor(tag: string): string {
+  const href = tag.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];
+  const safeHref = href && isSafeHref(href) ? href : undefined;
+
+  if (!safeHref) {
+    return '';
+  }
+
+  const target = /\btarget\s*=\s*(["'])_blank\1/i.test(tag)
+    ? ' target="_blank" rel="noopener"'
+    : '';
+
+  return `<a href="${escapeHtml(safeHref)}"${target}>`;
+}
+
+function isSafeHref(value: string): boolean {
+  if (value.startsWith('/') && !value.startsWith('//')) {
+    return true;
+  }
+
+  try {
+    const url = new URL(value);
+    return ['https:', 'http:', 'mailto:', 'tel:'].includes(url.protocol);
+  } catch {
+    return false;
+  }
+}
+
+function escapeHtml(value: string): string {
+  return decodeHtmlEntities(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function decodeHtmlEntities(value: string): string {
+  return value
+    .replace(/&#(\d+);/g, (_match, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_match, code: string) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#0?39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>');
+}
+---
+
+<Fragment set:html={html} />

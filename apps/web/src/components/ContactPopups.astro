@@ -1,0 +1,153 @@
+---
+import '../styles/components/_popups.scss';
+import { formEndpointFor, formSuccessRedirectFor } from '../data/forms';
+import FormTrackingFields from './FormTrackingFields.astro';
+
+type PopupConfig = {
+  id: string;
+  classes: string;
+  contentClass: string;
+  intent: 'request-demo';
+  title: string;
+  subtitle?: string;
+  introTitle?: string;
+  introSubtitle?: string;
+  introText?: string;
+  buttonLabel: string;
+};
+
+const popups: PopupConfig[] = [
+  {
+    id: 'popup-request-demo',
+    classes: 'popupRequestDemo popup-overlay',
+    contentClass: 'popup-content',
+    intent: 'request-demo',
+    title: 'Request a Demo',
+    subtitle: 'Book a guided walkthrough with the Acme team.',
+    buttonLabel: 'Request Demo',
+  },
+];
+---
+
+{
+  popups.map((popup) => (
+    <div id={popup.id} class={`ca-popup ${popup.classes}`} role="dialog" aria-modal="true" aria-hidden="true">
+      <div class={`ca-popup__dialog ${popup.contentClass}`} role="document">
+        <button class="ca-popup__close closePopup popup-close" type="button" data-popup-close aria-label="Close popup">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4 6.4 5Z" fill="currentColor" />
+          </svg>
+        </button>
+
+        <section class="l-container-box contact-form ca-popup__form">
+          <div class="l-contact-form-cont">
+            <div class="l-contact-form-cont-in">
+              {popup.introTitle && (
+                <div class="contact_form_textfield_main-box-container-title-box">
+                  <div class="contact_form_textfield_main-box-container-title-text">{popup.introTitle}</div>
+                  {popup.introSubtitle && <div class="contact_form_textfield_main-box-container-title-texts">{popup.introSubtitle}</div>}
+                  {popup.introText && <div class="contact_form_textfield_main-box-container-title-subtext">{popup.introText}</div>}
+                </div>
+              )}
+
+              <div class="ca-lead-form">
+                <form
+                  class="ca-lead-form__form"
+                  action={formEndpointFor(popup.intent)}
+                  method="post"
+                  data-acme-form
+                  data-success-redirect={formSuccessRedirectFor(popup.intent)}
+                >
+                  <input type="hidden" name="formIntent" value={popup.intent} />
+                  <input type="hidden" name="successRedirect" value={formSuccessRedirectFor(popup.intent)} />
+                  <FormTrackingFields />
+                  <input class="ca-form-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                  <div class="contact_form_textfield_main-box-container">
+                    <h2 class="contact_form_textfield_main-box-container-title">{popup.title}</h2>
+                    {popup.subtitle && <p class="contact_form_textfield_main-box-container-subtitle">{popup.subtitle}</p>}
+
+                    <div class="contact_form_textfield_main-box-content">
+                      <div class="contact_form_textfield_main-box">
+                        <label class="contact_form_textfield_main-box-ins">
+                          <span class="form_text_block">Name</span>
+                          <span class="ca-form-control-wrap">
+                            <input class="ca-form-control" type="text" name="name" autocomplete="name" placeholder="Your name" required />
+                          </span>
+                        </label>
+
+                        <label class="contact_form_textfield_main-box-ins">
+                          <span class="form_text_block">Email</span>
+                          <span class="ca-form-control-wrap">
+                            <input class="ca-form-control" type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+                          </span>
+                        </label>
+
+                        <label class="contact_form_textfield_main-box-ins">
+                          <span class="form_text_block">Phone</span>
+                          <span class="ca-form-control-wrap">
+                            <input class="ca-form-control" type="tel" name="phone" autocomplete="tel" placeholder="+1 555 000 0000" />
+                          </span>
+                        </label>
+                      </div>
+
+                      <div class="contact_form_textfield_main-box">
+                        <label class="contact_form_textfield_main-box-ins">
+                          <span class="form_text_block">Company</span>
+                          <span class="ca-form-control-wrap">
+                            <input class="ca-form-control" type="text" name="company" autocomplete="organization" placeholder="Company name" />
+                          </span>
+                        </label>
+
+                        <label class="contact_form_textfield_main-box-ins">
+                          <span class="form_text_block select">Team size</span>
+                          <span class="ca-form-control-wrap">
+                            <select class="ca-form-control" name="teamSize">
+                              <option value="">Select team size</option>
+                              <option value="1-10">1-10</option>
+                              <option value="11-50">11-50</option>
+                              <option value="51-200">51-200</option>
+                              <option value="201+">201+</option>
+                            </select>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <label class="contact_form_textfield_main-box-message">
+                      <span class="form_text_block department">Message</span>
+                      <span class="ca-form-control-wrap">
+                        <textarea class="ca-form-control" name="message" placeholder="How can we help?"></textarea>
+                      </span>
+                    </label>
+
+                    <div class="contact_form_textfield_main-box-policy">
+                      <span class="ca-form-control-wrap">
+                        <span class="ca-form-acceptance">
+                          <span class="ca-form-list-item">
+                            <label>
+                              <input type="checkbox" name="consent" value="yes" required />
+                              <span class="ca-form-list-item-label">
+                                I agree to be contacted about my request.
+                              </span>
+                            </label>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+
+                    <p class="ca-form-status ca-form-response-output" data-form-status aria-live="polite"></p>
+
+                    <div class="contact_form_textfield_main-box-button-box">
+                      <button class="hero_new_big_button_page ca-form-submit" type="submit">{popup.buttonLabel}</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  ))
+}

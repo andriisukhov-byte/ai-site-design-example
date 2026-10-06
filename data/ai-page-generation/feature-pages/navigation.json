@@ -1,0 +1,14 @@
+{
+  "operations": [
+    {
+      "menuLabel": "Features",
+      "itemLabel": "Platform Capabilities",
+      "href": "/platform-capabilities/"
+    },
+    {
+      "menuLabel": "Features",
+      "itemLabel": "Cognitive AI Agents",
+      "href": "/cognitive-ai-platform/"
+    }
+  ]
+}

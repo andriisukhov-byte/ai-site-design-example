@@ -1,0 +1,110 @@
+.error-404 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 120px 0 160px;
+  overflow: hidden;
+  background: #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url("/assets/images/tips_hero_bg.svg") center bottom / 100% auto no-repeat;
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  &__graphic {
+    width: 100%;
+    max-width: 510px;
+  }
+
+  &__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 18px 40px rgba(32, 0, 0, 0.16));
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 620px;
+  }
+
+  &__title {
+    margin: 0;
+    color: #171717;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -1.2px;
+  }
+
+  &__text {
+    margin: 0;
+    color: #5d5d5d;
+    font-size: 18px;
+    line-height: 150%;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .error-404 {
+    padding: 80px 0 110px;
+
+    &__container {
+      gap: 32px;
+    }
+
+    &__title {
+      font-size: 36px;
+      letter-spacing: -0.8px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .error-404 {
+    padding: 56px 0 80px;
+
+    &__graphic {
+      max-width: 320px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@acme/styles",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.css",
+  "exports": {
+    "./styles.css": "./src/index.css"
+  },
+  "files": ["src"],
+  "scripts": {
+    "build": "echo styles-ready",
+    "typecheck": "echo styles-ready",
+    "lint": "echo styles-ready"
+  }
+}

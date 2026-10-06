@@ -1,0 +1,32 @@
+---
+import FaqCategoryArchive from '../../components/FaqCategoryArchive.astro';
+import {
+  createArchivePage,
+  productionTaxonomies,
+} from '../../data/production-taxonomies';
+import { getSourcePage } from '../../data/source-pages';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+import '../../styles/templates/_blog.scss';
+
+const category = productionTaxonomies.faqCategories.find(
+  (item) => item.slug === Astro.params.slug,
+);
+
+if (!category) {
+  return Astro.redirect('/404');
+}
+
+const blogPage = await getSourcePage('/blog/');
+
+if (!blogPage) {
+  throw new Error('Missing CMS document for /blog/.');
+}
+
+const page = createArchivePage(blogPage, category);
+const items = productionTaxonomies.faqItems.filter((item) => item.categories.includes(category.slug));
+---
+
+<SiteLayout page={page}>
+  <FaqCategoryArchive items={items} />
+</SiteLayout>

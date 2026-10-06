@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-25T02:26:08.176Z",
+  "sanitizedPath": "data/source/sanitized-content.json",
+  "sourceCmsPath": "data/source/cms-pages.json",
+  "runtimeCmsPath": "data/cms/pages.json",
+  "sanitizedTips": 58,
+  "sourceCmsTips": 58,
+  "runtimeCmsTips": 58,
+  "dateDistribution": {
+    "2026-02-10": 46,
+    "2026-07-22": 12
+  },
+  "findingCount": 0,
+  "findings": []
+}

@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="check-circle">
+<path id="Vector" d="M3 16C3 8.8203 8.8203 3 16 3C23.1797 3 29 8.8203 29 16C29 23.1797 23.1797 29 16 29C8.8203 29 3 23.1797 3 16ZM21.0301 11.5893C20.5823 11.266 19.9572 11.3668 19.6339 11.8145L14.8371 18.4562C14.7116 18.6299 14.4572 18.6418 14.316 18.4805L12.3083 16.1859C11.9446 15.7703 11.3128 15.7282 10.8972 16.0919C10.4815 16.4555 10.4394 17.0873 10.8031 17.5029L12.8109 19.7975C13.7988 20.9266 15.5801 20.8434 16.4585 19.6272L21.2552 12.9855C21.5786 12.5378 21.4778 11.9127 21.0301 11.5893Z" fill="url(#paint0_linear_0_22)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_22" x1="3" y1="3" x2="33.0875" y2="9.21643" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3A87D9"/>
+<stop offset="0.25" stop-color="#2F1A6B"/>
+<stop offset="0.5" stop-color="#200000"/>
+<stop offset="0.75" stop-color="#AD3822"/>
+<stop offset="1" stop-color="#F7A75F"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,42 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_pricing-policy.scss';
+type PricingPolicyBlock = Extract<PageBlock, { type: 'pricing-policy' }>;
+
+interface Props {
+  block: PricingPolicyBlock;
+}
+
+const { block } = Astro.props;
+const sectionClass = `pricing-policy pricing-policy--${block.background}`;
+---
+
+<section class={sectionClass}>
+  <div class="pricing-policy__container container-wide">
+    {block.title && <h2 class="pricing-policy__title"><FormattedText text={block.title} /></h2>}
+
+    {block.callouts.length > 0 && (
+      <div class="pricing-policy__callouts">
+        {block.callouts.map((callout) => (
+          <div class="pricing-policy__callout">
+            <span class="pricing-policy__callout-icon" aria-hidden="true">
+              <img src={`/assets/blocks/pricing-policy/${callout.icon}.svg`} alt="" loading="lazy" />
+            </span>
+            <p class="pricing-policy__callout-text" set:html={callout.text} />
+          </div>
+        ))}
+      </div>
+    )}
+
+    {block.info && (
+      <aside class="pricing-policy__info">
+        <span class="pricing-policy__info-icon" aria-hidden="true">
+          <img src="/assets/blocks/pricing-policy/info.svg" alt="" loading="lazy" />
+        </span>
+        <p set:html={block.info} />
+      </aside>
+    )}
+  </div>
+</section>

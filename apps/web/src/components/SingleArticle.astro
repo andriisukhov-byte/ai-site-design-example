@@ -1,0 +1,283 @@
+---
+import type { PageBlock, PageDocument } from '@acme/blocks';
+import blogArchiveReference from '../../../../data/source/blog-archive-reference.json';
+import guidesPresentationReference from '../../../../data/source/guides-presentation-reference.json';
+import tipsPresentationReference from '../../../../data/source/tips-presentation-reference.json';
+import { productionPostPresentation } from '../data/production-taxonomies';
+import { getSourcePages } from '../data/source-pages';
+import { comparePublishedDesc, estimateReadTime, imageFor } from './archive-utils';
+import { articleReadTimeMinutes, formatArticleDate, prepareArticleHtml } from './article-utils';
+
+import '../styles/templates/_single-article.scss';
+
+interface Props {
+  page: PageDocument;
+  unratedLabel?: string;
+}
+
+type RichTextBlock = Extract<PageBlock, { type: 'rich-text' }>;
+
+const { page, unratedLabel } = Astro.props;
+const sourcePages = await getSourcePages();
+const isGuide = page.collection === 'guides' || page.template === 'guide';
+const isTip = page.collection === 'tips' || page.template === 'tip';
+const tipPresentation = isTip
+  ? tipsPresentationReference.records.find((record) => record.path === page.path)
+  : undefined;
+const guidePresentation = isGuide
+  ? guidesPresentationReference.records.find((record) => record.path === page.path)
+  : undefined;
+const postPresentation = !isGuide && !isTip
+  ? productionPostPresentation(page.path)
+  : undefined;
+const archivePath = isGuide ? '/guides/' : '/blog/';
+const archiveLabel = isGuide ? 'Guides' : 'Blog';
+const richText = page.blocks.find((block): block is RichTextBlock => block.type === 'rich-text');
+const article = prepareArticleHtml(richText?.html ?? '', Astro.url.pathname);
+const readTimeMinutes = articleReadTimeMinutes(page, richText?.html ?? '');
+const readTimeLabel = guidePresentation?.readTimeLabel
+  ?? (postPresentation?.readTimeMinutes ? `${postPresentation.readTimeMinutes} min read` : `${readTimeMinutes} min read`);
+const image = page.featuredImage ?? page.seo.ogImage ?? page.seo.twitterImage;
+const meta = page.articleMeta;
+const publishedDate = formatArticleDate(page.publishedAt);
+const updatedAt = meta?.updatedAt ?? tipPresentation?.updatedAt;
+const updatedDate = formatArticleDate(updatedAt, true);
+const showUpdated = !isGuide && updatedDate && updatedAt !== page.publishedAt;
+const tocHeadings = isTip ? [] : article.headings.filter((heading) => heading.level === 2);
+const showToc = isGuide
+  ? tocHeadings.length > 0
+  : (postPresentation?.showTableOfContents ?? (meta?.showTableOfContents !== false)) && tocHeadings.length > 0;
+const presentationRating = Number(tipPresentation?.ratingLabel?.match(/^([\d.]+)\/5/)?.[1]);
+const rating = meta?.ratingAverage ?? (Number.isFinite(presentationRating) ? presentationRating : undefined);
+const ratingLabel = tipPresentation?.ratingLabel ?? (rating !== undefined
+  ? `${rating.toFixed(1)}/5${meta?.ratingCount ? ` - (${meta.ratingCount} ${meta.ratingCount === 1 ? 'vote' : 'votes'})` : ''}`
+  : unratedLabel ?? (isTip ? 'Rate this tip' : undefined));
+const views = postPresentation?.views ?? meta?.views ?? tipPresentation?.views;
+const authorName = meta?.authorName ?? tipPresentation?.authorName;
+const sourceRelatedOrder = [
+  blogArchiveReference.featuredPath,
+  ...blogArchiveReference.firstPageCards.map((item) => item.path),
+];
+const fallbackRelatedItems = sourcePages
+  .filter((item) => {
+    const relatedCollection = isTip ? 'posts' : page.collection;
+
+    if (item.status !== 'published' || item.path === page.path || item.collection !== relatedCollection) {
+      return false;
+    }
+
+    return true;
+  })
+  .sort((left, right) => {
+    if (!isGuide) {
+      const leftIndex = sourceRelatedOrder.indexOf(left.path);
+      const rightIndex = sourceRelatedOrder.indexOf(right.path);
+      if (leftIndex >= 0 || rightIndex >= 0) {
+        return (leftIndex < 0 ? sourceRelatedOrder.length : leftIndex) - (rightIndex < 0 ? sourceRelatedOrder.length : rightIndex);
+      }
+    }
+    return comparePublishedDesc(left, right);
+  })
+  .slice(0, 3);
+const pinnedGuideRelatedItems = guidePresentation?.relatedCards.flatMap((card) => {
+  const item = sourcePages.find((candidate) => candidate.path === card.path && candidate.status === 'published');
+  return item ? [item] : [];
+});
+const pinnedPostRelatedItems = postPresentation?.relatedPaths?.flatMap((path) => {
+  const item = sourcePages.find((candidate) => candidate.path === path && candidate.status === 'published');
+  return item ? [item] : [];
+});
+const relatedItems = isGuide && guidePresentation
+  ? pinnedGuideRelatedItems ?? []
+  : postPresentation
+    ? pinnedPostRelatedItems ?? []
+    : fallbackRelatedItems;
+const relatedSourceMeta = new Map([
+  [
+    blogArchiveReference.featuredPath,
+    {
+      path: blogArchiveReference.featuredPath,
+      rating: blogArchiveReference.featuredRating,
+      readTime: blogArchiveReference.featuredReadTime,
+    },
+  ],
+  ...blogArchiveReference.firstPageCards.map((item) => [item.path, item] as const),
+]);
+
+function relatedRating(item: PageDocument): string | undefined {
+  const sourceRating = relatedSourceMeta.get(item.path)?.rating;
+  if (sourceRating) return sourceRating;
+  const average = item.articleMeta?.ratingAverage;
+  const count = item.articleMeta?.ratingCount;
+  return average === undefined ? undefined : `${average.toFixed(1)}/5${count ? ` - (${count} ${count === 1 ? 'vote' : 'votes'})` : ''}`;
+}
+
+function relatedReadTime(item: PageDocument): string {
+  return guidePresentation?.relatedCards.find((card) => card.path === item.path)?.readTimeLabel
+    ?? relatedSourceMeta.get(item.path)?.readTime
+    ?? estimateReadTime(item);
+}
+---
+
+<article class:list={['single-article', isGuide ? 'single-article--guide' : 'single-article--post']}>
+  <section class="single-article__hero">
+    <div class="single-article__container">
+      <nav class="single-article__breadcrumb" aria-label="Breadcrumb">
+        <a href={archivePath}>{archiveLabel}</a>
+        <span aria-hidden="true">/</span>
+        <span>{page.title}</span>
+      </nav>
+
+      <div class="single-article__header">
+        <div class="single-article__intro">
+          {!isGuide && !isTip && meta?.category && <span class="single-article__type">{meta.category}</span>}
+
+          <h1 class="single-article__title">{page.title}</h1>
+
+          {!isGuide && meta?.tags && meta.tags.length > 0 && (
+            <div class="single-article__chips" aria-label="Article tags">
+              {meta.tags.map((tag) => <span class="single-article__chip">{tag}</span>)}
+            </div>
+          )}
+
+          <div class="single-article__meta">
+            {!isGuide && ratingLabel && (
+              <div class="single-article__meta-item single-article__meta-item--rating" aria-label={`Rated ${ratingLabel} out of 5`}>
+                <span class="single-article__stars" aria-hidden="true">
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <img
+                      src="/assets/blocks/news-insights/star.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                      class:list={{ 'is-muted': rating === undefined || index + 1 > Math.round(rating) }}
+                    />
+                  ))}
+                </span>
+                <span>{ratingLabel}</span>
+              </div>
+            )}
+
+            {isGuide && publishedDate && (
+              <div class="single-article__meta-item">
+                <img src="/assets/blocks/news-insights/calendar.svg" width="20" height="20" alt="" />
+                <span>{publishedDate}</span>
+              </div>
+            )}
+
+            {showUpdated && <div class="single-article__meta-item"><span>Updated {updatedDate}</span></div>}
+
+            <div class="single-article__meta-item">
+              <img src="/assets/blocks/news-insights/clock.svg" width="20" height="20" alt="" />
+              <span>{readTimeLabel}</span>
+            </div>
+
+            {!isGuide && views !== undefined && (
+              <div class="single-article__meta-item"><span>{views} views</span></div>
+            )}
+
+            {authorName && (
+              <div class="single-article__meta-item single-article__meta-item--author">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>
+                  {isTip && tipPresentation?.authorPath
+                    ? <a href={tipPresentation.authorPath}>{authorName}</a>
+                    : authorName}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div class="single-article__media">
+          {image?.src
+            ? <img class="single-article__image" src={image.src} alt={image.alt || page.title} />
+            : <div class="single-article__placeholder" aria-hidden="true"></div>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="single-article__body">
+    <div class="single-article__container single-article__layout">
+      <div class="single-article__content entry-content" set:html={article.html}></div>
+
+      {showToc && (
+        <aside class="single-article__toc" aria-label="Table of contents">
+          <nav class="single-article__toc-panel">
+            {(postPresentation?.showTableOfContentsTitle ?? (meta?.showTableOfContentsTitle !== false)) && (
+              <p class="single-article__toc-title">{meta?.tableOfContentsTitle || 'Contents'}</p>
+            )}
+            <ol class="single-article__toc-list">
+              {tocHeadings.map((heading) => (
+                <li class:list={['single-article__toc-item', `single-article__toc-item--h${heading.level}`]}>
+                  <a class="single-article__toc-link" href={`#${heading.id}`}>{heading.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </aside>
+      )}
+    </div>
+  </section>
+
+  {relatedItems.length > 0 && (
+    <section class="single-article__related" aria-label={isGuide ? 'Other Guides' : 'Related Articles'}>
+      <div class="single-article__related-container">
+        <h2 class="single-article__related-title">
+          {isGuide ? 'Other' : 'Related'} <span>{isGuide ? 'Guides' : 'Articles'}</span>
+        </h2>
+
+        <div class="single-article__related-grid guides__list">
+          {relatedItems.map((item) => (
+            <a href={item.path} class="guide-card guide-card__link">
+              {imageFor(item)?.src && (
+                <div class="guide-card__image">
+                  <img src={imageFor(item)?.src} alt={imageFor(item)?.alt || item.title} loading="lazy" decoding="async" />
+                </div>
+              )}
+              <div class="guide-card__content">
+                {!isGuide && (
+                  <div class="blog-posts__tags">
+                    <span class="blog-posts__tag">{item.articleMeta?.category || 'Article'}</span>
+                  </div>
+                )}
+                {isGuide
+                  ? <h3 class="guide-card__title">{item.title}</h3>
+                  : <div class="guide-card__title">{item.title}</div>}
+                <div class="guide-card__info">
+                  {isGuide && formatArticleDate(item.publishedAt) && (
+                    <div class="guide-card__info-item date">
+                      <img src="/assets/blocks/news-insights/calendar.svg" alt="" width="20" height="20" loading="lazy" />
+                      <span>{formatArticleDate(item.publishedAt)}</span>
+                    </div>
+                  )}
+                  {!isGuide && relatedRating(item) && (
+                    <div class="guide-card__info-item">
+                      <div class="blog-posts__rating">
+                        <span class="kk-star-ratings">
+                          <span class="kksr-stars" aria-hidden="true"></span>
+                          <span class="kksr-legend">{relatedRating(item)}</span>
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  <div class="guide-card__info-item read">
+                    <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                    <span>{relatedReadTime(item)}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</article>
+
+<script>
+  import '../scripts/article-toc';
+</script>

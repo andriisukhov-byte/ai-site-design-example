@@ -1,0 +1,157 @@
+---
+import type { PageBlock, PageDocument } from '@acme/blocks';
+import { siteChrome } from '@acme/config';
+import { resolveSignupHrefsInHtml } from '../data/signup-links';
+
+import '../styles/templates/_news.scss';
+
+type RichTextBlock = Extract<PageBlock, { type: 'rich-text' }>;
+
+interface Props {
+  items: PageDocument[];
+}
+
+const { items } = Astro.props;
+const sortedItems = [...items].sort(comparePublishedDesc);
+const perPage = 5;
+const groups = groupByDay(sortedItems.slice(0, perPage));
+const maxPages = Math.max(1, Math.ceil(sortedItems.length / perPage));
+const payloadJson = JSON.stringify({
+  items: sortedItems.map((item) => ({
+    title: item.title,
+    path: item.path,
+    publishedAt: item.publishedAt,
+    image: imageFor(item),
+    contentHtml: richTextFor(item),
+  })),
+  perPage,
+}).replace(/</g, '\\u003c');
+
+function comparePublishedDesc(left: PageDocument, right: PageDocument): number {
+  return dateValue(right.publishedAt) - dateValue(left.publishedAt) || left.title.localeCompare(right.title);
+}
+
+function dateValue(value?: string): number {
+  return value ? new Date(value.replace(' ', 'T')).getTime() || 0 : 0;
+}
+
+function richTextFor(page: PageDocument): string {
+  const html = (page.blocks.find((block): block is RichTextBlock => block.type === 'rich-text')?.html ?? '').trim();
+  return resolveSignupHrefsInHtml(html, Astro.url.pathname);
+}
+
+function imageFor(page: PageDocument) {
+  return page.featuredImage ?? page.seo.ogImage ?? page.seo.twitterImage;
+}
+
+function slugId(page: PageDocument): string {
+  return `news-${page.path.replace(/^\/+|\/+$/g, '').replace(/[^A-Za-z0-9_-]+/g, '-')}`;
+}
+
+function dateParts(value?: string): { key: string; datetime: string; label: string } {
+  const date = value ? new Date(value.replace(' ', 'T')) : new Date(0);
+  const validDate = Number.isNaN(date.getTime()) ? new Date(0) : date;
+
+  return {
+    key: validDate.toISOString().slice(0, 10),
+    datetime: validDate.toISOString(),
+    label: validDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+  };
+}
+
+function groupByDay(pages: PageDocument[]) {
+  const byDay = new Map<string, { date: ReturnType<typeof dateParts>; items: PageDocument[] }>();
+
+  for (const page of pages) {
+    const date = dateParts(page.publishedAt);
+    const group = byDay.get(date.key);
+
+    if (group) {
+      group.items.push(page);
+    } else {
+      byDay.set(date.key, { date, items: [page] });
+    }
+  }
+
+  return [...byDay.values()];
+}
+---
+
+<div class="news-archive">
+  <section class="news-hero">
+    <div class="news-hero__content">
+      <h1 class="news-hero__title">Product updates</h1>
+      <div class="news-hero__description">
+        <p>New features, improvements, and fixes</p>
+        <p>we ship to <span>Acme</span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="news-socials">
+    <div class="news-socials__bar">
+      <ul class="news-socials__list" aria-label="Social links">
+        {siteChrome.socialLinks.map((social) => (
+          <li class="news-socials__item">
+            <a class="news-socials__link" href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+              {social.icon?.src
+                ? <img class="news-socials__icon" src={social.icon.src} width={social.icon.width} height={social.icon.height} alt={social.label} loading="lazy" />
+                : social.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p class="news-socials__text">Follow us and stay up to date with everything Acme!</p>
+    </div>
+  </div>
+
+  <section class="news-timeline" data-news-root>
+    <div class="news-timeline__container">
+      <div class="news-timeline__rail" data-news-rail aria-hidden="true"></div>
+
+      <div class="news-timeline__list" data-news-list>
+        {groups.length > 0 ? groups.map((group) => (
+          <div class="news-group" data-date={group.date.key}>
+            <time class="news-group__date" datetime={group.date.datetime}>{group.date.label}</time>
+            <div class="news-group__cards">
+              {group.items.map((item) => {
+                const image = imageFor(item);
+                return (
+                  <article class="news-card" id={slugId(item)}>
+                    <span class="news-card__node" aria-hidden="true"></span>
+
+                    <div class="news-card__body">
+                      <h2 class="news-card__title">{item.title}</h2>
+
+                      {image?.src && (
+                        <div class="news-card__media">
+                          <img class="news-card__image" src={image.src} alt={image.alt || item.title} loading="lazy" decoding="async" />
+                        </div>
+                      )}
+
+                      {richTextFor(item) && <div class="news-card__content entry-content" set:html={richTextFor(item)} />}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        )) : <p class="news-timeline__empty">No news yet.</p>}
+      </div>
+      {maxPages > 1 && (
+        <div class="news-timeline__more">
+          <button type="button" class="c-btn c-btn--secondary news-timeline__more-btn" data-news-more data-page="1" data-max={maxPages} data-per-page={perPage}>
+            <span class="c-btn__label">Load more</span>
+          </button>
+        </div>
+      )}
+      <script is:inline type="application/json" data-news-payload set:html={payloadJson}></script>
+    </div>
+  </section>
+</div>
+
+<script>
+  import '../scripts/news-timeline';
+  import '../scripts/news-load-more';
+</script>

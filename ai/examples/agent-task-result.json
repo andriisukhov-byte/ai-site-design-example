@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "blocker": null,
+  "summary": "Implemented the assigned slice without modifying orchestrator-owned shared files.",
+  "commit": "0123456789abcdef",
+  "pullRequest": null,
+  "changedFiles": [
+    "apps/web/src/components/blocks/<category>/<BlockName>Block.astro",
+    "apps/web/src/styles/blocks/_<block-name>.scss"
+  ],
+  "checks": [
+    {
+      "command": "npm.cmd --workspace @acme/web run typecheck",
+      "status": "passed",
+      "note": null
+    }
+  ],
+  "sharedChangesRequested": [
+    "Register the new block in packages/blocks/src/registry.ts."
+  ],
+  "delegatedTaskIds": []
+}

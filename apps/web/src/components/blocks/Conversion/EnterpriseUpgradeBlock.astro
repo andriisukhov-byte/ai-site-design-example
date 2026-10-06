@@ -1,0 +1,144 @@
+---
+import '../../../styles/blocks/_enterprise-upgrade.scss';
+import { formEndpointFor, formSuccessRedirects } from '../../../data/forms';
+import FormTrackingFields from '../../FormTrackingFields.astro';
+
+type EnterpriseUpgradeBenefit = {
+  capability?: string;
+  included?: string;
+};
+
+type EnterpriseUpgradeForm = {
+  title?: string;
+  description?: string;
+  html?: string;
+};
+
+type EnterpriseUpgradeBlock = {
+  title?: string;
+  description?: string;
+  tableTitle?: string;
+  leftHeading?: string;
+  rightHeading?: string;
+  benefits?: EnterpriseUpgradeBenefit[];
+  bodyHtml?: string;
+  form?: EnterpriseUpgradeForm;
+};
+
+interface Props {
+  block: EnterpriseUpgradeBlock;
+}
+
+const { block } = Astro.props;
+const benefits = block.benefits ?? [];
+const hasBody = Boolean(block.bodyHtml?.replace(/<[^>]+>/g, '').trim());
+const hasForm = Boolean(block.form?.html?.trim() || block.form?.title || block.form?.description);
+
+function richText(value?: string): string {
+  return (value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;')
+    .replace(/\{\{\s*([^}]+?)\s*\}\}/g, '<span>$1</span>')
+    .replace(/\|\|/g, '<br>')
+    .replaceAll('&lt;br&gt;', '<br>')
+    .replaceAll('&lt;br /&gt;', '<br>')
+    .replaceAll('&lt;span&gt;', '<span>')
+    .replaceAll('&lt;/span&gt;', '</span>');
+}
+---
+
+<section class="enterprise-upgrade">
+  <div class="enterprise-upgrade__container container-wide">
+    <div class="enterprise-upgrade__card">
+      <div class="enterprise-upgrade__banner">
+        <div class="enterprise-upgrade__decor enterprise-upgrade__decor--left" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="enterprise-upgrade__decor enterprise-upgrade__decor--right" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="enterprise-upgrade__hero">
+          <img class="enterprise-upgrade__hero-icon" src="/assets/blocks/enterprise-upgrade/check-gradient.svg" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+          {block.title && <h1 class="enterprise-upgrade__title" set:html={richText(block.title)} />}
+          {block.description && <p class="enterprise-upgrade__description" set:html={richText(block.description)} />}
+        </div>
+      </div>
+
+      {block.tableTitle && <h2 class="enterprise-upgrade__table-title" set:html={richText(block.tableTitle)} />}
+
+      {benefits.length > 0 && (
+        <div class="enterprise-upgrade__table" role="table">
+          <div class="enterprise-upgrade__table-row enterprise-upgrade__table-row--head" role="row">
+            <div class="enterprise-upgrade__table-cell" role="columnheader" set:html={richText(block.leftHeading)}></div>
+            <div class="enterprise-upgrade__table-cell" role="columnheader" set:html={richText(block.rightHeading)}></div>
+          </div>
+
+          {benefits.map((benefit) => (
+            (benefit.capability?.trim() || benefit.included?.trim()) && (
+              <div class="enterprise-upgrade__table-row" role="row">
+                <div class="enterprise-upgrade__table-cell enterprise-upgrade__table-cell--label" role="cell" set:html={richText(benefit.capability)}></div>
+                <div class="enterprise-upgrade__table-cell enterprise-upgrade__table-cell--included" role="cell">
+                  <img src="/assets/blocks/enterprise-upgrade/check-small.svg" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+                  <span set:html={richText(benefit.included)}></span>
+                </div>
+              </div>
+            )
+          ))}
+        </div>
+      )}
+
+      {hasBody && <div class="enterprise-upgrade__body" set:html={block.bodyHtml} />}
+
+      {hasForm && (
+        <div class="enterprise-upgrade__form-section">
+          {(block.form?.title || block.form?.description) && (
+            <div class="enterprise-upgrade__form-heading">
+              {block.form.title && <h2 set:html={richText(block.form.title)} />}
+              {block.form.description && <p set:html={richText(block.form.description)} />}
+            </div>
+          )}
+          {block.form?.html ? (
+            <div class="enterprise-upgrade__form" set:html={block.form.html} />
+          ) : (
+            <form
+              class="enterprise-upgrade__form enterprise-upgrade__form-shell"
+              action={formEndpointFor('enterprise')}
+              method="post"
+              data-acme-form
+              data-enterprise-form
+              data-success-redirect={formSuccessRedirects.enterprise}
+            >
+              <input type="hidden" name="formIntent" value="enterprise" />
+              <input type="hidden" name="successRedirect" value={formSuccessRedirects.enterprise} />
+              <FormTrackingFields />
+              <input class="enterprise-upgrade__honeypot" type="text" name="confirmWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <div class="enterprise-upgrade__form-row">
+                <label class="enterprise-upgrade__field"><span>Company name*</span><input type="text" name="company" autocomplete="organization" placeholder="Mycompany Inc." required /></label>
+                <label class="enterprise-upgrade__field"><span>Company website*</span><input type="url" name="companyWebsite" placeholder="https://..." required /></label>
+                <label class="enterprise-upgrade__field"><span>Your name*</span><input type="text" name="name" autocomplete="name" placeholder="Jane Smith" required /></label>
+                <label class="enterprise-upgrade__field"><span>Work email*</span><input type="email" name="email" autocomplete="email" placeholder="jane@company.com" required /></label>
+              </div>
+              <div class="enterprise-upgrade__checkboxes">
+                <p>Which job functions are you looking to automate?</p>
+                <div class="enterprise-upgrade__checkboxes-grid">
+                  {['Sales and lead qualification', 'Customer support and service', 'Recruiting and HR', 'Employee or customer onboarding', 'Marketing and lead re-engagement', 'Operations, dispatch, or scheduling', 'Accounting and finance', 'IT support and help desk', 'Other (describe in the comment field below)'].map((label) => (
+                    <label><input type="checkbox" name="functions" value={label} /><span>{label}</span></label>
+                  ))}
+                </div>
+              </div>
+              <label class="enterprise-upgrade__field enterprise-upgrade__field--wide"><span>Anything you’d like us to know before the call? <em>(optional)</em></span><textarea name="message" placeholder="Common things to mention here: target launch timeline, integration must-haves (your CRM, dispatch software, ATS, etc.), team size, security or compliance requirements (SSO provider, DPA, data residency)."></textarea></label>
+              <label class="enterprise-upgrade__field enterprise-upgrade__field--wide"><input type="checkbox" name="consent" value="yes" required /> <span>I agree to be contacted about my request.</span></label>
+              <p class="ca-form-status" data-form-status aria-live="polite"></p>
+              <button class="c-btn c-btn--primary c-btn--lg enterprise-upgrade__submit" type="submit">
+                <span class="c-btn__label">Request Enterprise Upgrade</span>
+              </button>
+            </form>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

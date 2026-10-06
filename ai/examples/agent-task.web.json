@@ -1,0 +1,35 @@
+{
+  "id": "WEB-042",
+  "title": "Port one source block",
+  "description": "Implement exactly one source block from its pinned source evidence.",
+  "kind": "implementation",
+  "lane": "web",
+  "role": "block-porter",
+  "priority": 50,
+  "baseBranch": "codex/clean-astro-migration",
+  "branch": "codex/agent/web-042-source-block",
+  "allowedFiles": [
+    "apps/web/src/components/blocks/<category>/<BlockName>Block.astro",
+    "apps/web/src/styles/blocks/_<block-name>.scss",
+    "apps/web/public/assets/blocks/<block-name>/**"
+  ],
+  "sharedFiles": [
+    "packages/blocks/src/schemas.ts",
+    "packages/blocks/src/registry.ts",
+    "apps/web/src/components/BlockRenderer.astro"
+  ],
+  "acceptance": [
+    "npm.cmd --workspace @acme/web run typecheck",
+    "npm.cmd --workspace @acme/web run build",
+    "npm.cmd run qa:no-inline-block-styles",
+    "npm.cmd run qa:no-hotlinks"
+  ],
+  "contextFiles": [
+    "ai/workflows/source-block-migration.md",
+    "ai/contracts/source-block-porting.md"
+  ],
+  "dependsOn": [],
+  "tokenBudget": 12000,
+  "reasoningEffort": "medium",
+  "delivery": "commit"
+}

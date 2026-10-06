@@ -1,0 +1,27 @@
+{
+  "id": "WEBTEAM-100",
+  "title": "Plan a bounded Web migration batch",
+  "description": "Decompose the named migration slice into disjoint Web implementation, integration, QA, and review tasks.",
+  "kind": "orchestration",
+  "lane": "web",
+  "role": "web-orchestrator",
+  "priority": 30,
+  "baseBranch": "codex/clean-astro-migration",
+  "branch": "codex/agent/webteam-100-plan",
+  "allowedFiles": [],
+  "sharedFiles": [
+    "packages/blocks/src/schemas.ts",
+    "packages/blocks/src/registry.ts",
+    "apps/web/src/components/BlockRenderer.astro"
+  ],
+  "acceptance": [],
+  "contextFiles": [
+    "ai/workflows/parallel-agent-orchestration.md",
+    "ai/contracts/source-block-porting.md",
+    "docs/migration/open-questions.md"
+  ],
+  "dependsOn": [],
+  "tokenBudget": 8000,
+  "reasoningEffort": "high",
+  "delivery": "report"
+}

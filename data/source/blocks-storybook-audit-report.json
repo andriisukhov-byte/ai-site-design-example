@@ -1,0 +1,322 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "000bace-dirty"
+  },
+  "generatedAt": "2026-07-27T00:17:51.351Z",
+  "sourceBase": "https://dev.acme.example",
+  "targetBase": "http://127.0.0.1:4321",
+  "route": "/blocks-5/",
+  "sourceAuthenticated": true,
+  "noScreenshots": false,
+  "noDiff": false,
+  "outDir": ".tmp/blocks-authoritative-page-5-final-7",
+  "threshold": 0.01,
+  "fullPageScreenshots": {
+    "source": ".tmp/blocks-authoritative-page-5-final-7/source-fullpage.png",
+    "target": ".tmp/blocks-authoritative-page-5-final-7/target-fullpage.png"
+  },
+  "sourceBlockTypes": [
+    "side-by-side-with-info-cards",
+    "logos-grid",
+    "integrations-banner",
+    "testimonials",
+    "difference"
+  ],
+  "targetBlockTypes": [
+    "side-by-side-with-info-cards",
+    "logos-grid",
+    "integrations-banner",
+    "testimonials",
+    "difference"
+  ],
+  "sourceBlockTypeCount": 5,
+  "targetBlockTypeCount": 5,
+  "findingCount": 5,
+  "blockingFindingCount": 0,
+  "likelySourceContentIssueCount": 2,
+  "likelySourceContentIssues": [
+    {
+      "type": "integrations-banner",
+      "index": 2,
+      "side": "source",
+      "code": "content-overflow",
+      "message": "39 elements overflow the block story horizontally."
+    },
+    {
+      "type": "difference",
+      "index": 4,
+      "side": "source",
+      "code": "content-overflow",
+      "message": "2 elements overflow the block story horizontally."
+    }
+  ],
+  "findings": [
+    {
+      "type": "integrations-banner",
+      "index": 2,
+      "side": "source",
+      "code": "content-overflow",
+      "message": "39 elements overflow the block story horizontally."
+    },
+    {
+      "type": "integrations-banner",
+      "index": 2,
+      "side": "target",
+      "code": "content-overflow",
+      "message": "39 elements overflow the block story horizontally."
+    },
+    {
+      "type": "testimonials",
+      "index": 3,
+      "side": "target",
+      "code": "content-overflow",
+      "message": "11 elements overflow the block story horizontally."
+    },
+    {
+      "type": "difference",
+      "index": 4,
+      "side": "source",
+      "code": "content-overflow",
+      "message": "2 elements overflow the block story horizontally."
+    },
+    {
+      "type": "difference",
+      "index": 4,
+      "side": "target",
+      "code": "content-overflow",
+      "message": "2 elements overflow the block story horizontally."
+    }
+  ],
+  "sections": [
+    {
+      "type": "side-by-side-with-info-cards",
+      "slug": "side-by-side-with-info-cards",
+      "index": 0,
+      "source": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/side-by-side-with-info-cards-source.png",
+        "width": 1440,
+        "height": 991,
+        "textLength": 906,
+        "imageCount": 1,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 0
+      },
+      "target": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/side-by-side-with-info-cards-target.png",
+        "width": 1440,
+        "height": 991,
+        "textLength": 886,
+        "imageCount": 1,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 0
+      },
+      "findings": [],
+      "diff": {
+        "pixels": 449,
+        "ratio": 0.0003140035806198948,
+        "threshold": 0.01,
+        "imagePath": ".tmp/blocks-authoritative-page-5-final-7/side-by-side-with-info-cards-diff.png",
+        "alignmentOffset": {
+          "x": 0,
+          "y": 1
+        }
+      }
+    },
+    {
+      "type": "logos-grid",
+      "slug": "logos-grid",
+      "index": 1,
+      "source": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/logos-grid-source.png",
+        "width": 1440,
+        "height": 1320,
+        "textLength": 306,
+        "imageCount": 17,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 0
+      },
+      "target": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/logos-grid-target.png",
+        "width": 1440,
+        "height": 1320,
+        "textLength": 298,
+        "imageCount": 17,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 0
+      },
+      "findings": [],
+      "diff": {
+        "pixels": 4789,
+        "ratio": 0.002517558247119186,
+        "threshold": 0.01,
+        "imagePath": ".tmp/blocks-authoritative-page-5-final-7/logos-grid-diff.png",
+        "alignmentOffset": {
+          "x": 0,
+          "y": 1
+        }
+      }
+    },
+    {
+      "type": "integrations-banner",
+      "slug": "integrations-banner",
+      "index": 2,
+      "source": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/integrations-banner-source.png",
+        "width": 1440,
+        "height": 419,
+        "textLength": 267,
+        "imageCount": 44,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 39
+      },
+      "target": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/integrations-banner-target.png",
+        "width": 1440,
+        "height": 419,
+        "textLength": 254,
+        "imageCount": 44,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 39
+      },
+      "findings": [
+        {
+          "type": "integrations-banner",
+          "index": 2,
+          "side": "source",
+          "code": "content-overflow",
+          "message": "39 elements overflow the block story horizontally."
+        },
+        {
+          "type": "integrations-banner",
+          "index": 2,
+          "side": "target",
+          "code": "content-overflow",
+          "message": "39 elements overflow the block story horizontally."
+        }
+      ],
+      "diff": {
+        "pixels": 0,
+        "ratio": 0,
+        "threshold": 0.01,
+        "imagePath": ".tmp/blocks-authoritative-page-5-final-7/integrations-banner-diff.png",
+        "alignmentOffset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "type": "testimonials",
+      "slug": "testimonials",
+      "index": 3,
+      "source": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/testimonials-source.png",
+        "width": 1440,
+        "height": 631,
+        "textLength": 800,
+        "imageCount": 2,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 0
+      },
+      "target": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/testimonials-target.png",
+        "width": 1440,
+        "height": 631,
+        "textLength": 791,
+        "imageCount": 2,
+        "brokenImages": [],
+        "emptyImageAlts": 0,
+        "overflowElements": 11
+      },
+      "findings": [
+        {
+          "type": "testimonials",
+          "index": 3,
+          "side": "target",
+          "code": "content-overflow",
+          "message": "11 elements overflow the block story horizontally."
+        }
+      ],
+      "diff": {
+        "pixels": 0,
+        "ratio": 0,
+        "threshold": 0.01,
+        "imagePath": ".tmp/blocks-authoritative-page-5-final-7/testimonials-diff.png",
+        "alignmentOffset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "type": "difference",
+      "slug": "difference",
+      "index": 4,
+      "source": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/difference-source.png",
+        "width": 1440,
+        "height": 1224,
+        "textLength": 685,
+        "imageCount": 1,
+        "brokenImages": [],
+        "emptyImageAlts": 1,
+        "overflowElements": 2
+      },
+      "target": {
+        "ok": true,
+        "screenshotPath": ".tmp/blocks-authoritative-page-5-final-7/difference-target.png",
+        "width": 1440,
+        "height": 1224,
+        "textLength": 675,
+        "imageCount": 4,
+        "brokenImages": [],
+        "emptyImageAlts": 4,
+        "overflowElements": 2
+      },
+      "findings": [
+        {
+          "type": "difference",
+          "index": 4,
+          "side": "source",
+          "code": "content-overflow",
+          "message": "2 elements overflow the block story horizontally."
+        },
+        {
+          "type": "difference",
+          "index": 4,
+          "side": "target",
+          "code": "content-overflow",
+          "message": "2 elements overflow the block story horizontally."
+        }
+      ],
+      "diff": {
+        "pixels": 1440,
+        "ratio": 0.0008163265306122449,
+        "threshold": 0.01,
+        "imagePath": ".tmp/blocks-authoritative-page-5-final-7/difference-diff.png",
+        "alignmentOffset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    }
+  ]
+}

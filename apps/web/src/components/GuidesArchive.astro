@@ -1,0 +1,126 @@
+---
+import type { PageDocument } from '@acme/blocks';
+import guidesPresentationReference from '../../../../data/source/guides-presentation-reference.json';
+import ArchivePagination from './ArchivePagination.astro';
+import { archivePayloadJson, comparePublishedDesc, estimateReadTime, formatDate, imageFor, richTextFor, stripHtml } from './archive-utils';
+
+interface Props {
+  items: PageDocument[];
+}
+
+const { items } = Astro.props;
+const archiveOrder = [
+  guidesPresentationReference.archive.featuredPath,
+  ...guidesPresentationReference.archive.cards.map((card) => card.path),
+];
+const readTimeByPath = new Map([
+  ...guidesPresentationReference.records.map((record) => [record.path, record.readTimeLabel] as const),
+  ...guidesPresentationReference.archive.cards.map((card) => [card.path, card.readTimeLabel] as const),
+]);
+const sortedItems = [...items].sort((left, right) => {
+  const leftIndex = archiveOrder.indexOf(left.path);
+  const rightIndex = archiveOrder.indexOf(right.path);
+  if (leftIndex >= 0 || rightIndex >= 0) {
+    return (leftIndex < 0 ? archiveOrder.length : leftIndex) - (rightIndex < 0 ? archiveOrder.length : rightIndex);
+  }
+  return comparePublishedDesc(left, right);
+});
+const categories = [...new Set(sortedItems.map((item) => item.articleMeta?.category).filter((value): value is string => Boolean(value)))];
+const featured = sortedItems[0];
+const rest = sortedItems.slice(1);
+const perPage = 9;
+const totalPages = Math.max(1, Math.ceil(rest.length / perPage));
+const firstPageItems = rest.slice(0, perPage);
+const featuredExcerpt = featured ? wordpressExcerpt(stripHtml(richTextFor(featured))) : '';
+const payload = {
+  variant: 'guides',
+  perPage,
+  items: rest.map((item) => ({
+    title: item.title,
+    path: item.path,
+    image: imageFor(item),
+    publishedAt: item.publishedAt,
+    date: formatDate(item.publishedAt),
+    readTime: readTimeByPath.get(item.path) ?? estimateReadTime(item),
+    category: item.articleMeta?.category,
+  })),
+};
+
+function wordpressExcerpt(value: string): string {
+  const words = value.split(/\s+/).filter(Boolean);
+  return words.length > 55 ? `${words.slice(0, 55).join(' ')} […]` : value;
+}
+---
+
+<div class="guide-archive">
+  {featured && (
+    <section class="first-guide">
+      <article class="first-guide__container">
+        <div class="first-guide__content">
+          <h1 class="first-guide__title">
+            <a href={featured.path}>{featured.title}</a>
+          </h1>
+
+          {featuredExcerpt && <div class="first-guide__text"><p>{featuredExcerpt}</p></div>}
+
+          <a class="first-guide__button c-btn c-btn--primary" href={featured.path}>
+            <span class="c-btn__label">Learn More</span>
+          </a>
+        </div>
+
+        <a href={featured.path} class="first-guide__image" aria-label={featured.title}>
+          {imageFor(featured)?.src
+            ? <img src={imageFor(featured)?.src} alt={imageFor(featured)?.alt || featured.title} loading="lazy" decoding="async" />
+            : <span class="first-guide__image-placeholder" aria-hidden="true"></span>}
+        </a>
+      </article>
+    </section>
+  )}
+
+  <nav class="guides-filters" aria-label="Guide categories">
+    <a href="/guides/" data-archive-filter="" class="active">All</a>
+    {categories.map((category) => (
+      <a href={`/guides/?category=${encodeURIComponent(category)}`} data-archive-filter={category}>{category}</a>
+    ))}
+  </nav>
+
+  <section class="guides" aria-label="Guides list" data-archive-root>
+    <div class="guides__container">
+      <div class="guides__list" data-archive-list>
+        {firstPageItems.map((item) => (
+          <article class="guide-card">
+            <a href={item.path} class="guide-card__link" aria-label={item.title}>
+              <div class="guide-card__image">
+                {imageFor(item)?.src
+                  ? <img src={imageFor(item)?.src} alt={imageFor(item)?.alt || item.title} loading="lazy" decoding="async" />
+                  : <span class="guide-card__image-placeholder" aria-hidden="true"></span>}
+              </div>
+
+              <h2 class="guide-card__title">{item.title}</h2>
+
+              <div class="guide-card__info">
+                <div class="guide-card__info-item date">
+                  <img src="/assets/blocks/news-insights/calendar.svg" alt="" width="20" height="20" loading="lazy" />
+                  <span>{formatDate(item.publishedAt)}</span>
+                </div>
+                <div class="guide-card__info-item read">
+                  <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                  <span>{readTimeByPath.get(item.path) ?? estimateReadTime(item)}</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        ))}
+        {rest.length === 0 && <p class="guides__empty">No guides found.</p>}
+      </div>
+
+      <ArchivePagination totalPages={totalPages} />
+    </div>
+
+    <script is:inline type="application/json" data-archive-payload set:html={archivePayloadJson(payload)}></script>
+  </section>
+</div>
+
+<script>
+  import '../scripts/archive-pagination';
+</script>

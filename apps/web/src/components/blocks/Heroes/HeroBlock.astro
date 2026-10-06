@@ -1,0 +1,191 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_hero.scss';
+
+type HeroBlock = Extract<PageBlock, { type: 'hero' }>;
+
+interface Props {
+  block: HeroBlock;
+}
+
+const { block } = Astro.props;
+const hasPrimaryButton = Boolean(block.primaryAction?.href && block.primaryAction?.label);
+const hasSecondaryButton = Boolean(block.secondaryAction?.href && block.secondaryAction?.label);
+const hasButtons = hasPrimaryButton || hasSecondaryButton;
+const hasTooltip = Boolean(block.tooltip?.label && (block.tooltip.title || block.tooltip.content));
+const hasMedia = Boolean(block.media?.src);
+const hasBackground = Boolean(block.backgroundImage?.src);
+const cards = block.cards ?? [];
+const hasCards = cards.length > 0;
+const mediaSize = block.mediaSize === 'tall' ? 'tall' : 'wide';
+const rootClass = [
+  'hero',
+  block.variant === 'home' && 'hero--home',
+  hasButtons && 'hero--has-buttons',
+  hasTooltip && 'hero--has-tooltip',
+  hasMedia && 'hero--has-media',
+  hasBackground && 'hero--has-background',
+  hasCards && 'hero--has-cards',
+  `hero--media-${mediaSize}`,
+].filter(Boolean).join(' ');
+const titleTag = block.eyebrow ? 'p' : 'h1';
+
+function buttonAttrs(action: NonNullable<HeroBlock['primaryAction']>) {
+  const attrs: Record<string, string> = {
+    href: action.href,
+  };
+
+  if (action.target === '_blank') {
+    attrs.target = '_blank';
+    attrs.rel = 'noopener';
+  }
+
+  if (action.href.startsWith('#popup-open-')) {
+    attrs['data-popup'] = action.href.slice('#popup-open-'.length);
+  }
+
+  return attrs;
+}
+
+const noteIcons = {
+  calendar: '<svg class="hero__note-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M6.45833 14.3501V14.2857M10.2083 14.3501V14.2857M10.2083 10.8571V10.7927M13.5417 10.8571V10.7927M3.95833 7.42855H15.625M5.46627 2.5V3.78586M13.9583 2.5V3.78571M13.9583 3.78571H5.625C4.24429 3.78571 3.125 4.93697 3.125 6.35712V14.9286C3.125 16.3487 4.24429 17.5 5.625 17.5H13.9583C15.339 17.5 16.4583 16.3487 16.4583 14.9286L16.4583 6.35712C16.4583 4.93697 15.339 3.78571 13.9583 3.78571Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  card: '<svg class="hero__note-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M11.8417 15.7499H3.84201C2.73747 15.7499 1.84204 14.8545 1.84201 13.75L1.8418 6.25012C1.84177 5.14553 2.73721 4.25006 3.8418 4.25006H15.8413C16.9459 4.25006 17.8414 5.14497 17.8414 6.24957L17.8414 9.75006M2.34141 7.74994H17.3414M15.181 15.5668L16.6695 14.0783M16.6695 14.0783L18.1581 12.5897M16.6695 14.0783L15.181 12.5897M16.6695 14.0783L18.1581 15.5668" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+---
+
+<section class={rootClass} data-hero>
+  {hasBackground && block.backgroundImage && (
+    <div class="hero__background" aria-hidden="true">
+      <img class="hero__background-image" src={block.backgroundImage.src} alt="" loading="eager" decoding="async" />
+    </div>
+  )}
+
+  <div class="hero__container container-wide">
+    {hasTooltip && block.tooltip && (
+      <div class="hero__tooltip">
+        <button class="hero__tooltip-trigger" type="button" aria-expanded="false" data-hero-tooltip-trigger>
+          <span class="hero__tooltip-icon" aria-hidden="true">i</span>
+          <span class="hero__tooltip-label">{block.tooltip.label}</span>
+          {block.tooltip.action && <span class="hero__tooltip-action">{block.tooltip.action}</span>}
+        </button>
+
+        <div class="hero__tooltip-card" hidden data-hero-tooltip-card>
+          <button class="hero__tooltip-close" type="button" aria-label="Close" data-hero-tooltip-close></button>
+
+          {block.tooltip.title && <p class="hero__tooltip-title">{block.tooltip.title}</p>}
+          {block.tooltip.content && <div class="hero__tooltip-content" set:html={block.tooltip.content} />}
+        </div>
+      </div>
+    )}
+
+    <div class="hero__content">
+      <div class="hero__text">
+        {block.eyebrow && <h1 class="hero__eyebrow"><FormattedText text={block.eyebrow} /></h1>}
+        <Fragment>
+          {titleTag === 'h1' ? (
+            <h1 class="hero__title"><FormattedText text={block.title} /></h1>
+          ) : (
+            <p class="hero__title"><FormattedText text={block.title} /></p>
+          )}
+        </Fragment>
+        {block.description && <p class="hero__description"><FormattedText text={block.description} /></p>}
+      </div>
+
+      {hasButtons && (
+        <div class="hero__actions">
+          {hasSecondaryButton && block.secondaryAction && (
+            <div class="hero__action">
+              <a class="c-btn c-btn--secondary c-btn--lg hero__button" {...buttonAttrs(block.secondaryAction)}>
+                <span class="c-btn__label">{block.secondaryAction.label}</span>
+              </a>
+
+              {block.secondaryNote && (
+                <p class="hero__note hero__note--calendar">
+                  <Fragment set:html={noteIcons.calendar} />
+                  <span class="hero__note-text">{block.secondaryNote}</span>
+                </p>
+              )}
+            </div>
+          )}
+
+          {hasPrimaryButton && block.primaryAction && (
+            <div class="hero__action">
+              <a class="c-btn c-btn--primary c-btn--lg hero__button" {...buttonAttrs(block.primaryAction)}>
+                <span class="c-btn__label">{block.primaryAction.label}</span>
+              </a>
+
+              {block.primaryNote && (
+                <p class="hero__note hero__note--card">
+                  <Fragment set:html={noteIcons.card} />
+                  <span class="hero__note-text">{block.primaryNote}</span>
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {hasMedia && block.media && (
+        <div class="hero__media">
+          <img class="hero__image" src={block.media.src} alt={block.media.alt ?? ''} loading="eager" decoding="async" />
+        </div>
+      )}
+    </div>
+
+    {hasCards && (
+      <div class="hero__cards">
+        {cards.map((card) => (
+          <article class="hero__card">
+            <div class="hero__card-icon" aria-hidden="true">
+              {card.icon?.src && <img src={card.icon.src} alt="" loading="lazy" decoding="async" />}
+            </div>
+
+            {card.title && <h2 class="hero__card-title">{card.title}</h2>}
+            {card.description && <p class="hero__card-description"><FormattedText text={card.description} /></p>}
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  (() => {
+    const roots = document.querySelectorAll('[data-hero]');
+
+    roots.forEach((root) => {
+      const trigger = root.querySelector('[data-hero-tooltip-trigger]');
+      const card = root.querySelector('[data-hero-tooltip-card]');
+      const close = root.querySelector('[data-hero-tooltip-close]');
+
+      if (!trigger || !card) {
+        return;
+      }
+
+      const setOpen = (isOpen: boolean) => {
+        trigger.setAttribute('aria-expanded', String(isOpen));
+        (card as HTMLElement).hidden = !isOpen;
+      };
+
+      trigger.addEventListener('mouseenter', () => setOpen(true));
+      trigger.addEventListener('click', () => {
+        setOpen(trigger.getAttribute('aria-expanded') !== 'true');
+      });
+
+      close?.addEventListener('click', () => setOpen(false));
+
+      document.addEventListener('click', (event) => {
+        if (!root.contains(event.target as Node)) {
+          setOpen(false);
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          setOpen(false);
+        }
+      });
+    });
+  })();
+</script>

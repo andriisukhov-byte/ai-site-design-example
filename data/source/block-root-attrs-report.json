@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-25T08:47:28.769Z",
+  "cmsPagesPath": "data/cms/pages.json",
+  "distDir": "apps/web/dist",
+  "htmlFiles": 310,
+  "routesWithRootAttrs": 76,
+  "rootAttrExpectations": 406,
+  "anchorsExpected": 405,
+  "classNamesExpected": 1,
+  "findingCount": 0,
+  "findings": []
+}

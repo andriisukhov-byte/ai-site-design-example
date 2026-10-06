@@ -1,0 +1,230 @@
+.logo-strip {
+  overflow: hidden;
+  padding: 120px 0;
+  background: var(--color-gray-25);
+}
+.logo-strip__container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.logo-strip__hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+.logo-strip--inline-logos .logo-strip__hero {
+  gap: 24px;
+}
+.logo-strip__title-wrap {
+  flex: 0 0 min(537px, 100%);
+}
+.logo-strip__eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-gray-700);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+}
+.logo-strip__title {
+  margin: 0;
+  color: var(--color-brand-font-dark);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+}
+.logo-strip__title .ca-gradient-text {
+  color: transparent;
+  background: var(--gradient-gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.logo-strip__description {
+  width: min(727px, 100%);
+  margin: 0;
+  color: var(--color-gray-500);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.logo-strip__marquee {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+.logo-strip__marquee--inline {
+  flex: 1 1 auto;
+  height: 130px;
+}
+.logo-strip__marquee--full {
+  width: 100%;
+  height: 130px;
+}
+.logo-strip__marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 321px;
+  background: linear-gradient(90deg, rgba(249, 249, 249, 0) 0%, var(--color-gray-25) 100%);
+  pointer-events: none;
+}
+.logo-strip__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: logo-strip-marquee 34s linear infinite;
+}
+.logo-strip__set {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.logo-strip__logo {
+  display: flex;
+  flex: 0 0 auto;
+  width: 218px;
+  height: 130px;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+  color: var(--color-gray-500);
+  filter: grayscale(1);
+  opacity: 0.9;
+}
+.logo-strip__logo-image {
+  display: block;
+  max-width: 150px;
+  max-height: 48px;
+  object-fit: contain;
+}
+.logo-strip__logo-text {
+  color: var(--color-gray-500);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+}
+.logo-strip__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.logo-strip--with-description .logo-strip__stats {
+  margin-top: -16px;
+}
+.logo-strip__stat {
+  min-width: 0;
+  padding: 24px;
+  border-top: 3px solid transparent;
+  border-image: var(--gradient-gold) 1;
+}
+.logo-strip__stat-label {
+  margin: 0 0 8px;
+  color: var(--color-gray-500);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.logo-strip__stat-value {
+  margin: 0;
+  color: var(--color-brand-font-dark);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-strip__track {
+    animation: none;
+  }
+}
+@media (max-width: 991px) {
+  .logo-strip {
+    padding: 80px 0;
+  }
+  .logo-strip__hero {
+    align-items: flex-start;
+    gap: 32px;
+  }
+  .logo-strip__description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .logo-strip__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .logo-strip {
+    padding: 64px 0;
+  }
+  .logo-strip__container {
+    gap: 40px;
+  }
+  .logo-strip__hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .logo-strip__title-wrap {
+    flex: 0 1 auto;
+  }
+  .logo-strip__title {
+    font-size: 28px;
+    line-height: 1.08;
+  }
+  .logo-strip__description {
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .logo-strip__marquee--inline,
+  .logo-strip__marquee--full {
+    width: 100vw;
+    height: 92px;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+  }
+  .logo-strip__marquee::after {
+    width: 80px;
+  }
+  .logo-strip__logo {
+    width: 170px;
+    height: 92px;
+    padding: 24px;
+  }
+  .logo-strip__logo-image {
+    max-width: 128px;
+    max-height: 42px;
+  }
+  .logo-strip__stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .logo-strip--with-description .logo-strip__stats {
+    margin-top: 0;
+  }
+  .logo-strip__stat {
+    padding: 20px 0 0;
+  }
+  .logo-strip__stat-label {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .logo-strip__stat-value {
+    font-size: 40px;
+  }
+}
+@keyframes logo-strip-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,14 @@
+@use "../variables" as *;
+
+.page-default {
+    // Astro keeps block root attributes on wrapper divs. The shared prose
+    // stylesheet adds sibling spacing to those wrappers, while the source
+    // WordPress template renders migrated block sections edge-to-edge.
+    > div {
+        margin-top: 0 !important;
+    }
+
+    @include mobile {
+        padding-block: 40px;
+    }
+}

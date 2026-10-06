@@ -1,0 +1,68 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.results-stats {
+    padding: 120px 0;
+    background: dt.$color-gray-25;
+
+    &--white { background: dt.$color-brand-white; }
+
+    &__container { display: flex; flex-direction: column; gap: 64px; }
+
+    &__title {
+        max-width: 1312px;
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: dt.$type-h3-size;
+        font-weight: dt.$font-weight-medium;
+        line-height: dt.$type-h3-line-height;
+    }
+
+    &__title span,
+    &__title .ca-gradient-text {
+        background: dt.$gradient-gold;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+    &__item {
+        position: relative;
+        display: flex;
+        min-height: 246px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px;
+        background: transparent;
+
+        &::before { position: absolute; top: 0; right: 0; left: 0; height: 3px; background: dt.$gradient-gold; content: ""; }
+    }
+
+    &__value { margin: 0; color: dt.$color-brand-font-dark; font-size: dt.$type-h4-size; font-weight: dt.$font-weight-semibold; line-height: 1; text-decoration: none; }
+    &__value--link { transition: opacity dt.$transition-base; &:hover, &:focus-visible { opacity: 0.72; } &:focus-visible { outline: 2px solid dt.$color-brand-azure-sky; outline-offset: 4px; } }
+    &__description { margin: 0; color: dt.$color-gray-500; font-size: dt.$type-body-lg-size; font-weight: dt.$font-weight-regular; line-height: dt.$type-body-lg-line-height; }
+
+    &__note { position: relative; display: flex; align-items: center; justify-content: center; margin-top: 32px; padding: 48px 24px; border: 1px solid dt.$color-gray-100; border-radius: 24px; background: dt.$color-brand-white; }
+    &__note-icon { position: absolute; top: -25px; left: 50%; display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 8px; border: 1px solid dt.$color-gray-100; border-radius: 16px; background: dt.$color-brand-white; color: dt.$color-brand-font-dark; transform: translateX(-50%); svg { display: block; width: 24px; height: 24px; } }
+    &__note-text { max-width: 694px; margin: 0; color: dt.$color-gray-700; font-size: 18px; font-weight: dt.$font-weight-medium; line-height: 24px; text-align: center; }
+
+    @include tablet {
+        padding: 88px 0;
+        &__title { font-size: 48px; line-height: 1.12; }
+        &__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @include mobile {
+        padding: 64px 0;
+        &__container { gap: 40px; }
+        &__title { font-size: 32px; font-weight: dt.$font-weight-semibold; line-height: 1.08; }
+        &__grid { grid-template-columns: 1fr; }
+        &__item { min-height: 0; padding: 24px 0 8px; }
+        &__value { font-size: 40px; }
+        &__description { font-size: dt.$type-body-md-size; line-height: dt.$type-body-md-line-height; }
+        &__note { margin-top: 24px; padding: 40px 20px; }
+        &__note-text { font-size: 16px; line-height: 22px; }
+    }
+}

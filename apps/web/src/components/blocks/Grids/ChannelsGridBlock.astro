@@ -1,0 +1,222 @@
+---
+import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_channels-grid.scss';
+
+type ChannelsGridBlock = Extract<PageBlock, { type: 'channels-grid' }>;
+
+type Props = {
+  block: ChannelsGridBlock;
+};
+
+const { block } = Astro.props;
+const assetRoot = '/assets/blocks/channels-grid';
+const sourceDir = dirname(fileURLToPath(import.meta.url));
+const iconDir = resolve(sourceDir, '../../../../public/assets/blocks/channels-grid/icons');
+const allowedIcons = new Set(['sms', 'whatsapp', 'voice', 'chat', 'mail']);
+const fallbackImageByIcon: Record<string, string> = {
+  sms: `${assetRoot}/images/sms.png`,
+  whatsapp: `${assetRoot}/images/whatsapp.png`,
+  voice: `${assetRoot}/images/voice-ai.png`,
+  chat: `${assetRoot}/images/web-chat.png`,
+  mail: `${assetRoot}/images/email.png`,
+};
+const iconCache = new Map<string, string>();
+
+function iconMarkup(icon?: string): string {
+  const key = allowedIcons.has(icon ?? '') ? icon! : 'sms';
+  const cached = iconCache.get(key);
+
+  if (cached) {
+    return cached;
+  }
+
+  try {
+    const markup = readFileSync(resolve(iconDir, `${key}.svg`), 'utf8');
+    iconCache.set(key, markup);
+    return markup;
+  } catch {
+    return '';
+  }
+}
+
+function titleText(title?: string, gradientText?: string): string {
+  if (!title) {
+    return '';
+  }
+
+  if (title.includes('{{') || title.includes('<') || !gradientText) {
+    return title;
+  }
+
+  return title.replace(gradientText, `{{ ${gradientText} }}`);
+}
+
+function cardImage(card: ChannelsGridBlock['cards'][number]) {
+  if (card.image?.src) {
+    return card.image;
+  }
+
+  const fallback = card.icon ? fallbackImageByIcon[card.icon] : undefined;
+
+  if (!fallback) {
+    return undefined;
+  }
+
+  return {
+    src: fallback,
+    alt: card.title ?? '',
+  };
+}
+
+function formatDescription(value?: string): string {
+  if (!value) {
+    return '';
+  }
+
+  return value
+    .split(/(<\/?(?:strong|em|br|span|a)(?:\s[^>]*)?>)/gi)
+    .map((part) => {
+      if (/^<br\s*\/?>$/i.test(part)) {
+        return '<br />';
+      }
+
+      if (/^<\/strong>$/i.test(part)) {
+        return '</strong>';
+      }
+
+      if (/^<strong(?:\s[^>]*)?>$/i.test(part)) {
+        return '<strong>';
+      }
+
+      if (/^<\/em>$/i.test(part)) {
+        return '</em>';
+      }
+
+      if (/^<em(?:\s[^>]*)?>$/i.test(part)) {
+        return '<em>';
+      }
+
+      if (/^<\/span>$/i.test(part)) {
+        return '</span>';
+      }
+
+      if (/^<span(?:\s[^>]*)?>$/i.test(part)) {
+        const className = part.match(/\sclass=(["'])(.*?)\1/i)?.[2] ?? '';
+        return className ? `<span class="${escapeAttribute(className)}">` : '<span>';
+      }
+
+      if (/^<\/a>$/i.test(part)) {
+        return '</a>';
+      }
+
+      if (/^<a(?:\s[^>]*)?>$/i.test(part)) {
+        const href = part.match(/\shref=(["'])(.*?)\1/i)?.[2] ?? '';
+        const target = part.match(/\starget=(["'])(.*?)\1/i)?.[2] ?? '_blank';
+        const rel = part.match(/\srel=(["'])(.*?)\1/i)?.[2] ?? 'noopener noreferrer';
+
+        return href
+          ? `<a href="${escapeAttribute(href)}" target="${escapeAttribute(target)}" rel="${escapeAttribute(rel)}">`
+          : '<a>';
+      }
+
+      return formatText(part);
+    })
+    .join('');
+}
+
+function formatText(value: string): string {
+  return escapeHtml(value)
+    .replace(/\{\{\s*([^{}]+?)\s*\}\}/g, (_match, highlighted: string) => `<span class="ca-gradient-text">${highlighted.trim()}</span>`)
+    .replace(/\s*\|\|\s*/g, '<br />');
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escapeAttribute(value: string): string {
+  return escapeHtml(value).replace(/`/g, '&#96;');
+}
+---
+
+<section class="channels-grid">
+  <div class="channels-grid__container container-wide">
+    <header class="channels-grid__header">
+      {block.title && (
+        <h2 class="channels-grid__title">
+          <FormattedText text={titleText(block.title, block.gradientText)} />
+        </h2>
+      )}
+
+      {block.description && (
+        <p class="channels-grid__description">
+          <FormattedText text={block.description} />
+        </p>
+      )}
+    </header>
+
+    <div class="channels-grid__list">
+      {block.cards.map((card) => {
+        const image = cardImage(card);
+
+        return (
+          <article class={`channels-grid__card${card.fullWidth ? ' channels-grid__card--wide' : ''}`}>
+            <div class="channels-grid__card-text">
+              <div class="channels-grid__card-head">
+                <span class="channels-grid__card-icon" aria-hidden="true">
+                  {card.customIcon?.src ? (
+                    <img
+                      class="channels-grid__custom-icon"
+                      src={card.customIcon.src}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <Fragment set:html={iconMarkup(card.icon)} />
+                  )}
+                </span>
+
+                {card.title && (
+                  card.href ? (
+                    <a class="channels-grid__card-title" href={card.href} target="_blank" rel="noopener noreferrer">
+                      <FormattedText text={card.title} />
+                    </a>
+                  ) : (
+                    <h3 class="channels-grid__card-title">
+                      <FormattedText text={card.title} />
+                    </h3>
+                  )
+                )}
+              </div>
+
+              {card.description && <p class="channels-grid__card-description" set:html={formatDescription(card.description)} />}
+            </div>
+
+            {image?.src && (
+              <div class="channels-grid__card-media">
+                <img
+                  class="channels-grid__card-image"
+                  src={image.src}
+                  alt={image.alt || card.title || ''}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

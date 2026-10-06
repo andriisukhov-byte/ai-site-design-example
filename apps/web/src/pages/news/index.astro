@@ -1,0 +1,37 @@
+---
+import NewsArchive from '../../components/NewsArchive.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getSourcePage, getSourcePages } from '../../data/source-pages';
+
+import '../../styles/templates/_news.scss';
+
+const page = await getSourcePage('/news/');
+const sourcePages = await getSourcePages();
+
+if (!page) {
+  throw new Error('Missing CMS document for /news/.');
+}
+
+const newsItems = sourcePages
+  .filter(
+    (page) =>
+      page.collection === 'news' &&
+      page.template === 'news' &&
+      page.path !== '/news/' &&
+      page.status === 'published',
+  );
+const layoutPage = {
+  ...page,
+  title: 'News Archive',
+  seo: {
+    ...page.seo,
+    metaTitle: 'News Archive | Acme',
+    canonicalUrl: '/news/',
+  },
+};
+
+---
+
+<SiteLayout page={layoutPage}>
+  <NewsArchive items={newsItems} />
+</SiteLayout>

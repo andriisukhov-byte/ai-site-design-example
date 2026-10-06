@@ -1,0 +1,68 @@
+---
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_alternatives-grid.scss';
+interface AlternativeAction {
+  label?: string;
+  href?: string;
+  target?: '_self' | '_blank';
+}
+
+interface AlternativeCard {
+  title?: string;
+  description?: string;
+  action?: AlternativeAction;
+}
+
+interface AlternativesGridBlock {
+  cards?: AlternativeCard[];
+}
+
+interface Props {
+  block: AlternativesGridBlock;
+}
+
+const { block } = Astro.props;
+const cards = (block.cards ?? []).filter((card) => Boolean(card.title?.trim() || card.description?.trim()));
+---
+
+{cards.length > 0 && (
+  <section class="alternatives-grid">
+    <div class="alternatives-grid__container container-wide">
+      <div class="alternatives-grid__items">
+        {cards.map((card) => {
+          const action = card.action?.href && card.action.label ? card.action : undefined;
+          const target = action?.target ?? '_self';
+
+          return (
+            <article class="alternatives-grid__card">
+              <div class="alternatives-grid__copy">
+                {card.title && (
+                  <h3 class="alternatives-grid__title">
+                    {action?.href ? (
+                      <a href={action.href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
+                        <FormattedText text={card.title} />
+                      </a>
+                    ) : (
+                      <FormattedText text={card.title} />
+                    )}
+                  </h3>
+                )}
+
+                {card.description && (
+                  <p class="alternatives-grid__description"><FormattedText text={card.description} /></p>
+                )}
+              </div>
+
+              {action?.href && (
+                <a class="c-btn c-btn--primary c-btn--lg alternatives-grid__button" href={action.href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
+                  <span class="c-btn__label">{action.label}</span>
+                </a>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+)}

@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "f12349e-dirty"
+  },
+  "generatedAt": "2026-07-27T11:26:02.657Z",
+  "mode": "dry-run",
+  "handoffPath": "data/cms/media-handoff.json",
+  "handoffGeneratedAt": "2026-07-27T11:26:01.843Z",
+  "sourcePublicDir": "apps/web/public",
+  "targetPublicDir": ".tmp/media-handoff/public",
+  "requiredImportedAssets": 919,
+  "handoffPresentLocalAssets": 919,
+  "handoffMissingLocalAssets": 0,
+  "itemCount": 919,
+  "copiedAssets": 0,
+  "plannedAssets": 919,
+  "missingSourceAssets": 0,
+  "sizeMismatchAssets": 0,
+  "unsafeTargetAssets": 0,
+  "totalBytes": 352883179,
+  "totalMegabytes": 336.54,
+  "statusCounts": {
+    "planned": 919
+  },
+  "policy": "Dry-run validates the ignored local media cache against data/cms/media-handoff.json. Write mode copies the exact publicPath tree to targetPublicDir for staging/self-hosted sync without committing imported binaries.",
+  "sampleItems": [
+    {
+      "publicPath": "/media/2025/04/2149699831.jpg",
+      "storageKey": "imported/2025/04/2149699831.jpg",
+      "sourcePath": "apps/web/public/media/2025/04/2149699831.jpg",
+      "targetPath": ".tmp/media-handoff/public/media/2025/04/2149699831.jpg",
+      "sizeBytes": 449900,
+      "attachmentId": 645,
+      "manifestStatus": "recorded",
+      "status": "planned"
+    },
+    {
+      "publicPath": "/media/2025/04/2150165608.jpg",
+      "storageKey": "imported/2025/04/2150165608.jpg",
+      "sourcePath": "apps/web/public/media/2025/04/2150165608.jpg",
+      "targetPath": ".tmp/media-handoff/public/media/2025/04/2150165608.jpg",
+      "sizeBytes": 385395,
+      "attachmentId": 646,
+      "manifestStatus": "recorded",
+      "status": "planned"
+    },
+    {
+      "publicPath": "/media/2025/04/2150944507.jpg",
+      "storageKey": "imported/2025/04/2150944507.jpg",
+      "sourcePath": "apps/web/public/media/2025/04/2150944507.jpg",
+      "targetPath": ".tmp/media-handoff/public/media/2025/04/2150944507.jpg",
+      "sizeBytes": 288012,
+      "attachmentId": 647,
+      "manifestStatus": "recorded",
+      "status": "planned"
+    },
+    {
+      "publicPath": "/media/2025/04/2151061705.jpg",
+      "storageKey": "imported/2025/04/2151061705.jpg",
+      "sourcePath": "apps/web/public/media/2025/04/2151061705.jpg",
+      "targetPath": ".tmp/media-handoff/public/media/2025/04/2151061705.jpg",
+      "sizeBytes": 102980,
+      "attachmentId": 643,
+      "manifestStatus": "recorded",
+      "status": "planned"
+    },
+    {
+      "publicPath": "/media/2025/04/5062.jpg",
+      "storageKey": "imported/2025/04/5062.jpg",
+      "sourcePath": "apps/web/public/media/2025/04/5062.jpg",
+      "targetPath": ".tmp/media-handoff/public/media/2025/04/5062.jpg",
+      "sizeBytes": 180645,
+      "attachmentId": 641,
+      "manifestStatus": "recorded",
+      "status": "planned"
+    }
+  ],
+  "problemItems": []
+}

@@ -1,0 +1,37 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+type FeatureGridBlock = Extract<PageBlock, { type: 'feature-grid' }>;
+
+interface Props {
+  block: FeatureGridBlock;
+}
+
+const { block } = Astro.props;
+---
+
+<section id={block.root?.anchor} class="uc-problem">
+  <div class="uc-problem__container container-wide">
+    {block.title && (
+      <header class="uc-problem__header">
+        <h2 class="uc-problem__title"><FormattedText text={block.title} /></h2>
+        {block.description && <p class="uc-problem__subtitle"><FormattedText text={block.description} /></p>}
+      </header>
+    )}
+
+    <ul class="uc-problem__grid" data-count={block.cards.length}>
+      {block.cards.map((card) => (
+        <li class="uc-problem__card">
+          {card.customIcon?.src && (
+            <span class="uc-problem__icon" aria-hidden="true">
+              <img src={card.customIcon.src} alt="" loading="lazy" decoding="async" />
+            </span>
+          )}
+          {card.title && <h3 class="uc-problem__card-title"><FormattedText text={card.title} /></h3>}
+          {card.description && <p class="uc-problem__card-text"><FormattedText text={card.description} /></p>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

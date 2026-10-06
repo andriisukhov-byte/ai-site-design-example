@@ -1,0 +1,207 @@
+.pricing-policy {
+  padding: 100px 0 120px;
+  background: var(--color-brand-white);
+}
+
+.pricing-policy--gray {
+  background: var(--color-gray-25);
+}
+
+.pricing-policy__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.pricing-policy__title {
+  max-width: 922px;
+  margin: 0;
+  color: var(--color-brand-font-dark);
+  font-size: var(--type-h3-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--type-h3-line-height);
+  text-align: center;
+}
+
+.pricing-policy__title span {
+  background: var(--gradient-gold);
+  background-clip: text;
+}
+
+.pricing-policy__callouts {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 32px;
+  border: 1px solid var(--color-gray-100);
+  border-radius: 24px;
+  padding: 8px 48px;
+}
+
+.pricing-policy__callout {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 0;
+}
+
+.pricing-policy__callout + .pricing-policy__callout {
+  margin-left: -32px;
+  padding-left: 32px;
+}
+
+.pricing-policy__callout + .pricing-policy__callout::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--color-gray-100);
+  content: "";
+}
+
+.pricing-policy__callout-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gray-100);
+  border-radius: 8px;
+  color: var(--color-brand-font-dark);
+  background: var(--color-brand-white);
+}
+
+.pricing-policy__callout-icon img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.pricing-policy__callout-text {
+  margin: 0;
+  color: var(--color-gray-700);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-body-lg-line-height);
+}
+
+.pricing-policy__info {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid var(--color-gray-100);
+  border-radius: 24px;
+  padding: 24px;
+  background: inherit;
+}
+
+.pricing-policy__info p {
+  min-width: 0;
+  flex: 1 1 0;
+  margin: 0;
+  color: var(--color-gray-700);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--type-body-lg-line-height);
+}
+
+.pricing-policy__info-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gray-100);
+  border-radius: 16px;
+  padding: 8px;
+  color: var(--color-brand-font-dark);
+  background: var(--color-brand-white);
+}
+
+.pricing-policy__info-icon img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 991px) {
+  .pricing-policy {
+    padding: 80px 0 96px;
+  }
+
+  .pricing-policy__container {
+    gap: 48px;
+  }
+
+  .pricing-policy__title {
+    font-size: 48px;
+    line-height: 1.12;
+  }
+
+  .pricing-policy__callouts {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px;
+  }
+
+  .pricing-policy__callout {
+    padding: 24px 0;
+  }
+
+  .pricing-policy__callout + .pricing-policy__callout {
+    margin-left: 0;
+    border-top: 1px solid var(--color-gray-100);
+    padding-left: 0;
+  }
+
+  .pricing-policy__callout + .pricing-policy__callout::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-policy {
+    padding: 64px 0 72px;
+  }
+
+  .pricing-policy__container {
+    gap: 32px;
+  }
+
+  .pricing-policy__title {
+    max-width: 343px;
+    font-size: var(--type-h5-size);
+    line-height: 1.1;
+  }
+
+  .pricing-policy__callouts {
+    padding: 8px 16px;
+  }
+
+  .pricing-policy__info {
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .pricing-policy__info-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    border-radius: 12px;
+  }
+
+  .pricing-policy__info p,
+  .pricing-policy__callout-text {
+    font-size: var(--type-body-md-size);
+    line-height: var(--type-body-md-line-height);
+  }
+}

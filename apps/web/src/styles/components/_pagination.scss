@@ -1,0 +1,83 @@
+@use "../variables" as *;
+
+.ca-pagination,
+.tips-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+        justify-content: space-between;
+        gap: 0;
+        flex-wrap: nowrap;
+        max-width: 343px;
+        margin-inline: auto;
+    }
+}
+
+.ca-pagination {
+    &__pages {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @media (max-width: $mobile) {
+            gap: 8px;
+        }
+    }
+
+    &__arrow {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        border: 0;
+        background: transparent;
+        color: #0c0a09;
+        text-decoration: none;
+        cursor: pointer;
+
+        svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+
+        &.is-disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+    }
+
+    .page-numbers {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        padding: 10px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: #0c0a09;
+        font-family: var(--font-family-base);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+
+        &.current {
+            color: #fff;
+            background: #0c0a09;
+            font-weight: 500;
+        }
+
+        &.dots {
+            pointer-events: none;
+        }
+    }
+}

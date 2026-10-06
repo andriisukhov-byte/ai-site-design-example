@@ -1,0 +1,61 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_content-feed.scss';
+type ContentFeedBlock = Extract<PageBlock, { type: 'content-feed' }>;
+
+interface Props {
+  block: ContentFeedBlock;
+}
+
+const { block } = Astro.props;
+const cards = block.cards.slice(0, block.limit);
+const normalizedCards = cards.map((card) => ({
+  ...card,
+  tags: (card.tags ?? []).map((tag) => (typeof tag === 'string' ? tag : tag.label)).filter(Boolean),
+}));
+---
+
+<section class="content-feed" data-feed-mode={block.mode} data-feed-collections={block.collections.join(',')}>
+  <div class="content-feed__container container-wide">
+    <div class="content-feed__header">
+      {block.eyebrow && <p class="content-feed__eyebrow">{block.eyebrow}</p>}
+      <h2 class="content-feed__title"><FormattedText text={block.title} /></h2>
+      {block.description && <p class="content-feed__subtitle"><FormattedText text={block.description} /></p>}
+    </div>
+
+    <div class="content-feed__grid">
+      {normalizedCards.length > 0 ? (
+        normalizedCards.map((card) => (
+          <a class="content-feed-card" href={card.href}>
+            <div class:list={['content-feed-card__image', !card.image && 'content-feed-card__image-placeholder']}>
+              {card.image && <img src={card.image.src} alt={card.image.alt} width={card.image.width} height={card.image.height} loading="lazy" />}
+            </div>
+            <div class="content-feed-card__content">
+              {(card.tags.length > 0 || card.meta) && (
+                <div class="content-feed-card__tags">
+                  {(card.tags.length > 0 ? card.tags : [card.meta]).map((tag) => (
+                    tag && <span class="content-feed-card__tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+              <h3 class="content-feed-card__title"><FormattedText text={card.title} /></h3>
+              {card.description && <p>{card.description}</p>}
+              {card.readTime && (
+                <div class="content-feed-card__info">
+                  <div class="content-feed-card__info-item">
+                    <img src="/assets/icons/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                    <span>{card.readTime}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </a>
+        ))
+      ) : (
+        <p class="content-feed__empty">No posts found.</p>
+      )}
+    </div>
+  </div>
+</section>

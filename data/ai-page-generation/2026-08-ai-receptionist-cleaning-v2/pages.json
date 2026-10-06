@@ -1,0 +1,641 @@
+{
+  "generatedAt": "2026-08-12T16:40:00.000Z",
+  "source": "create-page + create-block. TASK 1 brief, composed independently after competitor and design research; introduces the conversation-replay and recovery-calculator blocks.",
+  "pages": [
+    {
+      "contentKey": "ai-receptionist-cleaning-v2-0001",
+      "collection": "pages",
+      "path": "/ai-receptionist-for-cleaning-companies-v2/",
+      "title": "AI Receptionist for Cleaning Companies",
+      "status": "draft",
+      "template": "standard",
+      "seo": {
+        "metaTitle": "AI Receptionist for Cleaning Companies | Acme",
+        "metaDescription": "An AI receptionist for cleaning companies that answers, scopes and quotes the job, books the crew, and sells the recurring plan — on every channel.",
+        "canonicalUrl": "https://acme.example/ai-receptionist-for-cleaning-companies/",
+        "ogTitle": "AI Receptionist for Cleaning Companies | Acme",
+        "ogDescription": "See one missed call become a booked job in two minutes, then do the arithmetic on your own week."
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "eyebrow": "AI Receptionist for Cleaning Companies",
+          "title": "Your Crews Are Out. ||{{ The Phone Still Gets Answered. }}",
+          "description": "Your AI receptionist answers on the first ring across calls, texts, web chat, WhatsApp and email — scoping the job, quoting from your own rates, booking the crew on your live calendar, and offering the recurring plan before the conversation ends.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "/signup"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo"
+          },
+          "primaryNote": "No monthly fee",
+          "secondaryNote": "30-min consultation",
+          "mediaSize": "wide"
+        },
+        {
+          "type": "conversation-replay",
+          "background": "white",
+          "title": "A missed call at 7:42, {{a booked job by 7:44}}",
+          "description": "Not five screenshots of five channels. One customer, one thread, moving from a missed call to SMS to WhatsApp without repeating themselves — and a job in your system at the end of it.",
+          "replayLabel": "Replay the conversation",
+          "turns": [
+            {
+              "channel": "voice",
+              "time": "7:42 AM",
+              "from": "customer",
+              "text": "Missed call from a mobile number. Both crews left at seven and nobody is in the office yet.",
+              "action": "Call logged as a new lead. Text-back queued before the caller reaches the next listing."
+            },
+            {
+              "channel": "sms",
+              "time": "7:42 AM",
+              "from": "agent",
+              "text": "Hi, this is Bright Home Cleaning — sorry we missed you. I can help right here. What kind of clean do you need?"
+            },
+            {
+              "channel": "sms",
+              "time": "7:43 AM",
+              "from": "customer",
+              "text": "Move-out clean, 3 bed 2 bath in Northgate. Friday if you have it."
+            },
+            {
+              "channel": "sms",
+              "time": "7:43 AM",
+              "from": "agent",
+              "text": "Northgate is in our area. A 3 bed / 2 bath move-out is a flat $240. Friday I have 10 a.m. or 2 p.m. — which suits you?",
+              "action": "Service area checked, your rate card applied, Friday crew availability read from the calendar."
+            },
+            {
+              "channel": "whatsapp",
+              "time": "7:44 AM",
+              "from": "customer",
+              "text": "10 a.m. works. Sending photos — the kitchen is rough, is that extra?"
+            },
+            {
+              "channel": "whatsapp",
+              "time": "7:44 AM",
+              "from": "agent",
+              "text": "Looked at them — that kitchen is inside the flat rate, no surprise charge. You’re booked for Friday at 10 a.m. Want the same crew every two weeks once you’re in the new place?",
+              "action": "Slot held, job written to your scheduling tool, recurring plan offered at the moment of booking."
+            }
+          ],
+          "outcomeTitle": "What existed two minutes later",
+          "outcomeRows": [
+            {
+              "label": "Job",
+              "value": "Move-out deep clean · 3 bed / 2 bath"
+            },
+            {
+              "label": "When",
+              "value": "Friday, 10 a.m. – 1 p.m."
+            },
+            {
+              "label": "Quote",
+              "value": "$240 flat, no upcharge"
+            },
+            {
+              "label": "Crew",
+              "value": "Team B · confirmed"
+            }
+          ],
+          "outcomeNote": "The recurring biweekly plan was accepted in the same thread. Nobody in your office touched any of it."
+        },
+        {
+          "type": "feature-stack",
+          "title": "Right now you have {{three bad options}}",
+          "description": "Every cleaning operator picks one of these, and all three cost money. None of them is a failure of effort.",
+          "cards": [
+            {
+              "icon": "gauge",
+              "title": "Answer it yourself, between jobs",
+              "description": "You take the call in the van or mid-clean. You quote from memory, you write the address on your hand, and you lose the thread when the next call comes. Spam and price-shoppers cost you the same interruption as a real lead."
+            },
+            {
+              "icon": "shield-ellipsis",
+              "title": "Let it go to voicemail and call back later",
+              "description": "Most people never leave a message. The ones who do have already called two competitors by the time you finish the job, and getting hold of them again takes three attempts across two days."
+            },
+            {
+              "icon": "cpu",
+              "title": "Pay an answering service to take a message",
+              "description": "You are billed per call or per minute, so your busy season is your most expensive month. They cannot see your calendar or your rates, so the job still is not booked — it just arrives as a message for someone to action."
+            }
+          ],
+          "infoNote": "None of the three books the job. That is the part worth fixing."
+        },
+        {
+          "type": "functional-capabilities",
+          "preset": "sales",
+          "title": "What your AI receptionist {{actually runs}}",
+          "description": "The whole intake-to-rebook lifecycle of a cleaning business — including the three parts nobody else automates.",
+          "cards": [
+            {
+              "icon": "phone-incoming",
+              "title": "Answers Every Call",
+              "description": "First ring, any hour, including the stacked mornings when every crew is already on site and the office is empty."
+            },
+            {
+              "icon": "message-square",
+              "title": "Texts Back Missed Calls",
+              "description": "Anything that still slips through gets a text in seconds, while the prospect is on your listing and not the next one."
+            },
+            {
+              "icon": "clipboard-check",
+              "title": "Scopes the Job",
+              "description": "Beds, baths, square footage, pets, access codes and add-ons captured in conversation rather than a form people abandon."
+            },
+            {
+              "icon": "receipt",
+              "title": "Quotes From Your Rates",
+              "description": "Applies your flat rates, minimums and service-area rules — and refuses to quote the jobs you said need a walk-through."
+            },
+            {
+              "icon": "calendar-check-2",
+              "title": "Books the Crew",
+              "description": "Holds a real slot against crew availability and writes the job into the scheduling tool your office already works from."
+            },
+            {
+              "icon": "bell",
+              "title": "Confirms and Reschedules",
+              "description": "Sends confirmations, arrival windows and reminders, and moves an appointment when the customer asks — without a call to you."
+            },
+            {
+              "icon": "calendar-range",
+              "title": "Sells the Recurring Plan",
+              "description": "Offers weekly, biweekly or monthly service at the moment the one-time clean is booked, which is the only moment it reliably lands.",
+              "width": "wide"
+            },
+            {
+              "icon": "repeat-2",
+              "title": "Backfills Cancellations",
+              "description": "A 7 a.m. cancellation is a crew with a paid-for empty morning. The agent works your waitlist and recent quotes to fill the slot instead of leaving it stranded.",
+              "width": "wide"
+            },
+            {
+              "icon": "star",
+              "title": "Chases Quotes and Follows Up After the Visit",
+              "description": "Unconverted estimates get worked on your schedule, and after the clean it checks satisfaction, asks for the review when it went well, and hands the conversation to a person when it did not.",
+              "width": "wide"
+            }
+          ],
+          "note": "Recurring plans, cancellation backfill and post-visit follow-up are where cleaning margin actually lives — and where every other AI receptionist stops."
+        },
+        {
+          "type": "recovery-calculator",
+          "background": "dark",
+          "title": "What the silence {{actually costs}}",
+          "description": "Most calculators price a missed call as one job. In this business a recovered caller is usually a recurring contract, which is a different number entirely. Move the sliders to your own week.",
+          "clientsLabel": "new clients a month you are not booking",
+          "resultLabel": "Work that is worth",
+          "annualLabel": "over a year, if they stay",
+          "frequencyLabel": "How often a new client books",
+          "frequencyDefault": "biweekly",
+          "breakEvenNote": "One recovered client covers the platform for months. The sliders start deliberately low, because the argument only works if you can check it.",
+          "assumptionNote": "What this assumes: the annual figure holds only if those clients stay the year, and it ignores referrals and reviews. What it leaves out entirely: cancellations you could have backfilled, and quotes that went cold without follow-up. It is an estimate you can argue with, not a promise.",
+          "action": {
+            "label": "Get Started Free",
+            "href": "/signup"
+          },
+          "controls": [
+            {
+              "key": "missed",
+              "label": "Calls you miss in a typical week",
+              "value": 12,
+              "min": 0,
+              "max": 80,
+              "step": 1
+            },
+            {
+              "key": "share",
+              "label": "Share of them that would have booked",
+              "value": 30,
+              "min": 5,
+              "max": 60,
+              "step": 5,
+              "suffix": "%"
+            },
+            {
+              "key": "jobValue",
+              "label": "Your price per clean",
+              "value": 180,
+              "min": 60,
+              "max": 600,
+              "step": 10,
+              "prefix": "$"
+            }
+          ]
+        },
+        {
+          "type": "how-it-works",
+          "title": "Live in days, {{not quarters}}",
+          "subtitle": "No developer, no automation specialist, and nothing to migrate.",
+          "background": "white",
+          "openFirst": true,
+          "showStepNumbers": true,
+          "steps": [
+            {
+              "label": "Step 1",
+              "title": "Start From a Cleaning Template",
+              "description": "Open a prebuilt intake-and-booking agent and set your service area, rates and scope rules — or describe how you take a job in plain words and let the AI Concierge build the canvas."
+            },
+            {
+              "label": "Step 2",
+              "title": "Connect Your Stack and Channels",
+              "description": "Link your scheduler, CRM, payments and every channel customers already use. The agent reads and writes inside those tools, so there is no migration and no double entry."
+            },
+            {
+              "label": "Step 3",
+              "title": "Go Live and Tune",
+              "description": "Switch it on, watch answer rate and booked jobs from one dashboard, and change questions, pricing or escalation rules yourself whenever the business changes."
+            }
+          ]
+        },
+        {
+          "type": "channels-grid",
+          "title": "One receptionist. {{Every channel your customers use}}",
+          "description": "The same scoping, pricing and booking logic everywhere, and one customer history behind all of it.",
+          "cards": [
+            {
+              "icon": "sms",
+              "title": "SMS",
+              "description": "Recovers missed calls with an instant text back, then carries confirmations, arrival windows and reschedules.",
+              "image": {
+                "src": "/media/2026/06/image-109390.png",
+                "alt": "Text conversation where the agent qualifies a cleaning quote, confirms a recurring biweekly service and books the first slot"
+              }
+            },
+            {
+              "icon": "voice",
+              "title": "Conversational Voice AI",
+              "description": "Answers on the first ring, scopes the clean and books the slot. No phone tree, no hold music.",
+              "image": {
+                "src": "/media/2026/06/image-109392.png",
+                "alt": "Voice call in progress where the agent offers to quote or book a clean"
+              }
+            },
+            {
+              "icon": "chat",
+              "title": "Web Chat",
+              "description": "Turns your pricing and service-area page visitors into booked jobs without making them pick up the phone.",
+              "image": {
+                "src": "/media/2026/06/image-109393.png",
+                "alt": "Website chat where the agent checks availability and moves the visitor to a booking"
+              }
+            },
+            {
+              "icon": "whatsapp",
+              "title": "WhatsApp",
+              "description": "The property address, the date and photos of the job in one thread, so the quote matches what actually needs cleaning.",
+              "image": {
+                "src": "/media/2026/06/image-109391.png",
+                "alt": "WhatsApp thread where the agent scopes an end-of-tenancy deep clean, collects the address and date and confirms the booking"
+              }
+            },
+            {
+              "icon": "mail",
+              "title": "Email",
+              "description": "Property managers, multi-site accounts and the marketplace leads that only ever arrive by email.",
+              "fullWidth": true,
+              "image": {
+                "src": "/media/2026/06/image-109394.png",
+                "alt": "Inbox showing a cleaning quote request the agent answers with a booking link"
+              }
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "title": "Stop losing jobs to a {{phone nobody answers}}",
+          "description": "Free to start, pay-as-you-go, no contract and no per-seat fee — with a working agent live in days rather than next quarter.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "/signup"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo"
+          }
+        },
+        {
+          "type": "logo-grid",
+          "title": "Connects to your {{entire cleaning stack}}",
+          "description": "2,700+ integrations. The agent reads live data and updates records inside the tools your office already runs — including the places your leads arrive from.",
+          "columns": [
+            {
+              "heading": "Booking and Field Service",
+              "items": [
+                {
+                  "label": "Jobber",
+                  "subLabel": "Jobs and scheduling"
+                },
+                {
+                  "label": "Launch27",
+                  "subLabel": "Online booking"
+                },
+                {
+                  "label": "Housecall Pro",
+                  "subLabel": "Dispatch"
+                },
+                {
+                  "label": "ServiceTitan",
+                  "subLabel": "Field service"
+                },
+                {
+                  "label": "Google Calendar",
+                  "subLabel": "Crew availability"
+                }
+              ]
+            },
+            {
+              "heading": "Lead Sources",
+              "items": [
+                {
+                  "label": "Thumbtack",
+                  "subLabel": "Marketplace"
+                },
+                {
+                  "label": "Yelp",
+                  "subLabel": "Marketplace"
+                },
+                {
+                  "label": "Angi",
+                  "subLabel": "Marketplace"
+                },
+                {
+                  "label": "HubSpot",
+                  "subLabel": "CRM and forms"
+                },
+                {
+                  "label": "Google Sheets",
+                  "subLabel": "Lead lists"
+                }
+              ]
+            },
+            {
+              "heading": "Communications",
+              "items": [
+                {
+                  "label": "Twilio",
+                  "subLabel": "Voice and SMS"
+                },
+                {
+                  "label": "WhatsApp",
+                  "subLabel": "Messaging"
+                },
+                {
+                  "label": "Gmail",
+                  "subLabel": "Email"
+                },
+                {
+                  "label": "Slack",
+                  "subLabel": "Internal alerts"
+                },
+                {
+                  "label": "Microsoft Teams",
+                  "subLabel": "Internal alerts"
+                }
+              ]
+            },
+            {
+              "heading": "Payments and Invoicing",
+              "items": [
+                {
+                  "label": "Stripe",
+                  "subLabel": "Card payments"
+                },
+                {
+                  "label": "Square",
+                  "subLabel": "Card payments"
+                },
+                {
+                  "label": "PayPal",
+                  "subLabel": "Card payments"
+                },
+                {
+                  "label": "QuickBooks",
+                  "subLabel": "Invoicing"
+                },
+                {
+                  "label": "NetSuite",
+                  "subLabel": "Back office"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "difference",
+          "title": "What this does that a {{standard answering service doesn’t}}",
+          "subtitle": "An answering service protects you from a ringing phone. This books the work.",
+          "leftTitle": "Standard Cleaning Answering Service",
+          "rightTitle": "Acme AI Receptionist",
+          "leftItems": [
+            "Takes a message and passes it back to your office",
+            "Works from a script and cannot scope a clean",
+            "No access to your calendar, your rates or your job records",
+            "Phone only — web chat, WhatsApp and email go unanswered",
+            "Per-call or per-minute billing, so your busy season costs most",
+            "Nothing happens after the call ends",
+            "Every change to the script goes through an account manager"
+          ],
+          "rightItems": [
+            "Books the job on your live calendar and writes it into your system",
+            "Reasons about scope and pricing tiers, and flags what needs a walk-through",
+            "Reads and writes your scheduler, CRM and payment records mid-conversation",
+            "One agent and one customer history across voice, SMS, web chat, WhatsApp and email",
+            "Pay-as-you-go credits, no monthly fee and no per-seat cost",
+            "Chases the quote, sells the recurring plan, backfills the cancellation, asks for the review",
+            "You change the rules yourself on the canvas, live, in minutes"
+          ],
+          "action": {
+            "label": "Talk to Sales",
+            "href": "#popup-open-popupRequestDemo"
+          }
+        },
+        {
+          "type": "results-stats",
+          "background": "white",
+          "title": "The gap this closes, {{in published numbers}}",
+          "items": [
+            {
+              "value": "55%",
+              "description": "of home-service customers expect a reply within the hour, and 28% expect one immediately (Jobber 2026 Home Service Trends Report, 1,050 US owners surveyed)."
+            },
+            {
+              "value": "20%",
+              "description": "of home-service pros actually reply within the hour, while 60% get there the same day (same report). That distance is the whole opportunity."
+            },
+            {
+              "value": "96%",
+              "description": "of home-service customers say response time influences whether they buy (Jobber 2026 Home Service Trends Report, 1,001 consumers surveyed)."
+            },
+            {
+              "value": "82%",
+              "description": "of consumers say they will call a competitor when a business does not answer; 78% have already abandoned one for it (CallRail survey, 1,000 US consumers, 2025)."
+            }
+          ],
+          "infoNote": "These are published survey figures for home services, not Acme performance claims, and cleaning is one industry inside those samples. Your own answer rate is the number that matters — the calculator above uses it."
+        },
+        {
+          "type": "pricing-cards",
+          "background": "gray",
+          "title": "{{Pricing}}",
+          "description": "No subscription, no contract and no license fee. You pay for what the agent actually runs.",
+          "cards": [
+            {
+              "accent": "gradient",
+              "title": "Pay-As-You-Go",
+              "description": "No subscription. No monthly fee.<br>Buy credits from $10.",
+              "features": [
+                "5,000 credits loaded on signup",
+                "Credits never expire",
+                "Up to 5 seats included",
+                "Full canvas and every AI feature",
+                "All channels available"
+              ],
+              "note": "At a $180 average clean, two recovered jobs cover a long stretch of credits.",
+              "button": {
+                "label": "Get Started Free",
+                "href": "/signup"
+              }
+            },
+            {
+              "accent": "dark",
+              "title": "Enterprise",
+              "description": "Custom plan on a negotiated annual rate.",
+              "features": [
+                "Annual credit package",
+                "Everything in Pay-as-you-go, plus",
+                "Agent built and configured for you",
+                "Priority onboarding and support",
+                "Volume pricing"
+              ],
+              "button": {
+                "label": "See Pricing Details",
+                "href": "/pricing/"
+              }
+            }
+          ],
+          "info": "Credit packages and per-channel rates are laid out in full on the pricing page."
+        },
+        {
+          "type": "security",
+          "background": "white",
+          "title": "Enterprise-Grade",
+          "titleGradient": "Security & Compliance",
+          "subtitle": "Customers hand you their home addresses, their gate and alarm codes and their card details. All of it stays protected, and every action stays auditable.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data Protection",
+              "description": "Encryption in transit and at rest for call recordings, transcripts, property photos, access codes and payment records, with retention windows you configure."
+            },
+            {
+              "icon": "file_key",
+              "title": "Privacy Assurance",
+              "description": "Your customer data stays yours. Conversations and records are never used to train public AI models, and you can keep model calls inside your own provider account."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Secure System Integration",
+              "description": "Role-based access across your scheduler, CRM and payment processor, with every mid-conversation read and write travelling over an encrypted channel."
+            },
+            {
+              "icon": "text_search",
+              "title": "Audit & Monitoring",
+              "description": "Time-stamped logs of every call, message, booking, quote and record change — enough to settle a customer dispute or pass a call-recording consent review."
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "title": "The questions operators actually ask about",
+          "titleGradient": "an AI receptionist",
+          "searchPlaceholder": "Search FAQ",
+          "items": [
+            {
+              "question": "What happens if it quotes the wrong price on a job that turns out to be a disaster?",
+              "answer": "You decide what it is allowed to price. Standard sizes and services quote from your rate card; anything you flag — hoarding, post-construction, biohazard, unusual square footage, commercial — it will not put a number on. For those it collects the details, says the price needs a look first, and books the walk-through instead. You can also cap it to a range rather than a fixed figure.",
+              "category": "product"
+            },
+            {
+              "question": "Does it work for our service mix — one-time deep cleans, recurring maid plans, commercial janitorial?",
+              "answer": "Yes, and it treats them differently. One-time jobs are scoped and priced on the spot, with the recurring plan offered at the point of booking. Recurring customers are recognised, so it handles schedule changes and renewals instead of re-qualifying them. Commercial and specialty work follows its own path, including routing to a walk-through.",
+              "category": "product"
+            },
+            {
+              "question": "Can it fill a slot when someone cancels at 7 a.m.?",
+              "answer": "That is one of the jobs it is worth pointing at first. When a cancellation lands it can work your waitlist and your recent unconverted quotes to offer the freed slot, so a crew that is already paid for does not sit idle. You set who gets offered what, and whether it may discount.",
+              "category": "product"
+            },
+            {
+              "question": "How does it avoid double-booking a crew or sending them across town?",
+              "answer": "It books against real availability in your scheduling tool rather than a separate calendar, so it can only offer slots that exist. Service-area and travel rules are yours to define — by zone, by postcode, or by how much drive time you will accept between jobs — and it declines or escalates anything outside them.",
+              "category": "product"
+            },
+            {
+              "question": "What does the agent handle alone, and when does a person step in?",
+              "answer": "It handles standard intake end to end: qualifying, quoting, booking, confirming, reminding, rescheduling and following up. You decide what it never decides alone — non-standard pricing, complaints, damage claims, contract terms — and it hands those over with the full conversation attached rather than starting the customer again.",
+              "category": "product"
+            },
+            {
+              "question": "Will our customers know they are talking to AI?",
+              "answer": "That is your call. It can introduce itself as an assistant, or simply answer as your business. Either way it does not pretend to be a specific named employee, and it hands off rather than bluffing when a caller asks something outside what you gave it.",
+              "category": "business"
+            },
+            {
+              "question": "Who owns the customer data and the call recordings?",
+              "answer": "You do. Conversations, recordings and records stay in your account and are never used to train public AI models. You set retention windows and can export or delete the data whenever you want.",
+              "category": "business"
+            },
+            {
+              "question": "Can it take a deposit or keep a card on file?",
+              "answer": "It can collect payment details through your existing processor as part of the booking, so deposits and cancellation terms are enforceable rather than aspirational. Card data goes to the processor, not into the conversation record.",
+              "category": "business"
+            },
+            {
+              "question": "Does it handle Spanish-speaking customers?",
+              "answer": "Yes — it answers in the language the customer uses and keeps one thread, so a caller who switches between Spanish and English mid-conversation is not starting over. Worth configuring deliberately if a meaningful share of your customers or crews prefer Spanish.",
+              "category": "support"
+            },
+            {
+              "question": "How long does deployment take?",
+              "answer": "Typically a few days to a couple of weeks. What moves that number is how ready your inputs are: a clear rate card, service-area rules, access to your scheduler and CRM, and the escalation rules you want. Starting from a template and letting the AI Concierge draft the canvas removes most of the setup.",
+              "category": "support"
+            },
+            {
+              "question": "What happens when it gets something wrong?",
+              "answer": "It will, occasionally — any intake process does, including a human one. Every conversation is logged with a timestamp, so a mis-scoped job is traceable rather than mysterious, and you tighten the rule that allowed it. Set the escalation threshold conservatively at launch and loosen it once you have seen a few hundred real conversations.",
+              "category": "support"
+            },
+            {
+              "question": "How do credits map to call and message volume?",
+              "answer": "Credits are consumed by what the agent runs — conversation turns, channel usage and the actions it takes in your systems — so a quiet week costs less than a busy one. There is no monthly fee and no per-seat charge, and credits do not expire. Current per-channel rates and packages are on the pricing page.",
+              "category": "pricing"
+            },
+            {
+              "question": "Can we use the platform beyond the front desk later?",
+              "answer": "Yes. The same canvas runs recruiting intake for cleaners, dispatch and crew messaging, collections reminders and reporting workflows. Most operators start with inbound booking because it pays for itself first, then reuse the same connections for the next process.",
+              "category": "platform_overview"
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "title": "Your next missed call is {{already ringing}}",
+          "description": "Start free, keep your own rates and calendar, and let the agent handle the ones your crews cannot reach.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "/signup"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1204 @@
+{
+  "generatedAt": "2026-07-28T14:58:14.547Z",
+  "pages": [
+    {
+      "contentKey": "ai-page:lead-qualification",
+      "collection": "use-cases",
+      "path": "/ai-lead-qualification/",
+      "title": "AI Lead Qualification Agent",
+      "excerpt": "Respond to every inbound inquiry, collect the details your team needs, and route qualified opportunities to the right next step.",
+      "status": "published",
+      "template": "industry-use-case",
+      "seo": {
+        "metaTitle": "AI Lead Qualification Agent | Acme",
+        "metaDescription": "Respond to every inbound inquiry, collect the details your team needs, and route qualified opportunities to the right next step.",
+        "canonicalUrl": "/ai-lead-qualification/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "Sales use case",
+          "title": "AI Lead Qualification Agent",
+          "description": "Respond to every inbound inquiry, collect the details your team needs, and route qualified opportunities to the right next step.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "functional-capabilities",
+          "preset": "service",
+          "title": "Turn every conversation into {{ useful context }}",
+          "description": "Build the workflow around your operating rules, human handoffs, and connected systems.",
+          "cards": [
+            {
+              "title": "Respond with context",
+              "description": "Fit, timeline, budget, and location",
+              "width": "default"
+            },
+            {
+              "title": "Collect the right details",
+              "description": "Buying intent and product need",
+              "width": "default"
+            },
+            {
+              "title": "Route the next step",
+              "description": "Correct owner and next action",
+              "width": "default"
+            },
+            {
+              "title": "Keep the work moving",
+              "description": "Follow-up preference and consent",
+              "width": "default"
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "use-case-flow",
+          "title": "A clear {{ workflow }} from first message to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                {
+                  "text": "Answer the inquiry"
+                },
+                {
+                  "text": "Identify the request"
+                },
+                {
+                  "text": "Confirm contact details"
+                }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                {
+                  "text": "Fit, timeline, budget, and location"
+                },
+                {
+                  "text": "Buying intent and product need"
+                },
+                {
+                  "text": "Apply your routing rules"
+                }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                {
+                  "text": "Confirm the next step"
+                },
+                {
+                  "text": "Notify the right team"
+                },
+                {
+                  "text": "Keep a concise handoff summary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "pain-points-comparison",
+          "title": "Replace manual {{ follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Manual intake loses fit, timeline, budget, and location",
+              "rightDescription": "A configured workflow gathers fit, timeline, budget, and location before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses buying intent and product need",
+              "rightDescription": "A configured workflow gathers buying intent and product need before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses correct owner and next action",
+              "rightDescription": "A configured workflow gathers correct owner and next action before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses follow-up preference and consent",
+              "rightDescription": "A configured workflow gathers follow-up preference and consent before the human handoff."
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "security",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with the conversation your customers have most often, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "AI Lead Qualification Agent",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can we use our own qualification questions?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Can the agent hand a conversation to a person?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Can it work with our CRM?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:insurance",
+      "collection": "use-cases",
+      "path": "/ai-insurance-agent/",
+      "title": "AI Agent for Insurance Teams",
+      "excerpt": "Give policyholders and prospects a clear first response while collecting accurate context for service, claims, and sales teams.",
+      "status": "published",
+      "template": "industry-use-case",
+      "seo": {
+        "metaTitle": "AI Agent for Insurance Teams | Acme",
+        "metaDescription": "Give policyholders and prospects a clear first response while collecting accurate context for service, claims, and sales teams.",
+        "canonicalUrl": "/ai-insurance-agent/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "Insurance industry",
+          "title": "AI Agent for Insurance Teams",
+          "description": "Give policyholders and prospects a clear first response while collecting accurate context for service, claims, and sales teams.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "functional-capabilities",
+          "preset": "service",
+          "title": "Turn every conversation into {{ useful context }}",
+          "description": "Build the workflow around your operating rules, human handoffs, and connected systems.",
+          "cards": [
+            {
+              "title": "Respond with context",
+              "description": "Request type and policy context",
+              "width": "default"
+            },
+            {
+              "title": "Collect the right details",
+              "description": "Permitted intake information",
+              "width": "default"
+            },
+            {
+              "title": "Route the next step",
+              "description": "Licensed or specialist handoff",
+              "width": "default"
+            },
+            {
+              "title": "Keep the work moving",
+              "description": "Approved status and next-step updates",
+              "width": "default"
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "use-case-flow",
+          "title": "A clear {{ workflow }} from first message to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                {
+                  "text": "Answer the inquiry"
+                },
+                {
+                  "text": "Identify the request"
+                },
+                {
+                  "text": "Confirm contact details"
+                }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                {
+                  "text": "Request type and policy context"
+                },
+                {
+                  "text": "Permitted intake information"
+                },
+                {
+                  "text": "Apply your routing rules"
+                }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                {
+                  "text": "Confirm the next step"
+                },
+                {
+                  "text": "Notify the right team"
+                },
+                {
+                  "text": "Keep a concise handoff summary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "pain-points-comparison",
+          "title": "Replace manual {{ follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Manual intake loses request type and policy context",
+              "rightDescription": "A configured workflow gathers request type and policy context before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses permitted intake information",
+              "rightDescription": "A configured workflow gathers permitted intake information before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses licensed or specialist handoff",
+              "rightDescription": "A configured workflow gathers licensed or specialist handoff before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses approved status and next-step updates",
+              "rightDescription": "A configured workflow gathers approved status and next-step updates before the human handoff."
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "security",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with the conversation your customers have most often, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "AI Agent for Insurance Teams",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can the workflow be reviewed by our compliance team?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Does the agent make coverage decisions?",
+              "answer": "No. The agent can collect information and route the request; qualified people retain the decision-making responsibility."
+            },
+            {
+              "question": "Can customers move to a human agent?",
+              "answer": "Yes. Configure the handoff rules for the requests, exceptions, or customer preferences that require a person."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:security",
+      "collection": "use-cases",
+      "path": "/ai-security-agent/",
+      "title": "AI Agent for Security Companies",
+      "excerpt": "Capture inquiries, triage routine service requests, and give operations teams complete context before they take over.",
+      "status": "published",
+      "template": "industry-use-case",
+      "seo": {
+        "metaTitle": "AI Agent for Security Companies | Acme",
+        "metaDescription": "Capture inquiries, triage routine service requests, and give operations teams complete context before they take over.",
+        "canonicalUrl": "/ai-security-agent/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "Security industry",
+          "title": "AI Agent for Security Companies",
+          "description": "Capture inquiries, triage routine service requests, and give operations teams complete context before they take over.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "functional-capabilities",
+          "preset": "service",
+          "title": "Turn every conversation into {{ useful context }}",
+          "description": "Build the workflow around your operating rules, human handoffs, and connected systems.",
+          "cards": [
+            {
+              "title": "Respond with context",
+              "description": "Urgency, location, and request type",
+              "width": "default"
+            },
+            {
+              "title": "Collect the right details",
+              "description": "Approved escalation path",
+              "width": "default"
+            },
+            {
+              "title": "Route the next step",
+              "description": "Operations handoff summary",
+              "width": "default"
+            },
+            {
+              "title": "Keep the work moving",
+              "description": "Customer updates and follow-through",
+              "width": "default"
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "use-case-flow",
+          "title": "A clear {{ workflow }} from first message to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                {
+                  "text": "Answer the inquiry"
+                },
+                {
+                  "text": "Identify the request"
+                },
+                {
+                  "text": "Confirm contact details"
+                }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                {
+                  "text": "Urgency, location, and request type"
+                },
+                {
+                  "text": "Approved escalation path"
+                },
+                {
+                  "text": "Apply your routing rules"
+                }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                {
+                  "text": "Confirm the next step"
+                },
+                {
+                  "text": "Notify the right team"
+                },
+                {
+                  "text": "Keep a concise handoff summary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "pain-points-comparison",
+          "title": "Replace manual {{ follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Manual intake loses urgency, location, and request type",
+              "rightDescription": "A configured workflow gathers urgency, location, and request type before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses approved escalation path",
+              "rightDescription": "A configured workflow gathers approved escalation path before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses operations handoff summary",
+              "rightDescription": "A configured workflow gathers operations handoff summary before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses customer updates and follow-through",
+              "rightDescription": "A configured workflow gathers customer updates and follow-through before the human handoff."
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "security",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with the conversation your customers have most often, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "AI Agent for Security Companies",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can we define emergency escalation rules?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Can it support sales and existing customer service?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "What does the operations team receive?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:auto-repair",
+      "collection": "use-cases",
+      "path": "/ai-auto-repair-agent/",
+      "title": "AI Agent for Auto Repair Shops",
+      "excerpt": "Answer service inquiries, collect vehicle details, and help your shop move qualified requests toward a booked visit.",
+      "status": "published",
+      "template": "industry-use-case",
+      "seo": {
+        "metaTitle": "AI Agent for Auto Repair Shops | Acme",
+        "metaDescription": "Answer service inquiries, collect vehicle details, and help your shop move qualified requests toward a booked visit.",
+        "canonicalUrl": "/ai-auto-repair-agent/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "Auto repair industry",
+          "title": "AI Agent for Auto Repair Shops",
+          "description": "Answer service inquiries, collect vehicle details, and help your shop move qualified requests toward a booked visit.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "functional-capabilities",
+          "preset": "service",
+          "title": "Turn every conversation into {{ useful context }}",
+          "description": "Build the workflow around your operating rules, human handoffs, and connected systems.",
+          "cards": [
+            {
+              "title": "Respond with context",
+              "description": "Vehicle, concern, and contact preference",
+              "width": "default"
+            },
+            {
+              "title": "Collect the right details",
+              "description": "Service request and visit context",
+              "width": "default"
+            },
+            {
+              "title": "Route the next step",
+              "description": "Appointment options and reminders",
+              "width": "default"
+            },
+            {
+              "title": "Keep the work moving",
+              "description": "Advisor handoff summary",
+              "width": "default"
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "use-case-flow",
+          "title": "A clear {{ workflow }} from first message to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                {
+                  "text": "Answer the inquiry"
+                },
+                {
+                  "text": "Identify the request"
+                },
+                {
+                  "text": "Confirm contact details"
+                }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                {
+                  "text": "Vehicle, concern, and contact preference"
+                },
+                {
+                  "text": "Service request and visit context"
+                },
+                {
+                  "text": "Apply your routing rules"
+                }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                {
+                  "text": "Confirm the next step"
+                },
+                {
+                  "text": "Notify the right team"
+                },
+                {
+                  "text": "Keep a concise handoff summary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "pain-points-comparison",
+          "title": "Replace manual {{ follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Manual intake loses vehicle, concern, and contact preference",
+              "rightDescription": "A configured workflow gathers vehicle, concern, and contact preference before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses service request and visit context",
+              "rightDescription": "A configured workflow gathers service request and visit context before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses appointment options and reminders",
+              "rightDescription": "A configured workflow gathers appointment options and reminders before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses advisor handoff summary",
+              "rightDescription": "A configured workflow gathers advisor handoff summary before the human handoff."
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "security",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with the conversation your customers have most often, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "AI Agent for Auto Repair Shops",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can the agent collect vehicle information?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Can it book service appointments?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Does it diagnose vehicles?",
+              "answer": "No. The agent can collect information and route the request; qualified people retain the decision-making responsibility."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:cleaning",
+      "collection": "use-cases",
+      "path": "/ai-cleaning-agent/",
+      "title": "AI Agent for Cleaning Companies",
+      "excerpt": "Respond to every request, collect job details, and help your team turn inquiries into the right booked service.",
+      "status": "published",
+      "template": "industry-use-case",
+      "seo": {
+        "metaTitle": "AI Agent for Cleaning Companies | Acme",
+        "metaDescription": "Respond to every request, collect job details, and help your team turn inquiries into the right booked service.",
+        "canonicalUrl": "/ai-cleaning-agent/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "Cleaning industry",
+          "title": "AI Agent for Cleaning Companies",
+          "description": "Respond to every request, collect job details, and help your team turn inquiries into the right booked service.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "functional-capabilities",
+          "preset": "service",
+          "title": "Turn every conversation into {{ useful context }}",
+          "description": "Build the workflow around your operating rules, human handoffs, and connected systems.",
+          "cards": [
+            {
+              "title": "Respond with context",
+              "description": "Residential or commercial service type",
+              "width": "default"
+            },
+            {
+              "title": "Collect the right details",
+              "description": "Property, timing, and service-area details",
+              "width": "default"
+            },
+            {
+              "title": "Route the next step",
+              "description": "Recurring or one-time service needs",
+              "width": "default"
+            },
+            {
+              "title": "Keep the work moving",
+              "description": "Quote and booking follow-up",
+              "width": "default"
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "use-case-flow",
+          "title": "A clear {{ workflow }} from first message to handoff",
+          "columns": [
+            {
+              "label": "Capture",
+              "items": [
+                {
+                  "text": "Answer the inquiry"
+                },
+                {
+                  "text": "Identify the request"
+                },
+                {
+                  "text": "Confirm contact details"
+                }
+              ]
+            },
+            {
+              "label": "Understand",
+              "items": [
+                {
+                  "text": "Residential or commercial service type"
+                },
+                {
+                  "text": "Property, timing, and service-area details"
+                },
+                {
+                  "text": "Apply your routing rules"
+                }
+              ]
+            },
+            {
+              "label": "Advance",
+              "items": [
+                {
+                  "text": "Confirm the next step"
+                },
+                {
+                  "text": "Notify the right team"
+                },
+                {
+                  "text": "Keep a concise handoff summary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "pain-points-comparison",
+          "title": "Replace manual {{ follow-up }} with a clearer workflow",
+          "showColumnHeadings": true,
+          "leftHeading": "Without a workflow",
+          "rightHeading": "With a Acme workflow",
+          "rows": [
+            {
+              "leftTitle": "Manual intake loses residential or commercial service type",
+              "rightDescription": "A configured workflow gathers residential or commercial service type before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses property, timing, and service-area details",
+              "rightDescription": "A configured workflow gathers property, timing, and service-area details before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses recurring or one-time service needs",
+              "rightDescription": "A configured workflow gathers recurring or one-time service needs before the human handoff."
+            },
+            {
+              "leftTitle": "Manual intake loses quote and booking follow-up",
+              "rightDescription": "A configured workflow gathers quote and booking follow-up before the human handoff."
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "security",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Ready to map your workflow?",
+          "title": "Build the next step with {{ your team }}",
+          "description": "Start with the conversation your customers have most often, then connect the handoff and follow-up your team needs.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "Questions about",
+          "titleGradient": "AI Agent for Cleaning Companies",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can it distinguish residential and commercial cleaning?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Can it work after business hours?",
+              "answer": "Yes. The workflow can be configured around your approved questions, routing rules, and connected systems."
+            },
+            {
+              "question": "Can staff take over a conversation?",
+              "answer": "Yes. Configure the handoff rules for the requests, exceptions, or customer preferences that require a person."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "ai-page:use-cases-directory",
+      "collection": "pages",
+      "path": "/ai-use-cases/",
+      "title": "AI Use Cases",
+      "excerpt": "Explore practical AI-agent workflows for sales, customer service, operations, and industry teams.",
+      "status": "published",
+      "template": "landing",
+      "seo": {
+        "metaTitle": "AI Use Cases | Acme",
+        "metaDescription": "Explore practical AI-agent workflows for sales, customer service, operations, and industry teams.",
+        "canonicalUrl": "/ai-use-cases/"
+      },
+      "blocks": [
+        {
+          "type": "hero",
+          "variant": "default",
+          "eyebrow": "AI use cases",
+          "title": "AI agents for the work {{ your team repeats }}",
+          "description": "Explore practical workflows for turning conversations into completed next steps.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "mediaSize": "wide",
+          "cards": []
+        },
+        {
+          "type": "use-cases-grid",
+          "title": "Find the workflow that fits {{ your operation }}",
+          "description": "Start with a specific use case, then adapt questions, routing, handoffs, and integrations to how your team works.",
+          "cards": [
+            {
+              "icon": "filter",
+              "title": "AI Lead Qualification",
+              "description": "Qualify and route inbound opportunities with useful sales context.",
+              "href": "/ai-lead-qualification/"
+            },
+            {
+              "icon": "shield-check",
+              "title": "AI Agent for Insurance Teams",
+              "description": "Guide structured intake and route the right next step.",
+              "href": "/ai-insurance-agent/"
+            },
+            {
+              "icon": "shield-check",
+              "title": "AI Agent for Security Companies",
+              "description": "Triage inquiries and prepare operational handoffs.",
+              "href": "/ai-security-agent/"
+            },
+            {
+              "icon": "hammer",
+              "title": "AI Agent for Auto Repair Shops",
+              "description": "Collect vehicle service details and coordinate visits.",
+              "href": "/ai-auto-repair-agent/"
+            },
+            {
+              "icon": "calendar-check",
+              "title": "AI Agent for Cleaning Companies",
+              "description": "Capture job details and help every inquiry reach a booking path.",
+              "href": "/ai-cleaning-agent/"
+            },
+            {
+              "icon": "cloud-cog",
+              "title": "AI Agent for HVAC",
+              "description": "Manage service inquiries, scheduling, and follow-up.",
+              "href": "/hvac-ai-agent/"
+            },
+            {
+              "icon": "building",
+              "title": "AI Agent for Real Estate",
+              "description": "Respond to property inquiries and keep prospects moving.",
+              "href": "/real-estate-ai-agent/"
+            },
+            {
+              "icon": "headset",
+              "title": "Customer Service AI Agent",
+              "description": "Support customers across channels and route complex issues.",
+              "href": "/customer-service-ai-agent/"
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "how-it-works",
+          "title": "Start with one {{ high-value workflow }}",
+          "subtitle": "Turn a recurring conversation into an agent-led process with clear human ownership.",
+          "openFirst": false,
+          "steps": [
+            {
+              "label": "1",
+              "title": "Choose the conversation",
+              "description": "Pick a recurring request where speed, structure, or follow-up makes a difference."
+            },
+            {
+              "label": "2",
+              "title": "Define the handoff",
+              "description": "Set the questions, routing rules, connected systems, and moments a person takes over."
+            },
+            {
+              "label": "3",
+              "title": "Launch and improve",
+              "description": "Review real conversations with your team and refine the workflow as you learn."
+            }
+          ],
+          "button": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "background": "gray",
+          "type": "security",
+          "title": "Built for",
+          "titleGradient": "controlled workflows",
+          "subtitle": "Configure the data, access, escalation, and review rules that match your operating requirements.",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data protection",
+              "description": "Use controlled data handling and retention choices that fit your team’s policies."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Permission-aware access",
+              "description": "Connect systems and actions according to the access your workflow permits."
+            },
+            {
+              "icon": "file_key",
+              "title": "Human decision points",
+              "description": "Keep exceptions and sensitive decisions with the appropriate people."
+            },
+            {
+              "icon": "text_search",
+              "title": "Reviewable activity",
+              "description": "Give teams clear conversation and handoff context for ongoing review."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "eyebrow": "Not sure where to start?",
+          "title": "Map an AI workflow around {{ your next priority }}",
+          "description": "Choose the customer or operational conversation that creates the most repeat work today.",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Book a Demo",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "faq",
+          "title": "AI use case",
+          "titleGradient": "questions",
+          "searchPlaceholder": "Search questions",
+          "items": [
+            {
+              "question": "Can we start with a single use case?",
+              "answer": "Yes. Start with one high-volume workflow, then add more as the team is ready."
+            },
+            {
+              "question": "Can each workflow use different routing rules?",
+              "answer": "Yes. Each workflow can have its own questions, escalation rules, and connected systems."
+            },
+            {
+              "question": "Can our team update the workflow later?",
+              "answer": "Yes. The workflow is designed to be iterated as your process changes."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

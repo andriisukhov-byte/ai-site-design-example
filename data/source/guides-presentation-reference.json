@@ -1,0 +1,755 @@
+{
+  "generatedAt": "2026-07-30T13:17:19.980Z",
+  "source": "https://acme.example",
+  "archive": {
+    "featuredPath": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+    "cards": [
+      {
+        "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+        "readTimeLabel": "4 min read"
+      },
+      {
+        "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+        "readTimeLabel": "5 min read"
+      },
+      {
+        "path": "/guide/how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow/",
+        "readTimeLabel": "7 min read"
+      },
+      {
+        "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+        "readTimeLabel": "6 min read"
+      },
+      {
+        "path": "/guide/how-to-build-a-conversational-weekly-business-report-in-acme-part-2/",
+        "readTimeLabel": "4 min read"
+      },
+      {
+        "path": "/guide/how-to-build-a-conversational-weekly-business-report-in-acme/",
+        "readTimeLabel": "5 min read"
+      },
+      {
+        "path": "/guide/how-to-build-a-recruiting-agent-in-acme-step-by-step/",
+        "readTimeLabel": "5 min read"
+      },
+      {
+        "path": "/guide/how-to-create-an-inbound-triage-and-customer-communication-agent-on-acme/",
+        "readTimeLabel": "4 min read"
+      },
+      {
+        "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+        "readTimeLabel": "3 min read"
+      }
+    ]
+  },
+  "records": [
+    {
+      "path": "/guide/ai-youtube-automation-script-generator/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/automate-your-shopify-order-fulfillment-workflow-e-commerce-example/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/automated-invoice-processing-acme/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": false,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/how-to-teach-ai-with-your-companys-knowledge-base-in-acme/",
+          "readTimeLabel": "4 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": false,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/how-to-teach-ai-with-your-companys-knowledge-base-in-acme/",
+          "readTimeLabel": "4 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/daily-revenue-dashboard-e-commerce-shopify-automation-guide/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-auto-translate-auto-publish-shopify-product-descriptions/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-automate-a-post-purchase-email-sequence-for-your-shopify-store/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-automate-competitor-price-monitoring-e-commerce-example/",
+      "readTimeLabel": "2 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-automate-feedback-collection-and-log-the-data-in-hubspot/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": false,
+      "relatedCards": []
+    },
+    {
+      "path": "/guide/how-to-automate-onboarding-emails-once-payment-on-your-platform-is-received/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": false,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-automate-task-management-from-meeting-notes-in-acme/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-a-conversational-weekly-business-report-in-acme-part-2/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": []
+    },
+    {
+      "path": "/guide/how-to-build-a-conversational-weekly-business-report-in-acme/",
+      "readTimeLabel": "5 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+      "readTimeLabel": "5 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow/",
+          "readTimeLabel": "7 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow/",
+      "readTimeLabel": "7 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-a-recruiting-agent-in-acme-step-by-step/",
+      "readTimeLabel": "5 min read",
+      "showTableOfContents": true,
+      "relatedCards": []
+    },
+    {
+      "path": "/guide/how-to-build-a-return-request-handler-for-your-shopify-store/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-ai-agents-with-acme/",
+      "readTimeLabel": "2 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-an-abandoned-cart-recovery-workflow-e-commerce-example-part-2/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-an-abandoned-cart-recovery-workflow-e-commerce-example-part1/",
+      "readTimeLabel": "6 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-build-an-instant-inbound-response-workflow-in-acme-capture-every-missed-call-before-they-call-your-competitor/",
+      "readTimeLabel": "10 min read",
+      "showTableOfContents": true,
+      "relatedCards": []
+    },
+    {
+      "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow/",
+          "readTimeLabel": "7 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-collect-job-information-automatically-with-acme/",
+      "readTimeLabel": "7 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-create-an-ai-automated-inquiry-auto-response-with-acme/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-create-an-inbound-triage-and-customer-communication-agent-on-acme/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": false,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-create-auto-follow-up-emails-at-24-72-hours-real-estate-workflow-example/",
+      "readTimeLabel": "6 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-get-more-reviews-and-repeat-bookings-after-every-job-with-acme/",
+      "readTimeLabel": "6 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-let-customers-book-themselves-without-calling-or-waiting-on-acme/",
+      "readTimeLabel": "6 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-set-up-a-daily-sales-report-in-shopify-using-acme-automation/",
+      "readTimeLabel": "2 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-lead-agent-that-handles-both-sms-and-website-widget-in-one-flow/",
+          "readTimeLabel": "7 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-set-up-low-stock-alerts-in-shopify-using-acme-automation/",
+      "readTimeLabel": "2 min read",
+      "showTableOfContents": false,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-teach-ai-with-your-companys-knowledge-base-in-acme/",
+      "readTimeLabel": "4 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-use-action-nodes-to-run-ai-agents-with-acme/",
+      "readTimeLabel": "6 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-use-control-nodes-in-acme/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+      "readTimeLabel": "6 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/how-to-teach-ai-with-your-companys-knowledge-base-in-acme/",
+          "readTimeLabel": "4 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/how-to-use-starting-nodes-in-acme/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-use-knowledge-base-in-acme-for-product-aware-agents/",
+          "readTimeLabel": "6 min read"
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "readTimeLabel": "3 min read"
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "readTimeLabel": "3 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/social-media-automation-workflow-acme/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/web-form-automation-lead-routing-acme/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    },
+    {
+      "path": "/guide/what-you-can-build-in-acme-in-less-than-4-steps/",
+      "readTimeLabel": "3 min read",
+      "showTableOfContents": true,
+      "relatedCards": [
+        {
+          "path": "/guide/how-to-build-an-out-of-office-coverage-handoff-flow-in-acme/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-set-up-an-employee-onboarding-flow-with-conversation-flows-and-definition-of-done/",
+          "readTimeLabel": "4 min read"
+        },
+        {
+          "path": "/guide/how-to-build-a-customer-support-triage-agent-in-acme-from-inbound-message-to-routed-ticket/",
+          "readTimeLabel": "5 min read"
+        }
+      ]
+    }
+  ]
+}

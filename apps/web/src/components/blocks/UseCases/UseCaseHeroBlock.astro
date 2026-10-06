@@ -1,0 +1,168 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+type HeroBlock = Extract<PageBlock, { type: 'hero' }>;
+
+interface Props {
+  block: HeroBlock;
+}
+
+const { block } = Astro.props;
+const rootClass = block.root?.className ?? 'uc-hero uc-hero--centered';
+const isProductAvailabilityChat = rootClass.includes('uc-hero--chat-product-availability');
+const hasVisual = Boolean(block.media?.src || isProductAvailabilityChat);
+const isVideo = Boolean(block.media?.src && /\.(?:mp4|webm|ogv)(?:[?#].*)?$/i.test(block.media.src));
+const videoMime = block.media?.src?.match(/\.webm(?:[?#].*)?$/i) ? 'video/webm' : 'video/mp4';
+const hasActions = Boolean(block.primaryAction || block.secondaryAction);
+const notes = [block.primaryNote, block.secondaryNote].filter(Boolean);
+
+function plainInline(value: string): string {
+  return value
+    .replace(/\{\{\s*([^{}]+?)\s*\}\}/g, '$1')
+    .replace(/<[^>]*>/g, '')
+    .trim();
+}
+
+function actionAttrs(action: NonNullable<HeroBlock['primaryAction']>) {
+  return action.target === '_blank'
+    ? { href: action.href, target: '_blank', rel: 'noopener' }
+    : { href: action.href };
+}
+---
+
+<section id={block.root?.anchor} class={rootClass}>
+  <div class="uc-hero__container container-wide">
+    <div class="uc-hero__content">
+      <div class="uc-hero__text">
+        {block.eyebrow && <span class="uc-hero__eyebrow">{plainInline(block.eyebrow)}</span>}
+        <h1 class="uc-hero__title"><FormattedText text={block.title} /></h1>
+        {block.description && <p class="uc-hero__subtitle"><FormattedText text={block.description} /></p>}
+      </div>
+
+      {hasActions && (
+        <div class="uc-hero__actions">
+          {block.primaryAction && (
+            <a class="c-btn c-btn--primary c-btn--lg uc-hero__button" {...actionAttrs(block.primaryAction)}>
+              <span class="c-btn__label">{block.primaryAction.label}</span>
+            </a>
+          )}
+          {block.secondaryAction && (
+            <a class="c-btn c-btn--secondary c-btn--lg uc-hero__button" {...actionAttrs(block.secondaryAction)}>
+              <span class="c-btn__label">{block.secondaryAction.label}</span>
+            </a>
+          )}
+        </div>
+      )}
+
+      {notes.length > 0 && (
+        <div class="uc-hero__notes">
+          {notes.map((note) => <p class="uc-hero__note">{note}</p>)}
+        </div>
+      )}
+    </div>
+
+    {hasVisual && (
+      <div class="uc-hero__visual" aria-hidden="true">
+        <div class="uc-hero__visual-stage">
+          <svg class="uc-hero__visual-halo" viewBox="0 0 444 444" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="uc-hero-halo-grad" x1="0" y1="0" x2="444" y2="444" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#3A87D9"></stop>
+                <stop offset="0.25" stop-color="#2F1A6B"></stop>
+                <stop offset="0.5" stop-color="#200000"></stop>
+                <stop offset="0.75" stop-color="#AD3822"></stop>
+                <stop offset="1" stop-color="#F7A75F"></stop>
+              </linearGradient>
+            </defs>
+            <circle cx="222" cy="222" r="221" stroke="url(#uc-hero-halo-grad)" stroke-width="1"></circle>
+          </svg>
+
+          <div class:list={['uc-hero__visual-media', isProductAvailabilityChat && 'uc-hero__visual-media--mockup']}>
+            {isProductAvailabilityChat ? (
+              <div
+                class="uc-chat-mockup"
+                role="img"
+                aria-label="Chat mockup: customer asking if XL black hoodie is back in stock; AI checks availability"
+              >
+                <div class="uc-chat-mockup__header">
+                  <span class="uc-chat-mockup__mode">
+                    <svg class="uc-chat-mockup__mode-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                      <rect x="2" y="3" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"></rect>
+                      <path d="M5 12v2h6v-2" stroke="currentColor" stroke-width="1.2" fill="none"></path>
+                    </svg>
+                    <span>Chat mode</span>
+                  </span>
+                  <span class="uc-chat-mockup__actions" aria-hidden="true">
+                    <span class="uc-chat-mockup__action-btn">
+                      <svg viewBox="0 0 12 12"><path d="M2 2h3M2 2v3M10 10H7M10 10V7" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"></path></svg>
+                    </span>
+                    <span class="uc-chat-mockup__action-btn">
+                      <svg viewBox="0 0 12 12"><path d="M2 6h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path></svg>
+                    </span>
+                    <span class="uc-chat-mockup__action-btn">
+                      <svg viewBox="0 0 12 12">
+                        <circle cx="3" cy="6" r="1" fill="currentColor"></circle>
+                        <circle cx="6" cy="6" r="1" fill="currentColor"></circle>
+                        <circle cx="9" cy="6" r="1" fill="currentColor"></circle>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+
+                <div class="uc-chat-mockup__messages">
+                  <div class="uc-chat-mockup__message uc-chat-mockup__message--user">
+                    <div class="uc-chat-mockup__title">
+                      <span class="uc-chat-mockup__avatar" aria-hidden="true"></span>
+                      <span class="uc-chat-mockup__name">Jaydon Dokidis</span>
+                      <span class="uc-chat-mockup__time">09:43 AM</span>
+                    </div>
+                    <p class="uc-chat-mockup__text">Is the XL black hoodie back in stock?</p>
+                  </div>
+
+                  <div class="uc-chat-mockup__message uc-chat-mockup__message--ai">
+                    <div class="uc-chat-mockup__title">
+                      <span class="uc-chat-mockup__name">Cognitive AI</span>
+                      <span class="uc-chat-mockup__time">09:44 AM</span>
+                    </div>
+                    <p class="uc-chat-mockup__text">Let me check the availability of our black hoodie in XL size.</p>
+                  </div>
+
+                  <div class="uc-chat-mockup__message uc-chat-mockup__message--user">
+                    <div class="uc-chat-mockup__title">
+                      <span class="uc-chat-mockup__avatar" aria-hidden="true"></span>
+                      <span class="uc-chat-mockup__name">Jaydon Dokidis</span>
+                      <span class="uc-chat-mockup__time">09:45 AM</span>
+                    </div>
+                    <p class="uc-chat-mockup__text">jane.doe@email.com</p>
+                  </div>
+
+                  <div class="uc-chat-mockup__action">
+                    <div class="uc-chat-mockup__action-head">
+                      <svg class="uc-chat-mockup__action-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"></rect>
+                        <path d="M5 6h6M5 9h6M5 12h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path>
+                      </svg>
+                      <span>AI Action</span>
+                    </div>
+                    <ol class="uc-chat-mockup__action-list">
+                      <li>Searches product database for “black hoodie XL”</li>
+                      <li>Checks current inventory: 0 units</li>
+                      <li>Checks incoming purchase orders</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            ) : isVideo && block.media ? (
+              <video autoplay loop muted playsinline>
+                <source src={block.media.src} type={videoMime} />
+              </video>
+            ) : block.media ? (
+              <img src={block.media.src} alt={block.media.alt ?? ''} loading="eager" decoding="async" />
+            ) : null}
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,15 @@
+---
+import BlockRenderer from '../components/BlockRenderer.astro';
+import { getSourcePage } from '../data/source-pages';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const page = await getSourcePage('/');
+
+if (!page) {
+  throw new Error('Missing source page for /');
+}
+---
+
+<SiteLayout page={page}>
+  <BlockRenderer blocks={page.blocks} />
+</SiteLayout>

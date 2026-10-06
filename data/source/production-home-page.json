@@ -1,0 +1,659 @@
+{
+  "generatedAt": "2026-07-30T11:43:09.190Z",
+  "source": "https://acme.example/wp-json/wp/v2/pages/7621",
+  "pages": [
+    {
+      "contentKey": "098d4d9fef5475cf",
+      "collection": "pages",
+      "path": "/",
+      "title": "AI Agent Platform",
+      "status": "published",
+      "template": "standard",
+      "seo": {
+        "metaTitle": "AI Agent Platform Made for Business - Talk & Act on One Canvas | Acme",
+        "metaDescription": "Build conversational, autonomous, & cognitive AI agents fast with no-code setup, ready-to-use templates & human support. Start free - pay as you go.",
+        "canonicalUrl": "https://acme.example/",
+        "ogTitle": "AI Agent Platform | Acme",
+        "ogDescription": "Build AI agents & chatbots in minutes for free: workflow automation, conversational AI, autonomous execution, no/low coding, 2700+ integrations"
+      },
+      "blocks": [
+        {
+          "type": "hero-extended",
+          "variant": "home",
+          "eyebrow": "AI Agent Platform",
+          "title": "{{ Build AI Agents }}",
+          "subtitle": "That Talk and Act Natively",
+          "description": "Run your business with agentic and cognitive AI employees:|| launch in minutes for free and boost productivity from day one.",
+          "backgroundImage": {
+            "src": "/media/2026/05/Cognitive-AI-Platform.svg",
+            "alt": ""
+          },
+          "media": {
+            "src": "/media/2026/07/cognitive-ai-platform-image.webp",
+            "alt": "cognitive ai platform image"
+          },
+          "mediaSize": "wide",
+          "primaryAction": {
+            "label": "Get Started Free",
+            "href": "/signup",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Request Demo",
+            "href": "about:blank#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "primaryNote": "No monthly fee",
+          "secondaryNote": "30-min consultation",
+          "cards": []
+        },
+        {
+          "type": "live-in-days",
+          "items": [
+            {
+              "icon": "code-xml",
+              "label": "No/Low-Code"
+            },
+            {
+              "icon": "layout-grid",
+              "label": "Agent Templates"
+            },
+            {
+              "icon": "bot-message-square",
+              "label": "AI Concierge"
+            },
+            {
+              "icon": "user-round-check",
+              "label": "Human Onboarding"
+            }
+          ]
+        },
+        {
+          "type": "capability-trio",
+          "title": "Set Up, Test, and Launch {{ Real Automation }}||Without an Engineering Team",
+          "centerLabel": "Deterministic workflow engine",
+          "cards": [
+            {
+              "icon": "messages-square",
+              "title": "Conversational AI",
+              "description": "Multi-turn dialogue across voice and text, responding without a script.",
+              "highlighted": true
+            },
+            {
+              "icon": "orbit",
+              "title": "Autonomous AI",
+              "description": "Background agents triggered by events or schedules, running multi-step tasks",
+              "highlighted": false
+            },
+            {
+              "icon": "brain-circuit",
+              "title": "Cognitive AI Agents",
+              "description": "They check live systems and resolve requests mid-conversation",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "type": "agent-capabilities",
+          "title": "What {{ Your Agents }} Can Do",
+          "description": "AI Agent Platform built for every operation your business runs on.",
+          "contentSide": "right",
+          "autoplay": true,
+          "autoplayInterval": 5000,
+          "items": [
+            {
+              "icon": "circle-dollar-sign",
+              "title": "Sales",
+              "description": "<ul> <li>Inbound Lead Capture &amp; Qualification</li> <li>Appointment Booking &amp; Scheduling</li> <li>Quote &amp; Estimate Handling</li> <li>Follow-Up &amp; Re-Engagement</li> <li>Repeat Customer Re-Booking</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            },
+            {
+              "icon": "headset",
+              "title": "Customer Support",
+              "description": "<ul> <li>Customer Service &amp; Case Resolution</li> <li>Status &amp; Order Updates</li> <li>FAQ Deflection &amp; Self-Service</li> <li>After-Hours &amp; Overflow Coverage</li> <li>Warranty &amp; Returns Support</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            },
+            {
+              "icon": "user-round-check",
+              "title": "Recruiting",
+              "description": "<ul> <li>Applicant Intake &amp; Pre-Screening</li> <li>Skills &amp; Availability Pre-Screening</li> <li>Interview Scheduling</li> <li>Candidate Re-Engagement</li> <li>New Hire Onboarding Kickoff</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            },
+            {
+              "icon": "megaphone",
+              "title": "Marketing",
+              "description": "<ul> <li>Lead Form to CRM Sync</li> <li>Lead Enrichment on Autopilot</li> <li>Campaign Response Notifications</li> <li>Weekly Report Generation</li> <li>Abandoned Form Recovery</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            },
+            {
+              "icon": "users",
+              "title": "HR",
+              "description": "<ul> <li>Document &amp; Information Collection</li> <li>Internal Help Desk &amp; Knowledge Q&amp;A</li> <li>License &amp; Certification Tracking</li> <li>Employee Offboarding Coordination</li> <li>Performance Review Reminders</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            },
+            {
+              "icon": "wallet",
+              "title": "Finance & Accounting",
+              "description": "<ul> <li>Invoice Processing &amp; Data Entry</li> <li>Payment Verification &amp; Reconciliation</li> <li>Accounts Payable Follow-Up</li> <li>Accounts Receivable &amp; Collections Follow-Up</li> <li>Expense Approval Routing</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            },
+            {
+              "icon": "briefcase-business",
+              "title": "Business Operations",
+              "description": "<ul> <li>Approval &amp; Sign-Off Workflows</li> <li>Process Exception Alerts</li> <li>Vendor Communication Automation</li> <li>Scheduled Data Sync</li> <li>SLA Monitoring &amp; Escalation</li> </ul>",
+              "link": {
+                "url": "https://app.acme.example/",
+                "title": "Get more",
+                "target": "_self"
+              }
+            }
+          ],
+          "preview": false
+        },
+        {
+          "type": "cta",
+          "title": "DIY Your First Agent - or Let Us Do It for You",
+          "description": "5,000 credits free on signup - templates and the AI Concierge get you to a working canvas in minutes. Prefer hands-off? Our team builds, tests, and deploys the agent for you on Enterprise.",
+          "primaryAction": {
+            "label": "Talk to Sales",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          },
+          "secondaryAction": {
+            "label": "Start Building Free",
+            "href": "https://app.acme.example/signup",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "difference",
+          "title": "The {{ Acme }} Difference",
+          "subtitle": "Built for People Who Think in Processes",
+          "leftTitle": "Other Tools",
+          "rightTitle": "Acme",
+          "leftItems": [
+            {
+              "text": "Prompt-based agents that hope for the best"
+            },
+            {
+              "text": "Separate tools for chat, automation, and background agents"
+            },
+            {
+              "text": "You figure it out alone from docs and tutorials"
+            },
+            {
+              "text": "Onboarding ends at signup. What you build is your problem."
+            },
+            {
+              "text": "Chat-only or voice-only. Pick a channel"
+            }
+          ],
+          "rightItems": [
+            {
+              "text": "Structured reasoning with decision frameworks and input validation"
+            },
+            {
+              "text": "Three capabilities native on one platform - combinable in a single workflow"
+            },
+            {
+              "text": "Human expert onboarding included. AI Concierge to generate your first canvas"
+            },
+            {
+              "text": "We stay with you until your first agent is live and working. No charge until it runs."
+            },
+            {
+              "text": "Chat, voice, email, WhatsApp, SMS - same agent, any channel"
+            }
+          ],
+          "action": {
+            "label": "See It In Action",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "integrations-banner",
+          "title": "2,700+ Integrations. Works with What You Already Use.",
+          "description": "Acme connects natively with the tools your business runs on. Your agent reads and writes live data – mid-conversation, not after.",
+          "items": []
+        },
+        {
+          "background": "gray",
+          "type": "how-it-works",
+          "title": "How it Works",
+          "gradientText": "Works",
+          "subtitle": "From First Call to Live Agent in Days",
+          "openFirst": true,
+          "steps": [
+            {
+              "label": "Day 1",
+              "title": "Start",
+              "description": "Sign up free. Explore all three platform capabilities. No credit card, no time limit."
+            },
+            {
+              "label": "Day 1-3",
+              "title": "Build",
+              "description": "Begin from a template, generate a canvas with AI Concierge, or build from scratch - with human expert guidance when you need it."
+            },
+            {
+              "label": "Day 3-7",
+              "title": "Test",
+              "description": "Connect your systems through 2,700+ integrations. Run your agent against real scenarios and edge cases."
+            },
+            {
+              "label": "Day 7-14",
+              "title": "Launch",
+              "description": "Deploy across chat, voice, email, WhatsApp, SMS. Scale independently or request expert support."
+            }
+          ],
+          "button": {
+            "label": "Schedule Your Consultation",
+            "href": "#popup-open-popupRequestDemo",
+            "target": "_self"
+          }
+        },
+        {
+          "type": "industry-expertise",
+          "title": "Industry Expertise",
+          "subtitle": "Cognitive AI agents configured for your operations",
+          "visualType": "industry",
+          "hideBottomControls": false,
+          "autoplay": true,
+          "autoplayInterval": 5,
+          "items": [
+            {
+              "icon": "shopping_cart",
+              "title": "eCommerce & Retail",
+              "description": "Returns processing, order tracking, inventory checks, and payment verification - executed mid-conversation, not after a ticket",
+              "image": {
+                "src": "/media/2026/05/ethan_walker.svg",
+                "alt": "ethan walker"
+              }
+            },
+            {
+              "icon": "hotel",
+              "title": "Real Estate & Property Management",
+              "description": "Inquiry qualification, showing scheduling, tenant communication, and vacancy follow-up across every channel",
+              "image": {
+                "src": "/media/2026/05/Real-Estate-Property.svg",
+                "alt": "Real Estate & Property"
+              }
+            },
+            {
+              "icon": "layers",
+              "title": "Marketing",
+              "description": "Client approval collection, reporting delivery, revision intake, and new-client onboarding handled across every channel",
+              "image": {
+                "src": "/media/2026/05/Hiring-Recruitment.svg",
+                "alt": "Hiring & Recruitment"
+              }
+            },
+            {
+              "icon": "headset",
+              "title": "Call Centers",
+              "description": "Voice and chat agents handling inbound volume, routing, troubleshooting, and resolution - without hold times or tier-1 headcount",
+              "image": {
+                "src": "/media/2026/05/Call-Centers.svg",
+                "alt": "Call Centers"
+              }
+            },
+            {
+              "icon": "cloud_cog",
+              "title": "SaaS Platforms",
+              "description": "Demo qualification, tier-1 support deflection, and trial conversion flows that scale with your user base",
+              "image": {
+                "src": "/media/2026/05/Saas-Platforms.svg",
+                "alt": "Saas Platforms"
+              }
+            },
+            {
+              "icon": "hammer",
+              "title": "Home Services & Trades",
+              "description": "Inbound call qualification, job booking, and after-hours coverage - so leads don't go to whoever answers first",
+              "image": {
+                "src": "/media/2026/05/Home-Services-Trades.svg",
+                "alt": "Home Services & Trades"
+              }
+            },
+            {
+              "icon": "heart_handshake",
+              "title": "Hiring & Recruitment",
+              "description": "First-pass candidate screening, interview scheduling, and onboarding communication for businesses where hiring never stops",
+              "image": {
+                "src": "/media/2026/05/Hiring-Recruitment.svg",
+                "alt": "Hiring & Recruitment"
+              }
+            }
+          ],
+          "infoCards": []
+        },
+        {
+          "type": "testimonials",
+          "title": "What Our Clients {{ Say }}",
+          "subtitle": "Our customers have experienced remarkable transformations by implementing the cognitive conversational AI platform Acme",
+          "items": [
+            {
+              "quote": "Acme has become an essential part of our customer experience. The cognitive AI platform handles most routine inquiries, freeing up our agents to focus on more complex issues. Our customer satisfaction scores have gone up by 25% since implementation. I highly recommend this solution.",
+              "authorName": "Alex R.",
+              "authorRole": "Founder & CEO",
+              "authorImage": {
+                "src": "/media/2025/06/alex.png",
+                "alt": "alex"
+              }
+            },
+            {
+              "quote": "Acme automated 20% of our HR processes, cutting the recruitment cycle by 35% and improving hiring quality by 17%. The TA team shifted from manual screening to actual candidate engagement. Quarterly costs dropped by 24%. A must-have for any team serious about smarter hiring.",
+              "authorName": "Elena K.",
+              "authorRole": "HR Director",
+              "authorImage": {
+                "src": "/media/2026/02/testimonial-author-hr-director.png",
+                "alt": "Elena K. HR Director"
+              }
+            }
+          ]
+        },
+        {
+          "background": "gray",
+          "type": "pricing-cards",
+          "title": "{{ Pricing }}",
+          "description": "Pay only for what you use. Full visibility on every credit spent.",
+          "cards": [
+            {
+              "accent": "gradient",
+              "title": "Pay-as-you-go",
+              "description": "No subscription. No monthly fee.<br>Buy credits from $10",
+              "features": [
+                {
+                  "text": "5,000 credits loaded on signup"
+                },
+                {
+                  "text": "Full canvas + all AI features"
+                },
+                {
+                  "text": "2700+ integrations, templates"
+                },
+                {
+                  "text": "Free messaging channels"
+                },
+                {
+                  "text": "Up to 5 user seats"
+                },
+                {
+                  "text": "Production deployment"
+                },
+                {
+                  "text": "Human chat support*"
+                },
+                {
+                  "text": "Credits never expire"
+                }
+              ],
+              "note": "* activates on first credit purchase",
+              "button": {
+                "label": "Get Started Free",
+                "href": "/signup",
+                "target": "_self"
+              }
+            },
+            {
+              "accent": "dark",
+              "title": "Enterprise",
+              "description": "Custom plan. Annual subscription,<br>negotiated rate.",
+              "features": [
+                {
+                  "text": "Annual credit package"
+                },
+                {
+                  "text": "Custom user seats"
+                },
+                {
+                  "text": "SSO"
+                },
+                {
+                  "text": "Bring your own LLM API keys"
+                },
+                {
+                  "text": "Extended usage logs"
+                },
+                {
+                  "text": "Assisted onboarding + training"
+                },
+                {
+                  "text": "Agents built by Acme team"
+                },
+                {
+                  "text": "Premium support + SLA"
+                }
+              ],
+              "button": {
+                "label": "Talk to Sales",
+                "href": "about:blank#popup-open-popupRequestDemo",
+                "target": "_self"
+              }
+            }
+          ]
+        },
+        {
+          "background": "white",
+          "type": "security",
+          "title": "Enterprise-Grade",
+          "titleGradient": "Security & Compliance",
+          "cards": [
+            {
+              "icon": "database_zap",
+              "title": "Data Protection",
+              "description": "Advanced encryption and security protocols that meet or exceed industry standards for protecting customer information."
+            },
+            {
+              "icon": "file_key",
+              "title": "Privacy Assurance",
+              "description": "Your business data and customer interactions remain exclusively yours, only shared with trusted subprocessors as required to operate the platform."
+            },
+            {
+              "icon": "shield_ellipsis",
+              "title": "Secure System Integration",
+              "description": "Role-based access controls and encrypted connection protocols ensure your systems remain protected while enabling seamless data flow between Acme and your business tools."
+            },
+            {
+              "icon": "text_search",
+              "title": "Audit & Monitoring",
+              "description": "Full activity logging and audit trails across every agent interaction, workflow execution, and system connection."
+            }
+          ]
+        },
+        {
+          "type": "agent-solutions",
+          "title": "Interested in Specific {{ AI Agent Solutions? }}",
+          "items": [
+            {
+              "icon": "headset",
+              "title": "Customer Support AI Agent",
+              "href": "/customer-service-ai-agent/",
+              "description": "Reduce response times by 60%, handle high-volume periods seamlessly, maintain consistent service quality, and free human agents for complex issues through 24/7 customer inquiry handling, ticket routing, troubleshooting guidance, and escalation management."
+            },
+            {
+              "icon": "connections",
+              "title": "Multi-Agent AI",
+              "href": "/multi-agent-collaboration/",
+              "description": "Eliminate silos between departments, orchestrate complex processes, ensure seamless handoffs, and optimize resource allocation through coordinated task management, cross-departmental workflows, intelligent task routing, and collaborative problem-solving."
+            },
+            {
+              "icon": "goal",
+              "title": "Marketing AI Agent",
+              "href": "/ai-marketing-agent/",
+              "description": "Increase engagement rates, automate campaign optimization, deliver personalized experiences at scale, and improve ROI tracking through campaign management, content personalization, lead nurturing, performance analytics, and audience segmentation."
+            },
+            {
+              "icon": "cog",
+              "title": "AI ERP Bot",
+              "href": "/erp-ai-chatbot/",
+              "description": "Accelerate ERP adoption, reduce training time, minimize data errors, and increase system utilization across teams through system navigation assistance, data entry automation, report generation, workflow optimization, and user training."
+            },
+            {
+              "icon": "tag",
+              "title": "AI Sales Assistant",
+              "href": "/ai-sales-assistant/",
+              "description": "Increase conversion rates, capture leads around the clock, accelerate sales cycles, and provide consistent messaging across all prospects with lead qualification, meeting scheduling, product demonstrations, pipeline management, and follow-up automation."
+            },
+            {
+              "icon": "phone-call",
+              "title": "Call Center AI Agent",
+              "href": "/call-center-automation/",
+              "description": "Cut call center costs by 40%, eliminate hold times, provide empathetic voice interactions, and scale capacity instantly with inbound call handling, voice-based customer service, real-time sentiment analysis, and intelligent call routing."
+            },
+            {
+              "icon": "messages-square",
+              "title": "Conversational AI",
+              "href": "/conversational-ai-platform/",
+              "description": "Engage every shopper with intelligent chat and voice assistants that understand your catalog, order data, and policies to provide fast, accurate, and personalized responses."
+            },
+            {
+              "icon": "shopping-cart",
+              "title": "eCommerce Automation",
+              "href": "/ecommerce-automation/",
+              "description": "Build AI agents that automate your entire ecommerce operation - from customer support and order tracking to inventory updates and back-office workflows - all from one event-driven platform."
+            }
+          ]
+        },
+        {
+          "type": "news-insights",
+          "title": "AI Industry {{ News }}||and {{ Insights }}",
+          "mode": "latest",
+          "collections": [
+            "posts",
+            "news"
+          ],
+          "limit": 3,
+          "cards": []
+        },
+        {
+          "type": "faq",
+          "title": "Frequently Asked Questions about",
+          "titleGradient": "Acme",
+          "searchPlaceholder": "Search FAQ",
+          "items": [
+            {
+              "question": "What exactly do you build for us?",
+              "answer": "<p>Event-driven workflows that automate high-volume operational processes – lead capture and routing, returns management, order status inquiries, payment verification, inventory alerts, approval workflows, multi-channel content distribution, and showing scheduling. If your team handles it repeatedly and it follows business logic, we can automate it with seamless human handoff when judgment is required.</p>",
+              "category": "business"
+            },
+            {
+              "question": "What industries get the most value from Acme?",
+              "answer": "<p>We focus on three core industries:</p> <p>eCommerce &amp; Retail: Returns management, inventory alerts, order tracking, payment reconciliation</p> <p>Marketing Agencies &amp; Teams: Lead capture and qualification, campaign execution, multi-channel distribution, CRM workflows</p> <p>Real Estate: Inquiry response, showing scheduling, listing alerts, client reminders</p> <p>These industries have high-volume, repetitive processes where event-driven automation delivers immediate, measurable ROI. However, our cognitive AI platform isn’t limited to these verticals – any business with workflow automation needs, customer service operations, or multi-system coordination can benefit from unified automation.</p>",
+              "category": "business"
+            },
+            {
+              "question": "What types of business processes can you automate?",
+              "answer": "<p>Our cognitive AI platform handles business workflow automation across customer support, sales operations, marketing campaigns, inventory management, payment reconciliation, order processing, and lead qualification. AI agents manage conversational interfaces (chat and voice), trigger backend workflows, and escalate complex situations to human team members when needed – all on one unified platform.</p>",
+              "category": "business"
+            },
+            {
+              "question": "Can multiple AI agents work together in our organization?",
+              "answer": "<p>Yes. Our cognitive AI platform supports a multi-agent architecture where different cognitive AI agents collaborate within unified workflows. Agents share context automatically, transfer conversations intelligently when needed, and coordinate complex multi-department processes. Unlike solutions requiring separate platforms, our event-driven system enables seamless agent cooperation across your entire organization.</p>",
+              "category": "features"
+            },
+            {
+              "question": "Can we customize the AI agents’ voices and personalities?",
+              "answer": "<p>Yes, our conversational voice AI allows complete customization of AI agents’ voices, speaking styles, and personalities to match your brand. You can choose from multiple voice options or create custom voices that align with your company’s identity and communication style.</p>",
+              "category": "features"
+            },
+            {
+              "question": "How accurate is the voice recognition capability?",
+              "answer": "<p>Our conversational voice AI employs advanced voice recognition technology that delivers high accuracy across different accents and speaking styles. Cognitive AI agents built on our platform understand natural speech patterns, industry-specific terminology, and handle background noise effectively while maintaining rapid response times for natural conversation flow.</p>",
+              "category": "features"
+            },
+            {
+              "question": "Do I need technical skills to use Acme?",
+              "answer": "<p>Not to get started. You provide process knowledge; we show you how to build it. Through collaborative creation, you gain the skills to manage your automation independently without ongoing technical help.</p>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "Do you offer a free trial or self-service signup?",
+              "answer": "<p>Yes, signup is self-serve, no card and no sales call needed. Every account starts with 5,000 free credits and full access to the canvas, all AI features, and 2,700+ integrations. There’s no monthly fee and no expiry; pay as you go from $10 when you launch, with human chat support unlocking on your first purchase.</p>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "How quickly can we deploy automation with Acme?",
+              "answer": "<p>With professional onboarding included, most businesses reach production up towithin 2-3 weeks. Our team helps you configure cognitive AI agents, build event-driven workflows, and integrate with your existing systems. Using pre-built templates for common use cases (returns management, lead capture, order tracking), we can deploy working automation in your first onboarding session.</p>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "What’s included in professional onboarding?",
+              "answer": "<div class=\"main-l-faq__accordion-cont-bg\"> <div class=\"main-l-faq__accordion-cont\"> <div class=\"acmea\"> <p>Every plan includes 10-20 hours of hands-on guided setup. We build your automation together – you learn while creating so you can manage, modify, and improve independently after launch. You walk away with working automation and the knowledge to control it yourself.</p> </div> </div> </div>",
+              "category": "platform_overview"
+            },
+            {
+              "question": "How do your AI agents handle situations requiring human judgment?",
+              "answer": "<p>This is our core differentiator. Our cognitive AI platform is the only solution that combines automation and humans in an organic way. Event-driven workflows handle routine processes automatically, then hand off seamlessly to your team when situations require judgment, creativity, or relationship management. After human resolution, automation resumes without awkward breaks or system switching.</p>",
+              "category": "product"
+            },
+            {
+              "question": "How does event-driven automation differ from traditional workflow builders?",
+              "answer": "<p>Traditional workflow builders force you to draw rigid flowcharts that break when business conditions change. Our cognitive AI platform uses an event-driven architecture that responds to real business triggers – inventory changes, customer requests, and system updates. When complexity requires human judgment, workflows hand off seamlessly to your team, then resume automation automatically. This is the only platform where business workflow automation and human expertise work organically as one.</p>",
+              "category": "product"
+            },
+            {
+              "question": "What makes Acme different from Zapier or other workflow builders?",
+              "answer": "<p>Unlike traditional builders that give you a canvas and say “good luck,” we provide event-driven architecture that adapts to real business complexity. Key differentiators: professional onboarding included (10-20 hours), conversational interfaces native to workflows (not separate tools), voice support with one click, unlimited seats at Teams tier, and transparent ROI with published time equivalents.</p>",
+              "category": "product"
+            },
+            {
+              "question": "What happens after workflows go live?",
+              "answer": "<p>You choose your support model. Many operations managers prefer self-service – monitoring dashboards, making adjustments, and adding processes independently. Others prefer ongoing expert involvement available through the Enterprise tier for workflow optimization, new integration setup, and strategic automation planning. Either approach works.</p>",
+              "category": "support"
+            },
+            {
+              "question": "What kind of support do you provide?",
+              "answer": "<p>All plans include technical assistance during onboarding plus ongoing support for workflow optimization, integration troubleshooting, and system configuration. Enterprise customers receive dedicated success management, SLA guarantees, human workflow review services, and priority response. Our team helps ensure your business workflow automation delivers measurable results.</p>",
+              "category": "support"
+            },
+            {
+              "question": "Can we use voice and chat on the same workflows?",
+              "answer": "<p>Yes. Conversational interfaces – both text and voice – live natively inside workflows on our cognitive AI platform. Your existing workflow configurations work across every channel automatically. Add voice support with a single click; no rebuilding required. This unified approach eliminates the need to stitch separate chatbot, voice AI, and automation tools together.</p>",
+              "category": "technical"
+            },
+            {
+              "question": "Can your cognitive AI platform integrate with our existing systems?",
+              "answer": "<p>Yes, our cognitive AI platform integrates with over 2,700 business tools, including CRM systems (Salesforce, HubSpot, Pipedrive), eCommerce platforms (Shopify, WooCommerce, Magento), ERP systems, ticketing platforms, and communication tools. Cognitive AI agents access and update these systems automatically through event-driven workflows, eliminating manual data entry and synchronization failures.</p>",
+              "category": "technical"
+            },
+            {
+              "question": "How do you handle security and compliance?",
+              "answer": "<p>Our cognitive AI platform includes enterprise-grade security with data encryption, role-based access controls, and audit logging. For regulated industries, Enterprise plans offer enhanced security features, compliance documentation, and dedicated security reviews. All cognitive AI agents operate within your security policies and integration permissions.</p>",
+              "category": "technical"
+            },
+            {
+              "question": "What business systems does Acme integrate with?",
+              "answer": "<p>Over 2,700 tools, including CRMs (Salesforce, HubSpot, Pipedrive), eCommerce platforms (Shopify, WooCommerce, Magento), ERPs (Odoo, NetSuite), support systems (Zendesk, Intercom), communication tools (Slack, email, SMS), calendars, spreadsheets, and payment processors. If you use it, we likely integrate with it.</p>",
+              "category": "technical"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

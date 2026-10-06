@@ -1,0 +1,75 @@
+---
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_logo-grid.scss';
+type ImageValue = { src?: string; url?: string; alt?: string; width?: number; height?: number };
+type GridItem = { image?: ImageValue | string | null; secondaryImage?: ImageValue | string | null; label?: string; subLabel?: string; url?: string };
+type GridColumn = { heading?: string; items?: GridItem[] };
+
+interface Props {
+  block: { eyebrow?: string; title?: string; description?: string; columns?: GridColumn[] };
+}
+
+const { block } = Astro.props;
+const columns = (block.columns ?? []).map((column) => ({
+  ...column,
+  items: (column.items ?? []).filter((item) => item.image || item.secondaryImage || item.label?.trim() || item.subLabel?.trim()),
+})).filter((column) => column.heading?.trim() || column.items.length > 0);
+const maxRows = Math.max(0, ...columns.map((column) => column.items.length));
+
+function imageData(image: GridItem['image']) {
+  if (typeof image === 'string') return { src: image, alt: '' };
+  return { src: image?.src || image?.url || '', alt: image?.alt || '', width: image?.width, height: image?.height };
+}
+
+const columnViews = columns.map((column) => ({
+  ...column,
+  items: column.items.map((item) => ({
+    ...item,
+    image: imageData(item.image),
+    secondaryImage: imageData(item.secondaryImage),
+  })),
+}));
+const tableClass = `logo-grid__table logo-grid__table--cols-${Math.min(columnViews.length, 6)} logo-grid__table--rows-${Math.min(maxRows, 12)}`;
+---
+
+{columnViews.length > 0 && (
+  <section class="logo-grid">
+    <div class="logo-grid__container container-wide">
+      <header class="logo-grid__header">
+        {block.eyebrow && <p class="logo-grid__eyebrow">{block.eyebrow}</p>}
+        {block.title && <h2 class="logo-grid__title"><FormattedText text={block.title} /></h2>}
+        {block.description && <p class="logo-grid__description">{block.description}</p>}
+      </header>
+
+      <div class={tableClass}>
+        {columnViews.map((column) => (
+          <div class="logo-grid__column">
+            <div class="logo-grid__head">{column.heading}</div>
+            {Array.from({ length: maxRows }, (_, rowIndex) => column.items[rowIndex]).map((item) => (
+              <div class:list={['logo-grid__cell', !item && 'logo-grid__cell--empty']}>
+                {item ? (
+                  <>
+                {item.url ? (
+                  <a class="logo-grid__cell-inner logo-grid__cell-inner--link" href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.image.src && <img class="logo-grid__logo" src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} loading="lazy" decoding="async" />}
+                    {item.secondaryImage.src && <img class="logo-grid__logo" src={item.secondaryImage.src} alt={item.secondaryImage.alt} width={item.secondaryImage.width} height={item.secondaryImage.height} loading="lazy" decoding="async" />}
+                    {(item.label || item.subLabel) && <span class="logo-grid__text"><span class="logo-grid__label">{item.label}</span><span class="logo-grid__sub-label">{item.subLabel}</span></span>}
+                  </a>
+                ) : (
+                  <div class="logo-grid__cell-inner">
+                    {item.image.src && <img class="logo-grid__logo" src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} loading="lazy" decoding="async" />}
+                    {item.secondaryImage.src && <img class="logo-grid__logo" src={item.secondaryImage.src} alt={item.secondaryImage.alt} width={item.secondaryImage.width} height={item.secondaryImage.height} loading="lazy" decoding="async" />}
+                    {(item.label || item.subLabel) && <span class="logo-grid__text"><span class="logo-grid__label">{item.label}</span><span class="logo-grid__sub-label">{item.subLabel}</span></span>}
+                  </div>
+                )}
+                  </>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

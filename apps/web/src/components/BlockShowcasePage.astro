@@ -1,0 +1,86 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import BlockRenderer from './BlockRenderer.astro';
+import {
+  applyCurrentSourceStoryCopy,
+  currentSourceStoryFixtures,
+  currentSourceStorySourceSlugs,
+  sourceBlockStoryPages,
+} from '../data/block-story-fixtures';
+import { getSourcePage } from '../data/source-pages';
+
+import '../styles/templates/_block-lab.scss';
+
+type Props = {
+  pageNumber: number;
+};
+
+const { pageNumber } = Astro.props;
+const page = await getSourcePage('/blocks/');
+
+if (!page) {
+  throw new Error('Missing CMS document for /blocks/.');
+}
+
+const storyBlocks = new Map(
+  page.blocks
+    .filter((block) => block.root?.anchor?.startsWith('sec-'))
+    .map((block) => [block.root!.anchor!.replace(/^sec-/, ''), block]),
+);
+const pageSlugs = sourceBlockStoryPages[pageNumber - 1] ?? [];
+const stories = pageSlugs.flatMap((slug) => {
+  const sourceSlug = currentSourceStorySourceSlugs[slug] ?? slug;
+  const sourceBlock = currentSourceStoryFixtures[slug] ?? storyBlocks.get(sourceSlug);
+  if (!sourceBlock) return [];
+  const block = applyCurrentSourceStoryCopy(slug, sourceBlock);
+
+  return [{
+    id: `sec-${slug}`,
+    slug,
+    block: {
+      ...block,
+      root: {
+        ...block.root,
+        anchor: undefined,
+      },
+    },
+  }];
+});
+const showcasePages = Array.from({ length: 9 }, (_, index) => index + 1);
+---
+
+<SiteLayout page={page}>
+  <section class="block-lab">
+    <div class="block-lab__container container-wide">
+      <header class="block-lab__header">
+        <h1 class="block-lab__title">Blocks Showcase</h1>
+      </header>
+
+      <nav class="block-lab__nav" aria-label="Blocks showcase pages">
+        {showcasePages.map((number) => (
+          <a
+            href={number === 1 ? '/blocks/' : `/blocks-${number}/`}
+            class:list={['block-lab__chip', number === pageNumber && 'is-active']}
+            aria-current={number === pageNumber ? 'page' : undefined}
+          >
+            {number}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  {stories.map((story, index) => (
+    <section class="block-lab-group" id={story.id}>
+      <div class="block-lab-group__bar">
+        <div class="block-lab-group__container container-wide">
+          <h2>{story.slug}</h2>
+          <span>{story.block.type}</span>
+        </div>
+      </div>
+      <div data-block-lab-type={story.slug} data-block-lab-index={index + 1}>
+        <BlockRenderer blocks={[story.block]} />
+      </div>
+    </section>
+  ))}
+</SiteLayout>

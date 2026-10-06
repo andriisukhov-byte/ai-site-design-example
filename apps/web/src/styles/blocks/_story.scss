@@ -1,0 +1,249 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.story {
+    padding: 120px 0;
+    background: dt.$color-brand-white;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: minmax(0, 869px) 436px;
+        gap: 16px;
+        align-items: center;
+    }
+
+    &__copy {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-width: 0;
+    }
+
+    &__eyebrow {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 78px;
+        letter-spacing: 0;
+    }
+
+    &__title-gradient,
+    &__title-line {
+        display: block;
+    }
+
+    &__title-gradient {
+        background-image: linear-gradient(
+            153.78deg,
+            dt.$color-brand-azure-sky 0%,
+            dt.$color-brand-royal-violet 25%,
+            dt.$color-brand-dark-umber 50%,
+            dt.$color-brand-burnt-clay 75%,
+            dt.$color-brand-amber-glow 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    &__title-line {
+        color: dt.$color-brand-font-dark;
+    }
+
+    &__intro {
+        margin: 0;
+        color: dt.$color-gray-500;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    &__body {
+        margin: 0;
+        color: dt.$color-gray-500;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    &__quote {
+        margin: 0;
+        display: flex;
+        gap: 16px;
+        align-items: stretch;
+        max-width: 690px;
+
+        p {
+            margin: 0;
+            color: dt.$color-gray-700;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    }
+
+    &__quote-bar {
+        flex-shrink: 0;
+        width: 3px;
+        align-self: stretch;
+        background-image: linear-gradient(
+            180deg,
+            dt.$color-brand-azure-sky 0%,
+            dt.$color-brand-royal-violet 25%,
+            dt.$color-brand-dark-umber 50%,
+            dt.$color-brand-burnt-clay 75%,
+            dt.$color-brand-amber-glow 100%
+        );
+    }
+
+    &__visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 436px;
+        height: auto;
+        display: block;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        background: dt.$color-gray-25;
+        border-radius: 24px;
+    }
+
+    &__card-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 8px;
+        background: dt.$color-brand-white;
+        color: dt.$color-brand-font-dark;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+    }
+
+    &__card-title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &__card-description {
+        margin: 0;
+        color: dt.$color-gray-700;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    @include tablet {
+        padding: 80px 0;
+
+        &__top {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        &__visual {
+            order: -1;
+        }
+
+        &__title {
+            font-size: 48px;
+            line-height: 1.15;
+        }
+
+        &__intro {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @include mobile {
+        padding: 56px 0;
+
+        &__container {
+            gap: 32px;
+        }
+
+        &__copy {
+            gap: 12px;
+        }
+
+        &__title {
+            font-size: 32px;
+            line-height: 1.2;
+        }
+
+        &__intro {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__body,
+        &__quote p {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__card-title {
+            font-size: 20px;
+        }
+
+        &__card-description {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+}

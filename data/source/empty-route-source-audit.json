@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-24T23:55:42.050Z",
+  "cmsPagesPath": "data/cms/pages.json",
+  "sourceRoots": [
+    "D:/wamp/www/acme/wp-content/themes/acme/docs/data/pages",
+    "D:/wamp/www/acme/wp-content/themes/acme/docs/data/backup-use-case-schemes"
+  ],
+  "emptyRoutes": 0,
+  "recoverable": 0,
+  "partialSourceOnly": 0,
+  "missingSource": 0,
+  "routes": []
+}

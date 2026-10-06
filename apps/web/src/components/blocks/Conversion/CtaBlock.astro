@@ -1,0 +1,73 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_cta.scss';
+
+type CtaBlock = Extract<PageBlock, { type: 'cta' }>;
+
+interface Props {
+  block: CtaBlock;
+}
+
+const { block } = Astro.props;
+// The primary action must carry the primary treatment. These two were mapped
+// the other way round, which rendered every page's main conversion path as the
+// weakest button on the section and promoted the optional one above it.
+const buttons = [
+  block.primaryAction && { action: block.primaryAction, variant: 'primary' },
+  block.secondaryAction && { action: block.secondaryAction, variant: 'secondary' },
+].filter((button): button is { action: NonNullable<CtaBlock['primaryAction']>; variant: 'primary' | 'secondary' } =>
+  Boolean(button?.action.href && button.action.label)
+);
+const title = stripGradientMarkers(block.title ?? '');
+
+function buttonAttrs(action: NonNullable<CtaBlock['primaryAction']>) {
+  const attrs: Record<string, string> = {
+    href: action.href,
+  };
+
+  if (action.target === '_blank') {
+    attrs.target = '_blank';
+    attrs.rel = 'noopener';
+  }
+
+  if (action.href.startsWith('#popup-open-')) {
+    attrs['data-popup'] = action.href.slice('#popup-open-'.length);
+  }
+
+  return attrs;
+}
+
+function stripGradientMarkers(value: string): string {
+  return value
+    .replace(/\{\{\s*([^}]+?)\s*\}\}/g, '$1')
+    .trim();
+}
+---
+
+<section class="cta">
+  <div class="cta__banner">
+    <div class="cta__container container-wide">
+      <div class="cta__content">
+        {block.eyebrow && <p class="cta__eyebrow"><FormattedText text={block.eyebrow} /></p>}
+
+        {(title || block.description) && (
+          <div class="cta__copy">
+            {title && <h2 class="cta__title"><FormattedText text={title} /></h2>}
+            {block.description && <p class="cta__description"><FormattedText text={block.description} /></p>}
+          </div>
+        )}
+
+        {buttons.length > 0 && (
+          <div class="cta__buttons">
+            {buttons.map(({ action, variant }) => (
+              <a class={`c-btn c-btn--${variant} c-btn--lg cta__button cta__button--${variant}`} {...buttonAttrs(action)}>
+                <span class="c-btn__label">{action.label}</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

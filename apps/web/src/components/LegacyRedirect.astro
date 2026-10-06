@@ -1,0 +1,55 @@
+---
+import type { PageDocument } from '@acme/blocks';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+interface Props {
+  from: string;
+  to: string;
+  title: string;
+}
+
+const { from, to, title } = Astro.props;
+const page: PageDocument = {
+  collection: 'pages',
+  path: from,
+  title,
+  status: 'published',
+  template: 'standard',
+  seo: {
+    metaTitle: title,
+    metaDescription: `This page has moved to ${to}.`,
+    robots: 'noindex, follow',
+  },
+  blocks: [],
+};
+---
+
+<SiteLayout page={page} redirectTo={to}>
+  <section class="legacy-redirect">
+    <div class="container">
+      <p>This page has moved.</p>
+      <a href={to}>Continue</a>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .legacy-redirect {
+    min-height: 42vh;
+    padding: 96px 0;
+    background: var(--color-gray-25);
+  }
+
+  .legacy-redirect p {
+    margin: 0 0 16px;
+    color: var(--color-brand-font-dark);
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .legacy-redirect a {
+    color: var(--color-brand-rust);
+    font-size: 18px;
+    font-weight: 600;
+  }
+</style>

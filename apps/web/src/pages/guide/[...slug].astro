@@ -1,0 +1,15 @@
+---
+import SingleArticle from '../../components/SingleArticle.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getSourcePage } from '../../data/source-pages';
+
+const page = await getSourcePage(`/guide/${Astro.params.slug ?? ''}/`);
+
+if (!page || page.status !== 'published' || (page.collection !== 'guides' && page.template !== 'guide')) {
+  return Astro.redirect('/404');
+}
+---
+
+<SiteLayout page={page}>
+  <SingleArticle page={page} />
+</SiteLayout>

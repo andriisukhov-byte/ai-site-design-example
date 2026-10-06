@@ -1,0 +1,118 @@
+---
+import blogArchiveReference from '../../../../data/source/blog-archive-reference.json';
+import type { ProductionFaqItem } from '../data/production-taxonomies';
+import BlogNewsletterForm from './BlogNewsletterForm.astro';
+
+interface Props {
+  items: ProductionFaqItem[];
+}
+
+const { items } = Astro.props;
+const sortedItems = [...items].sort((left, right) =>
+  new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime(),
+);
+const featured = sortedItems[0];
+const rest = sortedItems.slice(1);
+
+function slugifyTag(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function filterHref(filter: string, index: number): string {
+  return index === 0 ? '/blog/' : `/blog/?tag=${encodeURIComponent(slugifyTag(filter))}`;
+}
+
+function excerptFor(item: ProductionFaqItem): string {
+  const plainText = decodeEntities(item.answer.replace(/<[^>]*>/g, ' '))
+    .replace(/\s+/g, ' ')
+    .trim();
+  const words = plainText.split(/\s+/);
+  return words.length > 55 ? `${words.slice(0, 55).join(' ')} […]` : plainText;
+}
+
+function decodeEntities(value: string): string {
+  return value
+    .replace(/&#x([0-9a-f]+);/gi, (_, code: string) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;|&#039;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ');
+}
+---
+
+<div class="blog-archive-page">
+  {featured && (
+    <section class="blog-featured">
+      <article class="blog-featured__article">
+        <div class="blog-featured__image">
+          <img src="/assets/brand/acme-logo.svg" alt="No image" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="blog-featured__content">
+          <h3 class="blog-featured__title">
+            <a href={featured.path}>{featured.question}</a>
+          </h3>
+          <div class="blog-featured__excerpt"><p>{excerptFor(featured)}</p></div>
+          <a class="blog-featured__button c-btn c-btn--primary" href={featured.path}>Learn More</a>
+        </div>
+      </article>
+    </section>
+  )}
+
+  <nav class="blog-filters" aria-label="Blog topics">
+    {blogArchiveReference.filters.map((filter, index) => (
+      <a
+        href={filterHref(filter, index)}
+        data-archive-filter={index === 0 ? '' : slugifyTag(filter)}
+        class:list={['blog-filters__tab', { 'blog-filters__tab--active': index === 0 }]}
+      >
+        {filter}
+      </a>
+    ))}
+  </nav>
+
+  {rest.length > 0 && (
+    <section class="blog-posts guides">
+      <div class="container-default">
+        <div class="guides__list">
+          {rest.map((item) => (
+            <a href={item.path} class="guide-card guide-card__link">
+              <div class="guide-card__content">
+                <div class="guide-card__title">{item.question}</div>
+                <div class="guide-card__info">
+                  <div class="guide-card__info-item">
+                    <div class="blog-posts__rating">
+                      <span class="kk-star-ratings">
+                        <span class="kksr-stars" aria-hidden="true"></span>
+                        <span class="kksr-legend">{item.ratingLabel || 'Rate this faq_item'}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="guide-card__info-item read">
+                    <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                    <span>1 min read</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="blog-newsletter">
+    <div class="blog-newsletter__inner">
+      <h2 class="blog-newsletter__heading">Acme <span>Newsletters</span></h2>
+      <BlogNewsletterForm />
+    </div>
+  </section>
+</div>

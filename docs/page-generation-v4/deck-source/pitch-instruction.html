@@ -1,0 +1,427 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<title>Как сделать страницу этой системой — инструкция</title><link rel="stylesheet" href="deck.css"></head><body>
+
+<section class="slide dark">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Инструкция · 15 сентября 2026</div>
+  <h1>Как сделать<br>страницу<br><span class="grad">этой системой</span></h1>
+  <p class="lead" style="margin-top:34px;max-width:960px">Вторая часть. Первая — «pitch-without-instruction» — показывала, что система делает. Эта показывает, как повторить: по шагам, с командами, с чек-листом приёмки и списком ловушек.</p>
+  <div class="hero-strip">
+    <div><b>КОМУ</b><span>Тому, кто заводит новую страницу и ни разу этого не делал.</span></div>
+    <div><b>СКОЛЬКО</b><span>14 шагов. Первые три фазы быстрые, четвёртая — самая долгая.</span></div>
+    <div><b>ЧЕМ ЗАКАНЧИВАЕТСЯ</b><span>Черновик в системе управления сайтом и отчёт о приёмке.</span></div>
+  </div>
+  <div class="foot">Все команды в этой деке — реальные, из прогона, разобранного в первой части.</div>
+  <div class="num">01</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Перед стартом</div>
+  <h2>Три условия. Без них начинать нельзя</h2>
+  <div class="cols c3" style="margin-top:32px;gap:24px">
+    <div class="doc"><div class="t">УСЛОВИЕ 1</div><h3>Библиотека секций заведена</h3><p>У каждого вида секции описаны роль, допустимое число элементов и подсказка, когда его брать. Без этого системе нечего собирать, и она начнёт изобретать.</p></div>
+    <div class="doc"><div class="t">УСЛОВИЕ 2</div><h3>Правила написаны и лежат в репозитории</h3><p>Закон сборки, свод правил письма, список утверждённых фактов. Правило, живущее в голове, не работает: его нельзя проверить и о нём нельзя спорить.</p></div>
+    <div class="doc"><div class="t">УСЛОВИЕ 3</div><h3>Проверки запускаются командой</h3><p>Если проверка — это «кто-нибудь посмотрит», её не будет. Каждое правило, которое можно посчитать, должно быть посчитано машиной.</p></div>
+  </div>
+  <div class="quote" style="margin-top:38px">Это и есть основная работа — и делается она <b>один раз</b>, а не на каждой странице. Дальше стоимость страницы падает до стоимости её содержания.</div>
+  <div class="num">02</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Карта</div>
+  <h2>Четырнадцать шагов</h2>
+  <div class="phase" style="margin-top:30px">
+    <div><b>ФАЗА 1 · ШАГИ 1–3</b><h3>Место</h3><p>Поднять стек. Проверить, что адрес свободен. Проверить, что ключевой запрос не отбирает трафик у существующей страницы.</p></div>
+    <div><b>ФАЗА 2 · ШАГИ 4–6</b><h3>Композиция</h3><p>Прочитать библиотеку. Сопоставить секции ТЗ с видами. Проверить, какие факты вообще разрешено утверждать.</p></div>
+    <div><b>ФАЗА 3 · ШАГИ 7–9</b><h3>Сборка</h3><p>Написать бриф. Собрать страницу. Прогнать сухую проверку и гейт копирайта.</p></div>
+    <div><b>ФАЗА 4 · ШАГИ 10–14</b><h3>Приёмка</h3><p>Залить черновиком. Снять скриншоты. Прогнать оставшиеся ворота. Отдать на независимую проверку. Вернуть в черновик и написать отчёт.</p></div>
+  </div>
+  <div class="rule" style="margin-top:42px"></div>
+  <p class="lead">Порядок не декоративный. Проверка маршрута до сборки экономит день; проверка фактов до написания текста экономит переписывание всей страницы.</p>
+  <div class="num">03</div>
+</section>
+
+<section class="slide slide--tight">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 1 · Место</div>
+  <h2 style="margin-bottom:6px">Шаги 1–3</h2>
+  <div class="step"><span class="i">01</span><span><b>Поднять стек</b><span>База, система управления сайтом, сам сайт. <b>Обязательно проверить строку в логе:</b> <code>[content] Loaded N pages from Payload at localhost:3000</code>. Если там адрес тестового сервера — работа пойдёт поверх чужих данных, и это никак не будет видно.</span></span></div>
+  <div class="step"><span class="i">02</span><span><b>Проверить, что адрес свободен</b><span>Три источника, все обязательны: <b>живая система управления во всех разделах</b> (черновики видны только с ключом доступа), <b>снимок контента</b> в репозитории (он свежее того, чем засеяна локальная база) и <b>меню сайта</b> — оно иногда ссылается на страницу, которой ещё нет, и это готовое место под задачу. Отдельно проверить адреса-синонимы.</span></span></div>
+  <div class="step"><span class="i">03</span><span><b>Проверить ключевой запрос</b><span><code>npm run qa:keyword-collision -- --keyword "…" --path /…/</code><br>Ищет страницы, которые уже борются за этот запрос. Дешевле узнать сейчас, чем после выпуска.</span></span></div>
+  <div class="card" style="margin-top:18px;background:#fdf0ee;border-color:#f3d5cf"><p style="color:#8a2f1a"><b>Признаки, что это не создание, а правка:</b> «поправить у источника…», «поменять X, как договаривались», или перечень секций совпадает с живой страницей. Тогда работать надо с существующим документом — иначе появится дубль на живом адресе.</p></div>
+  <div class="num">04</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 2 · Композиция</div>
+  <h2>Шаги 4–5: разложить ТЗ по секциям</h2>
+  <div class="cols c2" style="margin-top:20px;gap:40px">
+    <div>
+      <div class="step"><span class="i">04</span><span><b>Прочитать библиотеку заново</b><span>Каждый раз, не по памяти: реестр секций, закон сборки, точные поля выбранных видов, и — отдельно — <b>как секции реально рисуются</b>. В коде отрисовки прячется поведение, которого нет в описании полей.</span></span></div>
+      <div class="step"><span class="i">05</span><span><b>Заполнить таблицу и показать её</b><span>Для каждой секции ТЗ: какой вид взят, вердикт и почему. Вердикт по умолчанию — «переиспользуем».</span></span></div>
+      <div class="doc" style="margin-top:20px;background:#eef3fd;border-color:#d3e0f8">
+        <div class="t">И ЕЩЁ ОДИН ИСТОЧНИК</div>
+        <p style="color:#20458f">Посмотреть 1–2 живые страницы того же типа целиком. Оттуда берутся тон, плотность и порядок секций — иначе новая страница будет выглядеть чужой среди себе подобных.</p>
+      </div>
+    </div>
+    <div>
+      <h3>Порог новой секции</h3>
+      <p style="margin-bottom:16px">Завести новый вид можно, только если выполнены <b>все три</b> условия:</p>
+      <div class="chk"><span class="m">1</span><span><b>Роль не закрыта</b><span>Ни один существующий вид не делает эту работу — проверено по всей категории, а не по первым пришедшим в голову.</span></span></div>
+      <div class="chk"><span class="m">2</span><span><b>Появляется новый механизм</b><span>Другие значки, другой порядок карточек, другой фон — это не новый механизм, это содержание существующей секции.</span></span></div>
+      <div class="chk"><span class="m">3</span><span><b>Пригодится ещё дважды</b><span>Назвать минимум две будущие страницы, где вид применим. Одноразовую секцию не заводим.</span></span></div>
+      <p style="margin-top:16px"><b>Максимум одна новая секция на страницу.</b> «Существующая выглядит скучнее» — не аргумент.</p>
+    </div>
+  </div>
+  <div class="num">05</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 2 · Композиция</div>
+  <h2>Шаг 6: выяснить, что разрешено утверждать</h2>
+  <div class="cols c2" style="margin-top:22px;gap:40px">
+    <div>
+      <div class="step"><span class="i">06</span><span><b>Открыть список утверждённых фактов до написания текста</b><span>Там лежат цифры с источниками по отраслям, разрешённые названия программ, каналы связи по отраслям и готовые определения категорий.<br>Список <b>намеренно неполон</b>, и в нём прямо перечислены отрасли, по которым данных нет.</span></span></div>
+      <h3 style="margin-top:22px">Три варианта, если по вашей отрасли данных нет</h3>
+      <div class="chk"><span class="m x">✕</span><span><b>Взять цифры из соседней отрасли</b><span>Нельзя. Ровно ради этого список и существует.</span></span></div>
+      <div class="chk"><span class="m w">!</span><span><b>Исследовать и положить в бриф</b><span>Гейт принимает число, если оно есть в утверждённых фактах <b>или</b> в брифе задачи. В отчёте оно помечается как ждущее подтверждения.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Написать страницу без цифр</b><span>Механизм, названные роли, конкретные шаги — всё это работает и без статистики.</span></span></div>
+    </div>
+    <div>
+      <div class="doc" style="background:#fdf6e6;border-color:#f0e2c0">
+        <div class="t" style="color:#9a7017">ТО ЖЕ ПРО ИНСТРУМЕНТЫ</div>
+        <h3>Названия чужих программ — тоже факт</h3>
+        <p style="color:#7a5c10">У списка есть отдельный раздел «интеграции по отраслям» и приписка: для неисследованных отраслей <b>не выдумывать названия инструментов</b>.<br><br>На разобранном прогоне это означало: ни Dentrix, ни Open Dental, ни Eaglesoft — хотя это реальные продукты и они бы усилили страницу. Вместо них везде «ваша система управления клиникой», а пробел записан в отчёт.</p>
+      </div>
+      <div class="quote" style="margin-top:26px">Правило простое: <b>нет утверждённого пруфа — секция опускается</b>, а недостающее фиксируется в отчёте. Не «напишем осторожно», а «не напишем».</div>
+    </div>
+  </div>
+  <div class="num">06</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 3 · Сборка</div>
+  <h2>Шаг 7: бриф. Что в нём обязательно</h2>
+  <div class="cols c2" style="margin-top:20px;gap:40px">
+    <div>
+      <div class="doc">
+        <div class="t">ШАПКА</div>
+        <ul>
+          <li>Тип страницы и <b>что из шаблона исключено</b></li>
+          <li>Маршрут и подтверждение, что он свободен по трём источникам</li>
+          <li>Ключевой запрос и где он обязан появиться</li>
+          <li>Заголовок и описание для поиска, с длиной в знаках</li>
+          <li>Единый призыв к действию</li>
+          <li>Основной канал отрасли — со ссылкой на источник или пометкой «решение автора»</li>
+        </ul>
+      </div>
+      <div class="doc" style="margin-top:20px">
+        <div class="t">ФАКТЫ</div>
+        <p>Каждая цифра со ссылкой на источник. Отдельным абзацем — <b>что решили не использовать и почему</b>. Эти два абзаца потом читает тот, кто решает, публиковать ли страницу.</p>
+      </div>
+    </div>
+    <div>
+      <div class="doc" style="background:#fdf0ee;border-color:#f3d5cf">
+        <div class="t" style="color:#a8341d">САМОЕ ВАЖНОЕ ПОЛЕ</div>
+        <h3>Каждое отступление от шаблона — в шапке брифа</h3>
+        <p style="color:#8a2f1a;margin-bottom:14px">Не в отчёте, не в комментарии, не в голове. В шапке, нумерованным списком, с объяснением почему.</p>
+        <p style="color:#8a2f1a">На разобранном прогоне таких отступлений набралось <b>девять</b>. Первый круг проверки завернул страницу именно за это: отступления были описаны в отчёте, а бриф продолжал описывать страницу, которой уже не существовало.</p>
+      </div>
+      <div class="quote" style="margin-top:28px">Бриф — это <b>заполненное ТЗ</b>, а не пересказ задачи. Если бриф и страница расходятся, врёт бриф — и через полгода никто не восстановит, что было задумано.</div>
+    </div>
+  </div>
+  <div class="num">07</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 3 · Сборка</div>
+  <h2>Шаг 8: собрать страницу</h2>
+  <div class="cols c2" style="margin-top:20px;gap:40px">
+    <div>
+      <h3>Что можно</h3>
+      <div class="chk"><span class="m">✓</span><span><b>Только виды секций из реестра</b><span>Вида, которого там нет, для сборки не существует.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Разметка выделения и переноса</b><span><code>{{ слово }}</code> — цветное выделение, 1–3 слова. <code>||</code> — принудительный перенос строки. Больше в заголовках ничего.</span></span></div>
+      <div class="chk"><span class="m">✓</span><span><b>Плотность в пределах вида</b><span>У каждого записано, сколько элементов уместно. Выход за рамки — повод взять другой вид, а не растянуть этот.</span></span></div>
+      <h3 style="margin-top:20px">Что нельзя</h3>
+      <div class="chk"><span class="m x">✕</span><span><b>Оформление внутри страницы</b><span>Ни одного стиля в обход дизайн-системы. Есть отдельная проверка, которая это ловит.</span></span></div>
+      <div class="chk"><span class="m x">✕</span><span><b>Картинка, которой нет</b><span>Только существующие файлы. Нет подходящей — лучше взять вид секции без картинки и записать требование к недостающей.</span></span></div>
+    </div>
+    <div>
+      <div class="doc" style="background:#eef3fd;border-color:#d3e0f8">
+        <div class="t">ЕСЛИ ТЕКСТ ПРИШЁЛ ОТ МАРКЕТИНГА</div>
+        <h3>Он переносится дословно</h3>
+        <p style="color:#20458f;margin-bottom:12px">Байт в байт. Не сокращать, не «доводить», не менять тире и запятые, не подбирать синонимы. Единственное разрешённое преобразование — разметка выделения и переноса, и только там, где документ обозначил намерение.</p>
+        <p style="color:#20458f">Не влезает в секцию — это <b>не повод переписать</b>. Это повод выдать отчёт о несоответствии автору текста.</p>
+      </div>
+      <div class="doc" style="margin-top:20px">
+        <div class="t">ОТЧЁТ О НЕСООТВЕТСТВИИ</div>
+        <p>Всегда содержит три вещи: <b>измеренное число</b> («212 знаков, 34 слова»), <b>настоящий предел секции</b> («влезает ~170, дальше карточка растёт на третью строку»), и <b>варианты</b> — один из которых всегда «взять другую секцию». Формулировки «давай я перепишу» в нём быть не может.</p>
+      </div>
+    </div>
+  </div>
+  <div class="num">08</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 3 · Сборка</div>
+  <h2>Шаг 9: две проверки до того, как что-то записано</h2>
+  <div class="cols c2" style="margin-top:22px;gap:40px">
+    <div>
+      <div class="step"><span class="i">9a</span><span><b>Сухой прогон — проверка структуры</b><span><code>npm run cms:upsert -- --file &lt;батч&gt;/pages.json --write false</code><br>Проверяет каждое поле каждой секции. Опечатка в названии вида, лишнее поле, карточек больше допустимого — падает и <b>ничего не пишет в базу</b>.</span></span></div>
+      <div class="step"><span class="i">9b</span><span><b>Гейт копирайта</b><span><code>npm run qa:copy -- --file &lt;батч&gt;/pages.json --brief &lt;батч&gt;/brief.md</code><br><b>Флаг <code>--brief</code> обязателен.</b> Без него любая цифра из брифа читается как выдуманная.</span></span></div>
+      <div class="card" style="margin-top:18px;background:#fdf6e6;border-color:#f0e2c0"><p style="color:#7a5c10">Гейт <b>сообщает, но не правит</b>. Решение по каждому замечанию принимает человек — в том числе решение «принимаем как есть», если предел секции сильнее правила длины.</p></div>
+    </div>
+    <div>
+      <h3>Что смотрит гейт копирайта</h3>
+      <div class="cols c2" style="gap:18px;margin-top:12px">
+        <div>
+          <p style="font-size:16px;line-height:1.7">Запрещённые слова<br>Запрещённые обороты<br>Длинное тире<br>«Компания делает X»<br>Длины всех полей<br>Ритм предложений</p>
+        </div>
+        <div>
+          <p style="font-size:16px;line-height:1.7">Одинаковая длина соседей<br>Цифры вне списка фактов<br>Цифра в двух секциях<br>Правила ясности<br>Длина ответов на вопросы<br>Описание для поиска</p>
+        </div>
+      </div>
+      <div class="doc" style="margin-top:22px;background:#fdf0ee;border-color:#f3d5cf">
+        <div class="t" style="color:#a8341d">ЧЕГО ГЕЙТ НЕ ВИДИТ</div>
+        <p style="color:#8a2f1a">Цифры прописью («три звонка за два дня»). Тройные перечисления. Конструкции «ни X, ни Y, ни Z». Числительные словами вместо цифр. Все четыре — правила из свода, и все четыре пришлось ловить глазами. Записаны как кандидаты на доработку гейта.</p>
+      </div>
+    </div>
+  </div>
+  <div class="num">09</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 4 · Приёмка</div>
+  <h2>Шаги 10–11: залить и посмотреть</h2>
+  <div class="step"><span class="i">10</span><span><b>Залить черновиком</b><span><code>npm run cms:upsert -- --file &lt;батч&gt;/pages.json --write true</code> с ключом доступа.<br>Новая страница всегда заходит как <b>черновик</b>. Заливка ищет совпадение по маршруту <b>внутри объявленного раздела</b> — ошибка в разделе создаст дубль на живом адресе.</span></span></div>
+  <div class="step"><span class="i">11</span><span><b>Опубликовать локально и снять скриншоты</b><span>Черновики на сайте отдают 404, поэтому документ временно публикуется и <b>в конце возвращается в черновик</b>. Снимать браузером через скрипт, а не панелью разработчика: панель отдаёт пустые кадры, когда скрыта. Перед съёмкой проскроллить страницу до конца с паузами. Снимать <b>посекционно</b> на 1440 и 390 и смотреть каждый кадр.</span></span></div>
+  <div class="cols c2" style="margin-top:22px;gap:40px">
+    <div class="card" style="background:#fdf0ee;border-color:#f3d5cf"><p style="color:#8a2f1a"><b>Что искать на кадрах:</b> дыры в рядах карточек, полупустые карточки, одинаковые значки-заглушки, обрезанный текст, поломку на узком экране. Ни одну из этих вещей не ловит ни одна автоматическая проверка.</p></div>
+    <div class="card"><p><b>Содержание не подгоняется под сетку.</b> Если ряд рваный — либо берётся другое число элементов, которое честно нужно по смыслу, либо другой вид секции. «Добавить что-нибудь шестое» — неверный ответ.</p></div>
+  </div>
+  <div class="num">10</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 4 · Приёмка</div>
+  <h2>Шаг 12: чек-лист приёмки — одиннадцать ворот</h2>
+  <div class="cols c2" style="margin-top:18px;gap:44px">
+    <div>
+      <div class="gate"><span class="ic">✓</span><code>cms:upsert --write false</code><span class="r">структура</span></div>
+      <div class="gate"><span class="ic">✓</span><code>qa:keyword-collision</code><span class="r">запрос</span></div>
+      <div class="gate"><span class="ic">✓</span><code>qa:copy -- --brief …</code><span class="r">текст</span></div>
+      <div class="gate"><span class="ic">✓</span><code>typecheck</code><span class="r">0 ошибок</span></div>
+      <div class="gate"><span class="ic">✓</span><code>qa:no-inline-block-styles</code><span class="r">оформление</span></div>
+      <div class="gate"><span class="ic">✓</span><code>qa:no-hotlinks</code><span class="r">нужна продовая сборка</span></div>
+    </div>
+    <div>
+      <div class="gate"><span class="ic">✓</span><span>страница отдаёт 200, все секции в готовой странице</span></div>
+      <div class="gate"><span class="ic">✓</span><span>главный заголовок — тот, что задуман</span></div>
+      <div class="gate"><span class="ic">✓</span><span>каждая ссылка ведёт на существующий адрес</span></div>
+      <div class="gate"><span class="ic">✓</span><span>ни одной битой картинки</span></div>
+      <div class="gate"><span class="ic">✓</span><span>призывы по политике, один лейбл</span></div>
+      <div class="gate"><span class="ic w">+</span><code>qa:copy-fidelity</code><span class="r">двенадцатое, только для текста маркетинга</span></div>
+      <div class="gate"><span class="ic">✓</span><span>независимая проверка: «принято»</span></div>
+    </div>
+  </div>
+  <div class="cols c2" style="margin-top:26px;gap:40px">
+    <div class="card" style="background:#fdf0ee;border-color:#f3d5cf"><p style="color:#8a2f1a"><b>Проверять готовую страницу, а не файл.</b> Главный заголовок, описание для поиска, наличие секций — всё это смотрится в том, что реально отдал сайт. В файле может быть написано одно, а отрисоваться другое.</p></div>
+    <div class="card"><p><b>Три проверки на этом проекте бесполезны</b> и дают сотни ложных срабатываний: они рассчитаны на статическую сборку, а сайт собирается на лету. Знать, какие проверки у вас шумят, — часть настройки.</p></div>
+  </div>
+  <div class="num">11</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 4 · Приёмка</div>
+  <h2>Шаг 13: независимая проверка</h2>
+  <div class="cols c2" style="margin-top:20px;gap:40px">
+    <div>
+      <h3>Что передать проверяющему</h3>
+      <div class="chk"><span class="m">1</span><span><b>Саму страницу и бриф</b><span>Файлы, не пересказ.</span></span></div>
+      <div class="chk"><span class="m">2</span><span><b>Текст ТЗ дословно</b><span>Чтобы было с чем сверять пункт за пунктом.</span></span></div>
+      <div class="chk"><span class="m">3</span><span><b>Скриншоты обоих размеров</b><span>Посекционные, свежие. Устаревшие кадры делают проверку бессмысленной.</span></span></div>
+      <div class="chk"><span class="m">4</span><span><b>Пути к правилам</b><span>Реестр, закон сборки, свод правил письма, список фактов.</span></span></div>
+      <div class="chk"><span class="m">5</span><span><b>Явное требование</b><span>«Проверяй своими командами, не доверяй отчёту. Вердикт — либо „принято“, либо нумерованный список с указанием серьёзности и точного места».</span></span></div>
+    </div>
+    <div>
+      <div class="doc" style="background:#fdf0ee;border-color:#f3d5cf">
+        <div class="t" style="color:#a8341d">ГЛАВНОЕ ПРАВИЛО ПРОВЕРКИ</div>
+        <h3>Она повторяется после каждой починки</h3>
+        <p style="color:#8a2f1a;margin-bottom:12px">На разобранном прогоне понадобилось четыре круга. Во втором круге <b>четыре из десяти</b> замечаний создала починка первого. В третьем все четыре замечания создала починка второго.</p>
+        <p style="color:#8a2f1a">Правка текста вносит регрессии ровно как правка кода. Разовая проверка это не ловит по определению.</p>
+      </div>
+      <div class="quote" style="margin-top:26px">Проверяющий должен <b>перепроверять и то, что вы объявили сделанным</b>. На этом прогоне отчёт утверждал, что страница возвращена в черновик — а она была опубликована.</div>
+    </div>
+  </div>
+  <div class="num">12</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Фаза 4 · Приёмка</div>
+  <h2>Шаг 14: закрыть прогон</h2>
+  <div class="step"><span class="i">14a</span><span><b>Вернуть страницу в черновик</b><span>Это последнее действие, и его надо <b>проверить со стороны системы управления сайтом</b>, а не со стороны файла. Черновик подтверждается двумя способами сразу: документ в статусе «черновик» и сайт на этом маршруте отдаёт 404.</span></span></div>
+  <div class="step"><span class="i">14b</span><span><b>Написать отчёт о приёмке</b><span>Таблица «секция → вид» с обоснованием. Список полей, которые система дописала за автора. Результат каждого из ворот. Что нашла независимая проверка — <b>включая то, что пропустила самопроверка</b>. И открытые хвосты.</span></span></div>
+  <div class="step"><span class="i">14c</span><span><b>Вынести хвосты наружу</b><span>Недостающие картинки, неподтверждённые цифры, пробелы в библиотеке — в общий список открытых вопросов проекта, а не только в отчёт задачи. Иначе они умрут вместе с задачей.</span></span></div>
+  <div class="card" style="margin-top:24px;background:#e7f5ee;border-color:#c9e8d8"><p style="color:#155e3a"><b>Публикация — не ваш шаг.</b> Система доводит страницу до черновика и останавливается. Кнопку нажимает человек, и до этого момента цифры на странице должны быть подтверждены.</p></div>
+  <div class="num">13</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Опыт</div>
+  <h2>Ловушки, которые стоят времени</h2>
+  <div class="cols c2" style="margin-top:20px;gap:40px">
+    <div>
+      <div class="chk"><span class="m x">!</span><span><b>Удалить поле ≠ стереть значение</b><span>Заливка пишет только те поля, которые есть в файле. Удалённое поле сохраняет старое значение в базе. Писать поле пустым и проверять через систему управления сайтом, а не глазами в браузере.</span></span></div>
+      <div class="chk"><span class="m x">!</span><span><b>Главный заголовок подменяется</b><span>В первом экране, если задана надстрочная строка, именно она становится главным заголовком, а заголовок опускается. В файле этого не видно.</span></span></div>
+      <div class="chk"><span class="m x">!</span><span><b>Словари значков у секций разные</b><span>Незнакомое имя значка не вызывает ошибку — оно молча превращается в заглушку. Проверяется только глазами.</span></span></div>
+      <div class="chk"><span class="m x">!</span><span><b>Число элементов меняет сетку</b><span>У одной секции число колонок зависит от того, делится ли число шагов на три. Пять шагов встанут как четыре плюс один.</span></span></div>
+    </div>
+    <div>
+      <div class="chk"><span class="m x">!</span><span><b>Минимальная высота карточки</b><span>Есть виды секций с фиксированной высотой. Короткий текст оставит пустой прямоугольник. Предел секции сильнее идеала длины — но это записывается в отчёт, а не замалчивается.</span></span></div>
+      <div class="chk"><span class="m x">!</span><span><b>Один вид секции — разные отрисовки</b><span>На этом сайте некоторые виды рисуются разными компонентами в зависимости от служебного признака. Узнать об этом можно только из кода отрисовки — в описании полей этого нет.</span></span></div>
+      <div class="chk"><span class="m x">!</span><span><b>Фирменный градиент умирает на тёмном</b><span>Средняя точка почти чёрная. На тёмной секции его надо переопределять.</span></span></div>
+      <div class="chk"><span class="m x">!</span><span><b>Не давать ссылку на страницу, которую только что вернули в черновик</b><span>Она отдаст 404 тому, кому вы её отправили.</span></span></div>
+    </div>
+  </div>
+  <div class="num">14</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Опыт</div>
+  <h2>Два сценария, которые встретятся обязательно</h2>
+  <div class="cols c2" style="margin-top:26px;gap:40px">
+    <div class="doc">
+      <div class="t">СЦЕНАРИЙ 1</div>
+      <h3>Нужного вида секции нет</h3>
+      <p style="margin-bottom:14px">Сначала перепроверить: точно ли нет? Часто у существующего вида уже есть альтернативная отрисовка под нужный замысел, и она не описана нигде, кроме кода.</p>
+      <p style="margin-bottom:14px">Если действительно нет — не изобретать на лету и не насиловать чужой вид. Переключиться на отдельный процесс заведения новой секции: сначала дизайн, потом утверждение человеком, потом регистрация в библиотеке.</p>
+      <p><b>Пока вид не зарегистрирован полностью, его не существует.</b> Страница ждёт.</p>
+    </div>
+    <div class="doc">
+      <div class="t">СЦЕНАРИЙ 2</div>
+      <h3>Текст не влезает в секцию</h3>
+      <p style="margin-bottom:14px">Не сокращать и не дописывать. Выдать отчёт о несоответствии и остановиться до заливки: измеренное число, настоящий предел секции, варианты.</p>
+      <p style="margin-bottom:14px">Обратный случай — текст <b>короче</b> минимума секции — это тоже отчёт, а не разрешение налить воды.</p>
+      <p>Смена вида секции — законный и часто лучший вариант. Библиотека существует, чтобы вмещать текст, а не наоборот.</p>
+    </div>
+  </div>
+  <div class="quote" style="margin-top:34px">Общее у обоих: <b>система останавливается и спрашивает</b>, вместо того чтобы выкрутиться. Выкрутиться — значит создать проблему, которую найдут через полгода.</div>
+  <div class="num">15</div>
+</section>
+
+<section class="slide">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Итог</div>
+  <h2>Три вещи, которые определяют, заработает ли это у вас</h2>
+  <div class="cols c3" style="margin-top:34px;gap:24px">
+    <div class="doc"><div class="t">1</div><h3>Правила записаны заранее</h3><p>До задачи, а не по ходу. Правило, которого нет в репозитории, не существует: его нельзя проверить, на него нельзя сослаться и о нём каждый раз придётся спорить заново.</p></div>
+    <div class="doc"><div class="t">2</div><h3>Проверки запускаются командой</h3><p>Всё, что можно посчитать, считает машина. Всё остальное — длины, повторы, цифры без источника — иначе будет пропускаться, и не по чьей-то вине.</p></div>
+    <div class="doc"><div class="t">3</div><h3>Проверяет не тот, кто делал</h3><p>И проверяет заново после каждой починки. На разобранном прогоне самопроверка не нашла ничего, независимая — 33 замечания за четыре круга, включая две ошибки, которые дошли бы до продакшена.</p></div>
+  </div>
+  <div class="rule" style="margin-top:40px"></div>
+  <p class="lead">Ничего из этих трёх пунктов не про генерацию текста. Генерация — самая простая часть; всё остальное — про то, чтобы результату можно было доверять.</p>
+  <div class="num">16</div>
+</section>
+
+<section class="slide dark slide--cheat">
+  <div class="label">PITCH-INSTRUCTION</div>
+  <div class="kicker" style="margin-top:26px">Шпаргалка</div>
+  <h2 style="font-size:36px;margin-bottom:34px">Весь прогон одной колонкой</h2>
+  <div class="cols c2" style="gap:52px">
+    <div>
+      <p style="color:#aab1bd;font-size:18px;line-height:2.05">
+      <b style="color:#6ea0ff">01</b>&nbsp;&nbsp;Поднять стек, проверить источник контента<br>
+      <b style="color:#6ea0ff">02</b>&nbsp;&nbsp;Свобода маршрута по трём источникам<br>
+      <b style="color:#6ea0ff">03</b>&nbsp;&nbsp;Проверка ключевого запроса<br>
+      <b style="color:#a98cf5">04</b>&nbsp;&nbsp;Прочитать библиотеку и родственные страницы<br>
+      <b style="color:#a98cf5">05</b>&nbsp;&nbsp;Таблица «секция ТЗ → вид», порог новой секции<br>
+      <b style="color:#a98cf5">06</b>&nbsp;&nbsp;Проверить, что разрешено утверждать<br>
+      <b style="color:#ff9a6e">07</b>&nbsp;&nbsp;Бриф: отступления — в шапку</p>
+    </div>
+    <div>
+      <p style="color:#aab1bd;font-size:18px;line-height:2.05">
+      <b style="color:#ff9a6e">08</b>&nbsp;&nbsp;Собрать страницу<br>
+      <b style="color:#ff9a6e">09</b>&nbsp;&nbsp;Сухой прогон + гейт копирайта<br>
+      <b style="color:#ffc98a">10</b>&nbsp;&nbsp;Залить черновиком<br>
+      <b style="color:#ffc98a">11</b>&nbsp;&nbsp;Опубликовать локально, снять посекционно<br>
+      <b style="color:#ffc98a">12</b>&nbsp;&nbsp;Чек-лист приёмки<br>
+      <b style="color:#ffc98a">13</b>&nbsp;&nbsp;Независимая проверка, повторять после каждой починки<br>
+      <b style="color:#ffc98a">14</b>&nbsp;&nbsp;Вернуть в черновик, отчёт, хвосты наружу</p>
+    </div>
+  </div>
+  <div class="foot" style="margin-top:auto">Первая часть — «pitch-without-instruction» — показывает, что из этого получается.</div>
+  <div class="num">17</div>
+</section>
+
+<style>
+@media print { #nav, #hud, #hint { display:none !important; } }
+@media screen {
+  html, body { height:100%; margin:0; overflow:hidden; background:#0b0d12; }
+  .num { display:none; }
+  .slide { position:absolute; left:50%; top:50%; margin:0 !important;
+           transform:translate(-50%,-50%) scale(var(--s,1)); transform-origin:center center;
+           opacity:0; visibility:hidden; transition:opacity .18s ease;
+           box-shadow:0 24px 70px rgba(0,0,0,.45); }
+  .slide.is-on { opacity:1; visibility:visible; }
+  #hud { position:fixed; right:22px; bottom:18px; z-index:9;
+         font:600 13px 'SF Mono',Menlo,monospace; letter-spacing:.08em;
+         color:#8c94a2; background:rgba(20,24,31,.86); border:1px solid #262b34;
+         padding:7px 13px; border-radius:999px; user-select:none; }
+  #nav { position:fixed; inset:0; z-index:8; display:flex; }
+  #nav div { flex:1; cursor:pointer; }
+  #hint { position:fixed; left:22px; bottom:18px; z-index:9;
+          font:500 13px 'SF Mono',Menlo,monospace; color:#5b626d;
+          transition:opacity .5s ease; }
+}
+</style>
+<div id="nav"><div data-go="-1"></div><div data-go="1"></div></div>
+<div id="hud"></div>
+<div id="hint">← → листать · F во весь экран</div>
+<script>
+(function () {
+  var s = [].slice.call(document.querySelectorAll('.slide'));
+  var i = 0, hud = document.getElementById('hud'), hint = document.getElementById('hint');
+  function fit() {
+    var k = Math.min(window.innerWidth / 1600, window.innerHeight / 900) * 0.96;
+    s.forEach(function (el) { el.style.setProperty('--s', k); });
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(s.length - 1, n));
+    s.forEach(function (el, j) { el.classList.toggle('is-on', j === i); });
+    hud.textContent = (i + 1) + ' / ' + s.length;
+    location.hash = i + 1;
+  }
+  function go(d) { show(i + d); if (hint) hint.style.opacity = 0; }
+  addEventListener('resize', fit);
+  addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(s.length - 1);
+    else if (e.key === 'f' || e.key === 'F') {
+      document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+    }
+  });
+  document.getElementById('nav').addEventListener('click', function (e) {
+    var d = e.target.getAttribute('data-go'); if (d) go(+d);
+  });
+  fit();
+  show(Math.max(0, (parseInt(location.hash.slice(1), 10) || 1) - 1));
+  setTimeout(function () { if (hint) hint.style.opacity = 0; }, 6000);
+})();
+</script>
+
+</body></html>

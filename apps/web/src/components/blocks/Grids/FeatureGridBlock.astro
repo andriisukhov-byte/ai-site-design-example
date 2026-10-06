@@ -1,0 +1,100 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_feature-grid.scss';
+
+type FeatureGridBlock = Extract<PageBlock, { type: 'feature-grid' }>;
+
+interface Props {
+  block: FeatureGridBlock;
+}
+
+const { block } = Astro.props;
+const background = block.background === 'gray' ? 'gray' : 'white';
+const columns = block.columns === 2 || block.columns === 3 ? block.columns : 4;
+const cards = (block.cards ?? []).filter((card) => Boolean(card.title?.trim() || card.description?.trim()));
+const hasHeader = Boolean(block.eyebrow?.trim() || block.title?.trim() || block.description?.trim());
+const rootClass = `feature-grid feature-grid--bg-${background} feature-grid--cols-${columns}`;
+
+const iconMarkupByName: Record<string, string> = {
+  wrench: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 1 5.6 5.66l-2.83-2.83-2.83-2.82ZM14.7 6.3 4 17l3 3 10.7-10.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'messages-square': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5ZM18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  bot: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 8V4M8 12h8M8 12a4 4 0 1 1 8 0v4a4 4 0 0 1-4 4h0a4 4 0 0 1-4-4v-4ZM6 19v-3M18 19v-3M9 15h.01M15 15h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'file-stack': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M21 7H8a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1ZM4 17v-7M4 7h.01M4 12h.01M17 2v3a1 1 0 0 1-1 1h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'audio-lines': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M2 10v3M6 6v11M10 3v17M14 8v7M18 5v13M22 10v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  smartphone: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  'multi-agent': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="6" r="3" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="18" r="3" stroke="currentColor" stroke-width="2"/><path d="m10 8-3 7M14 8l3 7M9 18h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  'add-business': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3 21V8a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v6M3 21h12M3 21V12M21 14v7m-3.5-3.5h7M7 7V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'design-services': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m15 4 5 5M4 20 20 4M14 4l6 6M5 5v4M3 7h4M19 15v4M17 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'message-circle-heart': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22l5.9-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 8.5c.6-.6 1.4-1 2.3-1a3 3 0 0 1 2.1 5.2l-3.9 3.9-3.9-3.9a3 3 0 0 1 2.1-5.2c.9 0 1.7.4 2.3 1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+  network: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="15" y="16" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/><path d="M12 8v3M6 16v-3h12v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  'align-end-horizontal': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="4" y="2" width="6" height="16" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="8" width="6" height="10" rx="1" stroke="currentColor" stroke-width="2"/><path d="M22 22H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  cog: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7-3a7 7 0 0 0-.12-1.31l2.12-1.65-2-3.46-2.49 1a7 7 0 0 0-2.27-1.31L14 3h-4l-.24 2.27a7 7 0 0 0-2.27 1.31l-2.49-1-2 3.46 2.12 1.65A7 7 0 0 0 5 12c0 .44.04.88.12 1.31L3 14.96l2 3.46 2.49-1c.69.55 1.46.99 2.27 1.31L10 21h4l.24-2.27c.81-.32 1.58-.76 2.27-1.31l2.49 1 2-3.46-2.12-1.65c.08-.43.12-.87.12-1.31Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sparkles: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m12 3 1.91 5.18L19 10l-5.09 1.82L12 17l-1.91-5.18L5 10l5.09-1.82L12 3ZM19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2ZM5 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'shield-check': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10ZM9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM2 12h20M12 2c2.5 2.7 4 6.1 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.1-4-10s1.5-7.3 4-10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  users: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  zap: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
+  'shopping-cart': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'hand-coins': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m2 16 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="9" r="2.9" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="5" r="3" stroke="currentColor" stroke-width="2"/></svg>',
+  'graduation-cap': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 10v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  hospital: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 6v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 14h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 18h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 8h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sun: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  blocks: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><path d="M10 21H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 17v2a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'refresh-cw': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 15-6.7L21 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 3v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16H3v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'message-square-text': '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+};
+
+function iconMarkup(icon?: string): string {
+  const markup = iconMarkupByName[icon ?? ''] ?? iconMarkupByName.wrench;
+  return markup.replaceAll('stroke="currentColor"', 'stroke="url(#feature-grid-icon-gradient)"');
+}
+---
+
+<section class={rootClass}>
+  <svg class="feature-grid__svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="feature-grid-icon-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#3A87D9" />
+        <stop offset="0.25" stop-color="#2F1A6B" />
+        <stop offset="0.5" stop-color="#200000" />
+        <stop offset="0.75" stop-color="#AD3822" />
+        <stop offset="1" stop-color="#F7A75F" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="feature-grid__container container-wide">
+    {hasHeader && (
+      <header class="feature-grid__header">
+        {block.eyebrow && <p class="feature-grid__eyebrow"><FormattedText text={block.eyebrow} /></p>}
+        {block.title && <h2 class="feature-grid__title"><FormattedText text={block.title} /></h2>}
+        {block.description && <p class="feature-grid__description"><FormattedText text={block.description} /></p>}
+      </header>
+    )}
+
+    {cards.length > 0 && (
+      <div class="feature-grid__cards">
+        {cards.map((card) => (
+          <article class="feature-grid__card">
+            <div class="feature-grid__card-icon" aria-hidden="true">
+              {card.customIcon?.src ? (
+                <img
+                  class="feature-grid__custom-icon"
+                  src={card.customIcon.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <Fragment set:html={iconMarkup(card.icon)} />
+              )}
+            </div>
+            {card.title && <h3 class="feature-grid__card-title"><FormattedText text={card.title} /></h3>}
+            {card.description && <p class="feature-grid__card-description"><FormattedText text={card.description} /></p>}
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

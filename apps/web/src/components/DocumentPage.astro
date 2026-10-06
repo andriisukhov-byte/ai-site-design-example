@@ -1,0 +1,20 @@
+---
+import type { PageBlock, PageDocument } from '@acme/blocks';
+import { resolveSignupHrefsInHtml } from '../data/signup-links';
+
+import '../styles/templates/_document-page.scss';
+
+interface Props {
+  page: PageDocument;
+}
+
+type RichTextBlock = Extract<PageBlock, { type: 'rich-text' }>;
+
+const { page } = Astro.props;
+const richText = page.blocks.find((block): block is RichTextBlock => block.type === 'rich-text');
+const html = resolveSignupHrefsInHtml(richText?.html ?? '', Astro.url.pathname);
+---
+
+{richText && (
+  <article class="doc-page__article" set:html={html}></article>
+)}

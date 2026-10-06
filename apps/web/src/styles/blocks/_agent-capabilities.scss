@@ -1,0 +1,615 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+$agent-capabilities-assets: "/assets/blocks/agent-capabilities";
+$agent-capabilities-icon-files: (
+    circle-dollar-sign: "icon-circle-dollar-sign.svg",
+    user-search: "icon-user-search.svg",
+    megaphone: "icon-megaphone.svg",
+    users: "icon-users.svg",
+    wallet: "icon-wallet.svg",
+    briefcase-business: "icon-briefcase-business.svg",
+    messages-square: "icon-messages-square.svg",
+    messages: "icon-messages-square.svg",
+    send: "icon-send.svg",
+    calendar-check: "icon-calendar-check.svg",
+    clipboard-list: "icon-clipboard-list.svg",
+    receipt-text: "icon-receipt-text.svg",
+    shield-check: "icon-shield-check.svg",
+    headset: "icon-headset.svg",
+    user-round-check: "icon-user-round-check.svg",
+    package: "icon-package.svg",
+    book-marked: "icon-book-marked.svg",
+    package-plus: "icon-package-plus.svg",
+    file-cog: "icon-file-cog.svg",
+    rotate-cw-square: "icon-rotate-cw-square.svg",
+    badge-check: "icon-badge-check.svg",
+    badge-help: "icon-badge-check.svg",
+    handshake: "icon-user-round-check.svg",
+    refresh-cw: "icon-refresh-cw.svg",
+    file-text: "icon-file-text.svg",
+    shopping-cart: "icon-shopping-cart.svg",
+    truck: "icon-truck.svg",
+    sparkles: "icon-sparkles.svg",
+);
+
+@each $icon, $file in $agent-capabilities-icon-files {
+    .agent-capabilities__item-icon--#{$icon} {
+        --capability-icon: url("#{$agent-capabilities-assets}/#{$file}");
+    }
+}
+
+.agent-capabilities {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background: dt.$color-gray-25;
+
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__intro {
+        width: min(100%, 771px);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__heading {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 78px;
+    }
+
+    &__heading span {
+        background: dt.$gradient-gold;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__intro-text {
+        margin: 16px 0 0;
+        color: dt.$color-gray-500;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    &__layout {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 581px) minmax(0, 1fr);
+        align-items: start;
+        column-gap: 64px;
+        margin-top: 80px;
+    }
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        align-items: flex-start;
+        padding: 32px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 24px;
+    }
+
+    // Decorative brand badge sits below the card; the dashed connector that
+    // joins it to the grid columns is drawn dynamically in block.js (SVG).
+    &__badge {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 106px;
+        height: 106px;
+        margin: 56px auto 0;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__connector {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+        overflow: visible;
+        pointer-events: none;
+
+        path {
+            fill: none;
+            stroke: dt.$color-gray-300;
+            stroke-width: 1;
+            stroke-dasharray: 6 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+
+    &__panels {
+        width: 100%;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            align-items: stretch;
+        }
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        height: auto;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+            opacity 0.45s ease,
+            transform 0.45s ease,
+            visibility 0.45s;
+    }
+
+    &__panel.is-active {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    &__panel-main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__panel-image {
+        display: flex;
+        width: 120px;
+        height: 120px;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 101px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &__panel-title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &__panel-description {
+        color: dt.$color-gray-500;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+
+        p {
+            margin: 0;
+
+            + p {
+                margin-top: 12px;
+            }
+        }
+
+        // Styled capability list from the design: check-circle bullet per item.
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            min-height: 32px;
+            padding-left: 40px;
+            color: dt.$color-brand-font-dark;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 32px;
+                height: 32px;
+                transform: translateY(-50%);
+                background: url("#{$agent-capabilities-assets}/check-circle.svg") center / contain no-repeat;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__panel-button {
+        min-width: 200px;
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__arrow {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: dt.$color-brand-black;
+        transition:
+            background-color 0.2s ease,
+            opacity 0.2s ease;
+
+        img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        &:hover:not(:disabled):not(.swiper-button-disabled) {
+            background: dt.$color-gray-700;
+        }
+
+        &:focus-visible {
+            outline: 2px solid dt.$color-brand-azure-sky;
+            outline-offset: 3px;
+        }
+
+        &:disabled,
+        &.swiper-button-disabled {
+            background: dt.$color-gray-100;
+            cursor: not-allowed;
+
+            img {
+                filter: none;
+                opacity: 0.45;
+            }
+        }
+    }
+
+    &__arrow--prev {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+
+    &__item {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 0;
+        border: 0;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: none;
+
+            .agent-capabilities__item-badge {
+                outline: 2px solid dt.$color-brand-azure-sky;
+                outline-offset: 3px;
+            }
+        }
+    }
+
+    &__item-badge {
+        display: flex;
+        width: 80px;
+        height: 80px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 64px;
+        background: dt.$color-gray-25;
+        transition: border-color 0.25s ease;
+    }
+
+    &__item-icon {
+        width: 32px;
+        height: 32px;
+        background: dt.$color-gray-300;
+        -webkit-mask: var(--capability-icon) center / contain no-repeat;
+        mask: var(--capability-icon) center / contain no-repeat;
+        transition: background 0.25s ease;
+    }
+
+    &__custom-icon {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+    }
+
+    &__item-label {
+        color: dt.$color-gray-500;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        transition:
+            color 0.25s ease,
+            font-weight 0.25s ease;
+    }
+
+    &__item:hover &__item-badge {
+        border-color: dt.$color-gray-300;
+    }
+
+    &__item.is-active &__item-badge {
+        border-color: transparent;
+        // Gradient ring (Figma): 1px gold-gradient border over the gray fill.
+        background:
+            linear-gradient(dt.$color-gray-25, dt.$color-gray-25) padding-box,
+            dt.$gradient-gold border-box;
+    }
+
+    &__item.is-active &__item-icon {
+        background: dt.$gradient-gold;
+    }
+
+    &__item.is-active &__item-label {
+        color: dt.$color-brand-font-dark;
+        font-weight: 600;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 64px;
+        padding: 24px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 24px;
+        background: dt.$color-gray-25;
+    }
+
+    &__info-icon {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 16px;
+        background: dt.$color-gray-25;
+
+        img {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__info-text {
+        color: dt.$color-gray-700;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+
+        p {
+            margin: 0;
+        }
+
+        strong,
+        b {
+            color: dt.$color-brand-font-dark;
+            font-weight: 600;
+        }
+    }
+
+    // Content-right variant: card sits on the right, grid on the left with a
+    // column-major fill, and the brand badge is hidden. Only swaps once the
+    // layout is two columns (desktop); at/below tablet both variants stack the
+    // same way.
+    &--content-right {
+        @include laptop(up) {
+            .agent-capabilities__layout {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 581px);
+            }
+
+            .agent-capabilities__grid {
+                order: 1;
+                grid-auto-flow: column;
+            }
+
+            @for $rows from 1 through 12 {
+                .agent-capabilities__grid--rows-#{$rows} {
+                    grid-template-rows: repeat(#{$rows}, auto);
+                }
+            }
+
+            .agent-capabilities__aside {
+                order: 2;
+            }
+        }
+    }
+
+    @include tablet {
+        padding: 96px 0;
+
+        &__heading {
+            font-size: 54px;
+            line-height: 64px;
+        }
+
+        &__intro-text {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        &__layout {
+            grid-template-columns: 1fr;
+            row-gap: 48px;
+            margin-top: 56px;
+        }
+
+        &__panel-title {
+            font-size: 40px;
+        }
+    }
+
+    @include mobile {
+        padding: 64px 0;
+
+        &__container {
+            padding-inline: 16px;
+        }
+
+        &__heading {
+            max-width: 343px;
+            margin-inline: auto;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.18;
+        }
+
+        &__intro-text {
+            max-width: 343px;
+            margin: 16px auto 0;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__layout {
+            margin-top: 40px;
+            row-gap: 32px;
+        }
+
+        &__card {
+            gap: 32px;
+            padding: 24px;
+        }
+
+        &__panel-image {
+            width: 88px;
+            height: 88px;
+
+            img {
+                max-height: 76px;
+            }
+        }
+
+        &__panel-title {
+            font-size: 28px;
+        }
+
+        &__panel-description {
+            font-size: 16px;
+            line-height: 22px;
+
+            ul {
+                gap: 12px;
+            }
+
+            li {
+                min-height: 28px;
+                padding-left: 36px;
+                font-size: 16px;
+                line-height: 22px;
+
+                &::before {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+
+        &__footer {
+            gap: 12px;
+        }
+
+        &__panel-button {
+            min-width: 0;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            row-gap: 16px;
+        }
+
+        &__info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        &__info-text {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__item {
+            gap: 16px;
+        }
+
+        &__item-badge {
+            width: 64px;
+            height: 64px;
+        }
+
+        &__item-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        &__item-label {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@use "../variables";
+@use "../foundation/design-tokens";
+@use "./archive-shared";
+@use "./news-archive";
+
+.news-archive {
+  background: white;
+}

@@ -1,0 +1,245 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.feature-stack {
+    padding: 120px 0;
+    background: dt.$color-gray-25;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    &__layout {
+        display: grid;
+        grid-template-columns: minmax(0, 624fr) minmax(0, 624fr);
+        gap: 64px;
+        align-items: start;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 78px;
+
+        .ca-gradient-text {
+            display: inline;
+            background-image: linear-gradient(
+                151.73deg,
+                dt.$color-brand-azure-sky 0%,
+                dt.$color-brand-royal-violet 25%,
+                dt.$color-brand-dark-umber 50%,
+                dt.$color-brand-burnt-clay 75%,
+                dt.$color-brand-amber-glow 100%
+            );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    }
+
+    &__description {
+        margin: 0;
+        color: dt.$color-gray-500;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 24px;
+        border-radius: 24px;
+        background: dt.$color-brand-white;
+    }
+
+    &__card-icon {
+        flex: 0 0 64px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 8px;
+        background: dt.$color-brand-white;
+        color: dt.$color-brand-font-dark;
+
+        svg,
+        img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            object-fit: contain;
+        }
+    }
+
+    &__card-content {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__card-title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    &__card-title--link {
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: dt.$color-brand-burnt-clay;
+        }
+    }
+
+    &__card-description {
+        margin: 0;
+        color: dt.$color-gray-700;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    &__note {
+        position: relative;
+        max-width: 100%;
+        padding: 48px 24px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 24px;
+        background: dt.$color-gray-25;
+        text-align: center;
+    }
+
+    &__note-icon {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 8px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 16px;
+        background: dt.$color-gray-25;
+        color: dt.$color-brand-font-dark;
+        transform: translateX(-50%);
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__note-text {
+        margin: 0 auto;
+        max-width: 694px;
+        color: dt.$color-gray-700;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    @include tablet {
+        padding: 80px 0;
+
+        &__container {
+            gap: 48px;
+        }
+
+        &__layout {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 32px;
+        }
+
+        &__title {
+            font-size: 48px;
+            line-height: 1.15;
+        }
+
+        &__description {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+
+    @include mobile {
+        padding: 56px 0;
+
+        &__container {
+            gap: 32px;
+        }
+
+        &__title {
+            font-size: 32px;
+            line-height: 1.2;
+        }
+
+        &__description {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__card {
+            padding: 16px;
+            border-radius: 16px;
+        }
+
+        &__card-icon {
+            flex-basis: 52px;
+            width: 52px;
+            height: 52px;
+
+            svg,
+            img {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        &__card-title {
+            font-size: 18px;
+        }
+
+        &__card-description {
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        &__note {
+            padding: 36px 20px;
+        }
+
+        &__note-text {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+}

@@ -1,0 +1,567 @@
+{
+  "ok": true,
+  "status": "poc-ready-final-gaps-documented",
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "11d90ec-dirty"
+  },
+  "generatedAt": "2026-07-30T13:37:22.966Z",
+  "inputs": {
+    "cmsPagesPath": "data/cms/pages.json",
+    "sourcePagesPath": "data/source/cms-pages.json",
+    "sourceReportPath": "data/source/cms-export-report.json"
+  },
+  "summary": {
+    "archiveCollections": 4,
+    "archiveDocuments": 185,
+    "recoveredDetailRoutes": 6,
+    "warningCount": 6,
+    "blockerCount": 0
+  },
+  "archiveReadiness": {
+    "posts": {
+      "cmsDocumentCount": 48,
+      "sourceDocumentCount": 45,
+      "publishedCmsDocuments": 48,
+      "docsWithTaxonomyContract": 48,
+      "docsWithSeoImage": 45,
+      "richTextOnlyDocuments": 48,
+      "observedDocumentKeys": [
+        "articleMeta",
+        "blocks",
+        "collection",
+        "contentKey",
+        "featuredImage",
+        "path",
+        "publishedAt",
+        "seo",
+        "status",
+        "template",
+        "title"
+      ],
+      "observedBlockTypes": [
+        "rich-text"
+      ],
+      "sampleRoutes": [
+        {
+          "path": "/ai-agent-use-cases/",
+          "title": "100 AI Agent Use Cases in 2025: The Practical Power of Autonomy",
+          "template": "article",
+          "status": "published",
+          "publishedAt": "2025-05-23T08:55:04.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/ai-agent-vs-chatbot/",
+          "title": "AI Agent vs Chatbot: Comparison Guide",
+          "template": "article",
+          "status": "published",
+          "publishedAt": "2025-04-25T07:58:32.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/ai-agents-for-hr/",
+          "title": "How to Use AI for HR Workflow Agents",
+          "template": "article",
+          "status": "published",
+          "publishedAt": "2025-04-09T07:55:04.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/ai-agents-for-sales/",
+          "title": "AI Agents for Sales: Everything You Need to Know in 2026",
+          "template": "article",
+          "status": "published",
+          "publishedAt": "2025-04-04T08:01:17.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/ai-chatbot-for-ecommerce/",
+          "title": "How AI Chatbots for Ecommerce Automate Support and Boost Revenue",
+          "template": "article",
+          "status": "published",
+          "publishedAt": "2025-12-04T08:27:31.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        }
+      ]
+    },
+    "guides": {
+      "cmsDocumentCount": 42,
+      "sourceDocumentCount": 42,
+      "publishedCmsDocuments": 40,
+      "docsWithTaxonomyContract": 42,
+      "docsWithSeoImage": 42,
+      "richTextOnlyDocuments": 42,
+      "observedDocumentKeys": [
+        "articleMeta",
+        "blocks",
+        "collection",
+        "contentKey",
+        "excerpt",
+        "featuredImage",
+        "path",
+        "publishedAt",
+        "seo",
+        "status",
+        "template",
+        "title"
+      ],
+      "observedBlockTypes": [
+        "rich-text"
+      ],
+      "sampleRoutes": [
+        {
+          "path": "/guide/ai-youtube-automation-script-generator/",
+          "title": "YouTube Automation with AI: How to Add a Script Generator to Your Workflow",
+          "template": "guide",
+          "status": "published",
+          "publishedAt": "2026-02-03T08:37:32.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/guide/automate-your-shopify-order-fulfillment-workflow-e-commerce-example/",
+          "title": "Automate Your Shopify Order Fulfillment Workflow (E-Commerce Example)",
+          "template": "guide",
+          "status": "published",
+          "publishedAt": "2026-02-27T07:37:06.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/guide/automated-invoice-processing-acme/",
+          "title": "Automated Invoice Processing: How to Build It with Acme (No Code)",
+          "template": "guide",
+          "status": "published",
+          "publishedAt": "2026-02-17T05:39:29.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/guide/acme-conversational-ai-how-it-works-in-the-builder/",
+          "title": "Acme Conversational AI: How It Works in the Builder",
+          "template": "guide",
+          "status": "published",
+          "publishedAt": "2026-06-04T07:28:38.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/guide/conversational-ai-workflow-automation-with-acme/",
+          "title": "Why Acme’s Conversational AI Automation Is Different From Everything Else",
+          "template": "guide",
+          "status": "published",
+          "publishedAt": "2026-03-30T06:28:00.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        }
+      ]
+    },
+    "tips": {
+      "cmsDocumentCount": 86,
+      "sourceDocumentCount": 74,
+      "publishedCmsDocuments": 86,
+      "docsWithTaxonomyContract": 86,
+      "docsWithSeoImage": 0,
+      "richTextOnlyDocuments": 86,
+      "observedDocumentKeys": [
+        "blocks",
+        "collection",
+        "contentKey",
+        "path",
+        "publishedAt",
+        "seo",
+        "status",
+        "template",
+        "tipCard",
+        "title"
+      ],
+      "observedBlockTypes": [
+        "rich-text"
+      ],
+      "sampleRoutes": [
+        {
+          "path": "/tips/action-in-app-node/",
+          "title": "Action in App Node",
+          "template": "tip",
+          "status": "published",
+          "publishedAt": "2026-02-10T23:39:09",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/tips/ai-custom-event/",
+          "title": "AI Custom Event",
+          "template": "tip",
+          "status": "published",
+          "publishedAt": "2026-02-10T22:40:48",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/tips/all-in-one-pattern/",
+          "title": "All-in-one pattern",
+          "template": "tip",
+          "status": "published",
+          "publishedAt": "2026-02-26T09:35:21",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/tips/automate-recurring-tasks/",
+          "title": "Automate Recurring Tasks",
+          "template": "tip",
+          "status": "published",
+          "publishedAt": "2026-02-10T23:56:42",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/tips/avoid-constant-polling/",
+          "title": "Avoid Constant Polling",
+          "template": "tip",
+          "status": "published",
+          "publishedAt": "2026-02-10T23:45:52",
+          "blockTypes": [
+            "rich-text"
+          ]
+        }
+      ]
+    },
+    "news": {
+      "cmsDocumentCount": 9,
+      "sourceDocumentCount": 9,
+      "publishedCmsDocuments": 9,
+      "docsWithTaxonomyContract": 9,
+      "docsWithSeoImage": 5,
+      "richTextOnlyDocuments": 8,
+      "observedDocumentKeys": [
+        "articleMeta",
+        "blocks",
+        "collection",
+        "contentKey",
+        "featuredImage",
+        "path",
+        "publishedAt",
+        "seo",
+        "status",
+        "template",
+        "title"
+      ],
+      "observedBlockTypes": [
+        "rich-text"
+      ],
+      "sampleRoutes": [
+        {
+          "path": "/news/",
+          "title": "News",
+          "template": "news",
+          "status": "published",
+          "blockTypes": []
+        },
+        {
+          "path": "/news/billing-credits/",
+          "title": "Billing & Credits",
+          "template": "news",
+          "status": "published",
+          "publishedAt": "2026-07-14T06:23:31.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/news/custom-branding-for-the-chat-widget/",
+          "title": "Billing & Credits",
+          "template": "news",
+          "status": "published",
+          "publishedAt": "2026-07-07T07:10:00.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/news/faster-agent-response-times/",
+          "title": "Workflow",
+          "template": "news",
+          "status": "published",
+          "publishedAt": "2026-06-07T07:00:00.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        },
+        {
+          "path": "/news/improved-analytics-dashboard/",
+          "title": "Improvements",
+          "template": "news",
+          "status": "published",
+          "publishedAt": "2026-07-07T07:05:00.000Z",
+          "blockTypes": [
+            "rich-text"
+          ]
+        }
+      ]
+    }
+  },
+  "recoveredRoutes": [
+    {
+      "path": "/cart-abandonment-recovery-agent/",
+      "inRuntimeCms": true,
+      "inSourceCms": true,
+      "status": "published",
+      "collection": "pages",
+      "template": "standard",
+      "title": "Cart Abandonment Recovery Agent",
+      "blockTypes": [
+        "hero",
+        "feature-grid",
+        "feature-grid",
+        "side-by-side",
+        "pricing-details",
+        "how-it-works",
+        "cta",
+        "news-insights",
+        "faq"
+      ],
+      "sourceReportRecoveryEvidence": {
+        "path": "/ai-use-cases-in-ecommerce/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      },
+      "sourceReportKeys": [
+        "mappedBlocks",
+        "path",
+        "recoveredFrom",
+        "skippedBlocks",
+        "title",
+        "unmappedBlocks"
+      ]
+    },
+    {
+      "path": "/consultation-booking-agent/",
+      "inRuntimeCms": true,
+      "inSourceCms": true,
+      "status": "published",
+      "collection": "pages",
+      "template": "standard",
+      "title": "Consultation Booking Agent",
+      "blockTypes": [
+        "hero",
+        "feature-grid",
+        "feature-grid",
+        "side-by-side",
+        "pricing-details",
+        "how-it-works",
+        "cta",
+        "news-insights",
+        "faq"
+      ],
+      "sourceReportRecoveryEvidence": {
+        "path": "/ai-use-cases-in-sales/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      },
+      "sourceReportKeys": [
+        "mappedBlocks",
+        "path",
+        "recoveredFrom",
+        "skippedBlocks",
+        "title",
+        "unmappedBlocks"
+      ]
+    },
+    {
+      "path": "/follow-up-for-estimate-approval/",
+      "inRuntimeCms": true,
+      "inSourceCms": true,
+      "status": "published",
+      "collection": "pages",
+      "template": "standard",
+      "title": "Estimate Approval Follow-Up",
+      "blockTypes": [
+        "hero",
+        "feature-grid",
+        "feature-grid",
+        "side-by-side",
+        "pricing-details",
+        "how-it-works",
+        "cta",
+        "news-insights",
+        "faq"
+      ],
+      "sourceReportRecoveryEvidence": {
+        "path": "/ai-use-cases-in-sales/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      },
+      "sourceReportKeys": [
+        "mappedBlocks",
+        "path",
+        "recoveredFrom",
+        "skippedBlocks",
+        "title",
+        "unmappedBlocks"
+      ]
+    },
+    {
+      "path": "/multi-channel-chatbot-deployment/",
+      "inRuntimeCms": true,
+      "inSourceCms": true,
+      "status": "published",
+      "collection": "pages",
+      "template": "standard",
+      "title": "Multi-Channel Chatbot Deployment",
+      "blockTypes": [
+        "hero",
+        "feature-grid",
+        "feature-grid",
+        "side-by-side",
+        "pricing-details",
+        "how-it-works",
+        "cta",
+        "news-insights",
+        "faq"
+      ],
+      "sourceReportRecoveryEvidence": {
+        "path": "/ai-use-cases-in-ecommerce/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      },
+      "sourceReportKeys": [
+        "mappedBlocks",
+        "path",
+        "recoveredFrom",
+        "skippedBlocks",
+        "title",
+        "unmappedBlocks"
+      ]
+    },
+    {
+      "path": "/offer-communication-agent/",
+      "inRuntimeCms": true,
+      "inSourceCms": true,
+      "status": "published",
+      "collection": "pages",
+      "template": "standard",
+      "title": "Offer Communication Agent",
+      "blockTypes": [
+        "hero",
+        "feature-grid",
+        "feature-grid",
+        "side-by-side",
+        "pricing-details",
+        "how-it-works",
+        "cta",
+        "news-insights",
+        "faq"
+      ],
+      "sourceReportRecoveryEvidence": {
+        "path": "/ai-use-cases-in-recruitment/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      },
+      "sourceReportKeys": [
+        "mappedBlocks",
+        "path",
+        "recoveredFrom",
+        "skippedBlocks",
+        "title",
+        "unmappedBlocks"
+      ]
+    },
+    {
+      "path": "/product-recommendation-agent/",
+      "inRuntimeCms": true,
+      "inSourceCms": true,
+      "status": "published",
+      "collection": "pages",
+      "template": "standard",
+      "title": "Product Recommendation Agent",
+      "blockTypes": [
+        "hero",
+        "feature-grid",
+        "feature-grid",
+        "side-by-side",
+        "pricing-details",
+        "how-it-works",
+        "cta",
+        "news-insights",
+        "faq"
+      ],
+      "sourceReportRecoveryEvidence": {
+        "path": "/ai-use-cases-in-ecommerce/",
+        "blockType": "side-by-side",
+        "reason": "Recovered empty published detail page from a source-backed linked use-case card."
+      },
+      "sourceReportKeys": [
+        "mappedBlocks",
+        "path",
+        "recoveredFrom",
+        "skippedBlocks",
+        "title",
+        "unmappedBlocks"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "code": "recovered-detail-standalone-source-unproven",
+      "severity": "warning",
+      "path": "/cart-abandonment-recovery-agent/",
+      "message": "/cart-abandonment-recovery-agent/ renders from linked-card recovery evidence, but not from a standalone route artifact. Keep it in final certification until standalone source-era evidence or product approval exists."
+    },
+    {
+      "code": "recovered-detail-standalone-source-unproven",
+      "severity": "warning",
+      "path": "/consultation-booking-agent/",
+      "message": "/consultation-booking-agent/ renders from linked-card recovery evidence, but not from a standalone route artifact. Keep it in final certification until standalone source-era evidence or product approval exists."
+    },
+    {
+      "code": "recovered-detail-standalone-source-unproven",
+      "severity": "warning",
+      "path": "/follow-up-for-estimate-approval/",
+      "message": "/follow-up-for-estimate-approval/ renders from linked-card recovery evidence, but not from a standalone route artifact. Keep it in final certification until standalone source-era evidence or product approval exists."
+    },
+    {
+      "code": "recovered-detail-standalone-source-unproven",
+      "severity": "warning",
+      "path": "/multi-channel-chatbot-deployment/",
+      "message": "/multi-channel-chatbot-deployment/ renders from linked-card recovery evidence, but not from a standalone route artifact. Keep it in final certification until standalone source-era evidence or product approval exists."
+    },
+    {
+      "code": "recovered-detail-standalone-source-unproven",
+      "severity": "warning",
+      "path": "/offer-communication-agent/",
+      "message": "/offer-communication-agent/ renders from linked-card recovery evidence, but not from a standalone route artifact. Keep it in final certification until standalone source-era evidence or product approval exists."
+    },
+    {
+      "code": "recovered-detail-standalone-source-unproven",
+      "severity": "warning",
+      "path": "/product-recommendation-agent/",
+      "message": "/product-recommendation-agent/ renders from linked-card recovery evidence, but not from a standalone route artifact. Keep it in final certification until standalone source-era evidence or product approval exists."
+    }
+  ],
+  "notes": [
+    "This report is intentionally warning-only for POC readiness.",
+    "Do not invent taxonomy, tips card icons, archive widths, or recovered standalone content from presentation shape alone.",
+    "Use this report to decide the next source-era acquisition or Payload schema/import task before final certification."
+  ]
+}

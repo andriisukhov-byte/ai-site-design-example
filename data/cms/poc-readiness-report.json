@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "status": "poc-ready",
+  "provenance": {
+    "sourceEraId": "prod-sql-2026-07-23-23-14-51",
+    "buildRevision": "5b8d90e-dirty"
+  },
+  "generatedAt": "2026-07-25T08:47:47.250Z",
+  "inputs": {
+    "snapshotPath": "data/cms/snapshot.json",
+    "pocSuitePath": "data/source/poc-launch-suite-report.json",
+    "visualSmokePath": "data/source/visual-smoke-report.json",
+    "openQuestionsPath": "docs/migration/open-questions.md"
+  },
+  "routes": {
+    "documents": 315,
+    "published": 304,
+    "drafts": 11,
+    "builtHtmlFiles": 310,
+    "contentKeys": 315,
+    "uniqueContentKeys": 315
+  },
+  "gates": {
+    "launchReady": true,
+    "launchGaps": 0,
+    "pocSuiteOk": true,
+    "pocSuiteGates": 20,
+    "pocSuiteFailingGates": 0,
+    "visualSmokeOk": true,
+    "visualSmokeMode": "target-smoke",
+    "visualSmokeRoutes": 8,
+    "visualSmokeFindings": 0,
+    "mediaMissingImportedAssets": 0,
+    "mediaSyncOk": true,
+    "mediaSyncAssets": 928,
+    "mediaSyncMegabytes": 333.2,
+    "blockingProductDecisionCount": 0
+  },
+  "visualSmokeRoutes": [
+    "/",
+    "/ai-agent-builder/",
+    "/blog/",
+    "/guides/",
+    "/tips-and-tricks/",
+    "/24-7-emergency-call-intake/",
+    "/abandoned-form-recovery/",
+    "/agent-task-assignments/"
+  ],
+  "finalCertificationNotes": [
+    "POC-ready does not mean final strict source-era certification.",
+    "Final storage destination, taxonomy metadata, and recovered-detail standalone source certification remain tracked in docs/migration/open-questions.md.",
+    "Archive taxonomy/card metadata and recovered-detail standalone-source gaps are machine-audited in data/cms/archive-metadata-readiness-report.json."
+  ],
+  "blockerCount": 0,
+  "findingCount": 0,
+  "findings": []
+}

@@ -1,0 +1,5 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="item">
+<rect x="0.5" y="0.5" width="127" height="127" rx="31.5" fill="var(--fill-0, white)"/>
+<rect x="0.5" y="0.5" width="127" height="127" rx="31.5" stroke="var(--stroke-0, #E8E8E8)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#acme_g)" d="M34 64a30 30 0 1 0 60 0a30 30 0 1 0 -60 0ZM51.4 64a12.6 12.6 0 1 0 25.2 0a12.6 12.6 0 1 0 -25.2 0Z"/></g><defs><linearGradient id="acme_g" x1="34" y1="34" x2="94" y2="94" gradientUnits="userSpaceOnUse"><stop stop-color="#3A87D9"/><stop offset="0.25" stop-color="#2F1A6B"/><stop offset="0.5" stop-color="#200000"/><stop offset="0.75" stop-color="#AD3822"/><stop offset="1" stop-color="#F7A75F"/></linearGradient></defs></svg>

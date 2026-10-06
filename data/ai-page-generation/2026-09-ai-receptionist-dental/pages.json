@@ -1,0 +1,264 @@
+[
+  {
+    "contentKey": "ai-receptionist-dental-clinics",
+    "collection": "pages",
+    "path": "/ai-receptionist-for-dental-clinics/",
+    "title": "AI Receptionist for Dental Clinics",
+    "status": "draft",
+    "template": "standard",
+    "seo": {
+      "metaTitle": "AI Receptionist for Dental Clinics | Acme",
+      "metaDescription": "An AI receptionist for dental clinics answers every inbound call immediately - it qualifies the patient, books the appointment, and confirms it automatically.",
+      "robots": ""
+    },
+    "blocks": [
+      {
+        "type": "hero",
+        "eyebrow": "AI Receptionist for Dental Clinics",
+        "title": "{{ Book the Patient }} Before the Next Office Answers",
+        "description": "An AI receptionist for dental clinics answers every call and text as it arrives, qualifies the patient, books the visit, and confirms it.",
+        "primaryAction": {
+          "label": "Get Started Free",
+          "href": "https://app.acme.example/signup"
+        },
+        "secondaryAction": {
+          "label": "Book a Demo",
+          "href": "#popup-open-popupRequestDemo"
+        },
+        "primaryNote": "No monthly fee.",
+        "secondaryNote": "30-min consultation",
+        "mediaSize": "wide"
+      },
+      {
+        "type": "functional-capabilities",
+        "preset": "sales",
+        "title": "What Your {{ Front Desk }} Agent Covers",
+        "description": "8 jobs the front desk runs between patients, handled on the channel the patient used.",
+        "cards": [
+          {
+            "icon": "phone-incoming",
+            "title": "Missed Call Recovery",
+            "description": "A call that rings out gets a text back within seconds. The message names the practice, offers the next 2 openings, and carries a booking link. Patients answer it from the parking lot."
+          },
+          {
+            "icon": "inbox",
+            "title": "New Patient Intake",
+            "description": "Web forms, after-hours voicemail and Google Business messages land in one thread. The agent asks the reason for the visit, the carrier and a preferred time, then writes the patient record."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Insurance Questions",
+            "description": "Callers ask whether you take their plan before they ask for a time. The agent answers from the carrier list you maintain, and says plainly when a plan is out of network."
+          },
+          {
+            "icon": "calendar-days",
+            "title": "Appointment Booking",
+            "description": "Open chair time comes from your practice management system in real time. The agent books against the right provider and operatory, then holds the slot while the patient confirms the appointment."
+          },
+          {
+            "icon": "bell",
+            "title": "Reminders and Confirmations",
+            "description": "Confirmation goes out on the channel the patient wrote from. Reminders follow at 48 hours and 2 hours. A patient who replies with a change gets rebooked in the same thread."
+          },
+          {
+            "icon": "repeat-2",
+            "title": "Recall Follow-Up",
+            "description": "6-month recall lists sit untouched when the desk is busy. The agent works the list on the schedule you set, stops after 3 touches, and hands warm replies to your coordinator."
+          },
+          {
+            "icon": "clock",
+            "title": "After-Hours Triage",
+            "description": "A 9pm call about a broken crown reaches your on-call number. A routine cleaning request waits for morning, with the slot already held and the carrier already confirmed."
+          },
+          {
+            "icon": "file-text",
+            "title": "Treatment Plan Follow-Up",
+            "description": "Patients leave with a plan and book the first visit only. The agent follows up on the unscheduled treatment at the interval you set, and schedules it with the right provider."
+          }
+        ]
+      },
+      {
+        "type": "feature-grid",
+        "background": "gray",
+        "columns": 3,
+        "title": "Why the Front Desk {{ Loses Patients }}",
+        "description": "3 structural causes. None of them is a coordinator who is not trying hard enough.",
+        "cards": [
+          {
+            "icon": "smartphone",
+            "title": "The Phone Rings Mid-Procedure",
+            "description": "One coordinator covers check-in, checkout, the phone and the chairside handoff at the same time. Across a 26-practice group, 38% of inbound calls went unanswered (Peerlogic, 2026). The busiest hours ring most."
+          },
+          {
+            "icon": "audio-lines",
+            "title": "The Voicemail Dead End",
+            "description": "78% of callers who reach voicemail hang up without leaving a message, and 67% call another practice instead (Dentina, 2026). A new patient who wanted a Tuesday crown is now someone else's."
+          },
+          {
+            "icon": "file-stack",
+            "title": "Nobody Owns the Follow-Up",
+            "description": "Recall lists and unconfirmed appointments belong to whoever has a free minute. That is why 7.4% of confirmed appointments still go unattended across 3,400 practices (Planet DDS, 2025)."
+          }
+        ]
+      },
+      {
+        "type": "how-it-works",
+        "title": "What the Agent Does With One Call",
+        "gradientText": "One Call",
+        "subtitle": "One inbound call, start to finish, in the order it happens.",
+        "background": "white",
+        "openFirst": false,
+        "showStepNumbers": true,
+        "steps": [
+          {
+            "label": "Ring 1",
+            "title": "Answers Before Voicemail",
+            "description": "The agent picks up on the first ring. Voice, SMS, web chat and Google Business messages all land in the same thread."
+          },
+          {
+            "label": "Second 20",
+            "title": "Finds Out Why They Called",
+            "description": "It asks why the patient is calling and which plan they hold."
+          },
+          {
+            "label": "Minute 1",
+            "title": "Checks the Chair, Not a Waitlist",
+            "description": "It reads live openings from your schedule and offers the 2 that fit."
+          },
+          {
+            "label": "Minute 2",
+            "title": "Books and Writes the Record",
+            "description": "It books against the right provider, writes the patient record, and confirms on the channel they used."
+          },
+          {
+            "label": "Minute 3",
+            "title": "Escalates What Needs a Person",
+            "description": "A caller in pain, or anyone disputing a bill, reaches your phone with the transcript attached."
+          },
+          {
+            "label": "Hour 48",
+            "title": "Confirms and Rebooks",
+            "description": "It sends the reminder and moves the appointment in the same thread when the patient asks for a different day."
+          }
+        ]
+      },
+      {
+        "type": "media-showcase",
+        "background": "gray",
+        "title": "Your {{ Front Desk }} Agent in Action",
+        "description": "One canvas holds every thread and decides what happens next: book it, or hand it to a person.",
+        "image": {
+          "src": "/media/2026/07/img-3-scaled.png",
+          "alt": "Acme canvas routing phone, text and email threads into booking, quoting and escalation nodes"
+        }
+      },
+      {
+        "type": "pain-points-comparison",
+        "background": "white",
+        "title": "What Changes on {{ The Schedule }}",
+        "showColumnHeadings": true,
+        "leftHeading": "Today",
+        "rightHeading": "With Your Agent",
+        "rows": [
+          {
+            "leftTitle": "Time to First Reply",
+            "leftDescription": "Minutes during a quiet morning, hours after 5pm, and nothing at all on a Sunday. The patient compares 3 practices while they wait.",
+            "rightTitle": "Under a Minute, Every Hour",
+            "rightDescription": "First reply lands in seconds on every channel, at 6am and on a holiday weekend."
+          },
+          {
+            "leftTitle": "Share of Calls Answered",
+            "leftDescription": "Calls ring out while the coordinator is chairside. The desk is not idle, and that is exactly the problem.",
+            "rightTitle": "Every Call Picked Up",
+            "rightDescription": "No hold music and no voicemail. Nobody is promised a call back after the 2 o'clock."
+          },
+          {
+            "leftTitle": "Minutes Lost at the Desk",
+            "leftDescription": "Carrier questions, directions, hours and reschedule requests take the coordinator away from the patient standing in front of them.",
+            "rightTitle": "Routine Questions Leave the Desk",
+            "rightDescription": "The agent answers from your carrier list and your hours. Your coordinator keeps the conversations that need a person."
+          },
+          {
+            "leftTitle": "Callers Who Reach a Booking",
+            "leftDescription": "A caller who cannot get through does not call back. You never learn they tried.",
+            "rightTitle": "The Call Ends in a Chair Time",
+            "rightDescription": "Qualification, the open slot and the confirmation happen in one conversation, not across 3 callbacks."
+          },
+          {
+            "leftTitle": "Hours Spent on Recall",
+            "leftDescription": "6-month lists and unconfirmed appointments get worked when someone has a free minute. Most weeks nobody does.",
+            "rightTitle": "Recall Runs on a Schedule",
+            "rightDescription": "The list gets worked at the cadence you choose. Your coordinator only sees the patients who answered."
+          }
+        ],
+        "action": {
+          "label": "Get Started Free",
+          "href": "https://app.acme.example/signup"
+        }
+      },
+      {
+        "type": "live-in-days",
+        "eyebrow": "Start, Build, Test, Launch",
+        "description": "From signup to an agent that answers your phone: 5 to 15 days, without a developer.",
+        "items": [
+          {
+            "icon": "layout-grid",
+            "label": "Start - Day 1"
+          },
+          {
+            "icon": "code-xml",
+            "label": "Build - Days 2-4"
+          },
+          {
+            "icon": "bot-message-square",
+            "label": "Test - Days 5-7"
+          },
+          {
+            "icon": "user-round-check",
+            "label": "Launch - Days 8-15"
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Your Next New Patient Is Calling Right Now",
+        "description": "Free to start, and you pay only for the conversations the agent finishes. There is no subscription and no per-seat fee.",
+        "primaryAction": {
+          "label": "Get Started Free",
+          "href": "https://app.acme.example/signup"
+        },
+        "secondaryAction": {
+          "label": "Book a Demo",
+          "href": "#popup-open-popupRequestDemo"
+        }
+      },
+      {
+        "type": "faq",
+        "title": "Questions From",
+        "titleGradient": "Practice Owners",
+        "items": [
+          {
+            "category": "Product",
+            "question": "Which calls and messages does the agent cover?",
+            "answer": "Voice, SMS, web chat, Google Business messages and the form on your site. During hours and after them. The agent checks what is actually open in your schedule and writes the patient record, the same way for a new caller and a reschedule."
+          },
+          {
+            "category": "Product",
+            "question": "How does it decide which appointment to offer?",
+            "answer": "You set the rules: which treatment goes to which provider, how long each takes, which operatories it can use, and how far out it may book. The agent reads open chair time against those rules and offers the 2 slots that fit. It never invents a slot your schedule does not have."
+          },
+          {
+            "category": "Product",
+            "question": "What happens to a call the agent cannot finish?",
+            "answer": "The patient reaches you directly when it is pain, a treatment plan argument or a billing question, with the full conversation already on the record. Out-of-network plans get a plain answer and a handoff instead of a booking. If your practice takes fewer than 40 calls a month, your voicemail is fine."
+          },
+          {
+            "category": "Product",
+            "question": "How does the booking reach the front desk?",
+            "answer": "The appointment is written to your practice management system as the agent books it, carrying what the patient came in for and the full conversation. Your coordinator opens the day and sees a booked chair, not a message to return. See the <a href=\"/conversational-ai-platform/\">conversational AI platform</a> page."
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,2274 @@
+{
+  "generatedAt": "2026-07-30T10:24:33.538Z",
+  "source": "data/source/tips-presentation-reference.json",
+  "preservePolicy": "This output contains production Tips only. Upsert without --prune preserves local-only pages and Tips.",
+  "pages": [
+    {
+      "contentKey": "2076471b768e9121",
+      "collection": "tips",
+      "path": "/tips/three-ways-to-add-a-custom-tool/",
+      "title": "Three Ways to Add a Custom Tool",
+      "publishedAt": "2026-07-22T14:05:14",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:30",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Three Ways to Add a Custom Tool | Acme",
+        "canonicalUrl": "https://acme.example/tips/three-ways-to-add-a-custom-tool/",
+        "ogTitle": "Three Ways to Add a Custom Tool | Acme",
+        "ogDescription": "From an actor’s Capabilities drawer you can add Execute Code (sandboxed Python for calculations), Execute Workflow (kick off another Acme workflow and optionally wait for the result), or an HTTP Request (call an internal or third-party API), all without any canvas wiring."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Three Ways to Add a Custom Tool",
+          "html": "<p>From an actor&#8217;s Capabilities drawer you can add Execute Code (sandboxed Python for calculations), Execute Workflow (kick off another Acme workflow and optionally wait for the result), or an HTTP Request (call an internal or third-party API), all without any canvas wiring.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "6ed6cf95488db4cf",
+      "collection": "tips",
+      "path": "/tips/scope-integrations-down-to-the-actions-an-actor-needs/",
+      "title": "Scope Integrations Down to the Actions an Actor Needs",
+      "publishedAt": "2026-07-22T14:03:50",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:30",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Scope Integrations Down to the Actions an Actor Needs | Acme",
+        "canonicalUrl": "https://acme.example/tips/scope-integrations-down-to-the-actions-an-actor-needs/",
+        "ogTitle": "Scope Integrations Down to the Actions an Actor Needs | Acme",
+        "ogDescription": "When you wire an integration into an actor’s Capabilities, expose only the specific actions it needs, like just send-email, rather than a whole app’s action list. Give an actor “all of Gmail” and it may call delete-thread when a user says “delete this conversation.”"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Scope Integrations Down to the Actions an Actor Needs",
+          "html": "<p>When you wire an integration into an actor&#8217;s Capabilities, expose only the specific actions it needs, like just send-email, rather than a whole app&#8217;s action list. Give an actor &#8220;all of Gmail&#8221; and it may call delete-thread when a user says &#8220;delete this conversation.&#8221;</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "8fda107d4d6dff80",
+      "collection": "tips",
+      "path": "/tips/free-form-by-default-scripted-when-it-must-be-exact/",
+      "title": "Free-Form by Default, Scripted When It Must Be Exact",
+      "publishedAt": "2026-07-22T14:02:33",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:31",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Free-Form by Default, Scripted When It Must Be Exact | Acme",
+        "canonicalUrl": "https://acme.example/tips/free-form-by-default-scripted-when-it-must-be-exact/",
+        "ogTitle": "Free-Form by Default, Scripted When It Must Be Exact | Acme",
+        "ogDescription": "Actors are free-form by default, deciding what to say turn by turn, and that is right most of the time. Switch to the Advanced tab’s step builder only when you need an exact, repeatable sequence, like a payment flow or identity check; scripts longer than about 8 steps are usually better split into multiple actors."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Free-Form by Default, Scripted When It Must Be Exact",
+          "html": "<p>Actors are free-form by default, deciding what to say turn by turn, and that is right most of the time. Switch to the Advanced tab&#8217;s step builder only when you need an exact, repeatable sequence, like a payment flow or identity check; scripts longer than about 8 steps are usually better split into multiple actors.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "ef1001151aa0813e",
+      "collection": "tips",
+      "path": "/tips/slots-carry-data-across-handoffs-automatically/",
+      "title": "Slots Carry Data Across Handoffs Automatically",
+      "publishedAt": "2026-07-22T14:01:14",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:31",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Slots Carry Data Across Handoffs Automatically | Acme",
+        "canonicalUrl": "https://acme.example/tips/slots-carry-data-across-handoffs-automatically/",
+        "ogTitle": "Slots Carry Data Across Handoffs Automatically | Acme",
+        "ogDescription": "Values collected by Ask Question steps, such as a name, an email, or an order number, are saved to slots that survive every actor transfer for the life of the conversation. By default every actor’s prompt includes a “Collected information so far” summary, so users never repeat themselves."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Slots Carry Data Across Handoffs Automatically",
+          "html": "<p>Values collected by Ask Question steps, such as a name, an email, or an order number, are saved to slots that survive every actor transfer for the life of the conversation. By default every actor&#8217;s prompt includes a &#8220;Collected information so far&#8221; summary, so users never repeat themselves.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "f07a8a75e31199f8",
+      "collection": "tips",
+      "path": "/tips/not-every-channel-works-both-ways/",
+      "title": "Not Every Channel Works Both Ways",
+      "publishedAt": "2026-07-22T14:00:13",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:31",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Not Every Channel Works Both Ways | Acme",
+        "canonicalUrl": "https://acme.example/tips/not-every-channel-works-both-ways/",
+        "ogTitle": "Not Every Channel Works Both Ways | Acme",
+        "ogDescription": "Widget is inbound-only, since there is no one to start a conversation with an anonymous visitor, while SMS and WhatsApp Business are outbound-only. Gmail, Outlook, Slack, Teams, and Phone support both inbound and outbound, so check the channel matrix before wiring a channel to an Initiator flow."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Not Every Channel Works Both Ways",
+          "html": "<p>Widget is inbound-only, since there is no one to start a conversation with an anonymous visitor, while SMS and WhatsApp Business are outbound-only. Gmail, Outlook, Slack, Teams, and Phone support both inbound and outbound, so check the channel matrix before wiring a channel to an Initiator flow.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "a2d88ca2be49674f",
+      "collection": "tips",
+      "path": "/tips/execution-mode-is-set-on-the-flow-not-on-a-node/",
+      "title": "Execution Mode Is Set on the Flow, Not on a Node",
+      "publishedAt": "2026-07-22T13:57:57",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:31",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Execution Mode Is Set on the Flow, Not on a Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/execution-mode-is-set-on-the-flow-not-on-a-node/",
+        "ogTitle": "Execution Mode Is Set on the Flow, Not on a Node | Acme",
+        "ogDescription": "Responder or Initiator is chosen once per flow in Flow settings, not configured through a separate dispatcher node. Responder flows wait for inbound messages; Initiator flows are started manually, from a workflow, or via API, and a single flow can only run in one mode at a time."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Execution Mode Is Set on the Flow, Not on a Node",
+          "html": "<p>Responder or Initiator is chosen once per flow in Flow settings, not configured through a separate dispatcher node. Responder flows wait for inbound messages; Initiator flows are started manually, from a workflow, or via API, and a single flow can only run in one mode at a time.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "74995d0913422c1b",
+      "collection": "tips",
+      "path": "/tips/strict-mode-actors-need-a-definition-of-done/",
+      "title": "Strict-Mode Actors Need a Definition of Done",
+      "publishedAt": "2026-07-22T13:56:02",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:31",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Strict-Mode Actors Need a Definition of Done | Acme",
+        "canonicalUrl": "https://acme.example/tips/strict-mode-actors-need-a-definition-of-done/",
+        "ogTitle": "Strict-Mode Actors Need a Definition of Done | Acme",
+        "ogDescription": "A Strict actor won’t hand off until its Definition of Done is satisfied, so leaving that field blank on a Strict actor can stall the conversation indefinitely. Set a concrete completion rule any time you use Strict focus mode."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Strict-Mode Actors Need a Definition of Done",
+          "html": "<p>A Strict actor won&#8217;t hand off until its Definition of Done is satisfied, so leaving that field blank on a Strict actor can stall the conversation indefinitely. Set a concrete completion rule any time you use Strict focus mode.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "ca827e948560dfe3",
+      "collection": "tips",
+      "path": "/tips/choose-a-focus-mode-on-purpose/",
+      "title": "Choose a Focus Mode on Purpose",
+      "publishedAt": "2026-07-22T13:53:50",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:32",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Choose a Focus Mode on Purpose | Acme",
+        "canonicalUrl": "https://acme.example/tips/choose-a-focus-mode-on-purpose/",
+        "ogTitle": "Choose a Focus Mode on Purpose | Acme",
+        "ogDescription": "Auto, Flexible, Persistent, and Strict each change how eagerly an actor hands off when the user changes topics. Use Flexible for thin triage agents, Persistent for multi-step intake that can be resumed, and Strict only for identity, payment, or compliance flows that must not be interrupted."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Choose a Focus Mode on Purpose",
+          "html": "<p>Auto, Flexible, Persistent, and Strict each change how eagerly an actor hands off when the user changes topics. Use Flexible for thin triage agents, Persistent for multi-step intake that can be resumed, and Strict only for identity, payment, or compliance flows that must not be interrupted.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "05c32300de6f1e46",
+      "collection": "tips",
+      "path": "/tips/keep-behavior-rules-out-of-context/",
+      "title": "Keep Behavior Rules Out of Context",
+      "publishedAt": "2026-07-22T13:52:21",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:32",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Keep Behavior Rules Out of Context | Acme",
+        "canonicalUrl": "https://acme.example/tips/keep-behavior-rules-out-of-context/",
+        "ogTitle": "Keep Behavior Rules Out of Context | Acme",
+        "ogDescription": "Context is inheritable background knowledge; Instructions are private behavior rules that never pass to child actors. Put a rule like “always confirm before sending” into Context instead of Instructions, and every child actor will inherit it and try to do the same job."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Keep Behavior Rules Out of Context",
+          "html": "<p>Context is inheritable background knowledge; Instructions are private behavior rules that never pass to child actors. Put a rule like &#8220;always confirm before sending&#8221; into Context instead of Instructions, and every child actor will inherit it and try to do the same job.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "f387a2e529ce66f3",
+      "collection": "tips",
+      "path": "/tips/put-shared-knowledge-in-global-context-not-on-every-actor/",
+      "title": "Put Shared Knowledge in Global Context, Not on Every Actor",
+      "publishedAt": "2026-07-22T13:50:46",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:32",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Put Shared Knowledge in Global Context, Not on Every Actor | Acme",
+        "canonicalUrl": "https://acme.example/tips/put-shared-knowledge-in-global-context-not-on-every-actor/",
+        "ogTitle": "Put Shared Knowledge in Global Context, Not on Every Actor | Acme",
+        "ogDescription": "Write your company introduction once in Flow settings’ Global Context, then let each actor opt in through its Inherit Context checkboxes. Copy-pasting the same context block onto every actor just means three edits instead of one the next time it changes."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Put Shared Knowledge in Global Context, Not on Every Actor",
+          "html": "<p>Write your company introduction once in Flow settings&#8217; Global Context, then let each actor opt in through its Inherit Context checkboxes. Copy-pasting the same context block onto every actor just means three edits instead of one the next time it changes.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "fc8ccffc7b7cf9f1",
+      "collection": "tips",
+      "path": "/tips/write-activation-prompts-like-youre-briefing-a-teammate/",
+      "title": "Write Activation Prompts Like You’re Briefing a Teammate",
+      "publishedAt": "2026-07-22T13:49:26",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:32",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Write Activation Prompts Like You're Briefing a Teammate | Acme",
+        "canonicalUrl": "https://acme.example/tips/write-activation-prompts-like-youre-briefing-a-teammate/",
+        "ogTitle": "Write Activation Prompts Like You're Briefing a Teammate | Acme",
+        "ogDescription": "Describe the triggering situation in plain language on each routing edge, for example “when the user asks about price, plans, or wants an Enterprise quote,” instead of keyword conditions like “intent = billing.” Avoid overlapping activation prompts on sibling edges, since the router will pick one nondeterministically."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Write Activation Prompts Like You’re Briefing a Teammate",
+          "html": "<p>Describe the triggering situation in plain language on each routing edge, for example &#8220;when the user asks about price, plans, or wants an Enterprise quote,&#8221; instead of keyword conditions like &#8220;intent = billing.&#8221; Avoid overlapping activation prompts on sibling edges, since the router will pick one nondeterministically.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "87706157dd0d1424",
+      "collection": "tips",
+      "path": "/tips/flows-are-built-from-actors-not-nodes/",
+      "title": "Flows Are Built From Actors, Not Nodes",
+      "publishedAt": "2026-07-22T13:47:14",
+      "articleMeta": {
+        "category": "Conversational AI",
+        "tags": [],
+        "updatedAt": "2026-07-22T14:08:32",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Conversational AI",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Flows Are Built From Actors, Not Nodes | Acme",
+        "canonicalUrl": "https://acme.example/tips/flows-are-built-from-actors-not-nodes/",
+        "ogTitle": "Flows Are Built From Actors, Not Nodes | Acme",
+        "ogDescription": "A Conversation Flow has exactly one Start node plus one or more actors connected by routing edges — there’s no separate dispatcher or LLM node to wire up. Each actor holds its own model, prompt, and capabilities, and the Start node just routes new conversations into the first actor."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Flows Are Built From Actors, Not Nodes",
+          "html": "<p>A Conversation Flow has exactly one Start node plus one or more actors connected by routing edges — there&#8217;s no separate dispatcher or LLM node to wire up. Each actor holds its own model, prompt, and capabilities, and the Start node just routes new conversations into the first actor.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "71e8c85e6013d7e7",
+      "collection": "tips",
+      "path": "/tips/manual-testing-start/",
+      "title": "Manual Testing Start",
+      "publishedAt": "2026-02-10T23:59:23",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:59:11",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/circleplay-95c0d703.svg",
+            "alt": "Manual Testing Start"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Manual Testing Start | Acme",
+        "canonicalUrl": "https://acme.example/tips/manual-testing-start/",
+        "ogTitle": "Manual Testing Start | Acme",
+        "ogDescription": "Use the Start event when testing new workflows or validating features.This gives you full control and human oversight before automation kicks in."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Manual Testing Start",
+          "html": "<p>Use the Start event when testing new workflows or validating features.This gives you full control and human oversight before automation kicks in.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "0f9727c782601ac3",
+      "collection": "tips",
+      "path": "/tips/automate-recurring-tasks/",
+      "title": "Automate Recurring Tasks",
+      "publishedAt": "2026-02-10T23:56:42",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:56:42",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/circleplay-95c0d703.svg",
+            "alt": "Automate Recurring Tasks"
+          },
+          {
+            "src": "/assets/templates/tips/clock5-9ed7b8a6.svg",
+            "alt": "Automate Recurring Tasks"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Automate Recurring Tasks | Acme",
+        "canonicalUrl": "https://acme.example/tips/automate-recurring-tasks/",
+        "ogTitle": "Automate Recurring Tasks | Acme",
+        "ogDescription": "Set up Recurring Start events for regular reports, system checks, or competitor monitoring. Schedule them to run daily, weekly, or at specific times without manual intervention."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Automate Recurring Tasks",
+          "html": "<p>Set up Recurring Start events for regular reports, system checks, or competitor monitoring. Schedule them to run daily, weekly, or at specific times without manual intervention.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "67c00d2c864cbe84",
+      "collection": "tips",
+      "path": "/tips/connect-your-favorite-apps/",
+      "title": "Connect Your Favorite Apps",
+      "publishedAt": "2026-02-10T23:55:51",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:55:51",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/plug-2-e7a4121b.svg",
+            "alt": "Connect Your Favorite Apps"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Connect Your Favorite Apps | Acme",
+        "canonicalUrl": "https://acme.example/tips/connect-your-favorite-apps/",
+        "ogTitle": "Connect Your Favorite Apps | Acme",
+        "ogDescription": "Use Event from an App to trigger workflows from services like Gmail, Linkedin, or your CRM. This eliminates the need for constant manual checking."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Connect Your Favorite Apps",
+          "html": "<p>Use Event from an App to trigger workflows from services like Gmail, Linkedin, or your CRM. This eliminates the need for constant manual checking.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "81df510b38bdc4d6",
+      "collection": "tips",
+      "path": "/tips/use-webhooks-for-custom-integrations/",
+      "title": "Use Webhooks for Custom Integrations",
+      "publishedAt": "2026-02-10T23:54:28",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:54:28",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/webhook-1-3bf20763.svg",
+            "alt": "Use Webhooks for Custom Integrations"
+          },
+          {
+            "src": "/assets/templates/tips/link2-9b04aeb6.svg",
+            "alt": "Use Webhooks for Custom Integrations"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Use Webhooks for Custom Integrations | Acme",
+        "canonicalUrl": "https://acme.example/tips/use-webhooks-for-custom-integrations/",
+        "ogTitle": "Use Webhooks for Custom Integrations | Acme",
+        "ogDescription": "When your external service isn’t available as a pre-built integration, use Webhookevents. Just paste the unique URL into the external service to receive real-time data."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Use Webhooks for Custom Integrations",
+          "html": "<p>When your external service isn&#8217;t available as a pre-built integration, use Webhookevents. Just paste the unique URL into the external service to receive real-time data.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "4ed7a1f36ac53f5a",
+      "collection": "tips",
+      "path": "/tips/describe-triggers-in-plain-english/",
+      "title": "Describe Triggers in Plain English",
+      "publishedAt": "2026-02-10T23:53:29",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:53:29",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/lightbulb-1-42e467f9.svg",
+            "alt": "Describe Triggers in Plain English"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Describe Triggers in Plain English | Acme",
+        "canonicalUrl": "https://acme.example/tips/describe-triggers-in-plain-english/",
+        "ogTitle": "Describe Triggers in Plain English | Acme",
+        "ogDescription": "Al Custom Events let you set conditions using natural language like “when invoiceexceeds $500”. No complex coding required."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Describe Triggers in Plain English",
+          "html": "<p>Al Custom Events let you set conditions using natural language like &#8220;when invoiceexceeds $500&#8221;. No complex coding required.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "6e0fe46c03116ce5",
+      "collection": "tips",
+      "path": "/tips/monitor-key-data-changes/",
+      "title": "Monitor Key Data Changes",
+      "publishedAt": "2026-02-10T23:53:03",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:53:03",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/arrowrightleft-ee45fb13.svg",
+            "alt": "Monitor Key Data Changes"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Monitor Key Data Changes | Acme",
+        "canonicalUrl": "https://acme.example/tips/monitor-key-data-changes/",
+        "ogTitle": "Monitor Key Data Changes | Acme",
+        "ogDescription": "Use Event on Variable Change to track important metrics. Get notified automatically when a status updates or a value crosses a threshold."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Monitor Key Data Changes",
+          "html": "<p>Use Event on Variable Change to track important metrics. Get notified automatically when a status updates or a value crosses a threshold.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "2ba3999a8158ba7f",
+      "collection": "tips",
+      "path": "/tips/choose-events-based-on-your-needs/",
+      "title": "Choose Events Based on Your Needs",
+      "publishedAt": "2026-02-10T23:52:03",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:52:03",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/calendarcheck-ad2e3333.svg",
+            "alt": "Choose Events Based on Your Needs"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Choose Events Based on Your Needs | Acme",
+        "canonicalUrl": "https://acme.example/tips/choose-events-based-on-your-needs/",
+        "ogTitle": "Choose Events Based on Your Needs | Acme",
+        "ogDescription": "Different triggers serve different purposes – manual for testing, scheduled for reports,app-based for external integrations, and Al-based for complex conditions."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Choose Events Based on Your Needs",
+          "html": "<p>Different triggers serve different purposes &#8211; manual for testing, scheduled for reports,app-based for external integrations, and Al-based for complex conditions.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "ef6d89f89f64eb78",
+      "collection": "tips",
+      "path": "/tips/combine-events-with-actions/",
+      "title": "Combine Events with Actions",
+      "publishedAt": "2026-02-10T23:50:07",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:50:07",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/calendarcheck-ad2e3333.svg",
+            "alt": "Combine Events with Actions"
+          },
+          {
+            "src": "/assets/templates/tips/foldertree-ec109525.svg",
+            "alt": "Combine Events with Actions"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Combine Events with Actions | Acme",
+        "canonicalUrl": "https://acme.example/tips/combine-events-with-actions/",
+        "ogTitle": "Combine Events with Actions | Acme",
+        "ogDescription": "Remember that starting events are just the first step. Connect them to actions tocreate complete, executable automations."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Combine Events with Actions",
+          "html": "<p>Remember that starting events are just the first step. Connect them to actions tocreate complete, executable automations.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "e4482c5734d2aab5",
+      "collection": "tips",
+      "path": "/tips/leverage-real-time-responses/",
+      "title": "Leverage Real-Time Responses",
+      "publishedAt": "2026-02-10T23:48:14",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:48:14",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/messagessquare-7d3255ab.svg",
+            "alt": "Leverage Real-Time Responses"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Leverage Real-Time Responses | Acme",
+        "canonicalUrl": "https://acme.example/tips/leverage-real-time-responses/",
+        "ogTitle": "Leverage Real-Time Responses | Acme",
+        "ogDescription": "Event-driven automation removes manual steps from processes, making your systems more responsive and efficient."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Leverage Real-Time Responses",
+          "html": "<p>Event-driven automation removes manual steps from processes, making your systems more responsive and efficient.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "71e1932db2241800",
+      "collection": "tips",
+      "path": "/tips/avoid-constant-polling/",
+      "title": "Avoid Constant Polling",
+      "publishedAt": "2026-02-10T23:45:52",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:45:52",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/webhook-1-3bf20763.svg",
+            "alt": "Avoid Constant Polling"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Avoid Constant Polling | Acme",
+        "canonicalUrl": "https://acme.example/tips/avoid-constant-polling/",
+        "ogTitle": "Avoid Constant Polling | Acme",
+        "ogDescription": "Webhooks send data only when events occur, making them more efficient than constantly checking for updates. This saves system resources and provides instant notifications."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Avoid Constant Polling",
+          "html": "<p>Webhooks send data only when events occur, making them more efficient than constantly checking for updates. This saves system resources and provides instant notifications.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "cf1db14c1491b3b0",
+      "collection": "tips",
+      "path": "/tips/use-ai-for-sentiment-detection/",
+      "title": "Use AI for Sentiment Detection",
+      "publishedAt": "2026-02-10T23:44:48",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:44:48",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/lightbulb-1-42e467f9.svg",
+            "alt": "Use AI for Sentiment Detection"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Use AI for Sentiment Detection | Acme",
+        "canonicalUrl": "https://acme.example/tips/use-ai-for-sentiment-detection/",
+        "ogTitle": "Use AI for Sentiment Detection | Acme",
+        "ogDescription": "AI Custom Events are perfect for sentiment-based triggers and anomaly detection. Let AI continuously evaluate conditions you describe in plain language."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Use AI for Sentiment Detection",
+          "html": "<p>AI Custom Events are perfect for sentiment-based triggers and anomaly detection. Let AI continuously evaluate conditions you describe in plain language.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "bcfd786456dfd8a0",
+      "collection": "tips",
+      "path": "/tips/track-status-changes-automatically/",
+      "title": "Track Status Changes Automatically",
+      "publishedAt": "2026-02-10T23:41:48",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:41:48",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/history-5746c2a2.svg",
+            "alt": "Track Status Changes Automatically"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Track Status Changes Automatically | Acme",
+        "canonicalUrl": "https://acme.example/tips/track-status-changes-automatically/",
+        "ogTitle": "Track Status Changes Automatically | Acme",
+        "ogDescription": "Monitor workflow variables across execution history to trigger actions when statuses change from “pending” to “completed” or when values increase by specific percentages."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Track Status Changes Automatically",
+          "html": "<p>Monitor workflow variables across execution history to trigger actions when statuses change from &#8220;pending&#8221; to &#8220;completed&#8221; or when values increase by specific percentages.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "8f8f7d33c50475af",
+      "collection": "tips",
+      "path": "/tips/call-agent-node/",
+      "title": "Call Agent Node",
+      "publishedAt": "2026-02-10T23:40:15",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:40:15",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/bot-58d5a527.svg",
+            "alt": "Call Agent Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Call Agent Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/call-agent-node/",
+        "ogTitle": "Call Agent Node | Acme",
+        "ogDescription": "Invoke autonomous or conversational AI agents within your workflow. Agents can be reused across multiple workflows for tasks like sentiment analysis or customer support."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Call Agent Node",
+          "html": "<p>Invoke autonomous or conversational AI agents within your workflow. Agents can be reused across multiple workflows for tasks like sentiment analysis or customer support.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "a3bd13888d4c4e83",
+      "collection": "tips",
+      "path": "/tips/action-in-app-node/",
+      "title": "Action in App Node",
+      "publishedAt": "2026-02-10T23:39:09",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:39:09",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/plug-835ecc6b.svg",
+            "alt": "Action in App Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Action in App Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/action-in-app-node/",
+        "ogTitle": "Action in App Node | Acme",
+        "ogDescription": "Acts as a digital assistant executing instructions inside third-party applications. Use it to interact with CRMs, messaging platforms, or project management tools."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Action in App Node",
+          "html": "<p>Acts as a digital assistant executing instructions inside third-party applications. Use it to interact with CRMs, messaging platforms, or project management tools.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "77793b61d716788c",
+      "collection": "tips",
+      "path": "/tips/execute-code-node/",
+      "title": "Execute Code Node",
+      "publishedAt": "2026-02-10T23:15:15",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:15:15",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/codexml-4338954b.svg",
+            "alt": "Execute Code Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Execute Code Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/execute-code-node/",
+        "ogTitle": "Execute Code Node | Acme",
+        "ogDescription": "Provides Python scripting for complex logic and transformations. Non-developers can describe requirements in natural language and let AI generate the code."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Execute Code Node",
+          "html": "<p>Provides Python scripting for complex logic and transformations. Non-developers can describe requirements in natural language and let AI generate the code.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "8bd54a762904c545",
+      "collection": "tips",
+      "path": "/tips/set-variable-node/",
+      "title": "Set Variable Node",
+      "publishedAt": "2026-02-10T23:14:28",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:14:28",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/replaceall-d8b8254f.svg",
+            "alt": "Set Variable Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Set Variable Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/set-variable-node/",
+        "ogTitle": "Set Variable Node | Acme",
+        "ogDescription": "Variables persist throughout the entire workflow, unlike standard nodes. Use them to track conditions, store results, or control branching logic."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Set Variable Node",
+          "html": "<p>Variables persist throughout the entire workflow, unlike standard nodes. Use them to track conditions, store results, or control branching logic.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "082e453afd5ddfdf",
+      "collection": "tips",
+      "path": "/tips/http-request-node/",
+      "title": "HTTP Request Node",
+      "publishedAt": "2026-02-10T23:13:43",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:13:43",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-1-7a0988ee.svg",
+            "alt": "HTTP Request Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Request Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-request-node/",
+        "ogTitle": "HTTP Request Node | Acme",
+        "ogDescription": "Enables secure communication with external systems and APIs. Exists separately because Acme’s Python sandbox is restricted from network access for security."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Request Node",
+          "html": "<p>Enables secure communication with external systems and APIs. Exists separately because Acme&#8217;s Python sandbox is restricted from network access for security.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "2494a0b500e8a3e6",
+      "collection": "tips",
+      "path": "/tips/llm-nodes/",
+      "title": "LLM Nodes",
+      "publishedAt": "2026-02-10T23:12:52",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:12:52",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/brain-1-cbb0ef44.svg",
+            "alt": "LLM Nodes"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "LLM Nodes | Acme",
+        "canonicalUrl": "https://acme.example/tips/llm-nodes/",
+        "ogTitle": "LLM Nodes | Acme",
+        "ogDescription": "Bridge workflow data with AI models like GPT-4, Claude, NanoBanana, Gemini, etc. Use for summarization, classification, content generation, or text rewriting tasks."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "LLM Nodes",
+          "html": "<p>Bridge workflow data with AI models like GPT-4, Claude, NanoBanana, Gemini, etc. Use for summarization, classification, content generation, or text rewriting tasks.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "90a4b539d3e03693",
+      "collection": "tips",
+      "path": "/tips/parse-file-node/",
+      "title": "Parse File Node",
+      "publishedAt": "2026-02-10T23:10:58",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:11:25",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/filetext-58316288.svg",
+            "alt": "Parse File Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Parse File Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/parse-file-node/",
+        "ogTitle": "Parse File Node | Acme",
+        "ogDescription": "Converts uploaded files into structured, usable data. Use when you need to analyze contents or extract information rather than just forwarding files."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Parse File Node",
+          "html": "<p>Converts uploaded files into structured, usable data. Use when you need to analyze contents or extract information rather than just forwarding files.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "1bffcc39b0237bdb",
+      "collection": "tips",
+      "path": "/tips/condition-node/",
+      "title": "Condition Node",
+      "publishedAt": "2026-02-10T23:09:53",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:09:53",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/gitcommithorizontal-b3185706.svg",
+            "alt": "Condition Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Condition Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/condition-node/",
+        "ogTitle": "Condition Node | Acme",
+        "ogDescription": "Evaluates a rule and routes the workflow based on true/false results. Essential for building intelligent, decision-based automations like checking sentiment scores or payment status."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Condition Node",
+          "html": "<p>Evaluates a rule and routes the workflow based on true/false results. Essential for building intelligent, decision-based automations like checking sentiment scores or payment status.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "659ff0c6f5594328",
+      "collection": "tips",
+      "path": "/tips/loop-node/",
+      "title": "Loop Node",
+      "publishedAt": "2026-02-10T23:09:02",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:09:02",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/repeat-2e502861.svg",
+            "alt": "Loop Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Loop Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/loop-node/",
+        "ogTitle": "Loop Node | Acme",
+        "ogDescription": "Enables repetition by taking a collection of data and running following nodes once for each item. Use for bulk messaging, processing multiple orders, or batch AI analysis."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Loop Node",
+          "html": "<p>Enables repetition by taking a collection of data and running following nodes once for each item. Use for bulk messaging, processing multiple orders, or batch AI analysis.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "a1d951de39c56c47",
+      "collection": "tips",
+      "path": "/tips/switch-node/",
+      "title": "Switch Node",
+      "publishedAt": "2026-02-10T23:08:02",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:08:02",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/usb-c74511dd.svg",
+            "alt": "Switch Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Switch Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/switch-node/",
+        "ogTitle": "Switch Node | Acme",
+        "ogDescription": "Routes workflow into one of several paths based on natural language AI conditions. Describe the intent for each path instead of writing code to classify messages or requests."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Switch Node",
+          "html": "<p>Routes workflow into one of several paths based on natural language AI conditions. Describe the intent for each path instead of writing code to classify messages or requests.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "07469c7ba44182e6",
+      "collection": "tips",
+      "path": "/tips/merge-node/",
+      "title": "Merge Node",
+      "publishedAt": "2026-02-10T23:03:55",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:06:30",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/gitcomparearrows-14ff17d6.svg",
+            "alt": "Merge Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Merge Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/merge-node/",
+        "ogTitle": "Merge Node | Acme",
+        "ogDescription": "Acts as a synchronization point that gathers separate workflow branches back into a single path. Pauses execution until all connected branches finish their tasks."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Merge Node",
+          "html": "<p>Acts as a synchronization point that gathers separate workflow branches back into a single path. Pauses execution until all connected branches finish their tasks.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "51c8eaff38f166fb",
+      "collection": "tips",
+      "path": "/tips/structured-output/",
+      "title": "Structured Output",
+      "publishedAt": "2026-02-10T23:01:49",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T23:01:49",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/material-output-7fe60daa.svg",
+            "alt": "Structured Output"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Structured Output | Acme",
+        "canonicalUrl": "https://acme.example/tips/structured-output/",
+        "ogTitle": "Structured Output | Acme",
+        "ogDescription": "Configure structured output to define how data gets mapped."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Structured Output",
+          "html": "<p>Configure structured output to define how data gets mapped.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "61a744c872848416",
+      "collection": "tips",
+      "path": "/tips/system-vs-user-instructions-in-llm-node/",
+      "title": "System vs User Instructions in LLM Node",
+      "publishedAt": "2026-02-10T22:59:59",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:59:59",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/brain-a7a2d7a5.svg",
+            "alt": "System vs User Instructions in LLM Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "System vs User Instructions in LLM Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/system-vs-user-instructions-in-llm-node/",
+        "ogTitle": "System vs User Instructions in LLM Node | Acme",
+        "ogDescription": "System instructions define the LLM’s role (e.g., validator). User instructions specify what to evaluate and what output to return."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "System vs User Instructions in LLM Node",
+          "html": "<p>System instructions define the LLM&#8217;s role (e.g., validator). User instructions specify what to evaluate and what output to return.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "53412695f5f4fc43",
+      "collection": "tips",
+      "path": "/tips/get-urn-code-for-linkedin-posting/",
+      "title": "Get URN Code for Linkedin Posting",
+      "publishedAt": "2026-02-10T22:53:38",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:59:33",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/material-link-5947e9f7.svg",
+            "alt": "Get URN Code for Linkedin Posting"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Get URN Code for Linkedin Posting | Acme",
+        "canonicalUrl": "https://acme.example/tips/get-urn-code-for-linkedin-posting/",
+        "ogTitle": "Get URN Code for Linkedin Posting | Acme",
+        "ogDescription": "To post in Linkedin, you need to find your URN. Get it with the special node – GET MY INFO. Fo to “Action in App” → Linkedin → GET MY INFO."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Get URN Code for Linkedin Posting",
+          "html": "<p>To post in Linkedin, you need to find your URN. Get it with the special node &#8211; GET MY INFO. Fo to “Action in App” → Linkedin → GET MY INFO.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "f6821ec49235ffac",
+      "collection": "tips",
+      "path": "/tips/variables-are-critical/",
+      "title": "Variables Are Critical",
+      "publishedAt": "2026-02-10T22:46:49",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:53:59",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 3,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/hammer-52fc8f8f.svg",
+            "alt": "Variables Are Critical"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Variables Are Critical | Acme",
+        "canonicalUrl": "https://acme.example/tips/variables-are-critical/",
+        "ogTitle": "Variables Are Critical | Acme",
+        "ogDescription": "If your output appears unstructured and wrapped in {{ }}, it is in JSON format. In many cases, you may want to display plain text instead – adjust the variable input accordingly. If a variable name contains multiple words or spaces, reference it using square brackets with double quotes. If a variable name is a [&hellip;]"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Variables Are Critical",
+          "html": "<p>If your output appears unstructured and wrapped in {{ }}, it is in <strong>JSON format</strong>. In many cases, you may want to display <strong>plain text</strong> instead – adjust the variable input accordingly.<br />\nIf a variable name contains <strong>multiple words or spaces</strong>, reference it using square <strong>brackets with double quotes</strong>.<br />\nIf a variable name is a <strong>single word with no spaces</strong>, reference it using dot notation.</p>\n<h4>For example:</h4>\n<p><strong>Your name:</strong><br />\n{{llm_eating_analyser.structuredOutput[&#8220;Name of thelead&#8221;1}}</p>\n<p><strong>What we will eat in the first course:</strong><br />\n{{llm_eating_analyser.structuredOutput[&#8220;What wewill eat in the first course&#8221;1}}</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "ea1ce4f48344444c",
+      "collection": "tips",
+      "path": "/tips/knowledge-base-3/",
+      "title": "Knowledge Base",
+      "publishedAt": "2026-02-10T22:44:14",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:44:14",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/library-32e55c03.svg",
+            "alt": "Knowledge Base"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Knowledge Base | Acme",
+        "canonicalUrl": "https://acme.example/tips/knowledge-base-3/",
+        "ogTitle": "Knowledge Base | Acme",
+        "ogDescription": "Upload your brand guidelines, pricing docs, and FAQs to the Knowledge Base so your AI agent answers customer questions accurately every time – no more inconsistent responses."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Knowledge Base",
+          "html": "<p>Upload your brand guidelines, pricing docs, and FAQs to the Knowledge Base so your AI agent answers customer questions accurately every time – no more inconsistent responses.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "0db88a26c22dfdd0",
+      "collection": "tips",
+      "path": "/tips/knowledge-base-2/",
+      "title": "Knowledge Base",
+      "publishedAt": "2026-02-10T22:43:56",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:43:56",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/library-32e55c03.svg",
+            "alt": "Knowledge Base"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Knowledge Base | Acme",
+        "canonicalUrl": "https://acme.example/tips/knowledge-base-2/",
+        "ogTitle": "Knowledge Base | Acme",
+        "ogDescription": "Use the “What to Parse” section to tell AI which parts of your documents matter (like product specs) and which to ignore (like headers and footers) – this keeps your agent focused on what’s actually useful."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Knowledge Base",
+          "html": "<p>Use the &#8220;What to Parse&#8221; section to tell AI which parts of your documents matter (like product specs) and which to ignore (like headers and footers) – this keeps your agent focused on what&#8217;s actually useful.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "d6a55fac44c40137",
+      "collection": "tips",
+      "path": "/tips/knowledge-base/",
+      "title": "Knowledge Base",
+      "publishedAt": "2026-02-10T22:42:35",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:42:35",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/library-32e55c03.svg",
+            "alt": "Knowledge Base"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Knowledge Base | Acme",
+        "canonicalUrl": "https://acme.example/tips/knowledge-base/",
+        "ogTitle": "Knowledge Base | Acme",
+        "ogDescription": "Store your ideal customer profile in the Knowledge Base so your AI can qualify leads against your real criteria, not just the data in the form submission."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Knowledge Base",
+          "html": "<p>Store your ideal customer profile in the Knowledge Base so your AI can qualify leads against your real criteria, not just the data in the form submission.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "091f86992c8ec0d5",
+      "collection": "tips",
+      "path": "/tips/recurrent-event-frequency/",
+      "title": "Recurrent Event Frequency",
+      "publishedAt": "2026-02-10T22:41:48",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:41:48",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/clock-527ead5e.svg",
+            "alt": "Recurrent Event Frequency"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Recurrent Event Frequency | Acme",
+        "canonicalUrl": "https://acme.example/tips/recurrent-event-frequency/",
+        "ogTitle": "Recurrent Event Frequency | Acme",
+        "ogDescription": "Choose how often you want the event to be triggered: daily, hourly, weekly, monthly, or every X minutes."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Recurrent Event Frequency",
+          "html": "<p>Choose how often you want the event to be triggered: daily, hourly, weekly, monthly, or every X minutes.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "2402f976329c12ea",
+      "collection": "tips",
+      "path": "/tips/ai-custom-event/",
+      "title": "AI Custom Event",
+      "publishedAt": "2026-02-10T22:40:48",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:40:48",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/lightbulb-f1c4a3b3.svg",
+            "alt": "AI Custom Event"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "AI Custom Event | Acme",
+        "canonicalUrl": "https://acme.example/tips/ai-custom-event/",
+        "ogTitle": "AI Custom Event | Acme",
+        "ogDescription": "Choose which events should AI trigger or select “Auto-detect with AI”."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "AI Custom Event",
+          "html": "<p>Choose which events should AI trigger or select “Auto-detect with AI”.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "3eca325bc0223d21",
+      "collection": "tips",
+      "path": "/tips/event-from-app-notion/",
+      "title": "Event from App – Notion",
+      "publishedAt": "2026-02-10T22:39:19",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:39:19",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/notion-da41e5aa.svg",
+            "alt": "Event from App – Notion"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Event from App - Notion | Acme",
+        "canonicalUrl": "https://acme.example/tips/event-from-app-notion/",
+        "ogTitle": "Event from App - Notion | Acme",
+        "ogDescription": "Choose new page trigger when you want the vent to start when a new page is created or an existing page is updated in your Notion workspace."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Event from App – Notion",
+          "html": "<p>Choose new page trigger when you want the vent to start when a new page is created or an existing page is updated in your Notion workspace.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "199fb283acd01de5",
+      "collection": "tips",
+      "path": "/tips/llm-node/",
+      "title": "LLM Node",
+      "publishedAt": "2026-02-10T22:38:32",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:38:32",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/brain-a7a2d7a5.svg",
+            "alt": "LLM Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "LLM Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/llm-node/",
+        "ogTitle": "LLM Node | Acme",
+        "ogDescription": "Choose the model which corresponds to the logic of your workflow. If you are generating texts with the LLM – choose contextual model. For example, OpenAI: GPT-5.2. If you are generating visuals – choose OpenAI: GPT-5.1 or Nano Banana Pro, Gemini Pro models."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "LLM Node",
+          "html": "<p>Choose the model which corresponds to the logic of your workflow. If you are generating texts with the LLM &#8211; choose contextual model. For example, OpenAI: GPT-5.2. If you are generating visuals – choose OpenAI: GPT-5.1 or Nano Banana Pro, Gemini Pro models.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "6c143392743dabcc",
+      "collection": "tips",
+      "path": "/tips/sleep-node/",
+      "title": "Sleep Node",
+      "publishedAt": "2026-02-10T22:36:58",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:36:58",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/clock-527ead5e.svg",
+            "alt": "Sleep Node"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Sleep Node | Acme",
+        "canonicalUrl": "https://acme.example/tips/sleep-node/",
+        "ogTitle": "Sleep Node | Acme",
+        "ogDescription": "Choose the Sleep Node when you need to pause your workflow for a certain period before continuing."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Sleep Node",
+          "html": "<p>Choose the Sleep Node when you need to pause your workflow for a certain period before continuing.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "d62459487a63fcdb",
+      "collection": "tips",
+      "path": "/tips/sleep-node-parameters/",
+      "title": "Sleep Node Parameters",
+      "publishedAt": "2026-02-10T22:34:29",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:35:55",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/clock-527ead5e.svg",
+            "alt": "Sleep Node Parameters"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Sleep Node Parameters | Acme",
+        "canonicalUrl": "https://acme.example/tips/sleep-node-parameters/",
+        "ogTitle": "Sleep Node Parameters | Acme",
+        "ogDescription": "Enter how many seconds the workflow should wait. You can use a variable like {{previous_step.delay}} or a fixed number."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Sleep Node Parameters",
+          "html": "<p>Enter how many seconds the workflow should wait. You can use a variable like <strong>{{previous_step.delay}}</strong> or a fixed number.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "bb45ae5b375349ef",
+      "collection": "tips",
+      "path": "/tips/webhook-parameters/",
+      "title": "Webhook Parameters",
+      "publishedAt": "2026-02-10T22:27:50",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:53",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/webhook-a3be2d94.svg",
+            "alt": "Webhook Parameters"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Webhook Parameters | Acme",
+        "canonicalUrl": "https://acme.example/tips/webhook-parameters/",
+        "ogTitle": "Webhook Parameters | Acme",
+        "ogDescription": "After deploying your app, copy the generated Webhook URL and add it to your external service. The webhook accepts any HTTP method and automatically captures headers, body, and query parameters. Each execution generates a unique URL."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Webhook Parameters",
+          "html": "<p>After deploying your app, copy the generated Webhook URL and add it to your external service. The webhook accepts any HTTP method and automatically captures headers, body, and query parameters. Each execution generates a unique URL.</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "52909c126691f5ff",
+      "collection": "tips",
+      "path": "/tips/http-node-get/",
+      "title": "HTTP Node: GET",
+      "publishedAt": "2026-02-10T22:26:31",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:45",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: GET"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: GET | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-get/",
+        "ogTitle": "HTTP Node: GET | Acme",
+        "ogDescription": "Purpose: Retrieve data What it does: Requests information from a server Example: Get a user profile, fetch a list of orders, read data"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: GET",
+          "html": "<p><strong>Purpose:</strong> Retrieve data</p>\n<p><strong>What it does:</strong> Requests information from a server</p>\n<p><strong>Example:</strong> Get a user profile, fetch a list of orders, read data</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "9ae72de727c3224a",
+      "collection": "tips",
+      "path": "/tips/http-node-post/",
+      "title": "HTTP Node: POST",
+      "publishedAt": "2026-02-10T22:25:50",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:38",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: POST"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: POST | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-post/",
+        "ogTitle": "HTTP Node: POST | Acme",
+        "ogDescription": "Purpose: Create or trigger something What it does: Sends data to the server to create a new resource or start an action Example: Create a user, submit a form, trigger a workflow, send a webhook event"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: POST",
+          "html": "<p><strong>Purpose:</strong> Create or trigger something</p>\n<p><strong>What it does:</strong> Sends data to the server to create a new resource or start an action</p>\n<p><strong>Example:</strong> Create a user, submit a form, trigger a workflow, send a webhook event</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "7638cfaa4cb15ef4",
+      "collection": "tips",
+      "path": "/tips/http-node-patch-2/",
+      "title": "HTTP Node: PATCH",
+      "publishedAt": "2026-02-10T22:25:01",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:31",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: PATCH"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: PATCH | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-patch-2/",
+        "ogTitle": "HTTP Node: PATCH | Acme",
+        "ogDescription": "Purpose: Replace a resource entirely What it does: Updates an existing resource by overwriting it Example: Replace a user profile with a new full version"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: PATCH",
+          "html": "<p><strong>Purpose:</strong> Replace a resource entirely</p>\n<p><strong>What it does:</strong> Updates an existing resource by overwriting it</p>\n<p><strong>Example:</strong> Replace a user profile with a new full version</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "7221dc921389f2c6",
+      "collection": "tips",
+      "path": "/tips/http-node-patch/",
+      "title": "HTTP Node: PATCH",
+      "publishedAt": "2026-02-10T22:23:53",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:23",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: PATCH"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: PATCH | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-patch/",
+        "ogTitle": "HTTP Node: PATCH | Acme",
+        "ogDescription": "Purpose: Update part of a resource What it does: Modifies only specific fields Example: Update just an email address or status field"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: PATCH",
+          "html": "<p><strong>Purpose:</strong> Update part of a resource</p>\n<p><strong>What it does:</strong> Modifies only specific fields</p>\n<p><strong>Example:</strong> Update just an email address or status field</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "11e99763380a2372",
+      "collection": "tips",
+      "path": "/tips/http-node-delete/",
+      "title": "HTTP Node: DELETE",
+      "publishedAt": "2026-02-10T22:22:50",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:15",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: DELETE"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: DELETE | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-delete/",
+        "ogTitle": "HTTP Node: DELETE | Acme",
+        "ogDescription": "Purpose: Remove a resource What it does: Deletes data on the server Example: Delete a user, remove a record, cancel a resource"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: DELETE",
+          "html": "<p><strong>Purpose:</strong> Remove a resource</p>\n<p><strong>What it does:</strong> Deletes data on the server</p>\n<p><strong>Example:</strong> Delete a user, remove a record, cancel a resource</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "fa5c728e26367beb",
+      "collection": "tips",
+      "path": "/tips/http-node-cheatsheet/",
+      "title": "HTTP Node. CheatSheet",
+      "publishedAt": "2026-02-10T22:20:12",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:32:07",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 2,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node. CheatSheet"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node. CheatSheet | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-cheatsheet/",
+        "ogTitle": "HTTP Node. CheatSheet | Acme",
+        "ogDescription": "Read data: GET Create / trigger: POST Replace fully: PUT Update partially: PATCH Delete: DELETE Check only headers: HEAD Ask “what can I do here?”: OPTIONS"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node. CheatSheet",
+          "html": "<p><strong>Read data:</strong> GET</p>\n<p><strong>Create / trigger:</strong> POST</p>\n<p><strong>Replace fully:</strong> PUT</p>\n<p><strong>Update partially:</strong> PATCH</p>\n<p><strong>Delete:</strong> DELETE</p>\n<p><strong>Check only headers:</strong> HEAD</p>\n<p><strong>Ask “what can I do here?”:</strong> OPTIONS</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "75b49b7c6fa41869",
+      "collection": "tips",
+      "path": "/tips/http-node-head/",
+      "title": "HTTP Node: HEAD",
+      "publishedAt": "2026-02-10T22:18:35",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:31:40",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: HEAD"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: HEAD | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-head/",
+        "ogTitle": "HTTP Node: HEAD | Acme",
+        "ogDescription": "Purpose: Check metadata only What it does: Same as GET but without a response body Example: Check if a resource exists, validate headers, test availability"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: HEAD",
+          "html": "<p><strong>Purpose:</strong> Check metadata only</p>\n<p><strong>What it does:</strong> Same as GET but without a response body</p>\n<p><strong>Example:</strong> Check if a resource exists, validate headers, test availability</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "afe5ae2991f359c8",
+      "collection": "tips",
+      "path": "/tips/http-node-options/",
+      "title": "HTTP Node: OPTIONS",
+      "publishedAt": "2026-02-10T22:17:41",
+      "articleMeta": {
+        "category": "Applications",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:31:30",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Applications",
+        "archiveWidth": 1,
+        "icons": [
+          {
+            "src": "/assets/templates/tips/earth-fc1f9373.svg",
+            "alt": "HTTP Node: OPTIONS"
+          }
+        ]
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "HTTP Node: OPTIONS | Acme",
+        "canonicalUrl": "https://acme.example/tips/http-node-options/",
+        "ogTitle": "HTTP Node: OPTIONS | Acme",
+        "ogDescription": "Purpose: Discover server capabilities What it does: Returns which HTTP methods are allowed Example: Used by browsers for CORS checks or API introspection"
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "HTTP Node: OPTIONS",
+          "html": "<p><strong>Purpose:</strong> Discover server capabilities</p>\n<p><strong>What it does:</strong> Returns which HTTP methods are allowed</p>\n<p><strong>Example:</strong> Used by browsers for CORS checks or API introspection</p>"
+        }
+      ]
+    },
+    {
+      "contentKey": "41d4e3623fc1977a",
+      "collection": "tips",
+      "path": "/tips/node-colors-indicate-status/",
+      "title": "Node Colors Indicate Status",
+      "publishedAt": "2026-02-10T22:15:47",
+      "articleMeta": {
+        "category": "Knowledge Base",
+        "tags": [],
+        "updatedAt": "2026-02-10T22:31:09",
+        "showTableOfContents": true,
+        "showTableOfContentsTitle": false,
+        "tableOfContentsTitle": "Contents"
+      },
+      "tipCard": {
+        "category": "Knowledge Base",
+        "archiveWidth": 1,
+        "icons": []
+      },
+      "status": "published",
+      "template": "tip",
+      "seo": {
+        "metaTitle": "Node Colors Indicate Status | Acme",
+        "canonicalUrl": "https://acme.example/tips/node-colors-indicate-status/",
+        "ogTitle": "Node Colors Indicate Status | Acme",
+        "ogDescription": "Gray means inactive, green means executed successfully, red means error – color coding shows exactly where workflows break."
+      },
+      "blocks": [
+        {
+          "type": "rich-text",
+          "title": "Node Colors Indicate Status",
+          "html": "<p><span>Gray means inactive, green means executed successfully, red means error – color coding shows exactly where workflows break.</span></p>"
+        }
+      ]
+    }
+  ]
+}

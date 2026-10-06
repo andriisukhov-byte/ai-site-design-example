@@ -1,0 +1,4339 @@
+{
+  "generatedAt": "2026-07-23T23:48:28.854Z",
+  "source": {
+    "dumpFile": "acmeai_main-2026-07-23-23-14-51.sql",
+    "dumpSha256": "c52de3479b05412eb1751b6cd5fb58f87f7ffcd6666f6e5ce4e19716759227f7",
+    "themeBlocksDir": "D:/wamp/www/acme/wp-content/themes/acme/template-parts/blocks"
+  },
+  "totals": {
+    "tables": 35,
+    "themeBlocks": 40,
+    "sourceBlocksUsed": 40
+  },
+  "inventoryScope": {
+    "sourceDocumentKinds": [
+      "page",
+      "post",
+      "guide",
+      "tip",
+      "news"
+    ],
+    "sourceDocumentStatuses": [
+      "publish",
+      "draft",
+      "future",
+      "pending",
+      "private"
+    ],
+    "excludes": [
+      "revision",
+      "attachment",
+      "form definitions",
+      "navigation",
+      "field definitions"
+    ]
+  },
+  "tables": [
+    "wp_blc_filters",
+    "wp_blc_instances",
+    "wp_blc_links",
+    "wp_blc_synch",
+    "wp_ilj_linkindex",
+    "wp_links",
+    "wp_litespeed_url",
+    "wp_litespeed_url_file",
+    "wp_llms_txt_cache",
+    "wp_postmeta",
+    "wp_posts",
+    "wp_redirects",
+    "wp_term_relationships",
+    "wp_term_taxonomy",
+    "wp_termmeta",
+    "wp_terms",
+    "wp_yoast_expiring_store",
+    "wp_yoast_indexable",
+    "wp_yoast_indexable_hierarchy",
+    "wp_yoast_migrations",
+    "wp_yoast_primary_term",
+    "wp_yoast_seo_links"
+  ],
+  "excludedTableDetails": {
+    "count": 13,
+    "reason": "Sensitive or operational tables are intentionally omitted from committed inventory details."
+  },
+  "rowCounts": {
+    "wp_postmeta": 1368383,
+    "wp_posts": 7720,
+    "wp_term_relationships": 340,
+    "wp_term_taxonomy": 50,
+    "wp_terms": 50,
+    "wp_yoast_indexable": 426
+  },
+  "postTypes": {
+    "page": 163,
+    "wp_navigation": 1,
+    "wp_global_styles": 2,
+    "wp_template": 1,
+    "revision": 3086,
+    "wpcf7_contact_form": 9,
+    "acf-field-group": 25,
+    "acf-field": 1754,
+    "attachment": 2418,
+    "wpcf7r_action": 8,
+    "nav_menu_item": 43,
+    "post": 50,
+    "llms_txt": 1,
+    "guide": 42,
+    "tip": 86,
+    "faq_item": 19,
+    "wp_block": 1,
+    "news": 8,
+    "customize_changeset": 1,
+    "oembed_cache": 1,
+    "request": 1
+  },
+  "postStatuses": {
+    "publish": 2161,
+    "inherit": 5504,
+    "draft": 11,
+    "private": 10,
+    "trash": 28,
+    "parse": 1,
+    "auto-draft": 5
+  },
+  "documentTypeStatuses": {
+    "page": {
+      "publish": 152,
+      "draft": 9,
+      "private": 2
+    },
+    "wp_navigation": {
+      "publish": 1
+    },
+    "wp_global_styles": {
+      "publish": 2
+    },
+    "wp_template": {
+      "publish": 1
+    },
+    "revision": {
+      "inherit": 3086
+    },
+    "wpcf7_contact_form": {
+      "publish": 9
+    },
+    "acf-field-group": {
+      "publish": 25
+    },
+    "acf-field": {
+      "publish": 1754
+    },
+    "attachment": {
+      "inherit": 2418
+    },
+    "wpcf7r_action": {
+      "private": 8
+    },
+    "nav_menu_item": {
+      "publish": 43
+    },
+    "post": {
+      "publish": 45,
+      "auto-draft": 5
+    },
+    "llms_txt": {
+      "publish": 1
+    },
+    "guide": {
+      "publish": 40,
+      "draft": 2
+    },
+    "tip": {
+      "publish": 58,
+      "trash": 28
+    },
+    "faq_item": {
+      "publish": 19
+    },
+    "wp_block": {
+      "publish": 1
+    },
+    "news": {
+      "publish": 8
+    },
+    "customize_changeset": {
+      "publish": 1
+    },
+    "oembed_cache": {
+      "publish": 1
+    },
+    "request": {
+      "parse": 1
+    }
+  },
+  "sourceBlocks": {
+    "side-by-side": {
+      "count": 285,
+      "documents": 50,
+      "fieldCounts": {
+        "background": 285,
+        "section_eyebrow": 285,
+        "section_title": 285,
+        "section_subtitle": 285,
+        "image_side": 285,
+        "image": 285,
+        "card_title": 285,
+        "card_subtitle": 285,
+        "card_description": 285,
+        "bullets": 285,
+        "small_icons": 285,
+        "small_icons_overflow": 285,
+        "primary_button": 285,
+        "secondary_button": 285,
+        "card_note": 285,
+        "bottom_cards_0_title": 15,
+        "bottom_cards_0_items_0_icon": 15,
+        "bottom_cards_0_items_0_title": 15,
+        "bottom_cards_0_items_0_description": 15,
+        "bottom_cards_0_items_1_icon": 15,
+        "bottom_cards_0_items_1_title": 15,
+        "bottom_cards_0_items_1_description": 15,
+        "bottom_cards_0_items_2_icon": 15,
+        "bottom_cards_0_items_2_title": 15,
+        "bottom_cards_0_items_2_description": 15,
+        "bottom_cards_0_items_3_icon": 15,
+        "bottom_cards_0_items_3_title": 15,
+        "bottom_cards_0_items_3_description": 15,
+        "bottom_cards_0_items": 15,
+        "bottom_cards_1_title": 15,
+        "bottom_cards_1_items_0_icon": 15,
+        "bottom_cards_1_items_0_title": 15,
+        "bottom_cards_1_items_0_description": 15,
+        "bottom_cards_1_items_1_icon": 15,
+        "bottom_cards_1_items_1_title": 15,
+        "bottom_cards_1_items_1_description": 15,
+        "bottom_cards_1_items_2_icon": 15,
+        "bottom_cards_1_items_2_title": 15,
+        "bottom_cards_1_items_2_description": 15,
+        "bottom_cards_1_items_3_icon": 12,
+        "bottom_cards_1_items_3_title": 12,
+        "bottom_cards_1_items_3_description": 12,
+        "bottom_cards_1_items": 15,
+        "bottom_cards": 285,
+        "bottom_cards_2_title": 3,
+        "bottom_cards_2_items_0_icon": 3,
+        "bottom_cards_2_items_0_title": 3,
+        "bottom_cards_2_items_0_description": 3,
+        "bottom_cards_2_items_1_icon": 3,
+        "bottom_cards_2_items_1_title": 3,
+        "bottom_cards_2_items_1_description": 3,
+        "bottom_cards_2_items_2_icon": 3,
+        "bottom_cards_2_items_2_title": 3,
+        "bottom_cards_2_items_2_description": 3,
+        "bottom_cards_2_items_3_icon": 3,
+        "bottom_cards_2_items_3_title": 3,
+        "bottom_cards_2_items_3_description": 3,
+        "bottom_cards_2_items": 3,
+        "bullets_0_text": 84,
+        "bullets_0_description": 84,
+        "bullets_1_text": 84,
+        "bullets_1_description": 84,
+        "bullets_2_text": 84,
+        "bullets_2_description": 84,
+        "bullets_3_text": 79,
+        "bullets_3_description": 79,
+        "bullets_4_text": 19,
+        "bullets_4_description": 19,
+        "bullets_5_text": 6,
+        "bullets_5_description": 6,
+        "small_icons_0_image": 26,
+        "small_icons_1_image": 26,
+        "small_icons_2_image": 21,
+        "small_icons_3_image": 16,
+        "small_icons_4_image": 12,
+        "small_icons_5_image": 7,
+        "small_icons_6_image": 7
+      },
+      "sampleTitles": [
+        "Features",
+        "Features",
+        "Features",
+        "Features",
+        "Features"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 24
+    },
+    "faq": {
+      "count": 90,
+      "documents": 90,
+      "fieldCounts": {
+        "title": 26,
+        "title_gradient": 26,
+        "search_placeholder": 23,
+        "source": 85,
+        "manual_items_0_category": 78,
+        "manual_items_0_question": 78,
+        "manual_items_0_answer": 78,
+        "manual_items_1_category": 78,
+        "manual_items_1_question": 78,
+        "manual_items_1_answer": 78,
+        "manual_items_2_category": 78,
+        "manual_items_2_question": 78,
+        "manual_items_2_answer": 78,
+        "manual_items_3_category": 78,
+        "manual_items_3_question": 78,
+        "manual_items_3_answer": 78,
+        "manual_items": 78,
+        "manual_items_4_category": 71,
+        "manual_items_4_question": 71,
+        "manual_items_4_answer": 71,
+        "manual_items_5_category": 58,
+        "manual_items_5_question": 58,
+        "manual_items_5_answer": 58,
+        "manual_items_6_category": 23,
+        "manual_items_6_question": 23,
+        "manual_items_6_answer": 23,
+        "manual_items_7_category": 16,
+        "manual_items_7_question": 16,
+        "manual_items_7_answer": 16,
+        "manual_items_8_category": 8,
+        "manual_items_8_question": 8,
+        "manual_items_8_answer": 8,
+        "per_page": 3,
+        "manual_items_9_category": 4,
+        "manual_items_9_question": 4,
+        "manual_items_9_answer": 4
+      },
+      "sampleTitles": [
+        "Pricing",
+        "Customer Service AI Agent",
+        "AI Marketing Agent",
+        "Call Center Automation",
+        "Autonomous AI"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 8
+    },
+    "hero": {
+      "count": 90,
+      "documents": 90,
+      "fieldCounts": {
+        "eyebrow": 90,
+        "title": 90,
+        "description": 90,
+        "primary_button": 90,
+        "secondary_button": 90,
+        "primary_note": 90,
+        "secondary_note": 90,
+        "tooltip_label": 90,
+        "tooltip_action": 90,
+        "tooltip_title": 90,
+        "tooltip_content": 90
+      },
+      "sampleTitles": [
+        "About",
+        "Thanks Page",
+        "Pricing",
+        "Customer Service AI Agent",
+        "Features"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 11
+    },
+    "news-insights": {
+      "count": 85,
+      "documents": 85,
+      "fieldCounts": {
+        "title": 85,
+        "posts_count": 85,
+        "subtitle": 24
+      },
+      "sampleTitles": [
+        "Pricing",
+        "Customer Service AI Agent",
+        "Features",
+        "AI Marketing Agent",
+        "Call Center Automation"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 3
+    },
+    "cta": {
+      "count": 83,
+      "documents": 78,
+      "fieldCounts": {
+        "eyebrow": 83,
+        "title": 83,
+        "description": 83,
+        "primary_button": 83,
+        "secondary_button": 83
+      },
+      "sampleTitles": [
+        "About",
+        "Pricing",
+        "Features",
+        "Features",
+        "Features"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 5
+    },
+    "security": {
+      "count": 75,
+      "documents": 60,
+      "fieldCounts": {
+        "background": 64,
+        "title": 75,
+        "title_gradient": 75,
+        "subtitle": 71,
+        "cards_0_icon": 75,
+        "cards_0_custom_icon": 66,
+        "cards_0_title": 75,
+        "cards_0_description": 75,
+        "cards_1_icon": 75,
+        "cards_1_custom_icon": 66,
+        "cards_1_title": 75,
+        "cards_1_description": 75,
+        "cards_2_icon": 75,
+        "cards_2_custom_icon": 66,
+        "cards_2_title": 75,
+        "cards_2_description": 75,
+        "cards_3_icon": 69,
+        "cards_3_custom_icon": 60,
+        "cards_3_title": 69,
+        "cards_3_description": 69,
+        "cards": 75,
+        "cards_4_icon": 31,
+        "cards_4_title": 31,
+        "cards_4_description": 31,
+        "cards_4_custom_icon": 31,
+        "cards_5_icon": 15,
+        "cards_5_title": 15,
+        "cards_5_description": 15,
+        "cards_5_custom_icon": 15
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "AI Marketing Agent",
+        "Call Center Automation",
+        "Autonomous AI",
+        "AI ERP Automation"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 9
+    },
+    "feature-grid": {
+      "count": 65,
+      "documents": 37,
+      "fieldCounts": {
+        "eyebrow": 65,
+        "title": 65,
+        "description": 65,
+        "background": 65,
+        "columns": 65,
+        "cards_0_icon": 65,
+        "cards_0_title": 65,
+        "cards_0_description": 65,
+        "cards_1_icon": 65,
+        "cards_1_title": 65,
+        "cards_1_description": 65,
+        "cards_2_icon": 65,
+        "cards_2_title": 65,
+        "cards_2_description": 65,
+        "cards_3_icon": 62,
+        "cards_3_title": 62,
+        "cards_3_description": 62,
+        "cards_4_icon": 21,
+        "cards_4_title": 21,
+        "cards_4_description": 21,
+        "cards_5_icon": 19,
+        "cards_5_title": 19,
+        "cards_5_description": 19,
+        "cards": 65,
+        "cards_6_icon": 4,
+        "cards_6_title": 4,
+        "cards_6_description": 4,
+        "cards_7_icon": 4,
+        "cards_7_title": 4,
+        "cards_7_description": 4,
+        "cards_0_custom_icon": 59,
+        "cards_1_custom_icon": 59,
+        "cards_2_custom_icon": 59,
+        "cards_3_custom_icon": 57,
+        "cards_4_custom_icon": 16,
+        "cards_5_custom_icon": 15,
+        "cards_6_custom_icon": 3,
+        "cards_7_custom_icon": 3,
+        "cards_8_icon": 3,
+        "cards_8_custom_icon": 3,
+        "cards_8_title": 3,
+        "cards_8_description": 3,
+        "cards_9_icon": 3,
+        "cards_9_custom_icon": 3,
+        "cards_9_title": 3,
+        "cards_9_description": 3,
+        "cards_10_icon": 3,
+        "cards_10_custom_icon": 3,
+        "cards_10_title": 3,
+        "cards_10_description": 3,
+        "cards_11_icon": 3,
+        "cards_11_custom_icon": 3,
+        "cards_11_title": 3,
+        "cards_11_description": 3,
+        "cards_12_icon": 3,
+        "cards_12_custom_icon": 3,
+        "cards_12_title": 3,
+        "cards_12_description": 3,
+        "cards_13_icon": 3,
+        "cards_13_custom_icon": 3,
+        "cards_13_title": 3,
+        "cards_13_description": 3,
+        "cards_14_icon": 1,
+        "cards_14_custom_icon": 1,
+        "cards_14_title": 1,
+        "cards_14_description": 1
+      },
+      "sampleTitles": [
+        "About",
+        "About",
+        "Features",
+        "AI Marketing Agent",
+        "Autonomous AI"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 10
+    },
+    "how-it-works": {
+      "count": 54,
+      "documents": 53,
+      "fieldCounts": {
+        "background": 54,
+        "eyebrow": 53,
+        "title": 54,
+        "gradient_text": 54,
+        "subtitle": 54,
+        "button": 54,
+        "info_note": 52,
+        "steps_0_title": 54,
+        "steps_0_description": 54,
+        "steps_0_label": 54,
+        "steps_1_title": 54,
+        "steps_1_description": 54,
+        "steps_1_label": 54,
+        "steps_2_title": 54,
+        "steps_2_description": 54,
+        "steps_2_label": 54,
+        "steps_3_title": 38,
+        "steps_3_description": 38,
+        "steps_3_label": 38,
+        "steps": 54,
+        "closed_by_default": 5,
+        "open_first": 6
+      },
+      "sampleTitles": [
+        "About",
+        "Customer Service AI Agent",
+        "AI Marketing Agent",
+        "Call Center Automation",
+        "AI ERP Automation"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 12
+    },
+    "integrations-banner": {
+      "count": 34,
+      "documents": 34,
+      "fieldCounts": {
+        "title": 34,
+        "description": 34,
+        "items": 34
+      },
+      "sampleTitles": [
+        "AI Marketing Agent",
+        "Autonomous AI",
+        "Multi-Agent Collaboration",
+        "Magic Window Coordination",
+        "Acme Canvas/AcmeApps"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 5
+    },
+    "pricing-details": {
+      "count": 27,
+      "documents": 19,
+      "fieldCounts": {
+        "background": 27,
+        "title": 27,
+        "info": 27,
+        "headers_0_text": 26,
+        "headers_1_text": 26,
+        "headers_2_text": 26,
+        "headers": 27,
+        "rows_0_cells_0_text": 26,
+        "rows_0_cells_0_modifiers": 26,
+        "rows_0_cells_1_text": 26,
+        "rows_0_cells_1_modifiers": 26,
+        "rows_0_cells_2_text": 26,
+        "rows_0_cells_2_modifiers": 26,
+        "rows_0_cells": 26,
+        "rows_1_cells_0_text": 26,
+        "rows_1_cells_0_modifiers": 26,
+        "rows_1_cells_1_text": 26,
+        "rows_1_cells_1_modifiers": 26,
+        "rows_1_cells_2_text": 26,
+        "rows_1_cells_2_modifiers": 26,
+        "rows_1_cells": 26,
+        "rows_2_cells_0_text": 25,
+        "rows_2_cells_0_modifiers": 25,
+        "rows_2_cells_1_text": 25,
+        "rows_2_cells_1_modifiers": 25,
+        "rows_2_cells_2_text": 25,
+        "rows_2_cells_2_modifiers": 25,
+        "rows_2_cells": 25,
+        "rows": 27,
+        "note": 27,
+        "rows_3_cells_0_text": 18,
+        "rows_3_cells_0_modifiers": 18,
+        "rows_3_cells_1_text": 18,
+        "rows_3_cells_1_modifiers": 18,
+        "rows_3_cells_2_text": 18,
+        "rows_3_cells_2_modifiers": 18,
+        "rows_3_cells": 18,
+        "rows_4_cells_0_text": 18,
+        "rows_4_cells_0_modifiers": 18,
+        "rows_4_cells_1_text": 18,
+        "rows_4_cells_1_modifiers": 18,
+        "rows_4_cells_2_text": 18,
+        "rows_4_cells_2_modifiers": 18,
+        "rows_4_cells": 18,
+        "rows_5_cells_0_text": 18,
+        "rows_5_cells_0_modifiers": 18,
+        "rows_5_cells_1_text": 18,
+        "rows_5_cells_1_modifiers": 18,
+        "rows_5_cells_2_text": 18,
+        "rows_5_cells_2_modifiers": 18,
+        "rows_5_cells": 18,
+        "rows_6_cells_0_text": 18,
+        "rows_6_cells_0_modifiers": 18,
+        "rows_6_cells_1_text": 18,
+        "rows_6_cells_1_modifiers": 18,
+        "rows_6_cells_2_text": 18,
+        "rows_6_cells_2_modifiers": 18,
+        "rows_6_cells": 18,
+        "rows_7_cells_0_text": 16,
+        "rows_7_cells_0_modifiers": 16,
+        "rows_7_cells_1_text": 16,
+        "rows_7_cells_1_modifiers": 16,
+        "rows_7_cells_2_text": 16,
+        "rows_7_cells_2_modifiers": 16,
+        "rows_7_cells": 16,
+        "rows_8_cells_0_text": 13,
+        "rows_8_cells_0_modifiers": 13,
+        "rows_8_cells_1_text": 13,
+        "rows_8_cells_1_modifiers": 13,
+        "rows_8_cells_2_text": 13,
+        "rows_8_cells_2_modifiers": 13,
+        "rows_8_cells": 13,
+        "rows_9_cells_0_text": 9,
+        "rows_9_cells_0_modifiers": 9,
+        "rows_9_cells_1_text": 9,
+        "rows_9_cells_1_modifiers": 9,
+        "rows_9_cells_2_text": 9,
+        "rows_9_cells_2_modifiers": 9,
+        "rows_9_cells": 9,
+        "rows_10_cells_0_text": 6,
+        "rows_10_cells_0_modifiers": 6,
+        "rows_10_cells_1_text": 6,
+        "rows_10_cells_1_modifiers": 6,
+        "rows_10_cells_2_text": 6,
+        "rows_10_cells_2_modifiers": 6,
+        "rows_10_cells": 6,
+        "rows_11_cells_0_text": 5,
+        "rows_11_cells_0_modifiers": 5,
+        "rows_11_cells_1_text": 5,
+        "rows_11_cells_1_modifiers": 5,
+        "rows_11_cells_2_text": 5,
+        "rows_11_cells_2_modifiers": 5,
+        "rows_11_cells": 5,
+        "rows_12_cells_0_text": 5,
+        "rows_12_cells_0_modifiers": 5,
+        "rows_12_cells_1_text": 5,
+        "rows_12_cells_1_modifiers": 5,
+        "rows_12_cells_2_text": 5,
+        "rows_12_cells_2_modifiers": 5,
+        "rows_12_cells": 5,
+        "rows_13_cells_0_text": 3,
+        "rows_13_cells_0_modifiers": 3,
+        "rows_13_cells_1_text": 3,
+        "rows_13_cells_1_modifiers": 3,
+        "rows_13_cells_2_text": 3,
+        "rows_13_cells_2_modifiers": 3,
+        "rows_13_cells": 3,
+        "rows_14_cells_0_text": 2,
+        "rows_14_cells_0_modifiers": 2,
+        "rows_14_cells_1_text": 2,
+        "rows_14_cells_1_modifiers": 2,
+        "rows_14_cells_2_text": 2,
+        "rows_14_cells_2_modifiers": 2,
+        "rows_14_cells": 2,
+        "rows_15_cells_0_text": 2,
+        "rows_15_cells_0_modifiers": 2,
+        "rows_15_cells_1_text": 2,
+        "rows_15_cells_1_modifiers": 2,
+        "rows_15_cells_2_text": 2,
+        "rows_15_cells_2_modifiers": 2,
+        "rows_15_cells": 2,
+        "rows_16_cells_0_text": 2,
+        "rows_16_cells_0_modifiers": 2,
+        "rows_16_cells_1_text": 2,
+        "rows_16_cells_1_modifiers": 2,
+        "rows_16_cells_2_text": 2,
+        "rows_16_cells_2_modifiers": 2,
+        "rows_16_cells": 2,
+        "rows_17_cells_0_text": 2,
+        "rows_17_cells_0_modifiers": 2,
+        "rows_17_cells_1_text": 2,
+        "rows_17_cells_1_modifiers": 2,
+        "rows_17_cells_2_text": 2,
+        "rows_17_cells_2_modifiers": 2,
+        "rows_17_cells": 2,
+        "rows_18_cells_0_text": 2,
+        "rows_18_cells_0_modifiers": 2,
+        "rows_18_cells_1_text": 2,
+        "rows_18_cells_1_modifiers": 2,
+        "rows_18_cells_2_text": 2,
+        "rows_18_cells_2_modifiers": 2,
+        "rows_18_cells": 2,
+        "rows_19_cells_0_text": 2,
+        "rows_19_cells_0_modifiers": 2,
+        "rows_19_cells_1_text": 2,
+        "rows_19_cells_1_modifiers": 2,
+        "rows_19_cells_2_text": 2,
+        "rows_19_cells_2_modifiers": 2,
+        "rows_19_cells": 2,
+        "rows_20_cells_0_text": 2,
+        "rows_20_cells_0_modifiers": 2,
+        "rows_20_cells_1_text": 2,
+        "rows_20_cells_1_modifiers": 2,
+        "rows_20_cells_2_text": 2,
+        "rows_20_cells_2_modifiers": 2,
+        "rows_20_cells": 2,
+        "rows_21_cells_0_text": 2,
+        "rows_21_cells_0_modifiers": 2,
+        "rows_21_cells_1_text": 2,
+        "rows_21_cells_1_modifiers": 2,
+        "rows_21_cells_2_text": 2,
+        "rows_21_cells_2_modifiers": 2,
+        "rows_21_cells": 2,
+        "variant": 3
+      },
+      "sampleTitles": [
+        "Pricing",
+        "Pricing",
+        "Pricing",
+        "Pricing",
+        "Pricing"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 11
+    },
+    "stats-cards": {
+      "count": 24,
+      "documents": 24,
+      "fieldCounts": {
+        "background": 24,
+        "title": 24,
+        "subtitle": 24,
+        "items_0_icon": 24,
+        "items_0_heading": 24,
+        "items_0_value": 24,
+        "items_0_label": 24,
+        "items_1_icon": 24,
+        "items_1_heading": 24,
+        "items_1_value": 24,
+        "items_1_label": 24,
+        "items_2_icon": 24,
+        "items_2_heading": 24,
+        "items_2_value": 24,
+        "items_2_label": 24,
+        "items_3_icon": 24,
+        "items_3_heading": 24,
+        "items_3_value": 24,
+        "items_3_label": 24,
+        "items_4_icon": 5,
+        "items_4_heading": 5,
+        "items_4_value": 5,
+        "items_4_label": 5,
+        "items": 24
+      },
+      "sampleTitles": [
+        "AI Marketing Agent",
+        "Autonomous AI",
+        "AI ERP Automation",
+        "Multi-Agent Collaboration",
+        "Magic Window Coordination"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 8
+    },
+    "pricing-cards": {
+      "count": 22,
+      "documents": 22,
+      "fieldCounts": {
+        "source": 5,
+        "background": 22,
+        "eyebrow": 20,
+        "title": 20,
+        "description": 20,
+        "cards_0_accent": 20,
+        "cards_0_eyebrow": 16,
+        "cards_0_title": 20,
+        "cards_0_description": 20,
+        "cards_0_features_0_text": 20,
+        "cards_0_features_1_text": 20,
+        "cards_0_features_2_text": 20,
+        "cards_0_features_3_text": 20,
+        "cards_0_features_4_text": 20,
+        "cards_0_features_5_text": 17,
+        "cards_0_features_6_text": 14,
+        "cards_0_features_7_text": 14,
+        "cards_0_features": 20,
+        "cards_0_note": 4,
+        "cards_0_button": 20,
+        "cards_1_accent": 20,
+        "cards_1_eyebrow": 16,
+        "cards_1_title": 20,
+        "cards_1_description": 20,
+        "cards_1_features_0_text": 20,
+        "cards_1_features_1_text": 20,
+        "cards_1_features_2_text": 20,
+        "cards_1_features_3_text": 20,
+        "cards_1_features_4_text": 19,
+        "cards_1_features_5_text": 16,
+        "cards_1_features_6_text": 15,
+        "cards_1_features_7_text": 1,
+        "cards_1_features": 20,
+        "cards_1_note": 4,
+        "cards_1_button": 20,
+        "cards": 20,
+        "info": 20
+      },
+      "sampleTitles": [
+        "Pricing",
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent Platform"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 15
+    },
+    "difference": {
+      "count": 21,
+      "documents": 21,
+      "fieldCounts": {
+        "title": 21,
+        "subtitle": 21,
+        "left_title": 21,
+        "right_title": 21,
+        "button": 21,
+        "left_items_0_text": 20,
+        "left_items_1_text": 20,
+        "left_items_2_text": 20,
+        "left_items": 21,
+        "right_items_0_text": 20,
+        "right_items_1_text": 20,
+        "right_items_2_text": 20,
+        "right_items": 21,
+        "left_items_3_text": 18,
+        "left_items_4_text": 17,
+        "left_items_5_text": 16,
+        "right_items_3_text": 18,
+        "right_items_4_text": 17,
+        "right_items_5_text": 16,
+        "left_items_6_text": 9,
+        "right_items_6_text": 9
+      },
+      "sampleTitles": [
+        "About",
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent Platform"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 9
+    },
+    "pain-points-comparison": {
+      "count": 20,
+      "documents": 19,
+      "fieldCounts": {
+        "preset": 20,
+        "background": 20,
+        "eyebrow": 20,
+        "title": 20,
+        "show_column_headings": 20,
+        "left_heading": 20,
+        "right_heading": 20,
+        "rows_0_left_title": 20,
+        "rows_0_left_description": 20,
+        "rows_0_right_title": 20,
+        "rows_0_right_description": 20,
+        "rows_1_left_title": 20,
+        "rows_1_left_description": 20,
+        "rows_1_right_title": 20,
+        "rows_1_right_description": 20,
+        "rows_2_left_title": 20,
+        "rows_2_left_description": 20,
+        "rows_2_right_title": 20,
+        "rows_2_right_description": 20,
+        "rows_3_left_title": 20,
+        "rows_3_left_description": 20,
+        "rows_3_right_title": 20,
+        "rows_3_right_description": 20,
+        "rows_4_left_title": 20,
+        "rows_4_left_description": 20,
+        "rows_4_right_title": 20,
+        "rows_4_right_description": 20,
+        "rows": 20,
+        "button": 20,
+        "rows_5_left_title": 6,
+        "rows_5_left_description": 6,
+        "rows_5_right_title": 6,
+        "rows_5_right_description": 6,
+        "rows_6_left_title": 1,
+        "rows_6_left_description": 1,
+        "rows_6_right_title": 1,
+        "rows_6_right_description": 1,
+        "rows_7_left_title": 1,
+        "rows_7_left_description": 1,
+        "rows_7_right_title": 1,
+        "rows_7_right_description": 1
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 13
+    },
+    "use-cases-grid": {
+      "count": 20,
+      "documents": 19,
+      "fieldCounts": {
+        "eyebrow": 20,
+        "title": 20,
+        "description": 20,
+        "cards_0_icon": 20,
+        "cards_0_custom_icon": 15,
+        "cards_0_title": 20,
+        "cards_0_description": 20,
+        "cards_0_url": 18,
+        "cards_1_icon": 20,
+        "cards_1_custom_icon": 15,
+        "cards_1_title": 20,
+        "cards_1_description": 20,
+        "cards_1_url": 18,
+        "cards_2_icon": 20,
+        "cards_2_custom_icon": 15,
+        "cards_2_title": 20,
+        "cards_2_description": 20,
+        "cards_2_url": 18,
+        "cards_3_icon": 20,
+        "cards_3_custom_icon": 15,
+        "cards_3_title": 20,
+        "cards_3_description": 20,
+        "cards_3_url": 18,
+        "cards_4_icon": 9,
+        "cards_4_custom_icon": 6,
+        "cards_4_title": 9,
+        "cards_4_description": 9,
+        "cards_4_url": 9,
+        "cards_5_icon": 5,
+        "cards_5_custom_icon": 2,
+        "cards_5_title": 5,
+        "cards_5_description": 5,
+        "cards_5_url": 5,
+        "cards_6_icon": 5,
+        "cards_6_custom_icon": 2,
+        "cards_6_title": 5,
+        "cards_6_description": 5,
+        "cards_6_url": 5,
+        "cards_7_icon": 5,
+        "cards_7_custom_icon": 2,
+        "cards_7_title": 5,
+        "cards_7_description": 5,
+        "cards_7_url": 5,
+        "cards_8_icon": 5,
+        "cards_8_custom_icon": 2,
+        "cards_8_title": 5,
+        "cards_8_description": 5,
+        "cards_8_url": 5,
+        "cards": 20,
+        "cards_9_icon": 1,
+        "cards_9_title": 1,
+        "cards_9_description": 1,
+        "cards_9_url": 1
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "AI Marketing Agent",
+        "Call Center Automation",
+        "AI ERP Automation",
+        "Chatbot for Shopify"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 9
+    },
+    "industry-expertise": {
+      "count": 19,
+      "documents": 16,
+      "fieldCounts": {
+        "eyebrow": 19,
+        "title": 19,
+        "subtitle": 19,
+        "visual_type": 19,
+        "button": 19,
+        "hide_bottom_controls": 19,
+        "items_0_icon": 19,
+        "items_0_custom_icon": 15,
+        "items_0_title": 19,
+        "items_0_description": 19,
+        "items_0_image": 19,
+        "items_1_icon": 19,
+        "items_1_custom_icon": 15,
+        "items_1_title": 19,
+        "items_1_description": 19,
+        "items_1_image": 19,
+        "items_2_icon": 17,
+        "items_2_custom_icon": 15,
+        "items_2_title": 17,
+        "items_2_description": 17,
+        "items_2_image": 17,
+        "items_3_icon": 17,
+        "items_3_custom_icon": 15,
+        "items_3_title": 17,
+        "items_3_description": 17,
+        "items_3_image": 17,
+        "items_4_icon": 15,
+        "items_4_custom_icon": 13,
+        "items_4_title": 15,
+        "items_4_description": 15,
+        "items_4_image": 15,
+        "items_5_icon": 5,
+        "items_5_custom_icon": 5,
+        "items_5_title": 5,
+        "items_5_description": 5,
+        "items_5_image": 5,
+        "items_6_icon": 4,
+        "items_6_custom_icon": 4,
+        "items_6_title": 4,
+        "items_6_description": 4,
+        "items_6_image": 4,
+        "items": 19,
+        "info_cards_0_title": 3,
+        "info_cards_0_description": 3,
+        "info_cards_0_source": 3,
+        "info_cards": 14,
+        "autoplay": 11,
+        "autoplay_interval": 11
+      },
+      "sampleTitles": [
+        "Business Workflow Automation",
+        "AI Agent Platform",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning",
+        "HVAC AI Agent"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 18
+    },
+    "tabs-showcase": {
+      "count": 19,
+      "documents": 19,
+      "fieldCounts": {
+        "background": 19,
+        "eyebrow": 19,
+        "title": 19,
+        "subtitle": 19,
+        "autoplay_seconds": 19,
+        "tabs_0_icon": 19,
+        "tabs_0_custom_icon": 19,
+        "tabs_0_label": 19,
+        "tabs_0_steps_0_icon": 19,
+        "tabs_0_steps_0_custom_icon": 19,
+        "tabs_0_steps_0_text": 19,
+        "tabs_0_steps_1_icon": 19,
+        "tabs_0_steps_1_custom_icon": 19,
+        "tabs_0_steps_1_text": 19,
+        "tabs_0_steps_2_icon": 19,
+        "tabs_0_steps_2_custom_icon": 19,
+        "tabs_0_steps_2_text": 19,
+        "tabs_0_steps_3_icon": 19,
+        "tabs_0_steps_3_custom_icon": 19,
+        "tabs_0_steps_3_text": 19,
+        "tabs_0_steps_4_icon": 19,
+        "tabs_0_steps_4_custom_icon": 19,
+        "tabs_0_steps_4_text": 19,
+        "tabs_0_steps": 19,
+        "tabs_1_icon": 19,
+        "tabs_1_custom_icon": 19,
+        "tabs_1_label": 19,
+        "tabs_1_steps_0_icon": 19,
+        "tabs_1_steps_0_custom_icon": 19,
+        "tabs_1_steps_0_text": 19,
+        "tabs_1_steps_1_icon": 19,
+        "tabs_1_steps_1_custom_icon": 19,
+        "tabs_1_steps_1_text": 19,
+        "tabs_1_steps_2_icon": 19,
+        "tabs_1_steps_2_custom_icon": 19,
+        "tabs_1_steps_2_text": 19,
+        "tabs_1_steps_3_icon": 19,
+        "tabs_1_steps_3_custom_icon": 19,
+        "tabs_1_steps_3_text": 19,
+        "tabs_1_steps_4_icon": 19,
+        "tabs_1_steps_4_custom_icon": 19,
+        "tabs_1_steps_4_text": 19,
+        "tabs_1_steps": 19,
+        "tabs_2_icon": 19,
+        "tabs_2_custom_icon": 19,
+        "tabs_2_label": 19,
+        "tabs_2_steps_0_icon": 19,
+        "tabs_2_steps_0_custom_icon": 19,
+        "tabs_2_steps_0_text": 19,
+        "tabs_2_steps_1_icon": 19,
+        "tabs_2_steps_1_custom_icon": 19,
+        "tabs_2_steps_1_text": 19,
+        "tabs_2_steps_2_icon": 19,
+        "tabs_2_steps_2_custom_icon": 19,
+        "tabs_2_steps_2_text": 19,
+        "tabs_2_steps_3_icon": 19,
+        "tabs_2_steps_3_custom_icon": 19,
+        "tabs_2_steps_3_text": 19,
+        "tabs_2_steps_4_icon": 19,
+        "tabs_2_steps_4_custom_icon": 19,
+        "tabs_2_steps_4_text": 19,
+        "tabs_2_steps_5_icon": 4,
+        "tabs_2_steps_5_custom_icon": 4,
+        "tabs_2_steps_5_text": 4,
+        "tabs_2_steps": 19,
+        "tabs_3_icon": 19,
+        "tabs_3_custom_icon": 19,
+        "tabs_3_label": 19,
+        "tabs_3_steps_0_icon": 19,
+        "tabs_3_steps_0_custom_icon": 19,
+        "tabs_3_steps_0_text": 19,
+        "tabs_3_steps_1_icon": 19,
+        "tabs_3_steps_1_custom_icon": 19,
+        "tabs_3_steps_1_text": 19,
+        "tabs_3_steps_2_icon": 19,
+        "tabs_3_steps_2_custom_icon": 19,
+        "tabs_3_steps_2_text": 19,
+        "tabs_3_steps_3_icon": 19,
+        "tabs_3_steps_3_custom_icon": 19,
+        "tabs_3_steps_3_text": 19,
+        "tabs_3_steps_4_icon": 19,
+        "tabs_3_steps_4_custom_icon": 19,
+        "tabs_3_steps_4_text": 19,
+        "tabs_3_steps_5_icon": 3,
+        "tabs_3_steps_5_custom_icon": 3,
+        "tabs_3_steps_5_text": 3,
+        "tabs_3_steps": 19,
+        "tabs_4_icon": 3,
+        "tabs_4_custom_icon": 3,
+        "tabs_4_label": 3,
+        "tabs_4_steps_0_icon": 3,
+        "tabs_4_steps_0_custom_icon": 3,
+        "tabs_4_steps_0_text": 3,
+        "tabs_4_steps_1_icon": 3,
+        "tabs_4_steps_1_custom_icon": 3,
+        "tabs_4_steps_1_text": 3,
+        "tabs_4_steps_2_icon": 3,
+        "tabs_4_steps_2_custom_icon": 3,
+        "tabs_4_steps_2_text": 3,
+        "tabs_4_steps_3_icon": 3,
+        "tabs_4_steps_3_custom_icon": 3,
+        "tabs_4_steps_3_text": 3,
+        "tabs_4_steps_4_icon": 3,
+        "tabs_4_steps_4_custom_icon": 3,
+        "tabs_4_steps_4_text": 3,
+        "tabs_4_steps": 3,
+        "tabs_5_icon": 3,
+        "tabs_5_custom_icon": 3,
+        "tabs_5_label": 3,
+        "tabs_5_steps_0_icon": 3,
+        "tabs_5_steps_0_custom_icon": 3,
+        "tabs_5_steps_0_text": 3,
+        "tabs_5_steps_1_icon": 3,
+        "tabs_5_steps_1_custom_icon": 3,
+        "tabs_5_steps_1_text": 3,
+        "tabs_5_steps_2_icon": 3,
+        "tabs_5_steps_2_custom_icon": 3,
+        "tabs_5_steps_2_text": 3,
+        "tabs_5_steps_3_icon": 3,
+        "tabs_5_steps_3_custom_icon": 3,
+        "tabs_5_steps_3_text": 3,
+        "tabs_5_steps_4_icon": 3,
+        "tabs_5_steps_4_custom_icon": 3,
+        "tabs_5_steps_4_text": 3,
+        "tabs_5_steps": 3,
+        "tabs_6_icon": 3,
+        "tabs_6_custom_icon": 3,
+        "tabs_6_label": 3,
+        "tabs_6_steps_0_icon": 3,
+        "tabs_6_steps_0_custom_icon": 3,
+        "tabs_6_steps_0_text": 3,
+        "tabs_6_steps_1_icon": 3,
+        "tabs_6_steps_1_custom_icon": 3,
+        "tabs_6_steps_1_text": 3,
+        "tabs_6_steps_2_icon": 3,
+        "tabs_6_steps_2_custom_icon": 3,
+        "tabs_6_steps_2_text": 3,
+        "tabs_6_steps_3_icon": 3,
+        "tabs_6_steps_3_custom_icon": 3,
+        "tabs_6_steps_3_text": 3,
+        "tabs_6_steps_4_icon": 3,
+        "tabs_6_steps_4_custom_icon": 3,
+        "tabs_6_steps_4_text": 3,
+        "tabs_6_steps": 3,
+        "tabs": 19,
+        "tabs_0_steps_5_icon": 4,
+        "tabs_0_steps_5_custom_icon": 4,
+        "tabs_0_steps_5_text": 4,
+        "tabs_1_steps_5_icon": 4,
+        "tabs_1_steps_5_custom_icon": 4,
+        "tabs_1_steps_5_text": 4
+      },
+      "sampleTitles": [
+        "Autonomous AI",
+        "Multi-Agent Collaboration",
+        "Magic Window Coordination",
+        "Acme Canvas/AcmeApps",
+        "Universal Data Integration"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 13
+    },
+    "functional-capabilities": {
+      "count": 18,
+      "documents": 18,
+      "fieldCounts": {
+        "preset": 18,
+        "eyebrow": 18,
+        "title": 18,
+        "description": 18,
+        "cards_0_icon": 18,
+        "cards_0_custom_icon": 10,
+        "cards_0_title": 18,
+        "cards_0_description": 18,
+        "cards_0_channels": 18,
+        "cards_0_width": 18,
+        "cards_1_icon": 18,
+        "cards_1_custom_icon": 10,
+        "cards_1_title": 18,
+        "cards_1_description": 18,
+        "cards_1_channels": 18,
+        "cards_1_width": 18,
+        "cards_2_icon": 18,
+        "cards_2_custom_icon": 10,
+        "cards_2_title": 18,
+        "cards_2_description": 18,
+        "cards_2_channels": 18,
+        "cards_2_width": 18,
+        "cards_3_icon": 18,
+        "cards_3_custom_icon": 10,
+        "cards_3_title": 18,
+        "cards_3_description": 18,
+        "cards_3_channels": 18,
+        "cards_3_width": 18,
+        "cards_4_icon": 17,
+        "cards_4_custom_icon": 10,
+        "cards_4_title": 17,
+        "cards_4_description": 17,
+        "cards_4_channels": 17,
+        "cards_4_width": 17,
+        "cards_5_icon": 12,
+        "cards_5_custom_icon": 6,
+        "cards_5_title": 12,
+        "cards_5_description": 12,
+        "cards_5_channels": 12,
+        "cards_5_width": 12,
+        "cards_6_icon": 9,
+        "cards_6_custom_icon": 5,
+        "cards_6_title": 9,
+        "cards_6_description": 9,
+        "cards_6_channels": 9,
+        "cards_6_width": 9,
+        "cards_7_icon": 7,
+        "cards_7_custom_icon": 5,
+        "cards_7_title": 7,
+        "cards_7_description": 7,
+        "cards_7_channels": 7,
+        "cards_7_width": 7,
+        "cards": 18,
+        "note": 18,
+        "cards_8_icon": 4,
+        "cards_8_custom_icon": 3,
+        "cards_8_title": 4,
+        "cards_8_description": 4,
+        "cards_8_channels": 4,
+        "cards_8_width": 4,
+        "cards_9_icon": 4,
+        "cards_9_custom_icon": 3,
+        "cards_9_title": 4,
+        "cards_9_description": 4,
+        "cards_9_channels": 4,
+        "cards_9_width": 4
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 12
+    },
+    "results-stats": {
+      "count": 18,
+      "documents": 18,
+      "fieldCounts": {
+        "background": 18,
+        "title": 18,
+        "items_0_value": 18,
+        "items_0_description": 18,
+        "items_0_link": 18,
+        "items_1_value": 18,
+        "items_1_description": 18,
+        "items_1_link": 18,
+        "items_2_value": 18,
+        "items_2_description": 18,
+        "items_2_link": 18,
+        "items_3_value": 18,
+        "items_3_description": 18,
+        "items_3_link": 18,
+        "items": 18,
+        "info_note": 18
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 7
+    },
+    "logo-marquee": {
+      "count": 17,
+      "documents": 17,
+      "fieldCounts": {
+        "eyebrow": 17,
+        "title": 17,
+        "description": 17,
+        "logos": 17,
+        "stats_0_label": 17,
+        "stats_0_value": 17,
+        "stats_1_label": 17,
+        "stats_1_value": 17,
+        "stats_2_label": 17,
+        "stats_2_value": 17,
+        "stats_3_label": 17,
+        "stats_3_value": 17,
+        "stats": 17
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 9
+    },
+    "channels-grid": {
+      "count": 16,
+      "documents": 16,
+      "fieldCounts": {
+        "title": 16,
+        "gradient_text": 16,
+        "description": 16,
+        "cards_0_icon": 16,
+        "cards_0_custom_icon": 10,
+        "cards_0_title": 16,
+        "cards_0_url": 16,
+        "cards_0_description": 16,
+        "cards_0_image": 14,
+        "cards_0_full_width": 16,
+        "cards_1_icon": 16,
+        "cards_1_custom_icon": 10,
+        "cards_1_title": 16,
+        "cards_1_url": 16,
+        "cards_1_description": 16,
+        "cards_1_image": 14,
+        "cards_1_full_width": 16,
+        "cards_2_icon": 16,
+        "cards_2_custom_icon": 10,
+        "cards_2_title": 16,
+        "cards_2_url": 16,
+        "cards_2_description": 16,
+        "cards_2_image": 14,
+        "cards_2_full_width": 16,
+        "cards_3_icon": 16,
+        "cards_3_custom_icon": 10,
+        "cards_3_title": 16,
+        "cards_3_url": 16,
+        "cards_3_description": 16,
+        "cards_3_image": 14,
+        "cards_3_full_width": 16,
+        "cards_4_icon": 16,
+        "cards_4_custom_icon": 10,
+        "cards_4_title": 16,
+        "cards_4_url": 16,
+        "cards_4_description": 16,
+        "cards_4_image": 14,
+        "cards_4_full_width": 16,
+        "cards": 16
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 11
+    },
+    "logos-grid": {
+      "count": 15,
+      "documents": 15,
+      "fieldCounts": {
+        "eyebrow": 15,
+        "title": 15,
+        "description": 15,
+        "columns_0_heading": 15,
+        "columns_0_items_0_image": 14,
+        "columns_0_items_0_image_2": 14,
+        "columns_0_items_0_label": 15,
+        "columns_0_items_0_sub_label": 14,
+        "columns_0_items_0_url": 14,
+        "columns_0_items_1_image": 14,
+        "columns_0_items_1_image_2": 14,
+        "columns_0_items_1_label": 15,
+        "columns_0_items_1_sub_label": 14,
+        "columns_0_items_1_url": 14,
+        "columns_0_items_2_image": 14,
+        "columns_0_items_2_image_2": 14,
+        "columns_0_items_2_label": 15,
+        "columns_0_items_2_sub_label": 14,
+        "columns_0_items_2_url": 14,
+        "columns_0_items": 15,
+        "columns_1_heading": 15,
+        "columns_1_items_0_image": 14,
+        "columns_1_items_0_image_2": 14,
+        "columns_1_items_0_label": 15,
+        "columns_1_items_0_sub_label": 14,
+        "columns_1_items_0_url": 14,
+        "columns_1_items_1_image": 14,
+        "columns_1_items_1_image_2": 14,
+        "columns_1_items_1_label": 15,
+        "columns_1_items_1_sub_label": 14,
+        "columns_1_items_1_url": 14,
+        "columns_1_items_2_image": 14,
+        "columns_1_items_2_image_2": 14,
+        "columns_1_items_2_label": 15,
+        "columns_1_items_2_sub_label": 14,
+        "columns_1_items_2_url": 14,
+        "columns_1_items": 15,
+        "columns_2_heading": 15,
+        "columns_2_items_0_image": 14,
+        "columns_2_items_0_image_2": 14,
+        "columns_2_items_0_label": 15,
+        "columns_2_items_0_sub_label": 14,
+        "columns_2_items_0_url": 14,
+        "columns_2_items_1_image": 14,
+        "columns_2_items_1_image_2": 14,
+        "columns_2_items_1_label": 15,
+        "columns_2_items_1_sub_label": 14,
+        "columns_2_items_1_url": 14,
+        "columns_2_items_2_image": 14,
+        "columns_2_items_2_image_2": 14,
+        "columns_2_items_2_label": 15,
+        "columns_2_items_2_sub_label": 14,
+        "columns_2_items_2_url": 14,
+        "columns_2_items": 15,
+        "columns_3_heading": 15,
+        "columns_3_items_0_image": 14,
+        "columns_3_items_0_image_2": 14,
+        "columns_3_items_0_label": 15,
+        "columns_3_items_0_sub_label": 14,
+        "columns_3_items_0_url": 14,
+        "columns_3_items_1_image": 14,
+        "columns_3_items_1_image_2": 14,
+        "columns_3_items_1_label": 15,
+        "columns_3_items_1_sub_label": 14,
+        "columns_3_items_1_url": 14,
+        "columns_3_items_2_image": 14,
+        "columns_3_items_2_image_2": 14,
+        "columns_3_items_2_label": 15,
+        "columns_3_items_2_sub_label": 14,
+        "columns_3_items_2_url": 14,
+        "columns_3_items": 15,
+        "columns": 15,
+        "columns_0_items_3_image": 12,
+        "columns_0_items_3_image_2": 12,
+        "columns_0_items_3_label": 13,
+        "columns_0_items_3_sub_label": 12,
+        "columns_0_items_3_url": 12,
+        "columns_0_items_4_image": 8,
+        "columns_0_items_4_image_2": 8,
+        "columns_0_items_4_label": 9,
+        "columns_0_items_4_sub_label": 8,
+        "columns_0_items_4_url": 8,
+        "columns_1_items_3_image": 12,
+        "columns_1_items_3_image_2": 12,
+        "columns_1_items_3_label": 13,
+        "columns_1_items_3_sub_label": 12,
+        "columns_1_items_3_url": 12,
+        "columns_1_items_4_image": 8,
+        "columns_1_items_4_image_2": 8,
+        "columns_1_items_4_label": 9,
+        "columns_1_items_4_sub_label": 8,
+        "columns_1_items_4_url": 8,
+        "columns_2_items_3_image": 12,
+        "columns_2_items_3_image_2": 12,
+        "columns_2_items_3_label": 13,
+        "columns_2_items_3_sub_label": 12,
+        "columns_2_items_3_url": 12,
+        "columns_2_items_4_image": 7,
+        "columns_2_items_4_image_2": 7,
+        "columns_2_items_4_label": 7,
+        "columns_2_items_4_sub_label": 7,
+        "columns_2_items_4_url": 7,
+        "columns_3_items_3_image": 12,
+        "columns_3_items_3_image_2": 12,
+        "columns_3_items_3_label": 13,
+        "columns_3_items_3_sub_label": 12,
+        "columns_3_items_3_url": 12,
+        "columns_3_items_4_image": 7,
+        "columns_3_items_4_image_2": 7,
+        "columns_3_items_4_label": 7,
+        "columns_3_items_4_sub_label": 7,
+        "columns_3_items_4_url": 7,
+        "columns_0_items_5_image": 2,
+        "columns_0_items_5_image_2": 2,
+        "columns_0_items_5_label": 2,
+        "columns_0_items_5_sub_label": 2,
+        "columns_0_items_5_url": 2,
+        "columns_1_items_5_image": 2,
+        "columns_1_items_5_image_2": 2,
+        "columns_1_items_5_label": 2,
+        "columns_1_items_5_sub_label": 2,
+        "columns_1_items_5_url": 2,
+        "columns_2_items_5_image": 2,
+        "columns_2_items_5_image_2": 2,
+        "columns_2_items_5_label": 2,
+        "columns_2_items_5_sub_label": 2,
+        "columns_2_items_5_url": 2,
+        "columns_3_items_5_image": 2,
+        "columns_3_items_5_image_2": 2,
+        "columns_3_items_5_label": 2,
+        "columns_3_items_5_sub_label": 2,
+        "columns_3_items_5_url": 2,
+        "columns_0_items_6_image": 1,
+        "columns_0_items_6_image_2": 1,
+        "columns_0_items_6_label": 1,
+        "columns_0_items_6_sub_label": 1,
+        "columns_0_items_6_url": 1,
+        "columns_0_items_7_image": 1,
+        "columns_0_items_7_image_2": 1,
+        "columns_0_items_7_label": 1,
+        "columns_0_items_7_sub_label": 1,
+        "columns_0_items_7_url": 1,
+        "columns_3_items_6_image": 1,
+        "columns_3_items_6_image_2": 1,
+        "columns_3_items_6_label": 1,
+        "columns_3_items_6_sub_label": 1,
+        "columns_3_items_6_url": 1,
+        "columns_3_items_7_image": 1,
+        "columns_3_items_7_image_2": 1,
+        "columns_3_items_7_label": 1,
+        "columns_3_items_7_sub_label": 1,
+        "columns_3_items_7_url": 1
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "Business Workflow Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 11
+    },
+    "media-showcase": {
+      "count": 14,
+      "documents": 14,
+      "fieldCounts": {
+        "title": 14,
+        "description": 14,
+        "image": 14,
+        "background": 14
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "AI Agent for Installation and Repair Services",
+        "AI Recruiting Agent Cleaning",
+        "HVAC AI Agent"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 4
+    },
+    "agent-capabilities": {
+      "count": 9,
+      "documents": 7,
+      "fieldCounts": {
+        "title": 9,
+        "description": 9,
+        "autoplay": 9,
+        "autoplay_interval": 9,
+        "info_note": 9,
+        "items_0_icon": 9,
+        "items_0_custom_icon": 8,
+        "items_0_title": 9,
+        "items_0_description": 9,
+        "items_0_image": 6,
+        "items_0_link": 6,
+        "items_1_icon": 9,
+        "items_1_custom_icon": 8,
+        "items_1_title": 9,
+        "items_1_description": 9,
+        "items_1_image": 6,
+        "items_1_link": 6,
+        "items_2_icon": 9,
+        "items_2_custom_icon": 8,
+        "items_2_title": 9,
+        "items_2_description": 9,
+        "items_2_image": 6,
+        "items_2_link": 6,
+        "items_3_icon": 7,
+        "items_3_custom_icon": 6,
+        "items_3_title": 7,
+        "items_3_description": 7,
+        "items_3_image": 5,
+        "items_3_link": 5,
+        "items_4_icon": 6,
+        "items_4_custom_icon": 5,
+        "items_4_title": 6,
+        "items_4_description": 6,
+        "items_4_image": 5,
+        "items_4_link": 5,
+        "items_5_icon": 6,
+        "items_5_custom_icon": 5,
+        "items_5_title": 6,
+        "items_5_description": 6,
+        "items_5_image": 5,
+        "items_5_link": 5,
+        "items_6_icon": 6,
+        "items_6_custom_icon": 5,
+        "items_6_title": 6,
+        "items_6_description": 6,
+        "items_6_image": 5,
+        "items_6_link": 5,
+        "items_7_icon": 5,
+        "items_7_custom_icon": 4,
+        "items_7_title": 5,
+        "items_7_description": 5,
+        "items_7_image": 4,
+        "items_7_link": 4,
+        "items_8_icon": 3,
+        "items_8_custom_icon": 2,
+        "items_8_title": 3,
+        "items_8_description": 3,
+        "items_8_image": 2,
+        "items_8_link": 2,
+        "items_9_icon": 2,
+        "items_9_custom_icon": 1,
+        "items_9_title": 2,
+        "items_9_description": 2,
+        "items_9_image": 1,
+        "items_9_link": 1,
+        "items": 9,
+        "content_side": 1,
+        "title_position": 3,
+        "marker_mode": 3
+      },
+      "sampleTitles": [
+        "AI Marketing Agent",
+        "eCommerce Automation",
+        "eCommerce Automation",
+        "AI Agent Platform",
+        "Conversational AI Platform"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 13
+    },
+    "agent-solutions": {
+      "count": 8,
+      "documents": 7,
+      "fieldCounts": {
+        "title": 8,
+        "items_0_icon": 7,
+        "items_0_custom_icon": 7,
+        "items_0_title": 7,
+        "items_0_href": 7,
+        "items_0_description": 7,
+        "items_1_icon": 6,
+        "items_1_custom_icon": 6,
+        "items_1_title": 6,
+        "items_1_href": 6,
+        "items_1_description": 6,
+        "items_2_icon": 6,
+        "items_2_custom_icon": 6,
+        "items_2_title": 6,
+        "items_2_href": 6,
+        "items_2_description": 6,
+        "items_3_icon": 6,
+        "items_3_custom_icon": 6,
+        "items_3_title": 6,
+        "items_3_href": 6,
+        "items_3_description": 6,
+        "items_4_icon": 6,
+        "items_4_custom_icon": 6,
+        "items_4_title": 6,
+        "items_4_href": 6,
+        "items_4_description": 6,
+        "items": 8,
+        "items_5_icon": 5,
+        "items_5_custom_icon": 5,
+        "items_5_title": 5,
+        "items_5_href": 5,
+        "items_5_description": 5,
+        "items_6_icon": 4,
+        "items_6_custom_icon": 4,
+        "items_6_title": 4,
+        "items_6_href": 4,
+        "items_6_description": 4,
+        "items_7_icon": 3,
+        "items_7_custom_icon": 3,
+        "items_7_title": 3,
+        "items_7_href": 3,
+        "items_7_description": 3
+      },
+      "sampleTitles": [
+        "AI ERP Automation",
+        "Real Estate AI Agent",
+        "Marketing Automation for eCommerce",
+        "Odoo AI Automation",
+        "AI Agent Platform"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 7
+    },
+    "anchor-pills": {
+      "count": 8,
+      "documents": 7,
+      "fieldCounts": {
+        "background": 8,
+        "items_0_icon": 8,
+        "items_0_label": 8,
+        "items_0_anchor": 8,
+        "items_1_icon": 8,
+        "items_1_label": 8,
+        "items_1_anchor": 8,
+        "items_2_icon": 8,
+        "items_2_label": 8,
+        "items_2_anchor": 8,
+        "items_3_icon": 8,
+        "items_3_label": 8,
+        "items_3_anchor": 8,
+        "items_4_icon": 7,
+        "items_4_label": 7,
+        "items_4_anchor": 7,
+        "items_5_icon": 6,
+        "items_5_label": 6,
+        "items_5_anchor": 6,
+        "items_6_icon": 6,
+        "items_6_label": 6,
+        "items_6_anchor": 6,
+        "items_7_icon": 6,
+        "items_7_label": 6,
+        "items_7_anchor": 6,
+        "items_8_icon": 6,
+        "items_8_label": 6,
+        "items_8_anchor": 6,
+        "items_9_icon": 6,
+        "items_9_label": 6,
+        "items_9_anchor": 6,
+        "items_10_icon": 4,
+        "items_10_label": 4,
+        "items_10_anchor": 4,
+        "items_11_icon": 3,
+        "items_11_label": 3,
+        "items_11_anchor": 3,
+        "items_12_icon": 2,
+        "items_12_label": 2,
+        "items_12_anchor": 2,
+        "items_13_icon": 2,
+        "items_13_label": 2,
+        "items_13_anchor": 2,
+        "items": 8,
+        "items_14_icon": 1,
+        "items_14_label": 1,
+        "items_14_anchor": 1,
+        "items_15_icon": 1,
+        "items_15_label": 1,
+        "items_15_anchor": 1,
+        "items_16_icon": 1,
+        "items_16_label": 1,
+        "items_16_anchor": 1,
+        "items_17_icon": 1,
+        "items_17_label": 1,
+        "items_17_anchor": 1,
+        "items_18_icon": 1,
+        "items_18_label": 1,
+        "items_18_anchor": 1,
+        "items_19_icon": 1,
+        "items_19_label": 1,
+        "items_19_anchor": 1,
+        "items_20_icon": 1,
+        "items_20_label": 1,
+        "items_20_anchor": 1,
+        "items_21_icon": 1,
+        "items_21_label": 1,
+        "items_21_anchor": 1,
+        "items_22_icon": 1,
+        "items_22_label": 1,
+        "items_22_anchor": 1,
+        "items_23_icon": 1,
+        "items_23_label": 1,
+        "items_23_anchor": 1,
+        "items_24_icon": 1,
+        "items_24_label": 1,
+        "items_24_anchor": 1,
+        "items_25_icon": 1,
+        "items_25_label": 1,
+        "items_25_anchor": 1,
+        "items_26_icon": 1,
+        "items_26_label": 1,
+        "items_26_anchor": 1,
+        "items_27_icon": 1,
+        "items_27_label": 1,
+        "items_27_anchor": 1,
+        "items_28_icon": 1,
+        "items_28_label": 1,
+        "items_28_anchor": 1,
+        "items_29_icon": 1,
+        "items_29_label": 1,
+        "items_29_anchor": 1,
+        "items_30_icon": 1,
+        "items_30_label": 1,
+        "items_30_anchor": 1,
+        "items_31_icon": 1,
+        "items_31_label": 1,
+        "items_31_anchor": 1,
+        "items_32_icon": 1,
+        "items_32_label": 1,
+        "items_32_anchor": 1,
+        "items_33_icon": 1,
+        "items_33_label": 1,
+        "items_33_anchor": 1,
+        "items_34_icon": 1,
+        "items_34_label": 1,
+        "items_34_anchor": 1,
+        "items_35_icon": 1,
+        "items_35_label": 1,
+        "items_35_anchor": 1,
+        "items_36_icon": 1,
+        "items_36_label": 1,
+        "items_36_anchor": 1,
+        "items_37_icon": 1,
+        "items_37_label": 1,
+        "items_37_anchor": 1,
+        "items_38_icon": 1,
+        "items_38_label": 1,
+        "items_38_anchor": 1,
+        "items_39_icon": 1,
+        "items_39_label": 1,
+        "items_39_anchor": 1,
+        "items_40_icon": 1,
+        "items_40_label": 1,
+        "items_40_anchor": 1,
+        "items_41_icon": 1,
+        "items_41_label": 1,
+        "items_41_anchor": 1,
+        "items_42_icon": 1,
+        "items_42_label": 1,
+        "items_42_anchor": 1,
+        "items_43_icon": 1,
+        "items_43_label": 1,
+        "items_43_anchor": 1,
+        "items_44_icon": 1,
+        "items_44_label": 1,
+        "items_44_anchor": 1,
+        "items_45_icon": 1,
+        "items_45_label": 1,
+        "items_45_anchor": 1,
+        "items_46_icon": 1,
+        "items_46_label": 1,
+        "items_46_anchor": 1,
+        "items_47_icon": 1,
+        "items_47_label": 1,
+        "items_47_anchor": 1,
+        "items_48_icon": 1,
+        "items_48_label": 1,
+        "items_48_anchor": 1,
+        "items_49_icon": 1,
+        "items_49_label": 1,
+        "items_49_anchor": 1
+      },
+      "sampleTitles": [
+        "AI Use Cases in eCommerce",
+        "Acme AI Use Cases in Marketing",
+        "AI Use Cases in Real Estate",
+        "AI Use Cases in HR",
+        "AI Use Cases in Sales"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 5
+    },
+    "feature-rows": {
+      "count": 6,
+      "documents": 5,
+      "fieldCounts": {
+        "rows_0_title": 6,
+        "rows_0_description": 6,
+        "rows_1_title": 6,
+        "rows_1_description": 6,
+        "rows_2_title": 6,
+        "rows_2_description": 6,
+        "rows": 6,
+        "variant": 5,
+        "rows_0_eyebrow": 5,
+        "rows_1_eyebrow": 5,
+        "rows_2_eyebrow": 5
+      },
+      "sampleTitles": [
+        "AI Agent Builder",
+        "Conversational AI Platform",
+        "Virtual Employees",
+        "Blocks",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 5
+    },
+    "enterprise-upgrade": {
+      "count": 5,
+      "documents": 5,
+      "fieldCounts": {
+        "title": 5,
+        "description": 5,
+        "table_title": 5,
+        "left_heading": 5,
+        "right_heading": 5,
+        "benefits": 5,
+        "body": 3,
+        "form_title": 5,
+        "form_description": 5,
+        "form_shortcode": 5,
+        "benefits_0_capability": 2,
+        "benefits_0_included": 2,
+        "benefits_1_capability": 2,
+        "benefits_1_included": 2,
+        "benefits_2_capability": 2,
+        "benefits_2_included": 2,
+        "benefits_3_capability": 2,
+        "benefits_3_included": 2,
+        "benefits_4_capability": 2,
+        "benefits_4_included": 2,
+        "benefits_5_capability": 2,
+        "benefits_5_included": 2,
+        "benefits_6_capability": 2,
+        "benefits_6_included": 2,
+        "benefits_7_capability": 2,
+        "benefits_7_included": 2,
+        "benefits_8_capability": 2,
+        "benefits_8_included": 2
+      },
+      "sampleTitles": [
+        "Demo Request - Thank You",
+        "Verification",
+        "Free Trial - Thank You",
+        "Move to Enterprise",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 12
+    },
+    "hero-extended": {
+      "count": 5,
+      "documents": 5,
+      "fieldCounts": {
+        "eyebrow": 5,
+        "title": 5,
+        "description": 5,
+        "background_image": 5,
+        "content_image": 5,
+        "media_size": 5,
+        "secondary_button": 5,
+        "secondary_note": 5,
+        "primary_button": 5,
+        "primary_note": 5,
+        "cards": 5,
+        "cards_0_icon": 3,
+        "cards_0_title": 3,
+        "cards_0_description": 3,
+        "cards_1_icon": 3,
+        "cards_1_title": 3,
+        "cards_1_description": 3,
+        "cards_2_icon": 3,
+        "cards_2_title": 3,
+        "cards_2_description": 3
+      },
+      "sampleTitles": [
+        "AI Agent Platform",
+        "Conversational AI Platform",
+        "Virtual Employees",
+        "Blocks",
+        "Conversational AI Agent"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 14
+    },
+    "story": {
+      "count": 5,
+      "documents": 3,
+      "fieldCounts": {
+        "eyebrow": 5,
+        "title_gradient": 5,
+        "title": 5,
+        "intro": 5,
+        "body_top": 5,
+        "quote": 5,
+        "body_bottom": 5,
+        "image": 5,
+        "cards_0_icon": 3,
+        "cards_0_title": 3,
+        "cards_0_description": 3,
+        "cards_1_icon": 3,
+        "cards_1_title": 3,
+        "cards_1_description": 3,
+        "cards_2_icon": 3,
+        "cards_2_title": 3,
+        "cards_2_description": 3,
+        "cards": 5
+      },
+      "sampleTitles": [
+        "About",
+        "About",
+        "AI Agents for Recruiting",
+        "AI Agents for Recruiting",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 13
+    },
+    "testimonial": {
+      "count": 5,
+      "documents": 3,
+      "fieldCounts": {
+        "title": 5,
+        "subtitle": 5,
+        "items_0_quote": 3,
+        "items_0_author_name": 3,
+        "items_0_author_role": 3,
+        "items_0_author_image": 3,
+        "items_1_quote": 3,
+        "items_1_author_name": 3,
+        "items_1_author_role": 3,
+        "items_1_author_image": 3,
+        "items": 4,
+        "quote": 5,
+        "author_name": 5,
+        "author_role": 5,
+        "author_image": 5,
+        "source": 3,
+        "posts": 1,
+        "posts_per_page": 1
+      },
+      "sampleTitles": [
+        "AI Agent Platform",
+        "AI Agent Builder",
+        "AI Agent Builder",
+        "AI Agent Builder",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 14
+    },
+    "concierge-flow": {
+      "count": 4,
+      "documents": 4,
+      "fieldCounts": {
+        "title": 4,
+        "description": 4,
+        "image": 4,
+        "cards_0_eyebrow": 4,
+        "cards_0_title": 4,
+        "cards_0_description": 4,
+        "cards_1_eyebrow": 4,
+        "cards_1_title": 4,
+        "cards_1_description": 4,
+        "cards_2_eyebrow": 4,
+        "cards_2_title": 4,
+        "cards_2_description": 4,
+        "cards": 4,
+        "button": 4
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "AI Sales Assistant",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 8
+    },
+    "feature-stack": {
+      "count": 4,
+      "documents": 4,
+      "fieldCounts": {
+        "title": 4,
+        "description": 4,
+        "cards_0_icon": 4,
+        "cards_0_custom_icon": 3,
+        "cards_0_title": 4,
+        "cards_0_description": 4,
+        "cards_0_url": 3,
+        "cards_1_icon": 4,
+        "cards_1_custom_icon": 3,
+        "cards_1_title": 4,
+        "cards_1_description": 4,
+        "cards_1_url": 3,
+        "cards_2_icon": 4,
+        "cards_2_custom_icon": 3,
+        "cards_2_title": 4,
+        "cards_2_description": 4,
+        "cards_2_url": 3,
+        "cards": 4,
+        "info_note": 4
+      },
+      "sampleTitles": [
+        "Customer Service AI Agent",
+        "Call Center Automation",
+        "AI Sales Assistant",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 9
+    },
+    "coverage-grid": {
+      "count": 3,
+      "documents": 3,
+      "fieldCounts": {
+        "eyebrow": 3,
+        "title": 3,
+        "description": 3,
+        "cards_0_icon": 3,
+        "cards_0_custom_icon": 3,
+        "cards_0_title": 3,
+        "cards_0_description": 3,
+        "cards_0_url": 3,
+        "cards_1_icon": 3,
+        "cards_1_custom_icon": 3,
+        "cards_1_title": 3,
+        "cards_1_description": 3,
+        "cards_1_url": 3,
+        "cards_2_icon": 3,
+        "cards_2_custom_icon": 3,
+        "cards_2_title": 3,
+        "cards_2_description": 3,
+        "cards_2_url": 3,
+        "cards_3_icon": 3,
+        "cards_3_custom_icon": 3,
+        "cards_3_title": 3,
+        "cards_3_description": 3,
+        "cards_3_url": 3,
+        "cards_4_icon": 3,
+        "cards_4_custom_icon": 3,
+        "cards_4_title": 3,
+        "cards_4_description": 3,
+        "cards_4_url": 3,
+        "cards_5_icon": 3,
+        "cards_5_custom_icon": 3,
+        "cards_5_title": 3,
+        "cards_5_description": 3,
+        "cards_5_url": 3,
+        "cards_6_icon": 3,
+        "cards_6_custom_icon": 3,
+        "cards_6_title": 3,
+        "cards_6_description": 3,
+        "cards_6_url": 3,
+        "cards_7_icon": 3,
+        "cards_7_custom_icon": 3,
+        "cards_7_title": 3,
+        "cards_7_description": 3,
+        "cards_7_url": 3,
+        "cards": 3
+      },
+      "sampleTitles": [
+        "AI Agent for Installation and Repair Services",
+        "HVAC AI Agent",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 9
+    },
+    "alternatives-grid": {
+      "count": 2,
+      "documents": 2,
+      "fieldCounts": {
+        "cards_0_title": 2,
+        "cards_0_description": 2,
+        "cards_0_button": 2,
+        "cards_1_title": 2,
+        "cards_1_description": 2,
+        "cards_1_button": 2,
+        "cards_2_title": 2,
+        "cards_2_description": 2,
+        "cards_2_button": 2,
+        "cards_3_title": 2,
+        "cards_3_description": 2,
+        "cards_3_button": 2,
+        "cards_4_title": 2,
+        "cards_4_description": 2,
+        "cards_4_button": 2,
+        "cards_5_title": 2,
+        "cards_5_description": 2,
+        "cards_5_button": 2,
+        "cards_6_title": 2,
+        "cards_6_description": 2,
+        "cards_6_button": 2,
+        "cards_7_title": 2,
+        "cards_7_description": 2,
+        "cards_7_button": 2,
+        "cards_8_title": 2,
+        "cards_8_description": 2,
+        "cards_8_button": 2,
+        "cards_9_title": 2,
+        "cards_9_description": 2,
+        "cards_9_button": 2,
+        "cards_10_title": 2,
+        "cards_10_description": 2,
+        "cards_10_button": 2,
+        "cards_11_title": 2,
+        "cards_11_description": 2,
+        "cards_11_button": 2,
+        "cards_12_title": 2,
+        "cards_12_description": 2,
+        "cards_12_button": 2,
+        "cards": 2
+      },
+      "sampleTitles": [
+        "Comparisons",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 4
+    },
+    "contact-us": {
+      "count": 2,
+      "documents": 2,
+      "fieldCounts": {
+        "title_start": 2,
+        "title_accent": 2,
+        "description": 2,
+        "city": 2,
+        "address": 2,
+        "phone": 2,
+        "logo": 2,
+        "form_shortcode": 2
+      },
+      "sampleTitles": [
+        "Contact",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 8
+    },
+    "live-in-days": {
+      "count": 2,
+      "documents": 2,
+      "fieldCounts": {
+        "eyebrow": 2,
+        "description": 2,
+        "items_0_icon": 2,
+        "items_0_custom_icon": 2,
+        "items_0_label": 2,
+        "items_1_icon": 2,
+        "items_1_custom_icon": 2,
+        "items_1_label": 2,
+        "items_2_icon": 2,
+        "items_2_custom_icon": 2,
+        "items_2_label": 2,
+        "items_3_icon": 2,
+        "items_3_custom_icon": 2,
+        "items_3_label": 2,
+        "items": 2
+      },
+      "sampleTitles": [
+        "AI Agent Platform",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 6
+    },
+    "pricing-policy": {
+      "count": 2,
+      "documents": 2,
+      "fieldCounts": {
+        "background": 2,
+        "title": 2,
+        "callouts_0_icon": 2,
+        "callouts_0_text": 2,
+        "callouts_1_icon": 2,
+        "callouts_1_text": 2,
+        "callouts_2_icon": 2,
+        "callouts_2_text": 2,
+        "callouts": 2,
+        "info": 2
+      },
+      "sampleTitles": [
+        "Pricing",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 6
+    },
+    "use-cases-flow": {
+      "count": 2,
+      "documents": 2,
+      "fieldCounts": {
+        "eyebrow": 2,
+        "title": 2,
+        "description": 2,
+        "background": 2,
+        "columns_0_label": 2,
+        "columns_0_items_0_text": 2,
+        "columns_0_items_1_text": 2,
+        "columns_0_items_2_text": 2,
+        "columns_0_items_3_text": 2,
+        "columns_0_items_4_text": 2,
+        "columns_0_items_5_text": 2,
+        "columns_0_items": 2,
+        "columns_1_label": 2,
+        "columns_1_items_0_text": 2,
+        "columns_1_items_1_text": 2,
+        "columns_1_items_2_text": 2,
+        "columns_1_items_3_text": 2,
+        "columns_1_items_4_text": 2,
+        "columns_1_items_5_text": 2,
+        "columns_1_items": 2,
+        "columns_2_label": 2,
+        "columns_2_items_0_text": 2,
+        "columns_2_items_1_text": 2,
+        "columns_2_items_2_text": 2,
+        "columns_2_items_3_text": 2,
+        "columns_2_items_4_text": 2,
+        "columns_2_items_5_text": 2,
+        "columns_2_items": 2,
+        "columns": 2
+      },
+      "sampleTitles": [
+        "Features",
+        "Blocks"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 8
+    },
+    "capability-trio": {
+      "count": 1,
+      "documents": 1,
+      "fieldCounts": {
+        "title": 1,
+        "cards_0_icon": 1,
+        "cards_0_custom_icon": 1,
+        "cards_0_title": 1,
+        "cards_0_description": 1,
+        "cards_0_highlighted": 1,
+        "cards_1_icon": 1,
+        "cards_1_custom_icon": 1,
+        "cards_1_title": 1,
+        "cards_1_description": 1,
+        "cards_1_highlighted": 1,
+        "cards_2_icon": 1,
+        "cards_2_custom_icon": 1,
+        "cards_2_title": 1,
+        "cards_2_description": 1,
+        "cards_2_highlighted": 1,
+        "cards": 1
+      },
+      "sampleTitles": [
+        "AI Agent Platform"
+      ],
+      "hasThemeBlock": true,
+      "themeFieldCount": 8
+    }
+  },
+  "themeBlocks": [
+    {
+      "name": "agent-capabilities",
+      "title": "Acme Agent Capabilities",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "content_side",
+          "type": "select"
+        },
+        {
+          "name": "autoplay",
+          "type": "true_false"
+        },
+        {
+          "name": "autoplay_interval",
+          "type": "number"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "wysiwyg"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "link",
+          "type": "link"
+        },
+        {
+          "name": "info_note",
+          "type": "wysiwyg"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "agent-solutions",
+      "title": "Acme Agent Solutions",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "href",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "alternatives-grid",
+      "title": "Alternatives Grid",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "anchor-pills",
+      "title": "Anchor Pills",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "anchor",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "capability-trio",
+      "title": "Acme Capability Trio",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "center_label",
+          "type": "text"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "highlighted",
+          "type": "true_false"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "channels-grid",
+      "title": "Acme Channels Grid",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "gradient_text",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "url",
+          "type": "url"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "full_width",
+          "type": "true_false"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "concierge-flow",
+      "title": "Acme Concierge Flow",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "contact-us",
+      "title": "Acme Contact Us",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title_start",
+          "type": "text"
+        },
+        {
+          "name": "title_accent",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "city",
+          "type": "text"
+        },
+        {
+          "name": "address",
+          "type": "textarea"
+        },
+        {
+          "name": "phone",
+          "type": "text"
+        },
+        {
+          "name": "logo",
+          "type": "image"
+        },
+        {
+          "name": "form_shortcode",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "coverage-grid",
+      "title": "Acme Coverage Grid",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "url",
+          "type": "url"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "cta",
+      "title": "Acme CTA",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "primary_button",
+          "type": "link"
+        },
+        {
+          "name": "secondary_button",
+          "type": "link"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "difference",
+      "title": "Acme Difference",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "subtitle",
+          "type": "text"
+        },
+        {
+          "name": "left_title",
+          "type": "text"
+        },
+        {
+          "name": "left_items",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "right_title",
+          "type": "text"
+        },
+        {
+          "name": "right_items",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "enterprise-upgrade",
+      "title": "Acme Enterprise Upgrade",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "table_title",
+          "type": "text"
+        },
+        {
+          "name": "left_heading",
+          "type": "text"
+        },
+        {
+          "name": "right_heading",
+          "type": "text"
+        },
+        {
+          "name": "benefits",
+          "type": "repeater"
+        },
+        {
+          "name": "capability",
+          "type": "text"
+        },
+        {
+          "name": "included",
+          "type": "textarea"
+        },
+        {
+          "name": "body",
+          "type": "wysiwyg"
+        },
+        {
+          "name": "form_title",
+          "type": "text"
+        },
+        {
+          "name": "form_description",
+          "type": "textarea"
+        },
+        {
+          "name": "form_shortcode",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "faq",
+      "title": "Acme FAQ",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "title_gradient",
+          "type": "text"
+        },
+        {
+          "name": "search_placeholder",
+          "type": "text"
+        },
+        {
+          "name": "source",
+          "type": "select"
+        },
+        {
+          "name": "manual_items",
+          "type": "repeater"
+        },
+        {
+          "name": "category",
+          "type": "select"
+        },
+        {
+          "name": "question",
+          "type": "text"
+        },
+        {
+          "name": "answer",
+          "type": "wysiwyg"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "feature-grid",
+      "title": "Acme Feature Grid",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "columns",
+          "type": "select"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "feature-rows",
+      "title": "Acme Feature Rows",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "variant",
+          "type": "select"
+        },
+        {
+          "name": "rows",
+          "type": "repeater"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "feature-stack",
+      "title": "Acme Feature Stack",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "url",
+          "type": "url"
+        },
+        {
+          "name": "info_note",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "functional-capabilities",
+      "title": "Functional Capabilities",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "preset",
+          "type": "select"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "channels",
+          "type": "textarea"
+        },
+        {
+          "name": "width",
+          "type": "select"
+        },
+        {
+          "name": "note",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "hero",
+      "title": "Acme Hero",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "primary_button",
+          "type": "link"
+        },
+        {
+          "name": "secondary_button",
+          "type": "link"
+        },
+        {
+          "name": "secondary_note",
+          "type": "text"
+        },
+        {
+          "name": "primary_note",
+          "type": "text"
+        },
+        {
+          "name": "tooltip_label",
+          "type": "text"
+        },
+        {
+          "name": "tooltip_action",
+          "type": "text"
+        },
+        {
+          "name": "tooltip_title",
+          "type": "text"
+        },
+        {
+          "name": "tooltip_content",
+          "type": "wysiwyg"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "hero-extended",
+      "title": "Acme Hero Extended",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "background_image",
+          "type": "image"
+        },
+        {
+          "name": "content_image",
+          "type": "image"
+        },
+        {
+          "name": "media_size",
+          "type": "button_group"
+        },
+        {
+          "name": "secondary_button",
+          "type": "link"
+        },
+        {
+          "name": "secondary_note",
+          "type": "text"
+        },
+        {
+          "name": "primary_button",
+          "type": "link"
+        },
+        {
+          "name": "primary_note",
+          "type": "text"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "how-it-works",
+      "title": "Acme How It Works",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "open_first",
+          "type": "true_false"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "gradient_text",
+          "type": "text"
+        },
+        {
+          "name": "subtitle",
+          "type": "text"
+        },
+        {
+          "name": "steps",
+          "type": "repeater"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        },
+        {
+          "name": "info_note",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "industry-expertise",
+      "title": "Acme Industry Expertise",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "visual_type",
+          "type": "select"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        },
+        {
+          "name": "hide_bottom_controls",
+          "type": "true_false"
+        },
+        {
+          "name": "autoplay",
+          "type": "true_false"
+        },
+        {
+          "name": "autoplay_interval",
+          "type": "number"
+        },
+        {
+          "name": "info_cards",
+          "type": "repeater"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "source",
+          "type": "text"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "integrations-banner",
+      "title": "Acme Integrations Banner",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "image"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "live-in-days",
+      "title": "Acme Live In Days",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "logo-marquee",
+      "title": "Logo Marquee",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "logos",
+          "type": "repeater"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "stats",
+          "type": "repeater"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "value",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "logos-grid",
+      "title": "Acme Logos Grid",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "columns",
+          "type": "repeater"
+        },
+        {
+          "name": "heading",
+          "type": "text"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "image_2",
+          "type": "image"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "sub_label",
+          "type": "text"
+        },
+        {
+          "name": "url",
+          "type": "url"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "media-showcase",
+      "title": "Acme Media Showcase",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "background",
+          "type": "select"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "news-insights",
+      "title": "Acme News & Insights",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "posts_count",
+          "type": "number"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "pain-points-comparison",
+      "title": "Pain Points Comparison",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "preset",
+          "type": "select"
+        },
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "show_column_headings",
+          "type": "true_false"
+        },
+        {
+          "name": "left_heading",
+          "type": "text"
+        },
+        {
+          "name": "right_heading",
+          "type": "text"
+        },
+        {
+          "name": "rows",
+          "type": "repeater"
+        },
+        {
+          "name": "left_title",
+          "type": "text"
+        },
+        {
+          "name": "left_description",
+          "type": "textarea"
+        },
+        {
+          "name": "right_title",
+          "type": "text"
+        },
+        {
+          "name": "right_description",
+          "type": "textarea"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "pricing-cards",
+      "title": "Pricing Cards",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "source",
+          "type": "select"
+        },
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "accent",
+          "type": "select"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "features",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "note",
+          "type": "textarea"
+        },
+        {
+          "name": "button",
+          "type": "link"
+        },
+        {
+          "name": "info",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "pricing-details",
+      "title": "Pricing Details",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "variant",
+          "type": "select"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "info",
+          "type": "textarea"
+        },
+        {
+          "name": "headers",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "rows",
+          "type": "repeater"
+        },
+        {
+          "name": "cells",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "modifiers",
+          "type": "checkbox"
+        },
+        {
+          "name": "note",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "pricing-policy",
+      "title": "Pricing Policy",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "callouts",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "text",
+          "type": "textarea"
+        },
+        {
+          "name": "info",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "results-stats",
+      "title": "Results Stats",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "value",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "link",
+          "type": "link"
+        },
+        {
+          "name": "info_note",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "security",
+      "title": "Acme Security",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "title_gradient",
+          "type": "text"
+        },
+        {
+          "name": "subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "side-by-side",
+      "title": "Acme Side by Side",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "section_eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "section_title",
+          "type": "textarea"
+        },
+        {
+          "name": "section_subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "image_side",
+          "type": "select"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "card_title",
+          "type": "textarea"
+        },
+        {
+          "name": "card_subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "card_description",
+          "type": "wysiwyg"
+        },
+        {
+          "name": "bullets",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "small_icons",
+          "type": "repeater"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "small_icons_overflow",
+          "type": "text"
+        },
+        {
+          "name": "primary_button",
+          "type": "link"
+        },
+        {
+          "name": "secondary_button",
+          "type": "link"
+        },
+        {
+          "name": "card_note",
+          "type": "textarea"
+        },
+        {
+          "name": "bottom_cards",
+          "type": "repeater"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "stats-cards",
+      "title": "Acme Stats Cards",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "heading",
+          "type": "text"
+        },
+        {
+          "name": "value",
+          "type": "text"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    },
+    {
+      "name": "story",
+      "title": "Acme Story",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title_gradient",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "intro",
+          "type": "textarea"
+        },
+        {
+          "name": "body_top",
+          "type": "textarea"
+        },
+        {
+          "name": "quote",
+          "type": "textarea"
+        },
+        {
+          "name": "body_bottom",
+          "type": "textarea"
+        },
+        {
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "tabs-showcase",
+      "title": "Acme Tabs Showcase",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "autoplay_seconds",
+          "type": "number"
+        },
+        {
+          "name": "tabs",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "text"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "steps",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "text"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "text",
+          "type": "textarea"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "testimonial",
+      "title": "Acme Testimonial",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "subtitle",
+          "type": "textarea"
+        },
+        {
+          "name": "source",
+          "type": "select"
+        },
+        {
+          "name": "posts",
+          "type": "relationship"
+        },
+        {
+          "name": "posts_per_page",
+          "type": "number"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "quote",
+          "type": "textarea"
+        },
+        {
+          "name": "author_name",
+          "type": "text"
+        },
+        {
+          "name": "author_role",
+          "type": "text"
+        },
+        {
+          "name": "author_image",
+          "type": "image"
+        },
+        {
+          "name": "quote",
+          "type": "textarea"
+        },
+        {
+          "name": "author_name",
+          "type": "text"
+        },
+        {
+          "name": "author_role",
+          "type": "text"
+        },
+        {
+          "name": "author_image",
+          "type": "image"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "use-cases-flow",
+      "title": "Acme Use Cases Flow",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "background",
+          "type": "select"
+        },
+        {
+          "name": "columns",
+          "type": "repeater"
+        },
+        {
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "name": "items",
+          "type": "repeater"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": true
+    },
+    {
+      "name": "use-cases-grid",
+      "title": "Acme Use Cases Grid",
+      "category": "acme",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "type": "textarea"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "cards",
+          "type": "repeater"
+        },
+        {
+          "name": "icon",
+          "type": "select"
+        },
+        {
+          "name": "custom_icon",
+          "type": "image"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "textarea"
+        },
+        {
+          "name": "url",
+          "type": "url"
+        }
+      ],
+      "hasTemplate": true,
+      "hasStyles": true,
+      "hasScript": false
+    }
+  ],
+  "themeOnlyBlocks": [],
+  "notes": [
+    "Inventory is read-only analysis evidence. It is not a runtime mapping contract.",
+    "Only sanitized derived data may be committed. Raw SQL dumps stay outside git."
+  ]
+}

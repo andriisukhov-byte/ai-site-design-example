@@ -1,0 +1,52 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_capability-strip.scss';
+type CapabilityStripBlock = Extract<PageBlock, { type: 'capability-strip' }>;
+
+interface Props {
+  block: CapabilityStripBlock;
+}
+
+const { block } = Astro.props;
+const background = block.background === 'gray' ? 'gray' : 'white';
+
+const iconPaths: Record<string, string> = {
+  'code-xml': '<path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 4l-4 16"/>',
+  'layout-grid': '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
+  'bot-message-square': '<path d="M12 6V2H8M15 11v2M9 11v2M8 18l-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/>',
+  'user-round-check': '<path d="M2 21a8 8 0 0 1 13.3-6M15 19l2 2 4-4"/><circle cx="10" cy="8" r="5"/>',
+};
+
+function iconMarkup(name?: string): string {
+  return iconPaths[name ?? ''] ?? '<path d="M12 3 4 7v6c0 5 3.4 7.8 8 9 4.6-1.2 8-4 8-9V7Z"/><path d="m9 12 2 2 4-4"/>';
+}
+---
+
+<section class:list={['capability-strip', `capability-strip--${background}`]}>
+  <div class="capability-strip__container container-wide">
+    {(block.eyebrow || block.title || block.description) && (
+      <div class="capability-strip__heading">
+        {block.eyebrow && <p class="capability-strip__eyebrow">{block.eyebrow}</p>}
+        {block.title && <h2 class="capability-strip__title"><FormattedText text={block.title} /></h2>}
+        {block.description && <p class="capability-strip__description"><FormattedText text={block.description} /></p>}
+      </div>
+    )}
+
+    <ul class="capability-strip__list">
+      {block.items.map((item) => (
+        <li class="capability-strip__item">
+          <span class="capability-strip__icon" aria-hidden="true">
+            {item.customIcon?.src ? (
+              <img src={item.customIcon.src} alt="" loading="lazy" decoding="async" />
+            ) : (
+              <svg viewBox="0 0 24 24" focusable="false" set:html={iconMarkup(item.icon)} />
+            )}
+          </span>
+          <span class="capability-strip__label"><FormattedText text={item.label} /></span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

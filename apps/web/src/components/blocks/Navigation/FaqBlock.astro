@@ -1,0 +1,383 @@
+---
+import type { PageBlock } from '@acme/blocks';
+import '../../../styles/blocks/_faq.scss';
+
+type FaqBlock = Extract<PageBlock, { type: 'faq' }>;
+
+interface Props {
+  block: FaqBlock;
+}
+
+const { block } = Astro.props;
+const searchPlaceholder = block.searchPlaceholder || 'Search FAQ';
+const titleGradient = block.titleGradient || extractTitleGradient(block.title);
+const title = block.titleGradient ? block.title : removeInlineMarkers(block.title);
+const categories = buildCategories(block.items);
+const showCategoryChips = categories.length > 0;
+const schemaItems = block.items
+  .map((item) => {
+    const answerText = stripHtml(formatAnswer(item.answer));
+
+    if (!item.question || !answerText) {
+      return undefined;
+    }
+
+    return {
+      '@type': 'Question',
+      name: stripHtml(item.question),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answerText,
+      },
+    };
+  })
+  .filter(Boolean);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: schemaItems,
+};
+const blockId = `faq-${hashBlock(block.title + block.items.map((item) => item.question).join('|'))}`;
+
+function buildCategories(items: FaqBlock['items']) {
+  const categoriesById = new Map<string, { id: string; name: string; items: FaqBlock['items'] }>();
+
+  for (const item of items) {
+    const categoryId = item.category || 'all';
+    const categoryName = categoryNameFromId(categoryId);
+    const category = categoriesById.get(categoryId) ?? { id: categoryId, name: categoryName, items: [] };
+
+    category.items.push(item);
+    categoriesById.set(categoryId, category);
+  }
+
+  return Array.from(categoriesById.values());
+}
+
+function categoryNameFromId(id: string): string {
+  const names: Record<string, string> = {
+    all: 'All',
+    technical: 'Technical',
+    business: 'Business',
+    pricing: 'Pricing',
+    support: 'Support',
+    product: 'Product',
+    features: 'Features',
+    platform_overview: 'Platform Overview',
+  };
+
+  return names[id] ?? humanize(id);
+}
+
+function humanize(value: string): string {
+  return value
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function formatAnswer(value: string): string {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    return '';
+  }
+
+  if (/<(?:p|ul|ol|li|br|strong|em|a|h[1-6])[\s>]/i.test(trimmed)) {
+    return trimmed;
+  }
+
+  return trimmed
+    .split(/\n{2,}/)
+    .map((paragraph) => `<p>${escapeHtml(paragraph).replace(/\n/g, '<br>')}</p>`)
+    .join('');
+}
+
+function searchText(item: FaqBlock['items'][number]): string {
+  return stripHtml(`${item.question} ${formatAnswer(item.answer)}`).toLowerCase();
+}
+
+function stripHtml(value: string): string {
+  return value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function removeInlineMarkers(value: string): string {
+  return stripHtml(value.replace(/\{\{\s*([^}]+?)\s*\}\}/g, '$1').replace(/\|\|/g, ' '));
+}
+
+function extractTitleGradient(value: string): string {
+  const match = value.match(/\{\{\s*([^}]+?)\s*\}\}/);
+  return match?.[1]?.trim() ?? '';
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function hashBlock(value: string): string {
+  let hash = 0;
+
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+
+  return hash.toString(36);
+}
+---
+
+<section class="faq" id={blockId} data-faq>
+  <div class="faq__container container-wide faq__layout">
+    <div class="faq__left">
+      <header class="faq__header">
+        <h2 class="faq__title">{title}</h2>
+        {titleGradient && <p class="faq__title-gradient">{titleGradient}</p>}
+      </header>
+
+      <div class="faq__controls">
+        <div class="faq__search-group">
+          <form class="faq__search" data-faq-search-form>
+            <input class="faq__search-input" type="search" placeholder={searchPlaceholder} autocomplete="off" data-faq-search />
+            <button type="submit" class="faq__search-button" aria-label="Search">
+              <span class="faq__search-icon" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <p class="faq__result-count" data-faq-result-count hidden></p>
+        </div>
+
+        {showCategoryChips && (
+          <div class="faq__chips" data-faq-categories>
+            <button type="button" class="faq__chip is-active" data-faq-filter="all">All</button>
+            {categories.filter((category) => category.id !== 'all' && category.name.toLowerCase() !== 'all').map((category) => (
+              <button type="button" class="faq__chip" data-faq-filter={category.id}>{category.name}</button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+
+    <div class="faq__right">
+      <div class="faq__categories" data-faq-categories-list>
+        {categories.map((category, categoryIndex) => {
+          const isCategoryOpen = categoryIndex === 0;
+          const categoryPanelId = `${blockId}-category-${category.id}`;
+
+          return (
+            <div class:list={['faq__category', { 'is-open': isCategoryOpen }]} data-faq-category data-category-id={category.id}>
+              <button class="faq__category-head" type="button" aria-expanded={isCategoryOpen ? 'true' : 'false'} aria-controls={categoryPanelId}>
+                <span class="faq__category-title">{category.name}</span>
+                <span class="faq__toggle" aria-hidden="true"></span>
+              </button>
+
+              <div class="faq__category-body" id={categoryPanelId}>
+                <div class="faq__category-content">
+                  {category.items.map((item, itemIndex) => {
+                    const itemId = `${categoryPanelId}-item-${hashBlock(item.question)}`;
+                    const isItemOpen = isCategoryOpen && itemIndex === 0;
+
+                    return (
+                      <div class:list={['faq__item', { 'is-open': isItemOpen }]} data-faq-item data-search={searchText(item)}>
+                        <button class="faq__item-head" type="button" aria-expanded={isItemOpen ? 'true' : 'false'} aria-controls={itemId}>
+                          <span class="faq__item-title">{item.question}</span>
+                          <span class="faq__toggle" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq__item-body" id={itemId}>
+                          <div class="faq__item-content">
+                            <div class="faq__answer" set:html={formatAnswer(item.answer)} />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="faq__empty" data-faq-empty hidden>
+        <img class="faq__empty-icon" src="/assets/blocks/faq/search-empty.svg" alt="" />
+        <p class="faq__empty-title">No results</p>
+      </div>
+    </div>
+  </div>
+
+  {schemaItems.length > 0 && <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />}
+</section>
+
+<script>
+  (() => {
+    const roots = document.querySelectorAll('[data-faq]');
+    if (!roots.length) return;
+
+    const HIDE_DELAY = 220;
+
+    function setPanelState(control: Element, isOpen: boolean) {
+      control.classList.toggle('is-open', isOpen);
+      const button = control.querySelector(':scope > button');
+      if (button) {
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    }
+
+    function showElement(element: HTMLElement | null) {
+      if (!element) return;
+      element.hidden = false;
+      element.classList.remove('is-hidden');
+      requestAnimationFrame(() => {
+        element.classList.remove('is-filter-hidden');
+      });
+    }
+
+    function hideElement(element: HTMLElement | null) {
+      if (!element || element.hidden) return;
+      element.classList.add('is-filter-hidden');
+      window.setTimeout(() => {
+        if (element.classList.contains('is-filter-hidden')) {
+          element.hidden = true;
+          element.classList.add('is-hidden');
+        }
+      }, HIDE_DELAY);
+    }
+
+    function normalize(value: string) {
+      return value.toLowerCase().trim();
+    }
+
+    roots.forEach((root) => {
+      const searchInput = root.querySelector<HTMLInputElement>('[data-faq-search]');
+      const searchForm = root.querySelector('[data-faq-search-form]');
+      const chips = [...root.querySelectorAll('[data-faq-filter]')];
+      const categories = [...root.querySelectorAll<HTMLElement>('[data-faq-category]')];
+      const empty = root.querySelector<HTMLElement>('[data-faq-empty]');
+      const count = root.querySelector<HTMLElement>('[data-faq-result-count]');
+
+      const state = {
+        filter: 'all',
+        search: '',
+      };
+
+      function openFirstVisibleItem(category: Element) {
+        const items = [...category.querySelectorAll<HTMLElement>('[data-faq-item]')];
+        let opened = false;
+
+        items.forEach((item) => {
+          const shouldOpen = !opened && !item.hidden;
+          setPanelState(item, shouldOpen);
+          opened = opened || shouldOpen;
+        });
+      }
+
+      function applyFilters() {
+        if (!searchInput || !chips.length) return;
+
+        const query = normalize(state.search);
+        let visibleItemsCount = 0;
+        let visibleCategoryCount = 0;
+
+        chips.forEach((chip) => {
+          chip.classList.toggle('is-active', chip.getAttribute('data-faq-filter') === state.filter);
+        });
+
+        categories.forEach((category) => {
+          const categoryId = category.getAttribute('data-category-id') || '';
+          const matchesFilter = state.filter === 'all' || state.filter === categoryId;
+          let categoryVisibleItems = 0;
+
+          category.querySelectorAll<HTMLElement>('[data-faq-item]').forEach((item) => {
+            const text = item.getAttribute('data-search') || '';
+            const matchesSearch = query === '' || text.includes(query);
+
+            if (matchesFilter && matchesSearch) {
+              showElement(item);
+              categoryVisibleItems += 1;
+              visibleItemsCount += 1;
+            } else {
+              hideElement(item);
+            }
+          });
+
+          if (matchesFilter && categoryVisibleItems > 0) {
+            showElement(category);
+            visibleCategoryCount += 1;
+
+            const shouldOpen = state.filter !== 'all' || query !== '' || category.classList.contains('is-open');
+            setPanelState(category, shouldOpen);
+
+            if (shouldOpen) {
+              openFirstVisibleItem(category);
+            }
+          } else {
+            hideElement(category);
+          }
+        });
+
+        if (empty) {
+          empty.hidden = visibleCategoryCount > 0;
+        }
+
+        if (count) {
+          if (query === '') {
+            count.hidden = true;
+            count.textContent = '';
+          } else {
+            count.hidden = false;
+            count.textContent = `Found results: ${visibleItemsCount}`;
+          }
+        }
+      }
+
+      root.addEventListener('click', (event) => {
+        const target = event.target instanceof Element ? event.target : null;
+        const chip = target?.closest('[data-faq-filter]');
+
+        if (chip) {
+          state.filter = chip.getAttribute('data-faq-filter') || 'all';
+          applyFilters();
+          return;
+        }
+
+        const categoryHead = target?.closest('.faq__category-head');
+        if (categoryHead) {
+          const category = categoryHead.closest('[data-faq-category]');
+          if (category) {
+            setPanelState(category, !category.classList.contains('is-open'));
+          }
+          return;
+        }
+
+        const itemHead = target?.closest('.faq__item-head');
+        if (itemHead) {
+          const item = itemHead.closest('[data-faq-item]');
+          if (item) {
+            setPanelState(item, !item.classList.contains('is-open'));
+          }
+        }
+      });
+
+      if (searchForm) {
+        searchForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          state.search = searchInput ? searchInput.value : '';
+          applyFilters();
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          state.search = searchInput.value;
+          applyFilters();
+        });
+      }
+
+      applyFilters();
+    });
+  })();
+</script>

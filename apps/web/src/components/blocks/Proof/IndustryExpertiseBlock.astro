@@ -1,0 +1,235 @@
+---
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_industry-expertise.scss';
+interface IndustryItem {
+  icon?: string;
+  customIcon?: { src?: string; url?: string; alt?: string } | string;
+  title: string;
+  description?: string;
+  image?: { src?: string; url?: string; alt?: string } | string;
+}
+
+interface InfoCard {
+  title?: string;
+  description?: string;
+  source?: string;
+}
+
+interface IndustryExpertiseBlock {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  visualType?: 'industry' | 'platform' | 'capabilities';
+  button?: { label?: string; href?: string; target?: string };
+  hideBottomControls?: boolean;
+  autoplay?: boolean;
+  autoplayInterval?: number;
+  items?: IndustryItem[];
+  infoCards?: InfoCard[];
+}
+
+interface Props {
+  block: IndustryExpertiseBlock;
+}
+
+const { block } = Astro.props;
+const visualType = block.visualType ?? 'industry';
+const title = block.title ?? 'Industry {{ Expertise }}';
+const autoplayInterval = Math.max(1, block.autoplayInterval ?? 5);
+
+const iconSvgs: Record<string, string> = {
+  mouse_pointer: '<svg viewBox="0 0 24 24" fill="none"><path d="M5 3l14 8-6 2-2 6L5 3ZM13 13l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  text_cursor: '<svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10M12 4v16M8 20h8M5 9H3v6h2M19 9h2v6h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  brain: '<svg viewBox="0 0 24 24" fill="none"><path d="M9 3a3 3 0 0 0-3 3v1a3 3 0 0 0-2 5.24A3.5 3.5 0 0 0 7.5 18H9M15 3a3 3 0 0 1 3 3v1a3 3 0 0 1 2 5.24A3.5 3.5 0 0 1 16.5 18H15M9 3v18M15 3v18M9 8H7M15 8h2M9 13H6M15 13h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 13l9 5 9-5M3 17l9 5 9-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  wand: '<svg viewBox="0 0 24 24" fill="none"><path d="m15 4 5 5M4 20 20 4M14 4l6 6M5 5v4M3 7h4M19 15v4M17 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM2 12h20M12 2c2.5 2.7 4 6.1 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.1-4-10s1.5-7.3 4-10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  users: '<svg viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  workflow: '<svg viewBox="0 0 24 24" fill="none"><path d="M6 6h.01M18 6h.01M6 18h.01M18 18h.01M8 6h8M18 8v8M16 18H8M6 16V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+
+const iconAssets: Record<string, string> = {
+  shopping_cart: '/assets/blocks/industry-expertise/shopping-cart.svg',
+  headset: '/assets/blocks/industry-expertise/headset.svg',
+  cloud_cog: '/assets/blocks/industry-expertise/cloud-cog.svg',
+  hammer: '/assets/blocks/industry-expertise/hammer.svg',
+  heart_handshake: '/assets/blocks/industry-expertise/heart-handshake.svg',
+  hotel: '/assets/blocks/industry-expertise/hotel.svg',
+};
+
+const orbitIcons = ['brain', 'layers', 'wand', 'globe', 'users'];
+
+function imageUrl(image: IndustryItem['image']): string {
+  if (typeof image === 'string') return image;
+  return image?.src ?? image?.url ?? '';
+}
+
+function imageAlt(image: IndustryItem['image']): string {
+  if (typeof image === 'object' && image) return image.alt ?? '';
+  return '';
+}
+
+function iconMarkup(item: IndustryItem): string {
+  const customIcon = imageUrl(item.customIcon);
+  if (customIcon) return `<img src="${customIcon}" alt="" loading="lazy" />`;
+  if (item.icon && iconSvgs[item.icon]) return iconSvgs[item.icon];
+  const asset = item.icon ? iconAssets[item.icon] : undefined;
+  if (asset) return `<img src="${asset}" alt="" loading="lazy" />`;
+  return `<img src="${iconAssets.shopping_cart}" alt="" loading="lazy" />`;
+}
+
+const items = (block.items ?? []).filter((item) => item.title?.trim() && item.description?.trim());
+const firstItem = items[0] ?? null;
+const firstImage = firstItem ? imageUrl(firstItem.image) : '';
+const infoCards = block.infoCards ?? [];
+const hasInfoCards = infoCards.length > 0;
+const shouldRender = Boolean(block.title || block.subtitle || items.length > 0 || hasInfoCards);
+---
+
+{shouldRender && (
+<section
+  class={`industry-expertise industry-expertise--${visualType}`}
+  data-industry-expertise
+  data-autoplay={block.autoplay === false ? '0' : '1'}
+  data-autoplay-interval={autoplayInterval}
+>
+  <div class="industry-expertise__container container-wide">
+    <header class="industry-expertise__header">
+      {block.eyebrow && <p class="industry-expertise__eyebrow">{block.eyebrow}</p>}
+      <h2 class="industry-expertise__title"><FormattedText text={title} /></h2>
+      {block.subtitle && <p class="industry-expertise__subtitle">{block.subtitle}</p>}
+      {visualType === 'platform' && block.button?.href && block.button.label && (
+        <a class="c-btn c-btn--primary c-btn--lg industry-expertise__header-button" href={block.button.href} target={block.button.target ?? '_self'}>
+          <span class="c-btn__label">{block.button.label}</span>
+        </a>
+      )}
+    </header>
+
+    <div class="industry-expertise__content">
+      <div class="industry-expertise__layout">
+        {items.length > 0 && <div class="industry-expertise__items" role="tablist" aria-label={title.replace(/\{\{|\}\}/g, '')}>
+          {items.map((item, index) => (
+            <button
+              class:list={["industry-expertise__item", index === 0 && 'is-active']}
+              type="button"
+              role="tab"
+              aria-selected={index === 0 ? 'true' : 'false'}
+              data-preview-title={item.title}
+              data-preview-description={item.description ?? ''}
+              data-preview-image={imageUrl(item.image)}
+              data-preview-image-alt={imageAlt(item.image)}
+            >
+              <span class="industry-expertise__item-icon" aria-hidden="true" set:html={iconMarkup(item)} />
+              <span class="industry-expertise__item-copy">
+                <span class="industry-expertise__item-title">{item.title}</span>
+                {item.description && <span class="industry-expertise__item-description">{item.description}</span>}
+              </span>
+            </button>
+          ))}
+        </div>}
+
+        {firstItem && <aside class:list={["industry-expertise__preview", firstImage && 'has-image']} aria-live="polite">
+          <div class:list={["industry-expertise__preview-image-wrap", firstImage && 'has-image']}>
+            <img class="industry-expertise__preview-image" src={firstImage} alt={imageAlt(firstItem.image)} loading="lazy" hidden={!firstImage} />
+          </div>
+          <div class="industry-expertise__diagram" aria-hidden="true">
+            <div class="industry-expertise__message">
+              <span class="industry-expertise__avatar"></span>
+              <strong>Ethan Walker</strong>
+              <p>Is the XL black hoodie back in stock?</p>
+            </div>
+            <span class="industry-expertise__node industry-expertise__node--workflow" set:html={iconSvgs.workflow}></span>
+            <span class="industry-expertise__node industry-expertise__node--agent"></span>
+          </div>
+          <div class="industry-expertise__orbit" aria-hidden="true">
+            <span class="industry-expertise__orbit-center"></span>
+            {orbitIcons.map((icon, index) => <span class={`industry-expertise__orbit-icon industry-expertise__orbit-icon--${index + 1}`} set:html={iconSvgs[icon]} />)}
+          </div>
+          <div class="industry-expertise__preview-copy">
+            <h3 class="industry-expertise__preview-title">{firstItem.title}</h3>
+            <p class="industry-expertise__preview-description">{firstItem.description}</p>
+          </div>
+        </aside>}
+      </div>
+
+      {visualType !== 'platform' && block.button?.href && block.button.label && (
+        <a class="c-btn c-btn--primary c-btn--lg industry-expertise__button" href={block.button.href} target={block.button.target ?? '_self'}>
+          <span class="c-btn__label">{block.button.label}</span>
+        </a>
+      )}
+
+      {hasInfoCards && (
+        <div class="industry-expertise__info-cards">
+          {infoCards.map((card) => (
+            <article class="industry-expertise__info-card">
+              {card.title && <h3 class="industry-expertise__info-card-title">{card.title}</h3>}
+              {card.description && <p class="industry-expertise__info-card-description">{card.description}</p>}
+              {card.source && <p class="industry-expertise__info-card-source">{card.source}</p>}
+            </article>
+          ))}
+        </div>
+      )}
+
+      {!block.hideBottomControls && (
+        <div class="industry-expertise__bottom">
+          <div class="industry-expertise__progress"><span></span></div>
+          <div class="industry-expertise__arrows">
+            <button class="industry-expertise__arrow industry-expertise__arrow--prev" type="button" data-industry-prev aria-label="Previous tab">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+            <button class="industry-expertise__arrow industry-expertise__arrow--next" type="button" data-industry-next aria-label="Next tab">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+)}
+
+
+<script>
+  const roots = document.querySelectorAll<HTMLElement>('[data-industry-expertise]');
+  roots.forEach((root) => {
+    const items = Array.from(root.querySelectorAll<HTMLButtonElement>('.industry-expertise__item'));
+    const title = root.querySelector<HTMLElement>('.industry-expertise__preview-title');
+    const description = root.querySelector<HTMLElement>('.industry-expertise__preview-description');
+    const preview = root.querySelector<HTMLElement>('.industry-expertise__preview');
+    const image = root.querySelector<HTMLImageElement>('.industry-expertise__preview-image');
+    const imageWrap = root.querySelector<HTMLElement>('.industry-expertise__preview-image-wrap');
+    const progress = root.querySelector<HTMLElement>('.industry-expertise__progress span');
+    const previous = root.querySelector<HTMLButtonElement>('[data-industry-prev]');
+    const next = root.querySelector<HTMLButtonElement>('[data-industry-next]');
+    if (!items.length) return;
+    let activeIndex = Math.max(0, items.findIndex((item) => item.classList.contains('is-active')));
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let stopped = false;
+    const autoplay = root.dataset.autoplay === '1';
+    const interval = Math.max(1, Number(root.dataset.autoplayInterval ?? 5));
+    const mobile = window.matchMedia('(max-width: 600px)');
+    const clearTimer = () => { if (timer) clearTimeout(timer); timer = undefined; };
+    const schedule = () => { clearTimer(); if (autoplay && !stopped && !mobile.matches) timer = setTimeout(() => update(activeIndex + 1), interval * 1000); };
+    const stop = () => { stopped = true; clearTimer(); };
+    function update(index: number) {
+      activeIndex = (index + items.length) % items.length;
+      const active = items[activeIndex];
+      items.forEach((item, itemIndex) => { const selected = itemIndex === activeIndex; item.classList.toggle('is-active', selected); item.setAttribute('aria-selected', String(selected)); });
+      if (title) title.textContent = active.dataset.previewTitle ?? '';
+      if (description) description.textContent = active.dataset.previewDescription ?? '';
+      const imageUrl = active.dataset.previewImage ?? '';
+      if (image && imageWrap && preview) { image.hidden = !imageUrl; imageWrap.classList.toggle('has-image', Boolean(imageUrl)); preview.classList.toggle('has-image', Boolean(imageUrl)); if (imageUrl) image.src = imageUrl; image.alt = active.dataset.previewImageAlt ?? ''; }
+      const looping = autoplay && !stopped && !mobile.matches;
+      if (previous) previous.disabled = !looping && activeIndex === 0;
+      if (next) next.disabled = !looping && activeIndex === items.length - 1;
+      if (progress) progress.style.width = looping ? '100%' : `${((activeIndex + 1) / items.length) * 100}%`;
+      schedule();
+    }
+    items.forEach((item, index) => item.addEventListener('click', () => { stop(); update(index); }));
+    previous?.addEventListener('click', () => { stop(); update(activeIndex - 1); });
+    next?.addEventListener('click', () => { stop(); update(activeIndex + 1); });
+    mobile.addEventListener('change', () => schedule());
+    update(activeIndex);
+  });
+</script>

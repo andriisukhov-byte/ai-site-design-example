@@ -1,0 +1,19 @@
+---
+const fields = [
+  'referrer',
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'source',
+  'allpages_visited',
+  'first_page_visited',
+  'visitor_country',
+  'visitor_city',
+  'visitor_continent',
+  'visitor_calling_code',
+  'visitor_channel',
+  'current-time',
+] as const;
+---
+
+{fields.map((name) => <input type="hidden" name={name} data-form-tracking-field={name} />)}

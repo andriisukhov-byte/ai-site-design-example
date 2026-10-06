@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "queue": {
+    "leaseMinutes": 45,
+    "heartbeatSeconds": 20,
+    "pollSeconds": 5
+  },
+  "worktrees": {
+    "root": "../acme-remake-agent-worktrees"
+  },
+  "delivery": {
+    "githubCommand": "gh",
+    "draftPullRequests": true,
+    "mergeMethod": "merge",
+    "deleteBranchAfterMerge": true
+  },
+  "codex": {
+    "windowsCommand": "codex.cmd",
+    "unixCommand": "codex",
+    "sandbox": "workspace-write",
+    "ephemeral": true,
+    "maxContextFiles": 12,
+    "reviewTokenBudget": 8000
+  },
+  "teams": {
+    "global": {
+      "orchestratorRole": "global-orchestrator",
+      "workerRoles": ["web-orchestrator", "cms-orchestrator", "code-reviewer"],
+      "maxParallel": 1,
+      "maxDelegatedTasks": 8,
+      "defaultReasoningEffort": "high"
+    },
+    "web": {
+      "orchestratorRole": "web-orchestrator",
+      "workerRoles": ["block-porter", "frontend-integration"],
+      "maxParallel": 3,
+      "maxDelegatedTasks": 6,
+      "defaultReasoningEffort": "medium"
+    },
+    "cms": {
+      "orchestratorRole": "cms-orchestrator",
+      "workerRoles": ["cms-mapper", "admin-preview", "cms-qa"],
+      "maxParallel": 2,
+      "maxDelegatedTasks": 6,
+      "defaultReasoningEffort": "medium"
+    },
+    "qa": {
+      "orchestratorRole": "global-orchestrator",
+      "workerRoles": ["visual-qa", "storybook-qa", "cms-qa"],
+      "maxParallel": 2,
+      "maxDelegatedTasks": 4,
+      "defaultReasoningEffort": "low"
+    },
+    "review": {
+      "orchestratorRole": "global-orchestrator",
+      "workerRoles": ["code-reviewer"],
+      "maxParallel": 1,
+      "maxDelegatedTasks": 2,
+      "defaultReasoningEffort": "high"
+    }
+  }
+}

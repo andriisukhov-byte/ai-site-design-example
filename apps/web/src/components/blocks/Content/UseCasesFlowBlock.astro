@@ -1,0 +1,71 @@
+---
+import FormattedText from '../../FormattedText.astro';
+
+import '../../../styles/blocks/_use-cases-flow.scss';
+interface FlowStep {
+  text: string;
+}
+
+interface FlowColumn {
+  label?: string;
+  items?: FlowStep[];
+}
+
+interface UseCasesFlowBlock {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  background?: 'white' | 'gray';
+  columns?: FlowColumn[];
+}
+
+interface Props {
+  block: UseCasesFlowBlock;
+}
+
+const { block } = Astro.props;
+const background = block.background === 'white' ? 'white' : 'gray';
+const columns = (block.columns ?? []).filter((column) => {
+  return Boolean(column.label?.trim() || column.items?.some((step) => step.text?.trim()));
+}).map((column) => ({
+  label: column.label?.trim() ?? '',
+  items: (column.items ?? []).filter((step) => step.text?.trim()),
+}));
+const hasHeader = Boolean(block.eyebrow?.trim() || block.title?.trim() || block.description?.trim());
+---
+
+<section class={`use-cases-flow use-cases-flow--bg-${background}`} data-cols={Math.max(1, columns.length)}>
+  <div class="use-cases-flow__container container-wide">
+    {hasHeader && (
+      <header class="use-cases-flow__header">
+        {block.eyebrow?.trim() && <p class="use-cases-flow__eyebrow"><FormattedText text={block.eyebrow} /></p>}
+        {block.title?.trim() && <h2 class="use-cases-flow__title"><FormattedText text={block.title} /></h2>}
+        {block.description?.trim() && <p class="use-cases-flow__description"><FormattedText text={block.description} /></p>}
+      </header>
+    )}
+
+    {columns.length > 0 && (
+      <div class="use-cases-flow__grid">
+        {columns.map((column) => (
+          <div class="use-cases-flow__column">
+            {column.label && <div class="use-cases-flow__label"><FormattedText text={column.label} /></div>}
+            {column.items.length > 0 && (
+              <ol class="use-cases-flow__steps">
+                {column.items.map((step, index) => (
+                  <li class="use-cases-flow__step">
+                    <span class="use-cases-flow__step-text"><FormattedText text={step.text} /></span>
+                    {index < column.items.length - 1 && (
+                      <span class="use-cases-flow__arrow" aria-hidden="true">
+                        <svg viewBox="0 0 12 16" fill="none" focusable="false"><path d="M6 1v13M2 11l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 2" /></svg>
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "baseUrl": "http://127.0.0.1:4324",
+  "routes": [
+    "/blog/",
+    "/guides/",
+    "/news/",
+    "/tips-and-tricks/"
+  ],
+  "findingCount": 0,
+  "findings": [],
+  "results": [
+    {
+      "route": "/blog/",
+      "ok": true,
+      "status": 200,
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "route": "/guides/",
+      "ok": true,
+      "status": 200,
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "route": "/news/",
+      "ok": true,
+      "status": 200,
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "route": "/tips-and-tricks/",
+      "ok": true,
+      "status": 200,
+      "findingCount": 0,
+      "findings": []
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+---
+import TipsArchive from '../../components/TipsArchive.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getSourcePage, getSourcePages } from '../../data/source-pages';
+
+import '../../styles/templates/_tips-and-tricks.scss';
+
+const page = await getSourcePage('/tips-and-tricks/');
+const sourcePages = await getSourcePages();
+
+if (!page) {
+  throw new Error('Missing CMS document for /tips-and-tricks/.');
+}
+
+const tipItems = sourcePages.filter((page) =>
+  page.collection === 'tips' &&
+  page.path.startsWith('/tips/') &&
+  page.status === 'published',
+);
+const layoutPage = {
+  ...page,
+  seo: {
+    ...page.seo,
+    metaTitle: 'Tips and Tricks | Acme',
+  },
+};
+
+---
+
+<SiteLayout page={layoutPage}>
+  <TipsArchive page={page} items={tipItems} />
+</SiteLayout>

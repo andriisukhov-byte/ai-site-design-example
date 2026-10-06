@@ -1,0 +1,151 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-25T02:26:31.317Z",
+  "startedAt": "2026-07-25T02:24:34.173Z",
+  "durationMs": 117143,
+  "gateCount": 20,
+  "passingGateCount": 20,
+  "failingGateCount": 0,
+  "gates": [
+    {
+      "name": "web-build",
+      "command": "npm.cmd --workspace @acme/web run build",
+      "ok": true,
+      "durationMs": 33179,
+      "stdoutTail": "05:25:06   ├─ /tips/three-ways-to-add-a-custom-tool/index.html (+20ms) \n05:25:06   ├─ /tips/track-status-changes-automatically/index.html (+14ms) \n05:25:06   ├─ /tips/use-ai-for-sentiment-detection/index.html (+20ms) \n05:25:06   ├─ /tips/use-webhooks-for-custom-integrations/index.html (+18ms) \n05:25:06   ├─ /tips/variables-are-critical/index.html (+29ms) \n05:25:06   ├─ /tips/webhook-parameters/index.html (+18ms) \n05:25:06   ├─ /tips/write-activation-prompts-like-youre-briefing-a-teammate/index.html (+15ms) \n05:25:06   ├─ /top-conversational-ai-for-home-services/index.html (+31ms) \n05:25:06   ├─ /top-llm-agents/index.html (+24ms) \n05:25:06   ├─ /universal-data-integration/index.html (+52ms) \n05:25:06   ├─ /verification/index.html (+20ms) \n05:25:06   ├─ /virtual-employees/index.html (+35ms) \n05:25:06   ├─ /webinar-registration-to-email-sequence/index.html (+53ms) \n05:25:06   ├─ /weekly-report-generation/index.html (+55ms) \n05:25:06   ├─ /what-is-agent-ai/index.html (+17ms) \n05:25:06   ├─ /what-is-agentic-commerce/index.html (+18ms) \n05:25:07   ├─ /what-is-conversational-ai/index.html (+21ms) \n05:25:07   ├─ /wix-ai-chatbot/index.html (+53ms) \n05:25:07   ├─ /woocommerce-ai-chatbot/index.html (+65ms) \n05:25:07   ├─ /workforce-analytics-assistant/index.html (+44ms) \n05:25:07 ✓ Completed in 14.12s.\n\n05:25:07 [build] ✓ Completed in 28.89s.\n05:25:07 [build] 310 page(s) built in 30.40s\n05:25:07 [build] Complete!"
+    },
+    {
+      "name": "typecheck",
+      "command": "npm.cmd run typecheck",
+      "ok": true,
+      "durationMs": 42001,
+      "stdoutTail": "\n\u001b[7m378\u001b[0m         function pathBetween(start, end, startSide, endSide) {\n\u001b[7m   \u001b[0m \u001b[93m                                                    ~~~~~~~\u001b[0m\n\nResult (94 files): \n- 0 errors\n- 0 warnings\n- 1 hint\n\n\n> @acme/blocks@0.1.0 typecheck\n> tsc --noEmit\n\n\n> @acme/config@0.1.0 typecheck\n> tsc --noEmit\n\n\n> @acme/styles@0.1.0 typecheck\n> echo styles-ready\n\nstyles-ready\n\n> @acme/ui@0.1.0 typecheck\n> tsc --noEmit"
+    },
+    {
+      "name": "content",
+      "command": "npm.cmd run qa:content",
+      "ok": true,
+      "durationMs": 1518,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:content\n> tsx tools/qa/content-health.ts\n\n{\n  \"ok\": true,\n  \"file\": \"data/cms/pages.json\",\n  \"generatedAt\": \"2026-07-25T02:21:48.692Z\",\n  \"totalPages\": 315,\n  \"validPages\": 315,\n  \"uniquePaths\": 315,\n  \"warnings\": [],\n  \"findings\": []\n}"
+    },
+    {
+      "name": "page-contract",
+      "command": "npm.cmd run qa:page-contract",
+      "ok": true,
+      "durationMs": 1487,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:page-contract\n> tsx tools/qa/page-contract.ts\n\n{\n  \"ok\": true,\n  \"file\": \"data/cms/pages.json\",\n  \"generatedAt\": \"2026-07-25T02:21:48.692Z\",\n  \"totalPages\": 315,\n  \"validPages\": 315,\n  \"warnings\": [],\n  \"findings\": []\n}"
+    },
+    {
+      "name": "no-hotlinks",
+      "command": "npm.cmd run qa:no-hotlinks",
+      "ok": true,
+      "durationMs": 7780,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:no-hotlinks\n> tsx tools/qa/no-hotlinks.ts\n\n{\n  \"ok\": true,\n  \"distDir\": \"apps/web/dist\",\n  \"scannedFiles\": 1792,\n  \"forbiddenPatterns\": [\n    \"source-origin asset URL must be localized\",\n    \"dev source URL must not ship in static output\",\n    \"third-party runtime hotlink is forbidden\",\n    \"third-party runtime hotlink is forbidden\",\n    \"WordPress upload path must be rewritten to local assets\"\n  ],\n  \"findings\": []\n}"
+    },
+    {
+      "name": "no-inline-block-styles",
+      "command": "npm.cmd run qa:no-inline-block-styles",
+      "ok": true,
+      "durationMs": 1038,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:no-inline-block-styles\n> tsx tools/qa/no-inline-block-styles.ts\n\n{\n  \"ok\": true,\n  \"scanned\": 45\n}"
+    },
+    {
+      "name": "seo",
+      "command": "npm.cmd run qa:seo",
+      "ok": true,
+      "durationMs": 2182,
+      "stdoutTail": "    },\n    {\n      \"code\": \"meta-description-length\",\n      \"path\": \"/contact-us/demo-thanks-page/\",\n      \"message\": \"Meta description is outside the preferred 50-180 character range.\",\n      \"sample\": \"Demo Request - Thank You\"\n    },\n    {\n      \"code\": \"seo-text-spacing-title\",\n      \"path\": \"/guide/how-to-automate-competitor-price-monitoring-e-commerce-example/\",\n      \"message\": \"SEO text contains repeated whitespace.\",\n      \"sample\": \"How to Automate Competitor Price Monitoring  (E-Commerce Example)\"\n    },\n    {\n      \"code\": \"meta-description-length\",\n      \"path\": \"/verification/\",\n      \"message\": \"Meta description is outside the preferred 50-180 character range.\",\n      \"sample\": \"Verification\"\n    }\n  ],\n  \"findingCount\": 0,\n  \"findingsByCode\": {},\n  \"findings\": [],\n  \"omittedFindings\": 0\n}"
+    },
+    {
+      "name": "site-index",
+      "command": "npm.cmd run qa:site-index",
+      "ok": true,
+      "durationMs": 1392,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:site-index\n> tsx tools/qa/site-index.ts\n\n{\n  \"ok\": true,\n  \"distDir\": \"apps/web/dist\",\n  \"expectedIndexableRoutes\": 301,\n  \"excludedNoindexRoutes\": 3,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "toc",
+      "command": "npm.cmd run qa:toc",
+      "ok": true,
+      "durationMs": 1408,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:toc\n> tsx tools/qa/toc.ts\n\n{\n  \"ok\": true,\n  \"distDir\": \"apps/web/dist\",\n  \"checkedRoutes\": 82,\n  \"expectedTocRoutes\": 82,\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "tips-dates",
+      "command": "npm.cmd run qa:tips-dates -- --out data/source/tips-dates-report.json",
+      "ok": true,
+      "durationMs": 2112,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:tips-dates\n> tsx tools/qa/tips-dates.ts --out data/source/tips-dates-report.json\n\n{\n  \"ok\": true,\n  \"generatedAt\": \"2026-07-25T02:26:08.176Z\",\n  \"sanitizedPath\": \"data/source/sanitized-content.json\",\n  \"sourceCmsPath\": \"data/source/cms-pages.json\",\n  \"runtimeCmsPath\": \"data/cms/pages.json\",\n  \"sanitizedTips\": 58,\n  \"sourceCmsTips\": 58,\n  \"runtimeCmsTips\": 58,\n  \"dateDistribution\": {\n    \"2026-02-10\": 46,\n    \"2026-07-22\": 12\n  },\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "links",
+      "command": "npm.cmd run qa:links",
+      "ok": true,
+      "durationMs": 2014,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:links\n> tsx tools/qa/link-check.ts\n\n{\n  \"ok\": true,\n  \"distDir\": \"apps/web/dist\",\n  \"htmlFiles\": 310,\n  \"checkedFiles\": 2992,\n  \"findingCount\": 0,\n  \"findingsByCode\": {},\n  \"topReferences\": [],\n  \"findings\": [],\n  \"truncatedFindings\": 0\n}"
+    },
+    {
+      "name": "media-handoff",
+      "command": "npm.cmd run cms:media-handoff",
+      "ok": true,
+      "durationMs": 1872,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 cms:media-handoff\n> tsx tools/cms/export-media-handoff.ts\n\n{\n  \"ok\": true,\n  \"out\": \"data/cms/media-handoff.json\",\n  \"requiredImportedAssets\": 916,\n  \"presentLocalAssets\": 916,\n  \"missingLocalAssets\": 0,\n  \"notInManifest\": 8,\n  \"manifestCoverageOk\": false,\n  \"totalMegabytes\": 333.17\n}"
+    },
+    {
+      "name": "media-sync-dry-run",
+      "command": "npm.cmd run cms:media-sync -- --out data/cms/media-sync-report.json",
+      "ok": true,
+      "durationMs": 1723,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 cms:media-sync\n> tsx tools/cms/sync-media-handoff.ts --out data/cms/media-sync-report.json\n\n{\n  \"ok\": true,\n  \"mode\": \"dry-run\",\n  \"out\": \"data/cms/media-sync-report.json\",\n  \"handoffPath\": \"data/cms/media-handoff.json\",\n  \"sourcePublicDir\": \"apps/web/public\",\n  \"targetPublicDir\": \".tmp/media-handoff/public\",\n  \"itemCount\": 916,\n  \"copiedAssets\": 0,\n  \"plannedAssets\": 916,\n  \"missingSourceAssets\": 0,\n  \"sizeMismatchAssets\": 0,\n  \"unsafeTargetAssets\": 0,\n  \"totalMegabytes\": 333.17\n}"
+    },
+    {
+      "name": "media",
+      "command": "npm.cmd run qa:media -- --out data/source/media-availability-report.json",
+      "ok": true,
+      "durationMs": 3266,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:media\n> tsx tools/qa/media-availability.ts --out data/source/media-availability-report.json\n\n{\n  \"ok\": true,\n  \"provenance\": {\n    \"sourceEraId\": \"prod-sql-2026-07-23-23-14-51\",\n    \"buildRevision\": \"575e306-dirty\"\n  },\n  \"distDir\": \"apps/web/dist\",\n  \"publicDir\": \"apps/web/public\",\n  \"manifestPath\": \"data/source/attachment-media.json\",\n  \"htmlFiles\": 310,\n  \"missingImportedAssets\": 0,\n  \"affectedRoutes\": 0,\n  \"byManifestStatus\": {\n    \"missing-original\": 0,\n    \"recorded\": 0,\n    \"not-in-manifest\": 0\n  },\n  \"findingsWithLocalCandidates\": 0,\n  \"topMissingAssets\": [],\n  \"findings\": [],\n  \"truncatedFindings\": 0\n}"
+    },
+    {
+      "name": "html-structure",
+      "command": "npm.cmd run qa:html-structure -- --out data/source/html-structure-report.json",
+      "ok": true,
+      "durationMs": 2415,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:html-structure\n> tsx tools/qa/html-structure.ts --out data/source/html-structure-report.json\n\n{\n  \"ok\": true,\n  \"distDir\": \"apps/web/dist\",\n  \"htmlFiles\": 310,\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "forms",
+      "command": "npm.cmd run qa:forms -- --out data/source/forms-report.json",
+      "ok": true,
+      "durationMs": 2308,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:forms\n> tsx tools/qa/forms.ts --out data/source/forms-report.json\n\n{\n  \"ok\": true,\n  \"distDir\": \"apps/web/dist\",\n  \"htmlFiles\": 310,\n  \"formCount\": 139,\n  \"acmeFormCount\": 5,\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "form-api",
+      "command": "npm.cmd run qa:form-api -- --out data/source/form-api-report.json",
+      "ok": true,
+      "durationMs": 1509,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:form-api\n> tsx tools/qa/form-api.ts --out data/source/form-api-report.json\n\n{\n  \"ok\": true,\n  \"generatedAt\": \"2026-07-25T02:26:23.287Z\",\n  \"endpointPath\": \"/api/forms/submit\",\n  \"acceptedSamples\": 2,\n  \"rejectedSamples\": 1,\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "payload-roundtrip",
+      "command": "npm.cmd run qa:payload-roundtrip -- --out data/source/payload-roundtrip-report.json",
+      "ok": true,
+      "durationMs": 2661,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:payload-roundtrip\n> tsx tools/qa/payload-roundtrip.ts --out data/source/payload-roundtrip-report.json\n\n{\n  \"ok\": true,\n  \"generatedAt\": \"2026-07-25T02:26:25.918Z\",\n  \"sourcePath\": \"data/source/cms-pages.json\",\n  \"cmsPath\": \"data/cms/pages.json\",\n  \"sourceGeneratedAt\": \"2026-07-25T02:16:51.258Z\",\n  \"cmsGeneratedAt\": \"2026-07-25T02:21:48.692Z\",\n  \"sourceDocuments\": 315,\n  \"cmsDocuments\": 315,\n  \"sourcePaths\": 315,\n  \"cmsPaths\": 315,\n  \"sourceContentKeys\": 315,\n  \"cmsContentKeys\": 315,\n  \"sourceImportedImageDescriptors\": 1571,\n  \"cmsImportedImageDescriptors\": 1571,\n  \"sourceImportedImageIds\": 465,\n  \"cmsImportedImageIds\": 465,\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    },
+    {
+      "name": "route-coverage",
+      "command": "npm.cmd run qa:route-coverage -- --out data/source/route-coverage-report.json",
+      "ok": true,
+      "durationMs": 2498,
+      "stdoutTail": "      \"file\": \"apps/web/src/pages/ai-recruitment/index.astro\"\n    },\n    {\n      \"from\": \"/cognitive-ai-platform/\",\n      \"to\": \"/\",\n      \"file\": \"apps/web/src/pages/cognitive-ai-platform/index.astro\"\n    },\n    {\n      \"from\": \"/guide/how-to-auto-fill-your-crm-with-a-received-invoice-or-route-it-to-your-customer-handling-team/\",\n      \"to\": \"/guides/\",\n      \"file\": \"apps/web/src/pages/guide/how-to-auto-fill-your-crm-with-a-received-invoice-or-route-it-to-your-customer-handling-team/index.astro\"\n    },\n    {\n      \"from\": \"/guide/how-to-automate-inquiries-from-your-web-form-into-actions-for-your-team-with-acme/\",\n      \"to\": \"/guides/\",\n      \"file\": \"apps/web/src/pages/guide/how-to-automate-inquiries-from-your-web-form-into-actions-for-your-team-with-acme/index.astro\"\n    },\n    {\n      \"from\": \"/recruiting-ai-agent-for-security-guard-company/\",\n      \"to\": \"/ai-recruiting-agent-security/\",\n      \"file\": \"apps/web/src/pages/recruiting-ai-agent-for-security-guard-company/index.astro\"\n    }\n  ],\n  \"findings\": []\n}"
+    },
+    {
+      "name": "block-root-attrs",
+      "command": "npm.cmd run qa:block-root-attrs -- --out data/source/block-root-attrs-report.json",
+      "ok": true,
+      "durationMs": 2769,
+      "stdoutTail": "> acme-clean-rebuild@0.1.0 qa:block-root-attrs\n> tsx tools/qa/block-root-attrs.ts --out data/source/block-root-attrs-report.json\n\n{\n  \"ok\": true,\n  \"generatedAt\": \"2026-07-25T02:26:31.221Z\",\n  \"cmsPagesPath\": \"data/cms/pages.json\",\n  \"distDir\": \"apps/web/dist\",\n  \"htmlFiles\": 310,\n  \"routesWithRootAttrs\": 76,\n  \"rootAttrExpectations\": 406,\n  \"anchorsExpected\": 405,\n  \"classNamesExpected\": 1,\n  \"findingCount\": 0,\n  \"findings\": []\n}"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+---
+import type { PageDocument } from '@acme/blocks';
+import blogArchiveReference from '../../../../data/source/blog-archive-reference.json';
+import type { ProductionAuthor } from '../data/production-taxonomies';
+import ArchivePagination from './ArchivePagination.astro';
+import BlogNewsletterForm from './BlogNewsletterForm.astro';
+import {
+  archivePayloadJson,
+  comparePublishedDesc,
+  estimateReadTime,
+  imageFor,
+} from './archive-utils';
+
+interface Props {
+  author: ProductionAuthor;
+  items: PageDocument[];
+}
+
+const { author, items } = Astro.props;
+const sortedItems = [...items].sort(comparePublishedDesc);
+const perPage = 10;
+const totalPages = Math.max(1, Math.ceil(sortedItems.length / perPage));
+const firstPageItems = sortedItems.slice(0, perPage);
+const sourceCardMeta = new Map(blogArchiveReference.firstPageCards.map((item) => [item.path, item]));
+const payload = {
+  variant: 'blog',
+  perPage,
+  items: sortedItems.map((item) => ({
+    title: item.title,
+    path: item.path,
+    image: imageFor(item),
+    excerpt: item.excerpt || item.seo.metaDescription || '',
+    readTime: sourceCardMeta.get(item.path)?.readTime ?? estimateReadTime(item),
+    rating: ratingFor(item),
+    category: item.articleMeta?.category || 'Article',
+    tags: item.articleMeta?.tags ?? [],
+  })),
+};
+
+function ratingFor(item: PageDocument): string | undefined {
+  const sourceRating = sourceCardMeta.get(item.path)?.rating;
+  if (sourceRating) return sourceRating;
+
+  const average = item.articleMeta?.ratingAverage;
+  const count = item.articleMeta?.ratingCount;
+  return average === undefined
+    ? undefined
+    : `${average.toFixed(1)}/5${count ? ` - (${count} ${count === 1 ? 'vote' : 'votes'})` : ''}`;
+}
+---
+
+<div class="blog-archive-page">
+  <section class="author-hero">
+    <div class="author-hero__inner">
+      <div class="author-hero__avatar">
+        {author.avatar
+          ? <img src={author.avatar} alt={author.name} width="160" height="160" />
+          : <span aria-hidden="true"></span>}
+      </div>
+      <div class="author-hero__details">
+        <span class="author-hero__eyebrow">Author</span>
+        <h1 class="author-hero__name">{author.name}</h1>
+        {author.description && <p class="author-hero__bio">{author.description}</p>}
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-posts guides author-posts" data-archive-root>
+    <div class="container-default">
+      <h2 class="author-posts__heading">Articles by {author.name}</h2>
+      <div class="guides__list" data-archive-list>
+        {firstPageItems.map((item) => (
+          <a href={item.path} class="guide-card guide-card__link">
+            {imageFor(item)?.src && (
+              <div class="guide-card__image">
+                <img src={imageFor(item)?.src} alt={imageFor(item)?.alt || item.title} loading="lazy" decoding="async" />
+              </div>
+            )}
+            <div class="guide-card__content">
+              <div class="blog-posts__tags">
+                <div class="blog-posts__tag">{item.articleMeta?.category || 'Article'}</div>
+              </div>
+              <div class="guide-card__title">{item.title}</div>
+              <div class="guide-card__info">
+                <div class="guide-card__info-item">
+                  <div class="blog-posts__rating">
+                    <span class="kk-star-ratings">
+                      <span class="kksr-stars" aria-hidden="true"></span>
+                      {ratingFor(item) && <span class="kksr-legend">{ratingFor(item)}</span>}
+                    </span>
+                  </div>
+                </div>
+                <div class="guide-card__info-item read">
+                  <img src="/assets/blocks/news-insights/clock.svg" alt="" width="20" height="20" loading="lazy" />
+                  <span>{sourceCardMeta.get(item.path)?.readTime ?? estimateReadTime(item)}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <ArchivePagination totalPages={totalPages} />
+    </div>
+
+    <script is:inline type="application/json" data-archive-payload set:html={archivePayloadJson(payload)}></script>
+  </section>
+
+  <section class="blog-newsletter">
+    <div class="blog-newsletter__inner">
+      <h2 class="blog-newsletter__heading">Acme <span>Newsletters</span></h2>
+      <BlogNewsletterForm />
+    </div>
+  </section>
+</div>
+
+<script>
+  import '../scripts/archive-pagination';
+</script>

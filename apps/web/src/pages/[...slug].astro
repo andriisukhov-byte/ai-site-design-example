@@ -1,0 +1,60 @@
+---
+import BlockRenderer from '../components/BlockRenderer.astro';
+import DocumentPage from '../components/DocumentPage.astro';
+import NewsArchive from '../components/NewsArchive.astro';
+import SingleArticle from '../components/SingleArticle.astro';
+import { getSourcePage, getSourcePages, slugToPath } from '../data/source-pages';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import '../styles/templates/_page-default.scss';
+
+const requestedPath = slugToPath(Astro.params.slug);
+const page = await getSourcePage(requestedPath);
+
+if (!page || page.status !== 'published') {
+  return Astro.redirect('/404');
+}
+
+const sourcePages = await getSourcePages();
+const isArticle =
+  page.collection === 'posts' ||
+  page.collection === 'tips' ||
+  page.template === 'article' ||
+  page.template === 'tip';
+const isNews = page.collection === 'news' || page.template === 'news';
+const isDocument = page.template === 'document';
+const newsItems = isNews
+  ? sourcePages.filter(
+    (item) =>
+      item.collection === 'news' &&
+      item.template === 'news' &&
+      item.path !== '/news/' &&
+      item.status === 'published',
+  )
+  : [];
+const newsArchivePage = isNews ? sourcePages.find((item) => item.path === '/news/') : undefined;
+const layoutPage = newsArchivePage
+  ? {
+    ...newsArchivePage,
+    title: 'News Archive',
+    seo: {
+      ...newsArchivePage.seo,
+      metaTitle: 'News Archive | Acme',
+      canonicalUrl: '/news/',
+    },
+  }
+  : page;
+
+if (page.path !== slugToPath(Astro.params.slug)) {
+  throw new Error(`Route parameter mismatch for ${page.path}`);
+}
+---
+
+<SiteLayout page={layoutPage}>
+  {isNews
+    ? <NewsArchive items={newsItems} />
+    : isArticle
+      ? <SingleArticle page={page} />
+      : isDocument
+        ? <DocumentPage page={page} />
+        : <article class="page-default"><BlockRenderer blocks={page.blocks} /></article>}
+</SiteLayout>

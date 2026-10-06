@@ -1,0 +1,32 @@
+---
+import BlogArchive from '../../components/BlogArchive.astro';
+import {
+  createArchivePage,
+  postsForTag,
+  productionTaxonomies,
+} from '../../data/production-taxonomies';
+import { getSourcePage, getSourcePages } from '../../data/source-pages';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+import '../../styles/templates/_blog.scss';
+
+const tag = productionTaxonomies.postTags.find((item) => item.slug === Astro.params.slug);
+
+if (!tag) {
+  return Astro.redirect('/404');
+}
+
+const blogPage = await getSourcePage('/blog/');
+const sourcePages = await getSourcePages();
+
+if (!blogPage) {
+  throw new Error('Missing CMS document for /blog/.');
+}
+
+const page = createArchivePage(blogPage, tag);
+const items = postsForTag(sourcePages, tag.slug);
+---
+
+<SiteLayout page={page}>
+  <BlogArchive items={items} />
+</SiteLayout>

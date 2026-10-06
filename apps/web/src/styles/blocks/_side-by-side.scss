@@ -1,0 +1,487 @@
+@use "../variables" as *;
+@use "../foundation/design-tokens" as dt;
+
+.side-by-side {
+    padding: 80px 0;
+
+    &--bg-white {
+        background: dt.$color-brand-white;
+    }
+
+    &--bg-gray {
+        background: dt.$color-gray-25;
+
+        .side-by-side__container {
+            padding: 24px;
+            border-radius: 24px;
+            background: dt.$color-brand-white;
+        }
+    }
+
+    &--bg-transparent {
+        background: transparent;
+        padding: 0;
+    }
+
+    &__svg-defs {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__eyebrow {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 78px;
+
+        span {
+            background-image: linear-gradient(
+                102deg,
+                dt.$color-brand-azure-sky 0%,
+                dt.$color-brand-royal-violet 25%,
+                dt.$color-brand-dark-umber 50%,
+                dt.$color-brand-burnt-clay 75%,
+                dt.$color-brand-amber-glow 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        color: dt.$color-gray-500;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    // Side-by-side row
+    &__row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 64px;
+        align-items: center;
+    }
+
+    &--image-left &__row {
+        .side-by-side__visual { order: 1; }
+        .side-by-side__content { order: 2; }
+    }
+
+    &--image-right &__row {
+        .side-by-side__visual { order: 2; }
+        .side-by-side__content { order: 1; }
+    }
+
+    &__visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 16px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-width: 0;
+    }
+
+    &__card-title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 48px;
+    }
+
+    &__card-subtitle {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+
+    &__card-description {
+        margin: 0;
+        color: dt.$color-gray-700;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+
+        // WYSIWYG content: lead copy is gray; bold lines (labels / closing
+        // statement) switch to the dark heading colour like Figma.
+        p {
+            margin: 0;
+
+            & + p {
+                margin-top: 16px;
+            }
+        }
+
+        strong {
+            color: dt.$color-brand-font-dark;
+            font-weight: 600;
+        }
+
+        // Bullet lists render with the brand gradient check-circle (same icon
+        // as the bullets repeater), not native markers.
+        ul {
+            list-style: none;
+            margin: 16px 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                margin: 0;
+
+                &::before {
+                    content: "";
+                    flex: 0 0 24px;
+                    width: 24px;
+                    height: 24px;
+                    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><defs><linearGradient id='sbsCheck' x1='0' y1='0' x2='24' y2='24' gradientUnits='userSpaceOnUse'><stop stop-color='%233A87D9'/><stop offset='0.25' stop-color='%232F1A6B'/><stop offset='0.5' stop-color='%23200000'/><stop offset='0.75' stop-color='%23AD3822'/><stop offset='1' stop-color='%23F7A75F'/></linearGradient></defs><circle cx='12' cy='12' r='12' fill='url(%23sbsCheck)'/><path d='m8 12 3 3 5-6' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat center / 24px 24px;
+                }
+            }
+
+            // Closing bold statement after the list (Figma 32px gap).
+            & + p {
+                margin-top: 32px;
+            }
+        }
+
+        // Ordered lists are rare here; just restore the indent the global
+        // normalize reset strips.
+        ol {
+            margin: 16px 0 0;
+            padding-inline-start: 24px;
+
+            li + li {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    &__bullets {
+        list-style: none;
+        margin: 8px 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__bullet {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    &__bullet-icon {
+        flex-shrink: 0;
+        display: inline-flex;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+    }
+
+    &__check {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    &__bullet-body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+
+    &__bullet-text {
+        color: dt.$color-brand-font-dark;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    // Rich bullets — title becomes bold, description below
+    &--bullets-rich &__bullet-text {
+        font-weight: 600;
+    }
+
+    &__bullet-description {
+        color: dt.$color-gray-500;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    &__icons-row {
+        display: flex;
+        gap: 0;
+        align-items: center;
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
+
+    &__icon-cell {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        margin-right: -4px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 32px;
+        background: dt.$color-brand-white;
+        box-sizing: border-box;
+        overflow: hidden;
+        transition: width 0.4s ease, padding 0.4s ease, margin-right 0.4s ease, border-width 0.4s ease, opacity 0.3s ease;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    }
+
+    &__icons-row.is-collapsed &__icon-cell:nth-of-type(n + 3) {
+        width: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        border-width: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__icon-overflow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        margin-left: 12px;
+        padding: 12px;
+        border: 1px solid dt.$color-gray-100;
+        border-radius: 32px;
+        background: dt.$color-brand-white;
+        color: dt.$color-gray-700;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        cursor: pointer;
+        box-sizing: border-box;
+        overflow: hidden;
+        transition: width 0.4s ease, padding 0.4s ease, margin-left 0.4s ease, border-width 0.4s ease, opacity 0.3s ease;
+
+        &:hover,
+        &:focus-visible {
+            background: dt.$color-gray-25;
+            outline: 0;
+        }
+    }
+
+    &__icons-row:not(.is-collapsed) &__icon-overflow {
+        width: 0;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        border-width: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+
+        .c-btn {
+            min-width: 160px;
+        }
+    }
+
+    &__card-note {
+        margin: 4px 0 0;
+        color: dt.$color-gray-500;
+        font-size: 16px;
+        font-weight: dt.$font-weight-medium;
+        line-height: 22px;
+    }
+
+    // Bottom info cards (Perfect For / Use Cases / Channels)
+    &__bottom {
+        display: grid;
+        gap: 16px;
+        margin-top: 16px;
+
+        &[data-cards="1"] { grid-template-columns: minmax(0, 1fr); }
+        &[data-cards="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        &[data-cards="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        &[data-cards="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    &__bottom-card {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        border-radius: 16px;
+        background: dt.$color-brand-white;
+        border: 1px solid dt.$color-gray-100;
+    }
+
+    // When section bg is white, bottom cards use gray-25 fill for contrast
+    &--bg-white &__bottom-card {
+        background: dt.$color-gray-25;
+        border-color: transparent;
+    }
+
+    &__bottom-card-title {
+        margin: 0;
+        color: dt.$color-brand-font-dark;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+
+    &__bottom-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__bottom-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    &__bottom-item-icon {
+        flex-shrink: 0;
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        color: dt.$color-brand-font-dark;
+        margin-top: 2px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__bottom-item-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    &__bottom-item-title {
+        color: dt.$color-brand-font-dark;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+    }
+
+    &__bottom-item-description {
+        color: dt.$color-gray-500;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    @include tablet {
+        padding: 64px 0;
+
+        &__title { font-size: 48px; line-height: 1.15; }
+        &__subtitle { font-size: 20px; line-height: 28px; }
+        &__card-title { font-size: 32px; line-height: 1.2; }
+
+        &__row {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        // Force image on top in tablet/mobile
+        &--image-right &__row,
+        &--image-left &__row {
+            .side-by-side__visual { order: 1; }
+            .side-by-side__content { order: 2; }
+        }
+
+        &__bottom {
+            &[data-cards="3"],
+            &[data-cards="4"] {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @include mobile {
+        padding: 48px 0;
+
+        &__title { font-size: 32px; line-height: 1.2; }
+        &__subtitle { font-size: 16px; line-height: 22px; }
+        &__card-title { font-size: 26px; line-height: 1.2; }
+        &__card-subtitle { font-size: 18px; line-height: 24px; }
+        &__card-description { font-size: 16px; line-height: 22px; }
+        &__bullet-text { font-size: 16px; line-height: 22px; }
+
+        &__bottom {
+            grid-template-columns: 1fr !important;
+        }
+    }
+}

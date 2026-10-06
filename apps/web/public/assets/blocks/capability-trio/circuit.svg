@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1301 703" fill="none" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="capability-trio-bg-gradient" x1="14" y1="67" x2="1118" y2="866" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A87D9"/>
+      <stop offset="0.25" stop-color="#2F1A6B"/>
+      <stop offset="0.5" stop-color="#200000"/>
+      <stop offset="0.75" stop-color="#AD3822"/>
+      <stop offset="1" stop-color="#F7A75F"/>
+    </linearGradient>
+  </defs>
+  <path pathLength="1" d="M78 276h117l44 45h204l74 75h181l76-76h132l66-90h62l54-54h102l31-31h27M44 242l34 34M284 384l-26 26H142l-17 17H0M507 369l-101 81h-50l-17-17H190l-29 28H76M663 481h-55l-74 74v55l-50 50M714 0l-7 8v40l-40 40v11l-28 28v171M1125 55l-55-15H942L840 142h-77l-17 17v17l-39 39v80M1301 375h-10l-13 13h-40l-21 21h-120M260 263h258l45 32M1087 222l-54 54h-62l-52 64h-69M642 370h-27l-81 81v33l-50 49" stroke="url(#capability-trio-bg-gradient)" stroke-opacity="0.2" stroke-width="2" vector-effect="non-scaling-stroke"/>
+</svg>

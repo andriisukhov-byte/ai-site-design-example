@@ -1,0 +1,175 @@
+---
+import FormattedText from '../../FormattedText.astro';
+import '../../../styles/blocks/_conversation-replay.scss';
+
+type Turn = {
+  channel?: string;
+  time?: string;
+  from?: 'customer' | 'agent';
+  text?: string;
+  action?: string;
+};
+
+type OutcomeRow = { label?: string; value?: string };
+
+export interface Props {
+  block: {
+    background?: 'white' | 'gray';
+    title?: string;
+    description?: string;
+    turns?: Turn[];
+    outcomeTitle?: string;
+    outcomeRows?: OutcomeRow[];
+    outcomeNote?: string;
+    replayLabel?: string;
+  };
+}
+
+const { block } = Astro.props;
+const turns = (block.turns ?? []).filter((turn) => turn.text?.trim());
+const outcomeRows = (block.outcomeRows ?? []).filter((row) => row.label?.trim() || row.value?.trim());
+const background = block.background ?? 'white';
+
+const channelMeta: Record<string, { label: string; glyph: string }> = {
+  voice: {
+    label: 'Phone call',
+    glyph: '<path d="M6.5 3h2.2l1.4 3.4-1.8 1.3a10.5 10.5 0 0 0 4.9 4.9l1.3-1.8L18 12.3v2.2A2.5 2.5 0 0 1 15.3 17C9.6 16.6 4.4 11.4 4 5.7A2.5 2.5 0 0 1 6.5 3Z"/>',
+  },
+  sms: {
+    label: 'SMS',
+    glyph: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h11A1.5 1.5 0 0 1 18 5.5v7A1.5 1.5 0 0 1 16.5 14H9l-4 3.5V14H5.5A1.5 1.5 0 0 1 4 12.5Z"/>',
+  },
+  whatsapp: {
+    label: 'WhatsApp',
+    glyph: '<path d="M11 3.5a7.5 7.5 0 0 0-6.4 11.4L3.5 18.5l3.7-1.1A7.5 7.5 0 1 0 11 3.5Zm0 1.6a5.9 5.9 0 1 1-3.1 10.9l-.4-.2-2 .6.6-1.9-.2-.4A5.9 5.9 0 0 1 11 5.1Z"/><path d="M8.9 8.1c.2-.4.4-.4.6-.4h.4c.2 0 .3.1.4.4l.5 1.1c.1.2 0 .4-.1.5l-.3.4c-.1.2-.1.3 0 .4a4.6 4.6 0 0 0 2 1.7c.2.1.3.1.4 0l.4-.4c.1-.2.3-.2.5-.1l1.1.5c.2.1.3.2.3.4v.4c0 .3-.2.6-.5.8-.4.3-.9.4-1.4.3a7.4 7.4 0 0 1-4.4-3.4c-.3-.6-.4-1.2-.2-1.8Z"/>',
+  },
+  chat: {
+    label: 'Web chat',
+    glyph: '<path d="M3.5 6A2.5 2.5 0 0 1 6 3.5h10A2.5 2.5 0 0 1 18.5 6v5A2.5 2.5 0 0 1 16 13.5h-4.6l-3.9 3v-3H6A2.5 2.5 0 0 1 3.5 11Z"/>',
+  },
+  mail: {
+    label: 'Email',
+    glyph: '<path d="M3.5 6.5A1.5 1.5 0 0 1 5 5h12a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 17 16H5a1.5 1.5 0 0 1-1.5-1.5Z"/><path d="m4 7 7 4.6L18 7"/>',
+  },
+};
+
+function meta(channel?: string) {
+  return channelMeta[channel ?? ''] ?? channelMeta.sms;
+}
+
+// The channel rail is derived from the script, in first-appearance order.
+const rail: { key: string; label: string; glyph: string }[] = [];
+for (const turn of turns) {
+  const key = turn.channel ?? 'sms';
+  if (!rail.some((entry) => entry.key === key)) {
+    rail.push({ key, label: meta(key).label, glyph: meta(key).glyph });
+  }
+}
+
+const hasContent = turns.length > 0;
+---
+
+{hasContent && (
+  <section class:list={['conversation-replay', `conversation-replay--${background}`]} data-conversation-replay>
+    <div class="conversation-replay__container">
+      {(block.title || block.description) && (
+        <header class="conversation-replay__header">
+          {block.title && (
+            <h2 class="conversation-replay__title"><FormattedText text={block.title} /></h2>
+          )}
+          {block.description && (
+            <p class="conversation-replay__description">{block.description}</p>
+          )}
+        </header>
+      )}
+
+      <div class="conversation-replay__stage">
+        <div class="conversation-replay__rail" aria-hidden="true">
+          {rail.map((entry, index) => (
+            <div class="conversation-replay__rail-item" data-rail-channel={entry.key}>
+              <span class="conversation-replay__rail-dot">
+                <svg viewBox="0 0 22 22" focusable="false" set:html={entry.glyph} />
+              </span>
+              <span class="conversation-replay__rail-label">{entry.label}</span>
+              {index < rail.length - 1 && <span class="conversation-replay__rail-line" />}
+            </div>
+          ))}
+        </div>
+
+        <div class="conversation-replay__thread-wrap">
+          <ol class="conversation-replay__thread" role="list" data-thread>
+            {turns.map((turn, index) => {
+              const channel = turn.channel ?? 'sms';
+              const from = turn.from === 'agent' ? 'agent' : 'customer';
+              return (
+                <li
+                  class:list={[
+                    'conversation-replay__turn',
+                    `conversation-replay__turn--${from}`,
+                  ]}
+                  data-turn={index}
+                  data-turn-channel={channel}
+                >
+                  <div class="conversation-replay__bubble">
+                    <span class="conversation-replay__meta">
+                      <span class="conversation-replay__meta-icon">
+                        <svg viewBox="0 0 22 22" focusable="false" set:html={meta(channel).glyph} />
+                      </span>
+                      <span class="conversation-replay__speaker">
+                        {from === 'agent' ? 'Your AI receptionist' : 'Customer'} on
+                      </span>
+                      <span class="conversation-replay__meta-channel">{meta(channel).label}</span>
+                      {turn.time && <span class="conversation-replay__meta-time">{turn.time}</span>}
+                    </span>
+                    <p class="conversation-replay__text">{turn.text}</p>
+                  </div>
+                  {turn.action && (
+                    <p class="conversation-replay__action">
+                      <span class="conversation-replay__action-mark" aria-hidden="true" />
+                      {turn.action}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+
+          {(block.outcomeTitle || outcomeRows.length > 0) && (
+            <aside class="conversation-replay__outcome" data-outcome>
+              {block.outcomeTitle && (
+                <p class="conversation-replay__outcome-title">{block.outcomeTitle}</p>
+              )}
+              {outcomeRows.length > 0 && (
+                <dl class="conversation-replay__outcome-rows">
+                  {outcomeRows.map((row) => (
+                    <div class="conversation-replay__outcome-row">
+                      <dt>{row.label}</dt>
+                      <dd>{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              {block.outcomeNote && (
+                <p class="conversation-replay__outcome-note">{block.outcomeNote}</p>
+              )}
+            </aside>
+          )}
+        </div>
+      </div>
+
+      <div class="conversation-replay__controls">
+        <p class="conversation-replay__status" data-status role="status" aria-live="polite"></p>
+        <button type="button" class="conversation-replay__replay" data-replay>
+          <span class="conversation-replay__replay-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" focusable="false">
+              <path d="M10 4.5V2l4 3-4 3V5.5a4.5 4.5 0 1 0 4.5 4.5h1.5A6 6 0 1 1 10 4.5Z" />
+            </svg>
+          </span>
+          {block.replayLabel ?? "Replay the conversation"}
+        </button>
+      </div>
+    </div>
+  </section>
+)}
+
+{hasContent && <script is:inline src="/assets/blocks/conversation-replay/conversation-replay.js" defer></script>}

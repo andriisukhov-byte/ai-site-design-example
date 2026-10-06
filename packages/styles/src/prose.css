@@ -1,0 +1,342 @@
+.page-default > h1,
+.page-default > h2,
+.page-default > h3,
+.page-default > h4,
+.page-default > h5,
+.page-default > h6,
+.page-default > p,
+.page-default > ul,
+.page-default > ol,
+.page-default > dl,
+.page-default > blockquote,
+.page-default > figure,
+.page-default > pre,
+.page-default > table,
+.page-default > address,
+.page-default > hr,
+.page-default > [class^="wp-block-"]:not(.alignfull):not(.alignwide) {
+  box-sizing: border-box;
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.page-default > .alignwide {
+  box-sizing: border-box;
+  max-width: var(--container-base);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.page-default > .alignfull {
+  max-width: none;
+  margin-inline: 0;
+}
+
+.page-default > h1,
+.page-default > h2,
+.page-default > h3,
+.page-default > h4,
+.page-default > h5,
+.page-default > h6 {
+  color: var(--color-brand-black);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+
+.page-default > h1 {
+  font-size: 40px;
+}
+
+.page-default > h2 {
+  font-size: 32px;
+}
+
+.page-default > h3 {
+  font-size: 24px;
+}
+
+.page-default > h4,
+.page-default > h5 {
+  font-size: 20px;
+}
+
+.page-default > h6 {
+  font-size: 18px;
+}
+
+.page-default > *:not(section) + *:not(section) {
+  margin-top: 24px;
+}
+
+.page-default > h2 + *:not(section),
+.page-default > h3 + *:not(section),
+.page-default > h4 + *:not(section),
+.page-default > h5 + *:not(section),
+.page-default > h6 + *:not(section) {
+  margin-top: 16px;
+}
+
+.page-default > *:not(section) + h2 {
+  margin-top: 56px;
+}
+
+.page-default > *:not(section) + h3 {
+  margin-top: 40px;
+}
+
+.page-default > *:not(section) + h4,
+.page-default > *:not(section) + h5,
+.page-default > *:not(section) + h6 {
+  margin-top: 32px;
+}
+
+.page-default > hr,
+.page-default > .wp-block-separator {
+  height: 1px;
+  border: 0;
+  margin-block: 40px;
+  background: var(--color-gray-100);
+}
+
+.page-default > p,
+.page-default > ul,
+.page-default > ol,
+.page-default > dl,
+.page-default > blockquote {
+  color: var(--color-gray-700);
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line-height);
+}
+
+.page-default > ul,
+.page-default > ol {
+  padding-left: 52px;
+}
+
+.page-default > ul {
+  list-style: disc;
+}
+
+.page-default > ol {
+  list-style: decimal;
+}
+
+.page-default > ul li + li,
+.page-default > ol li + li {
+  margin-top: 8px;
+}
+
+.page-default > ul ul,
+.page-default > ol ol,
+.page-default > ul ol,
+.page-default > ol ul {
+  margin-top: 8px;
+  padding-left: 24px;
+}
+
+.page-default > p a,
+.page-default > ul a,
+.page-default > ol a,
+.page-default > dl a,
+.page-default > blockquote a,
+.page-default > h1 a,
+.page-default > h2 a,
+.page-default > h3 a,
+.page-default > h4 a,
+.page-default > h5 a,
+.page-default > h6 a,
+.page-default > figure a,
+.page-default > table a,
+.page-default > address a {
+  color: var(--color-brand-azure-sky);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-default > p a:hover,
+.page-default > ul a:hover,
+.page-default > ol a:hover,
+.page-default > dl a:hover,
+.page-default > blockquote a:hover,
+.page-default > h1 a:hover,
+.page-default > h2 a:hover,
+.page-default > h3 a:hover,
+.page-default > h4 a:hover,
+.page-default > h5 a:hover,
+.page-default > h6 a:hover,
+.page-default > figure a:hover,
+.page-default > table a:hover,
+.page-default > address a:hover {
+  text-decoration: none;
+}
+
+.page-default > p strong,
+.page-default > p b,
+.page-default > ul strong,
+.page-default > ol strong,
+.page-default > dl strong,
+.page-default > blockquote strong,
+.page-default > h1 strong,
+.page-default > h2 strong,
+.page-default > h3 strong,
+.page-default > h4 strong,
+.page-default > h5 strong,
+.page-default > h6 strong,
+.page-default > table strong {
+  font-weight: var(--font-weight-semibold);
+}
+
+.page-default > p code,
+.page-default > ul code,
+.page-default > ol code,
+.page-default > blockquote code,
+.page-default > table code {
+  border-radius: 4px;
+  padding: 2px 6px;
+  background: var(--color-gray-25);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.page-default > pre {
+  overflow-x: auto;
+  padding: 20px 24px;
+  border: 1px solid var(--color-gray-100);
+  border-radius: 12px;
+  background: var(--color-gray-25);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line-height);
+}
+
+.page-default > blockquote {
+  border-left: 3px solid var(--color-brand-azure-sky);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 24px;
+  background: var(--color-gray-25);
+  font-style: italic;
+}
+
+.page-default > table,
+.page-default > .wp-block-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.page-default > table th,
+.page-default > table td,
+.page-default > .wp-block-table table th,
+.page-default > .wp-block-table table td {
+  border-bottom: 1px solid var(--color-gray-100);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.page-default > table thead th,
+.page-default > .wp-block-table table thead th {
+  background: var(--color-gray-25);
+  font-weight: var(--font-weight-semibold);
+}
+
+.page-default > figure img,
+.page-default > .wp-block-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.page-default > figure figcaption,
+.page-default > .wp-block-image figcaption {
+  margin-top: 12px;
+  color: var(--color-gray-500);
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line-height);
+  text-align: center;
+}
+
+.ca-prose {
+  color: var(--color-gray-700);
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line-height);
+}
+
+.ca-prose :where(p, ul, ol, blockquote, table, figure) {
+  margin-block: 0 1.2em;
+}
+
+.ca-prose :where(h2, h3, h4) {
+  margin-block: 1.45em 0.55em;
+  color: var(--color-brand-black);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+
+.ca-prose :where(h2) {
+  font-size: 36px;
+}
+
+.ca-prose :where(h3) {
+  font-size: 28px;
+}
+
+.ca-prose :where(a) {
+  color: var(--color-brand-azure-sky);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ca-prose :where(ul, ol) {
+  padding-left: 1.35em;
+}
+
+.ca-prose :where(li + li) {
+  margin-top: 0.45em;
+}
+
+.ca-prose :where(img) {
+  border-radius: 12px;
+}
+
+.ca-prose :where(blockquote) {
+  border-left: 3px solid var(--color-brand-azure-sky);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 24px;
+  color: var(--color-gray-700);
+  background: var(--color-gray-25);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .page-default {
+    padding-block: 40px;
+  }
+
+  .page-default > h1,
+  .page-default > h2 {
+    font-size: 32px;
+  }
+
+  .page-default > h3 {
+    font-size: 22px;
+  }
+
+  .page-default > h4,
+  .page-default > h5 {
+    font-size: 20px;
+  }
+
+  .page-default > h6 {
+    font-size: 18px;
+  }
+
+  .page-default > * + h2 {
+    margin-top: 40px;
+  }
+
+  .page-default > * + h3 {
+    margin-top: 32px;
+  }
+}
